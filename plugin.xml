@@ -1,0 +1,20 @@
+<plugin name='google-visualization' version='0.1' grailsVersion='1.2 &gt; *'>
+  <author>Benjamin Muschko</author>
+  <authorEmail>benjamin.muschko@gmail.com</authorEmail>
+  <title>Google Visualization API Plugin</title>
+  <description>\
+This is a plugin for Google Visualization API. 
+</description>
+  <documentation>http://grails.org/org.grails.plugins.google.visualization.GoogleVisualization+Plugin</documentation>
+  <resources>
+    <resource>BuildConfig</resource>
+    <resource>DataSource</resource>
+    <resource>UrlMappings</resource>
+    <resource>org.grails.plugins.google.visualization.DeprecatedController</resource>
+    <resource>org.grails.plugins.google.visualization.FormatterController</resource>
+    <resource>org.grails.plugins.google.visualization.GoogleVisualizationDataRendererTagLib</resource>
+    <resource>org.grails.plugins.google.visualization.GoogleVisualizationTagLib</resource>
+  </resources>
+  <dependencies />
+  <behavior />
+</plugin>
