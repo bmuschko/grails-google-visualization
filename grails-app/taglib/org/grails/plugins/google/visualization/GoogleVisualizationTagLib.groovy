@@ -105,6 +105,30 @@ class GoogleVisualizationTagLib {
         validateAndRender(attrs, GoogleVisualization.SCATTER_CORE_CHART)
     }
 
+    def treeMap = { attrs, body ->
+        validateAndRender(attrs, GoogleVisualization.TREE_MAP)
+    }
+
+    def imageAreaChart = { attrs, body ->
+        validateAndRender(attrs, GoogleVisualization.IMAGE_AREA_CHART)
+    }
+
+    def imageBarChart = { attrs, body ->
+        validateAndRender(attrs, GoogleVisualization.IMAGE_BAR_CHART)
+    }
+
+    def imageLineChart = { attrs, body ->
+        validateAndRender(attrs, GoogleVisualization.IMAGE_LINE_CHART)
+    }
+
+    def imagePieChart = { attrs, body ->
+        validateAndRender(attrs, GoogleVisualization.IMAGE_PIE_CHART)
+    }
+
+    def imageSparkLine = { attrs, body ->
+        validateAndRender(attrs, GoogleVisualization.IMAGE_SPARK_LINE)
+    }
+
     private validateAndRender(attrs, googleVisualization) {
         validateAttributes(attrs, googleVisualization)
         renderVisualization(attrs, googleVisualization)

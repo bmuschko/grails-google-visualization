@@ -34,7 +34,7 @@ This is a plugin for Google Visualization API.
 '''
 
     // URL to the plugin's documentation
-    def documentation = "http://grails.org/org.grails.plugins.google.visualization.GoogleVisualization+Plugin"
+    def documentation = "http://www.grails.org/plugin/google-visualization"
 
     def doWithSpring = {
         // TODO Implement runtime spring config (optional)

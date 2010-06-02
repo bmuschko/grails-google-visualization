@@ -12,22 +12,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.grails.plugins.google.visualization.option
+package org.grails.plugins.google.visualization.option.image
+
+import org.grails.plugins.google.visualization.option.GoogleVisualizationConfigOptionType
 
 /**
- * Map configuration options
+ * Image Pie Chart configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-enum MapConfigOption {
-    ENABLE_SCROLL_WHEEL("enableScrollWheel", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    SHOW_TIP("showTip", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    SHOW_LINE("showLine", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    LINE_COLOR("lineColor", [GoogleVisualizationConfigOptionType.STRING]),
-    LINE_WIDTH("lineWidth", [GoogleVisualizationConfigOptionType.NUMBER]),
-    MAP_TYPE("mapType", [GoogleVisualizationConfigOptionType.STRING]),
-    USE_MAP_TYPE_CONTROL("useMapTypeControl", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    ZOOM_LEVEL("zoomLevel", [GoogleVisualizationConfigOptionType.NUMBER])
+enum ImagePieChartConfigOption {
+    BACKGROUND_COLOR("backgroundColor", [GoogleVisualizationConfigOptionType.STRING]),
+    COLOR("color", [GoogleVisualizationConfigOptionType.STRING]),
+    COLORS("colors", [GoogleVisualizationConfigOptionType.ARRAY]),
+    ENABLE_EVENTS("enableEvents", [GoogleVisualizationConfigOptionType.BOOLEAN]),
+    HEIGHT("height", [GoogleVisualizationConfigOptionType.NUMBER]),
+    IS_3D("is3D", [GoogleVisualizationConfigOptionType.BOOLEAN]),
+    LABELS("labels", [GoogleVisualizationConfigOptionType.STRING]),    
+    LEGEND("legend", [GoogleVisualizationConfigOptionType.STRING]),
+    TITLE("title", [GoogleVisualizationConfigOptionType.STRING]),
+    WIDTH("width", [GoogleVisualizationConfigOptionType.NUMBER])
 
     static final Map configOptions
 
@@ -42,13 +46,13 @@ enum MapConfigOption {
     private final name
     private final types
 
-    MapConfigOption(name, types) {
+    ImagePieChartConfigOption(name, types) {
         this.name = name
         this.types = types
     }
 
     @Override
     public String toString() {
-        "MapConfigOption{name='${name}', types='${types}'}"
+        "ImagePieChartConfigOption{name='${name}', types='${types}'}"
     }
 }

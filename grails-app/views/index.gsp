@@ -3,7 +3,6 @@
     <head>
         <title>Google Visualization API plugin</title>
 		<meta name="layout" content="main" />
-        <script src="http://maps.google.com/maps?file=api&v=2&key=ABCDEFG" type="text/javascript"></script>
         <script type="text/javascript" src="http://www.google.com/jsapi"></script>
     </head>
        <body>
@@ -12,8 +11,12 @@
           def myDailyActivitiesData = [['Work', 11], ['Eat', 2], ['Commute', 2], ['Watch TV', 2], ['Sleep', 7]]
           def companyPerformanceColumns = [['string', 'Year'], ['number', 'Sales'], ['number', 'Expenses']]
           def companyPerformanceData = [['2004', 1000, 400], ['2005', 1170, 460], ['2006', 660, 1120], ['2007', 1030, 540]]
+          def yearlyExpensesColumns = [['string', 'Year'], ['number', 'Expenses'], ['number', 'Sales']]
+          def yearlyExpensesData = [['2004', 1000, 900], ['2005', 1170, 1000], ['2006', 660, 660], ['2007', 1030, 1000]]
           def weightByAgeColumns = [['number', 'Age'], ['number', 'Weight']]
           def weightByAgeData = [[8, 12], [4, 5.5], [11, 14], [4, 5], [3, 3.5], [6.5, 7]]
+          def revenueAndLicensesColumns = [['number', 'Revenue'], ['number', 'Licenses']]
+          def revenueAndLicensesData = [[435, 132], [438, 131], [512, 137], [460, 142], [491, 140], [487, 139], [552, 147], [511, 146], [505, 151], [509, 149]]
           def systemPerformanceColumns = [['string', 'Label'], ['number', 'Value']]
           def systemPerformanceData = [['Memory', 80], ['CPU', 55], ['Network', 68]]
           def employeeColumns = [['string', 'Name'], ['string', 'Salary'], ['boolean', 'Full Time Employee']]
@@ -30,6 +33,8 @@
           def popularityData = [['Germany', 200], ['United States', 300], ['Brazil', 400], ['Canada', 500], ['France', 600], ['RU', 700]]
           def fruitColumns = [['string', 'Fruit'], ['date', 'Date'], ['number', 'Sales'], ['number', 'Expenses'], ['string', 'Location']]
           def fruitData = [['Apples', DateUtil.createDate(1988, 0, 1), 1000, 300, 'East'], ['Oranges', DateUtil.createDate(1988, 0, 1), 1150, 200, 'West'], ['Bananas', DateUtil.createDate(1988, 0, 1), 300, 250, 'West'], ['Apples', DateUtil.createDate(1989, 6, 1), 1200, 400, 'East'], ['Oranges', DateUtil.createDate(1989, 6, 1), 750, 150, 'West'], ['Bananas', DateUtil.createDate(1989, 6, 1), 788, 617, 'West']]
+          def marketByRegionColumns = [['string', 'Region'], ['string', 'Parent'], ['number', 'Market trade volume (size)'], ['number', 'Market increase/decrease (color)']]
+          def marketByRegionData = [['Global', null, 0, 0], ['America', 'Global', 0, 0], ['Europe', 'Global', 0, 0], ['Asia', 'Global', 0, 0], ['Australia', 'Global', 0, 0], ['Africa', 'Global', 0, 0], ['Brazil', 'America', 11, 10], ['USA', 'America', 52, 31], ['Mexico', 'America', 24, 12], ['Canada', 'America', 16, -23], ['France', 'Europe', 42, -11], ['Germany', 'Europe', 31, -2], ['Sweden', 'Europe', 22, -13], ['Italy', 'Europe', 17, 4], ['UK', 'Europe', 21, -5], ['China', 'Asia', 36, 4], ['Japan', 'Asia', 20, -12], ['India', 'Asia', 40, 63], ['Laos', 'Asia', 4, 34], ['Mongolia', 'Asia', 1, -5], ['Israel', 'Asia', 12, 24], ['Iran', 'Asia', 18, 13], ['Pakistan', 'Asia', 11, -52], ['Egypt', 'Africa', 21, 0], ['S. Africa', 'Africa', 30, 43], ['Sudan', 'Africa', 12, 2], ['Congo', 'Africa', 10, 12], ['Zair', 'Africa', 8, 10]]
        %>
        <script type="text/javascript">
           function selectHandler(e) {
@@ -38,11 +43,16 @@
        </script>
        <h2>Google Visualization API Examples</h2>
        <gvisualization:pieCoreChart elementId="piechart" title="My Daily Activities" width="${450}" height="${300}" columns="${myDailyActivitiesColumns}" data="${myDailyActivitiesData}" />
+       <gvisualization:imagePieChart elementId="imagepiechart" width="${430}" height="${240}" title="My Daily Activities" columns="${myDailyActivitiesColumns}" data="${myDailyActivitiesData}" />
        <gvisualization:barCoreChart elementId="barchart" title="Company Performance" width="${400}" height="${240}" vAxis="${new Expando(title: 'Year', titleColor: 'red')}" columns="${companyPerformanceColumns}" data="${companyPerformanceData}" />
+       <gvisualization:imageBarChart elementId="imagebarchart" width="${400}" height="${240}" min="${0}" columns="${companyPerformanceColumns}" data="${companyPerformanceData}" />
        <gvisualization:columnCoreChart elementId="columnchart" title="Company Performance" width="${400}" height="${240}" hAxis="${new Expando(title: 'Year', titleColor: 'red')}" columns="${companyPerformanceColumns}" data="${companyPerformanceData}" />
        <gvisualization:areaCoreChart elementId="areachart" title="Company Performance" width="${400}" height="${240}" hAxis="${new Expando(title: 'Year', titleColor: 'red')}" columns="${companyPerformanceColumns}" data="${companyPerformanceData}" />
+       <gvisualization:imageAreaChart elementId="imageareachart" width="${400}" height="${240}" min="${300}" max="${1400}" title="Yearly Expenses and Sales" columns="${yearlyExpensesColumns}" data="${yearlyExpensesData}" />       
        <gvisualization:lineCoreChart elementId="linechart" width="${400}" height="${240}" title="Company Performance" columns="${companyPerformanceColumns}" data="${companyPerformanceData}" />
+       <gvisualization:imageLineChart elementId="imagelinechart" width="${400}" height="${240}" min="${0}" columns="${companyPerformanceColumns}" data="${companyPerformanceData}" />
        <gvisualization:scatterCoreChart elementId="scatterchart" width="${400}" height="${240}" title="Age vs. Weight comparison" hAxis="${new Expando(title: 'Age', minValue: 0, maxValue: 15)}" vAxis="${new Expando(title: 'Weight', minValue: 0, maxValue: 15)}" legend="none" columns="${weightByAgeColumns}" data="${weightByAgeData}" />
+       <gvisualization:imageSparkLine elementId="imagesparkline" width="${120}" height="${40}" showAxisLines="${false}" showValueLabels="${false}" labelPosition="left" columns="${revenueAndLicensesColumns}" data="${revenueAndLicensesData}" />
        <gvisualization:gauge elementId="gauge" width="${400}" height="${120}" redFrom="${90}" redTo="${100}" yellowFrom="${75}" yellowTo="${90}" minorTicks="${5}" columns="${systemPerformanceColumns}" data="${systemPerformanceData}" />
        <gvisualization:table elementId="table" width="${400}" height="${130}" columns="${employeeColumns}" data="${employeeData}" select="selectHandler" />
        <gvisualization:map elementId="map" columns="${mapColumns}" data="${mapData}" />
@@ -51,6 +61,7 @@
        <gvisualization:intensityMap elementId="intensitymap" columns="${populationColumns}" data="${populationData}" />
        <gvisualization:geoMap elementId="geomap" columns="${popularityColumns}" data="${popularityData}" />
        <gvisualization:motionChart elementId="motionchart" columns="${fruitColumns}" data="${fruitData}" />
+       <gvisualization:treeMap elementId="treemap" minColor="#f00" midColor="#ddd" maxColor="#0d0" headerHeight="${15}" fontColor="black" showScale="${true}" columns="${marketByRegionColumns}" data="${marketByRegionData}" />
        <table cellpadding="2" cellspacing="0">
           <tr>
              <td>
@@ -62,10 +73,26 @@
           </tr>
           <tr>
              <td>
+                <a href="http://code.google.com/apis/visualization/documentation/gallery/imagepiechart.html">Pie Chart (Image)</a>
+             </td>
+             <td>
+                <div id="imagepiechart"></div>
+             </td>
+          </tr>
+          <tr>
+             <td>
                 <a href="http://code.google.com/apis/visualization/documentation/gallery/barchart.html">Bar Chart</a>
              </td>
              <td>
                 <div id="barchart"></div>
+             </td>
+          </tr>
+          <tr>
+             <td>
+                <a href="http://code.google.com/apis/visualization/documentation/gallery/imagebarchart.html">Bar Chart (Image)</a>
+             </td>
+             <td>
+                <div id="imagebarchart"></div>
              </td>
           </tr>
           <tr>
@@ -86,6 +113,14 @@
           </tr>
           <tr>
              <td>
+                <a href="http://code.google.com/apis/visualization/documentation/gallery/imageareachart.html">Area Chart (Image)</a>
+             </td>
+             <td>
+                <div id="imageareachart"></div>
+             </td>
+          </tr>
+          <tr>
+             <td>
                 <a href="http://code.google.com/apis/visualization/documentation/gallery/linechart.html">Line Chart</a>
              </td>
              <td>
@@ -94,10 +129,26 @@
           </tr>
           <tr>
              <td>
+                <a href="http://code.google.com/apis/visualization/documentation/gallery/imagelinechart.html">Line Chart (Image)</a>
+             </td>
+             <td>
+                <div id="imagelinechart"></div>
+             </td>
+          </tr>
+          <tr>
+             <td>
                 <a href="http://code.google.com/apis/visualization/documentation/gallery/scatterchart.html">Scatter Chart</a>
              </td>
              <td>
                 <div id="scatterchart"></div>
+             </td>
+          </tr>
+          <tr>
+             <td>
+                <a href="http://code.google.com/apis/visualization/documentation/gallery/imagesparkline.html">Sparkline (Image)</a>
+             </td>
+             <td>
+                <div id="imagesparkline"></div>
              </td>
           </tr>
           <tr>
@@ -162,6 +213,14 @@
              </td>
              <td>
                 <div id="motionchart"></div>
+             </td>
+          </tr>
+          <tr>
+             <td>
+                <a href="http://code.google.com/apis/visualization/documentation/gallery/treemap.html">Tree Map</a>
+             </td>
+             <td>
+                <div id="treemap" style="width: 900px; height: 500px;"></div>
              </td>
           </tr>
        </table>

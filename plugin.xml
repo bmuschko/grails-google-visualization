@@ -5,14 +5,11 @@
   <description>\
 This is a plugin for Google Visualization API. 
 </description>
-  <documentation>http://grails.org/org.grails.plugins.google.visualization.GoogleVisualization+Plugin</documentation>
+  <documentation>http://www.grails.org/plugin/google-visualization</documentation>
   <resources>
     <resource>BuildConfig</resource>
     <resource>DataSource</resource>
     <resource>UrlMappings</resource>
-    <resource>org.grails.plugins.google.visualization.DeprecatedController</resource>
-    <resource>org.grails.plugins.google.visualization.FormatterController</resource>
-    <resource>org.grails.plugins.google.visualization.GoogleVisualizationDataRendererTagLib</resource>
     <resource>org.grails.plugins.google.visualization.GoogleVisualizationTagLib</resource>
   </resources>
   <dependencies />
