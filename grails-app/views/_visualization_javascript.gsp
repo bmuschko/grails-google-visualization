@@ -8,9 +8,8 @@
         <g:each var="column" in="${visualizationData.columns}">
         data.addColumn('${column[0]}', '${column[1]}');
         </g:each>
-        data.addRows(${visualizationData.rowSize});
         <g:each var="row" in="${visualizationData.rows}">
-        <gvisualizationinternal:renderData packageName="${visualizationData.visualization.packageName}" row="${row}"/>
+        data.addRow(${row});
         </g:each>
       
         ${visualizationData.name} = new ${visualizationData.visualization.object}(document.getElementById('${visualizationData.elementId}'));

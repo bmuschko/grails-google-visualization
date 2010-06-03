@@ -26,7 +26,6 @@ class VisualizationData {
     def language
     def options
     def columns
-    def rowSize
     def rows
     def events
     def formatters

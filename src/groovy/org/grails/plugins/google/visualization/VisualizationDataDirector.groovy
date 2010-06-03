@@ -33,7 +33,6 @@ class VisualizationDataDirector {
         visualizationBuilder.buildLanguage()
         visualizationBuilder.buildOptions()
         visualizationBuilder.buildColumns()
-        visualizationBuilder.buildRowSize()
         visualizationBuilder.buildRows()
         visualizationBuilder.buildEvents()
         visualizationBuilder.buildFormatters()

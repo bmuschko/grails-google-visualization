@@ -33,7 +33,6 @@ abstract class VisualizationBuilder {
     abstract buildLanguage()
     abstract buildOptions()
     abstract buildColumns()
-    abstract buildRowSize()
     abstract buildRows()
     abstract buildEvents()
     abstract buildFormatters()

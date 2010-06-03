@@ -1,4 +1,4 @@
-<%@ page import="org.grails.plugins.google.visualization.util.DateUtil" %>
+<%@ page import="org.grails.plugins.google.visualization.Cell; org.grails.plugins.google.visualization.util.DateUtil" %>
 <html>
     <head>
         <title>Google Visualization API plugin</title>
@@ -26,7 +26,7 @@
           def pensColumns = [['date', 'Date'], ['number', 'Sold Pencils'], ['string', 'title1'], ['string', 'text1'], ['number', 'Sold Pens'], ['string', 'title2'], ['string', 'text2']]
           def pensData = [[DateUtil.createDate(2008, 1, 1), 30000, null, null, 40645, null, null], [DateUtil.createDate(2008, 1, 2), 14045, null, null, 20374, null, null], [DateUtil.createDate(2008, 1, 3), 55022, null, null, 50766, null, null], [DateUtil.createDate(2008, 1, 4), 75284, null, null, 14334, 'Out of Stock','Ran out of stock on pens at 4pm'], [DateUtil.createDate(2008, 1, 5), 41476, 'Bought Pens','Bought 200k pens', 66467, null, null], [DateUtil.createDate(2008, 1, 6), 33322, null, null, 39463, null, null]]
           def orgColumns = [['string', 'Name'], ['string', 'Manager'], ['string', 'ToolTip']]
-          def orgData = [['Mike', '', 'The President'], ['Jim', 'Mike', 'VP'], ['Alice', 'Mike', ''], ['Bob', 'Jim', 'Bob Sponge'], ['Carol', 'Bob', '']]
+          def orgData = [[new Cell(value: 'Mike', label: 'Mike<div style="color:red; font-style:italic">President</div>'), '', 'The President'], [new Cell(value: 'Jim', label: 'Jim<div style="color:red; font-style:italic">Vice President<div>'), 'Mike', 'VP'], ['Alice', 'Mike', ''], ['Bob', 'Jim', 'Bob Sponge'], ['Carol', 'Bob', '']]
           def populationColumns = [['string', '', 'Country'], ['number', 'Population (mil)', 'a'], ['number', 'Area (km2)', 'b']]
           def populationData = [['CN', 1324, 9640821], ['IN', 1133, 3287263], ['US', 304, 9629091], ['ID', 232, 1904569], ['BR', 187, 8514877]]
           def popularityColumns = [['string', 'Country'], ['number', 'Popularity']]
@@ -57,7 +57,7 @@
        <gvisualization:table elementId="table" width="${400}" height="${130}" columns="${employeeColumns}" data="${employeeData}" select="selectHandler" />
        <gvisualization:map elementId="map" columns="${mapColumns}" data="${mapData}" />
        <gvisualization:annotatedTimeLine elementId="annotatedtimeline" columns="${pensColumns}" data="${pensData}" />
-       <gvisualization:orgChart elementId="orgchart" columns="${orgColumns}" data="${orgData}" />
+       <gvisualization:orgChart elementId="orgchart" allowHtml="${true}" columns="${orgColumns}" data="${orgData}" />
        <gvisualization:intensityMap elementId="intensitymap" columns="${populationColumns}" data="${populationData}" />
        <gvisualization:geoMap elementId="geomap" columns="${popularityColumns}" data="${popularityData}" />
        <gvisualization:motionChart elementId="motionchart" columns="${fruitColumns}" data="${fruitData}" />

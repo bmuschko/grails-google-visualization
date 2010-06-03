@@ -15,24 +15,17 @@
 package org.grails.plugins.google.visualization
 
 /**
- * Taglib for rendering the data based on the visualization type
+ * Cell input value (see http://code.google.com/apis/visualization/documentation/reference.html#cell_object)
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class GoogleVisualizationDataRendererTagLib {
-    static namespace = "gvisualizationinternal"
-    final CELL_PACKAGE_NAMES = [GoogleVisualization.TABLE.packageName, GoogleVisualization.MAP.packageName, GoogleVisualization.ANNOTATED_TIME_LINE.packageName] as Set
+class Cell {
+    def value
+    String label
+    Map customValues
 
-    def renderData = { attrs, body ->
-        if(isCellSetter(attrs.packageName)) {
-            out << "data.setCell(${attrs.row});"
-        }
-        else {
-            out << "data.setValue(${attrs.row});"
-        }
-    }
-
-    def isCellSetter(packageName) {
-        CELL_PACKAGE_NAMES.contains(packageName) ? true : false
+    @Override
+    public String toString() {
+        "Cell{value='${value}', label='${label}', customValues='${customValues}'}"
     }
 }

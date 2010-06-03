@@ -1,4 +1,4 @@
-<%@ page import="org.grails.plugins.google.visualization.formatter.PatternFormatter; org.grails.plugins.google.visualization.formatter.NumberFormatter; org.grails.plugins.google.visualization.formatter.DateFormatter; org.grails.plugins.google.visualization.formatter.ColorRange; org.grails.plugins.google.visualization.formatter.ColorFormatter; org.grails.plugins.google.visualization.formatter.BarFormatter; org.grails.plugins.google.visualization.formatter.ArrowFormatter; org.grails.plugins.google.visualization.util.DateUtil" %>
+<%@ page import="org.grails.plugins.google.visualization.Cell; org.grails.plugins.google.visualization.formatter.PatternFormatter; org.grails.plugins.google.visualization.formatter.NumberFormatter; org.grails.plugins.google.visualization.formatter.DateFormatter; org.grails.plugins.google.visualization.formatter.ColorRange; org.grails.plugins.google.visualization.formatter.ColorFormatter; org.grails.plugins.google.visualization.formatter.BarFormatter; org.grails.plugins.google.visualization.formatter.ArrowFormatter; org.grails.plugins.google.visualization.util.DateUtil" %>
 
 <html>
     <head>
@@ -9,7 +9,7 @@
        <body>
        <% 
           def departmentRevenueChangeColumns = [['string', 'Department'], ['number', 'Revenues Change']]
-          def departmentRevenueChangeData = [['Shoes', 12], ['Sports', -7.3], ['Toys', 0], ['Electronics', -2.1], ['Food', 22]]
+          def departmentRevenueChangeData = [['Shoes', new Cell(value: 12, label: '12.0%')], ['Sports', new Cell(value: -7.3, label: '-7.3%')], ['Toys', new Cell(value: 0, label: '0%')], ['Electronics', new Cell(value: -2.1, label: '-2.1%')], ['Food', new Cell(value: 22, label: '22.0%')]]
           def departmentRevenueColumns = [['string', 'Department'], ['number', 'Revenues']]
           def departmentRevenueData = [['Shoes', 10700], ['Sports', -15400], ['Toys', 12500], ['Electronics', -2100], ['Food', 22600], ['Art', 1100]]
           def employeeDatesColumns = [['string', 'Employee Name'], ['date', 'Start Date (Long)'], ['date', 'Start Date (Medium)'], ['date', 'Start Date (Short)']]

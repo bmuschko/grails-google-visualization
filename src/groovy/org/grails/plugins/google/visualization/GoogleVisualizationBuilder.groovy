@@ -66,11 +66,6 @@ class GoogleVisualizationBuilder extends VisualizationBuilder {
         visualizationData.columns = attrs.columns
     }
 
-    @Override
-    def buildRowSize() {
-        visualizationData.rowSize = attrs.data.size()
-    }
-
     /**
      * Builds rows
      * Allowed data types are 'string', 'number', 'boolean', 'date', 'datetime' or 'timeofday'.
@@ -82,36 +77,84 @@ class GoogleVisualizationBuilder extends VisualizationBuilder {
         def rowsData = []
 
         attrs.data.eachWithIndex { it, dataIndex ->
+            def rowValues = []
+
             it.toList().eachWithIndex { row, rowIndex ->
                 def dataType = attrs.columns[rowIndex][0]
                 def param
 
                 if(row != null) {
-                    if(dataType == GoogleVisualizationColumnType.STRING.toString().toLowerCase()) {
-                        param = "'${row}'"
-                    }
-                    else if(dataType == GoogleVisualizationColumnType.DATE.toString().toLowerCase()) {
-                        param = DateUtil.createDateJavaScriptObject(row)
-                    }
-                    else if(dataType == GoogleVisualizationColumnType.DATETIME.toString().toLowerCase()) {
-                        param = DateUtil.createDateTimeJavaScriptObject(row)
-                    }
-                    else if(dataType == GoogleVisualizationColumnType.TIMEOFDAY.toString().toLowerCase()) {
-                        param = DateUtil.createTimeOfDayJavaScriptObject(row)
-                    }
-                    else {
-                        param = row
-                    }
+                    // Render cell object if provided; otherwise render based on data type
+                    param = (row instanceof Cell) ? renderCellValue(dataType, row) : renderParam(dataType, row)
                 }
                 else {
                     param = 'undefined'
                 }
 
-                rowsData << "${dataIndex}, ${rowIndex}, ${param}"
+                rowValues << param
             }
+
+            // Each row the same amount of row values as columns; separated by comma; in square brackets
+            // Examples: ['Shoes', 10700] or ['Sports', {v: -7.3, f: '-7.3%'}]
+            rowsData << "[${StringUtils.join(rowValues, ', ')}]"
         }
 
         visualizationData.rows = rowsData
+    }
+
+    /**
+     * Renders parameter based on the provided data type.
+     * Allowed data types are 'string', 'number', 'boolean', 'date', 'datetime' or 'timeofday'.
+     *
+     * @param dataType Data type
+     * @param value Value
+     * @return Rendered parameter value
+     */
+    def renderParam(dataType, value) {
+        def param
+
+        if(dataType == GoogleVisualizationColumnType.STRING.toString().toLowerCase()) {
+            param = "'${value}'"
+        }
+        else if(dataType == GoogleVisualizationColumnType.DATE.toString().toLowerCase()) {
+            param = DateUtil.createDateJavaScriptObject(value)
+        }
+        else if(dataType == GoogleVisualizationColumnType.DATETIME.toString().toLowerCase()) {
+            param = DateUtil.createDateTimeJavaScriptObject(value)
+        }
+        else if(dataType == GoogleVisualizationColumnType.TIMEOFDAY.toString().toLowerCase()) {
+            param = DateUtil.createTimeOfDayJavaScriptObject(value)
+        }
+        else {
+            param = value
+        }
+
+        param
+    }
+
+    /**
+     * Renders cell value (see http://code.google.com/apis/visualization/documentation/reference.html#cell_object)
+     *
+     * @param dataType Data type
+     * @param cell Cell
+     * @return Rendered value
+     */
+    def renderCellValue(dataType, cell) {
+        def cellProperties = []
+
+        if(cell.value != null) {
+            cellProperties << "v: ${renderParam(dataType, cell.value)}"
+        }
+
+        if(cell.label != null) {
+            cellProperties << "f: '${cell.label}'"
+        }
+
+        if(cell.customValues != null) {
+            cellProperties << "p: '${cell.customValues}'"
+        }
+
+        "{${StringUtils.join(cellProperties, ', ')}}"
     }
 
     @Override
