@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.grails.plugins.google.visualization
+package org.grails.plugins.google.visualization.data
 
 /**
  * Cell input value (see http://code.google.com/apis/visualization/documentation/reference.html#cell_object)

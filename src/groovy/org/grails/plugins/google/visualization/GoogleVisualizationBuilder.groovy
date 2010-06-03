@@ -15,6 +15,7 @@
 package org.grails.plugins.google.visualization
 
 import org.apache.commons.lang.StringUtils
+import org.grails.plugins.google.visualization.data.Cell
 import org.grails.plugins.google.visualization.util.ConfigOptionRendererUtil
 import org.grails.plugins.google.visualization.util.DateUtil
 
