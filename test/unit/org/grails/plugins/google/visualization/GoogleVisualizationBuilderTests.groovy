@@ -92,50 +92,36 @@ class GoogleVisualizationBuilderTests extends GrailsUnitTestCase {
         assertEquals 'Full Time Employee', googleVisualizationBuilder.visualizationData.columns.get(2).get(1)
     }
 
-    void testBuildRowSize() {
-        googleVisualizationBuilder.createNewVisualizationData(['data':[['Memory', 80], ['CPU', 55], ['Network', 68]]], GoogleVisualization.PIE_CHART)
-        googleVisualizationBuilder.buildRowSize()
-        assertEquals 3, googleVisualizationBuilder.visualizationData.rowSize
-    }
-
     void testBuildRowsForStringDataType() {
         googleVisualizationBuilder.createNewVisualizationData(['columns':[['string', 'Task'], ['number', 'Hours per Day']], 'data':[['Work', 11], [null, 2]]], GoogleVisualization.PIE_CHART)
         googleVisualizationBuilder.buildRows()
-        assertEquals 4, googleVisualizationBuilder.visualizationData.rows.size()
-        assertEquals "0, 0, 'Work'", googleVisualizationBuilder.visualizationData.rows.get(0)
-        assertEquals "0, 1, 11", googleVisualizationBuilder.visualizationData.rows.get(1)
-        assertEquals "1, 0, undefined", googleVisualizationBuilder.visualizationData.rows.get(2)
-        assertEquals "1, 1, 2", googleVisualizationBuilder.visualizationData.rows.get(3)
+        assertEquals 2, googleVisualizationBuilder.visualizationData.rows.size()
+        assertEquals "['Work', 11]", googleVisualizationBuilder.visualizationData.rows.get(0)
+        assertEquals "[undefined, 2]", googleVisualizationBuilder.visualizationData.rows.get(1)
     }
 
     void testBuildRowsForDateDataType() {
         googleVisualizationBuilder.createNewVisualizationData(['columns':[['date', 'Date'], ['number', 'Hours per Day']], 'data':[[DateUtil.createDate(2008, Calendar.MARCH, 1), 11], [null, 2]]], GoogleVisualization.PIE_CHART)
         googleVisualizationBuilder.buildRows()
-        assertEquals 4, googleVisualizationBuilder.visualizationData.rows.size()
-        assertEquals "0, 0, new Date(2008, 2, 1)", googleVisualizationBuilder.visualizationData.rows.get(0)
-        assertEquals "0, 1, 11", googleVisualizationBuilder.visualizationData.rows.get(1)
-        assertEquals "1, 0, undefined", googleVisualizationBuilder.visualizationData.rows.get(2)
-        assertEquals "1, 1, 2", googleVisualizationBuilder.visualizationData.rows.get(3)
+        assertEquals 2, googleVisualizationBuilder.visualizationData.rows.size()
+        assertEquals "[new Date(2008, 2, 1), 11]", googleVisualizationBuilder.visualizationData.rows.get(0)
+        assertEquals "[undefined, 2]", googleVisualizationBuilder.visualizationData.rows.get(1)
     }
 
     void testBuildRowsForDateDataTimeType() {
         googleVisualizationBuilder.createNewVisualizationData(['columns':[['datetime', 'DateTime'], ['number', 'Hours per Day']], 'data':[[DateUtil.createDate(2008, Calendar.MARCH, 1, 1, 2, 3, 4), 11], [null, 2]]], GoogleVisualization.PIE_CHART)
         googleVisualizationBuilder.buildRows()
-        assertEquals 4, googleVisualizationBuilder.visualizationData.rows.size()
-        assertEquals "0, 0, new Date(2008, 2, 1, 1, 2, 3, 4)", googleVisualizationBuilder.visualizationData.rows.get(0)
-        assertEquals "0, 1, 11", googleVisualizationBuilder.visualizationData.rows.get(1)
-        assertEquals "1, 0, undefined", googleVisualizationBuilder.visualizationData.rows.get(2)
-        assertEquals "1, 1, 2", googleVisualizationBuilder.visualizationData.rows.get(3)
+        assertEquals 2, googleVisualizationBuilder.visualizationData.rows.size()
+        assertEquals "[new Date(2008, 2, 1, 1, 2, 3, 4), 11]", googleVisualizationBuilder.visualizationData.rows.get(0)
+        assertEquals "[undefined, 2]", googleVisualizationBuilder.visualizationData.rows.get(1)
     }
 
     void testBuildRowsForDateTimeOfDayType() {
         googleVisualizationBuilder.createNewVisualizationData(['columns':[['timeofday', 'TimeOfDay'], ['number', 'Hours per Day']], 'data':[[DateUtil.createDate(2008, Calendar.MARCH, 1, 1, 2, 3, 4), 11], [null, 2]]], GoogleVisualization.PIE_CHART)
         googleVisualizationBuilder.buildRows()
-        assertEquals 4, googleVisualizationBuilder.visualizationData.rows.size()
-        assertEquals "0, 0, [1, 2, 3, 4]", googleVisualizationBuilder.visualizationData.rows.get(0)
-        assertEquals "0, 1, 11", googleVisualizationBuilder.visualizationData.rows.get(1)
-        assertEquals "1, 0, undefined", googleVisualizationBuilder.visualizationData.rows.get(2)
-        assertEquals "1, 1, 2", googleVisualizationBuilder.visualizationData.rows.get(3)
+        assertEquals 2, googleVisualizationBuilder.visualizationData.rows.size()
+        assertEquals "[[1, 2, 3, 4], 11]", googleVisualizationBuilder.visualizationData.rows.get(0)
+        assertEquals "[undefined, 2]", googleVisualizationBuilder.visualizationData.rows.get(1)
     }
 
     void testBuildEvents() {

@@ -69,7 +69,6 @@ class GoogleVisualizationBuilder extends VisualizationBuilder {
 
     /**
      * Builds rows
-     * Allowed data types are 'string', 'number', 'boolean', 'date', 'datetime' or 'timeofday'.
      *
      * @return Row data
      */
