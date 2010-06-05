@@ -136,8 +136,8 @@ class GoogleVisualizationBuilderTests extends GrailsUnitTestCase {
     }
 
     void testRenderCellValueForValueLabelAndCustomValues() {
-        def renderedCellValue = googleVisualizationBuilder.renderCellValue(GoogleVisualizationColumnType.NUMBER.toString(), new Cell(value: 1, label: 'hello', customValues: [style:'border: 1px solid green;']))
-        assertEquals "{v: 1, f: 'hello', p: {style: 'border: 1px solid green;'}}", renderedCellValue
+        def renderedCellValue = googleVisualizationBuilder.renderCellValue(GoogleVisualizationColumnType.NUMBER.toString(), new Cell(value: 1, label: 'hello', customValues: [style:'border: 1px solid green;', test:'hello: next;']))
+        assertEquals "{v: 1, f: 'hello', p: {style: 'border: 1px solid green;', test: 'hello: next;'}}", renderedCellValue
     }
 
     void testBuildEvents() {
