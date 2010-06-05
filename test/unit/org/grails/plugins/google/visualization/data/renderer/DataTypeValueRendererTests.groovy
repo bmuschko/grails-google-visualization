@@ -16,6 +16,7 @@ package org.grails.plugins.google.visualization.data.renderer
 
 import grails.test.GrailsUnitTestCase
 import org.grails.plugins.google.visualization.data.DataType
+import org.grails.plugins.google.visualization.util.DateUtil
 
 /**
  * Data type value renderer tests
@@ -45,6 +46,13 @@ class DataTypeValueRendererTests extends GrailsUnitTestCase {
         def renderedValue = DataTypeValueRenderer.instance.render(false)
         assertEquals DataType.BOOLEAN, renderedValue.type
         assertEquals false, renderedValue.value
+    }
+
+    void testRenderForDate() {
+        def date = DateUtil.removeTime(DateUtil.createDate(1995, Calendar.NOVEMBER, 29))
+        def renderedValue = DataTypeValueRenderer.instance.render(date)
+        assertEquals DataType.DATE, renderedValue.type
+        assertEquals "new Date(1995, 10, 29, 0, 0, 0, 0)", renderedValue.value
     }
 
     void testRenderForList() {
