@@ -14,24 +14,26 @@
  */
 package org.grails.plugins.google.visualization.option
 
+import org.grails.plugins.google.visualization.data.DataType
+
 /**
  * Gauge configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum GaugeConfigOption {
-    GREEN_FROM("greenFrom", [GoogleVisualizationConfigOptionType.NUMBER]),
-    GREEN_TO("greenTo", [GoogleVisualizationConfigOptionType.NUMBER]),
-    HEIGHT("height", [GoogleVisualizationConfigOptionType.NUMBER]),
-    MAJOR_TICKS("majorTicks", [GoogleVisualizationConfigOptionType.ARRAY]),
-    MAX("max", [GoogleVisualizationConfigOptionType.NUMBER]),
-    MIN("min", [GoogleVisualizationConfigOptionType.NUMBER]),
-    MINOR_TICKS("minorTicks", [GoogleVisualizationConfigOptionType.NUMBER]),
-    RED_FROM("redFrom", [GoogleVisualizationConfigOptionType.NUMBER]),
-    RED_TO("redTo", [GoogleVisualizationConfigOptionType.NUMBER]),
-    WIDTH("width", [GoogleVisualizationConfigOptionType.NUMBER]),
-    YELLOW_FROM("yellowFrom", [GoogleVisualizationConfigOptionType.NUMBER]),
-    YELLOW_TO("yellowTo", [GoogleVisualizationConfigOptionType.NUMBER])
+    GREEN_FROM("greenFrom", [DataType.NUMBER]),
+    GREEN_TO("greenTo", [DataType.NUMBER]),
+    HEIGHT("height", [DataType.NUMBER]),
+    MAJOR_TICKS("majorTicks", [DataType.ARRAY]),
+    MAX("max", [DataType.NUMBER]),
+    MIN("min", [DataType.NUMBER]),
+    MINOR_TICKS("minorTicks", [DataType.NUMBER]),
+    RED_FROM("redFrom", [DataType.NUMBER]),
+    RED_TO("redTo", [DataType.NUMBER]),
+    WIDTH("width", [DataType.NUMBER]),
+    YELLOW_FROM("yellowFrom", [DataType.NUMBER]),
+    YELLOW_TO("yellowTo", [DataType.NUMBER])
 
     static final Map configOptions
 

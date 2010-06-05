@@ -14,31 +14,33 @@
  */
 package org.grails.plugins.google.visualization.option
 
+import org.grails.plugins.google.visualization.data.DataType
+
 /**
  * Tree Map configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum TreeMapConfigOption {
-    HEADER_COLOR("headerColor", [GoogleVisualizationConfigOptionType.STRING]),
-    HEADER_HEIGHT("headerHeight", [GoogleVisualizationConfigOptionType.NUMBER]),
-    HEADER_HIGHLIGHT_COLOR("headerHighlightColor", [GoogleVisualizationConfigOptionType.STRING]),
-    MAX_COLOR("maxColor", [GoogleVisualizationConfigOptionType.STRING]),
-    MAX_DEPTH("maxDepth", [GoogleVisualizationConfigOptionType.NUMBER]),
-    MAX_HIGHLIGHT_COLOR("maxHighlightColor", [GoogleVisualizationConfigOptionType.STRING]),
-    MAX_POST_DEPTH("maxPostDepth", [GoogleVisualizationConfigOptionType.NUMBER]),
-    MAX_COLOR_VALUE("maxColorValue", [GoogleVisualizationConfigOptionType.NUMBER]),
-    MID_COLOR("midColor", [GoogleVisualizationConfigOptionType.STRING]),
-    MID_HIGHLIGHT_COLOR("midHighlightColor", [GoogleVisualizationConfigOptionType.STRING]),
-    MIN_COLOR("minColor", [GoogleVisualizationConfigOptionType.STRING]),
-    MIN_HIGHLIGHT_COLOR("minHighlightColor", [GoogleVisualizationConfigOptionType.STRING]),
-    MIN_COLOR_VALUE("minColorValue", [GoogleVisualizationConfigOptionType.NUMBER]),
-    NO_COLOR("noColor", [GoogleVisualizationConfigOptionType.STRING]),
-    NO_HIGHLIGHT_COLOR("noHighlightColor", [GoogleVisualizationConfigOptionType.STRING]),
-    SHOW_SCALE("showScale", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    FONT_COLOR("fontColor", [GoogleVisualizationConfigOptionType.STRING]),
-    FONT_FAMILY("fontFamily", [GoogleVisualizationConfigOptionType.STRING]),
-    FONT_SIZE("fontSize", [GoogleVisualizationConfigOptionType.NUMBER])
+    HEADER_COLOR("headerColor", [DataType.STRING]),
+    HEADER_HEIGHT("headerHeight", [DataType.NUMBER]),
+    HEADER_HIGHLIGHT_COLOR("headerHighlightColor", [DataType.STRING]),
+    MAX_COLOR("maxColor", [DataType.STRING]),
+    MAX_DEPTH("maxDepth", [DataType.NUMBER]),
+    MAX_HIGHLIGHT_COLOR("maxHighlightColor", [DataType.STRING]),
+    MAX_POST_DEPTH("maxPostDepth", [DataType.NUMBER]),
+    MAX_COLOR_VALUE("maxColorValue", [DataType.NUMBER]),
+    MID_COLOR("midColor", [DataType.STRING]),
+    MID_HIGHLIGHT_COLOR("midHighlightColor", [DataType.STRING]),
+    MIN_COLOR("minColor", [DataType.STRING]),
+    MIN_HIGHLIGHT_COLOR("minHighlightColor", [DataType.STRING]),
+    MIN_COLOR_VALUE("minColorValue", [DataType.NUMBER]),
+    NO_COLOR("noColor", [DataType.STRING]),
+    NO_HIGHLIGHT_COLOR("noHighlightColor", [DataType.STRING]),
+    SHOW_SCALE("showScale", [DataType.BOOLEAN]),
+    FONT_COLOR("fontColor", [DataType.STRING]),
+    FONT_FAMILY("fontFamily", [DataType.STRING]),
+    FONT_SIZE("fontSize", [DataType.NUMBER])
 
     static final Map configOptions
 

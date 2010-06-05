@@ -14,24 +14,26 @@
  */
 package org.grails.plugins.google.visualization.option
 
+import org.grails.plugins.google.visualization.data.DataType
+
 /**
  * Motion Chart configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum MotionChartConfigOption {
-    HEIGHT("height", [GoogleVisualizationConfigOptionType.NUMBER]),
-    WIDTH("width", [GoogleVisualizationConfigOptionType.NUMBER]),
-    STATE("state", [GoogleVisualizationConfigOptionType.STRING]),
-    SHOW_CHART_BUTTON("showChartButtons", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    SHOW_HEADER("showHeader", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    SHOW_SELECT_LIST_COMPONENT("showSelectListComponent", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    SHOW_SIDE_PANEL("showSidePanel", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    SHOW_X_METRIC_PANEL("showXMetricPicker", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    SHOW_Y_METRIC_PANEL("showYMetricPicker", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    SHOW_X_SCALE_PICKER("showXScalePicker", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    SHOW_Y_SCALE_PICKER("showYScalePicker", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    SHOW_ADVANCED_PANEL("showAdvancedPanel", [GoogleVisualizationConfigOptionType.BOOLEAN])
+    HEIGHT("height", [DataType.NUMBER]),
+    WIDTH("width", [DataType.NUMBER]),
+    STATE("state", [DataType.STRING]),
+    SHOW_CHART_BUTTON("showChartButtons", [DataType.BOOLEAN]),
+    SHOW_HEADER("showHeader", [DataType.BOOLEAN]),
+    SHOW_SELECT_LIST_COMPONENT("showSelectListComponent", [DataType.BOOLEAN]),
+    SHOW_SIDE_PANEL("showSidePanel", [DataType.BOOLEAN]),
+    SHOW_X_METRIC_PANEL("showXMetricPicker", [DataType.BOOLEAN]),
+    SHOW_Y_METRIC_PANEL("showYMetricPicker", [DataType.BOOLEAN]),
+    SHOW_X_SCALE_PICKER("showXScalePicker", [DataType.BOOLEAN]),
+    SHOW_Y_SCALE_PICKER("showYScalePicker", [DataType.BOOLEAN]),
+    SHOW_ADVANCED_PANEL("showAdvancedPanel", [DataType.BOOLEAN])
 
     static final Map configOptions
 

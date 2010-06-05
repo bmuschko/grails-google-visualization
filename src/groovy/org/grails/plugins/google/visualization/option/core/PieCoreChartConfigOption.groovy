@@ -14,7 +14,7 @@
  */
 package org.grails.plugins.google.visualization.option.core
 
-import org.grails.plugins.google.visualization.option.GoogleVisualizationConfigOptionType
+import org.grails.plugins.google.visualization.data.DataType
 
 /**
  * Pie Core Chart configuration options
@@ -22,19 +22,19 @@ import org.grails.plugins.google.visualization.option.GoogleVisualizationConfigO
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum PieCoreChartConfigOption {
-    BACKGROUND_COLOR("backgroundColor", [GoogleVisualizationConfigOptionType.STRING]),
-    COLORS("colors", [GoogleVisualizationConfigOptionType.ARRAY]),
-    FONT_SIZE("fontSize", [GoogleVisualizationConfigOptionType.NUMBER]),
-    HEIGHT("height", [GoogleVisualizationConfigOptionType.NUMBER]),
-    LEGEND("legend", [GoogleVisualizationConfigOptionType.STRING]),
-    LEGEND_FONT_SIZE("legendFontSize", [GoogleVisualizationConfigOptionType.NUMBER]),
-    LEGEND_TEXT_COLOR("legendTextColor", [GoogleVisualizationConfigOptionType.STRING]),
-    REVERSE_CATEGORIES("reverseCategories", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    TITLE("title", [GoogleVisualizationConfigOptionType.STRING]),
-    TITLE_COLOR("titleColor", [GoogleVisualizationConfigOptionType.STRING]),
-    TITLE_FONT_SIZE("titleFontSize", [GoogleVisualizationConfigOptionType.NUMBER]),
-    TOOLTIP_FONT_SIZE("tooltipFontSize", [GoogleVisualizationConfigOptionType.NUMBER]),
-    WIDTH("width", [GoogleVisualizationConfigOptionType.NUMBER])
+    BACKGROUND_COLOR("backgroundColor", [DataType.STRING]),
+    COLORS("colors", [DataType.ARRAY]),
+    FONT_SIZE("fontSize", [DataType.NUMBER]),
+    HEIGHT("height", [DataType.NUMBER]),
+    LEGEND("legend", [DataType.STRING]),
+    LEGEND_FONT_SIZE("legendFontSize", [DataType.NUMBER]),
+    LEGEND_TEXT_COLOR("legendTextColor", [DataType.STRING]),
+    REVERSE_CATEGORIES("reverseCategories", [DataType.BOOLEAN]),
+    TITLE("title", [DataType.STRING]),
+    TITLE_COLOR("titleColor", [DataType.STRING]),
+    TITLE_FONT_SIZE("titleFontSize", [DataType.NUMBER]),
+    TOOLTIP_FONT_SIZE("tooltipFontSize", [DataType.NUMBER]),
+    WIDTH("width", [DataType.NUMBER])
 
     static final Map configOptions
 

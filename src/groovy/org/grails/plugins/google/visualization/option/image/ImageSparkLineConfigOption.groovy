@@ -14,7 +14,7 @@
  */
 package org.grails.plugins.google.visualization.option.image
 
-import org.grails.plugins.google.visualization.option.GoogleVisualizationConfigOptionType
+import org.grails.plugins.google.visualization.data.DataType
 
 /**
  * Image Pie Chart configuration options
@@ -22,18 +22,18 @@ import org.grails.plugins.google.visualization.option.GoogleVisualizationConfigO
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum ImageSparkLineConfigOption {
-    COLOR("color", [GoogleVisualizationConfigOptionType.STRING]),
-    COLORS("colors", [GoogleVisualizationConfigOptionType.ARRAY]),
-    FILL("fill", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    HEIGHT("height", [GoogleVisualizationConfigOptionType.NUMBER]),
-    LABEL_POSITION("labelPosition", [GoogleVisualizationConfigOptionType.STRING]),
-    MAX("max", [GoogleVisualizationConfigOptionType.ARRAY]),
-    MIN("min", [GoogleVisualizationConfigOptionType.ARRAY]),
-    SHOW_AXIS_LINES("showAxisLines", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    SHOW_VALUE_LABELS("showValueLabels", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    TITLE("title", [GoogleVisualizationConfigOptionType.ARRAY]),
-    WIDTH("width", [GoogleVisualizationConfigOptionType.NUMBER]),
-    LAYOUT("layout", [GoogleVisualizationConfigOptionType.STRING])
+    COLOR("color", [DataType.STRING]),
+    COLORS("colors", [DataType.ARRAY]),
+    FILL("fill", [DataType.BOOLEAN]),
+    HEIGHT("height", [DataType.NUMBER]),
+    LABEL_POSITION("labelPosition", [DataType.STRING]),
+    MAX("max", [DataType.ARRAY]),
+    MIN("min", [DataType.ARRAY]),
+    SHOW_AXIS_LINES("showAxisLines", [DataType.BOOLEAN]),
+    SHOW_VALUE_LABELS("showValueLabels", [DataType.BOOLEAN]),
+    TITLE("title", [DataType.ARRAY]),
+    WIDTH("width", [DataType.NUMBER]),
+    LAYOUT("layout", [DataType.STRING])
 
     static final Map configOptions
 

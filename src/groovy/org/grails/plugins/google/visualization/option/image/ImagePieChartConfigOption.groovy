@@ -14,7 +14,7 @@
  */
 package org.grails.plugins.google.visualization.option.image
 
-import org.grails.plugins.google.visualization.option.GoogleVisualizationConfigOptionType
+import org.grails.plugins.google.visualization.data.DataType
 
 /**
  * Image Pie Chart configuration options
@@ -22,16 +22,16 @@ import org.grails.plugins.google.visualization.option.GoogleVisualizationConfigO
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum ImagePieChartConfigOption {
-    BACKGROUND_COLOR("backgroundColor", [GoogleVisualizationConfigOptionType.STRING]),
-    COLOR("color", [GoogleVisualizationConfigOptionType.STRING]),
-    COLORS("colors", [GoogleVisualizationConfigOptionType.ARRAY]),
-    ENABLE_EVENTS("enableEvents", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    HEIGHT("height", [GoogleVisualizationConfigOptionType.NUMBER]),
-    IS_3D("is3D", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    LABELS("labels", [GoogleVisualizationConfigOptionType.STRING]),    
-    LEGEND("legend", [GoogleVisualizationConfigOptionType.STRING]),
-    TITLE("title", [GoogleVisualizationConfigOptionType.STRING]),
-    WIDTH("width", [GoogleVisualizationConfigOptionType.NUMBER])
+    BACKGROUND_COLOR("backgroundColor", [DataType.STRING]),
+    COLOR("color", [DataType.STRING]),
+    COLORS("colors", [DataType.ARRAY]),
+    ENABLE_EVENTS("enableEvents", [DataType.BOOLEAN]),
+    HEIGHT("height", [DataType.NUMBER]),
+    IS_3D("is3D", [DataType.BOOLEAN]),
+    LABELS("labels", [DataType.STRING]),    
+    LEGEND("legend", [DataType.STRING]),
+    TITLE("title", [DataType.STRING]),
+    WIDTH("width", [DataType.NUMBER])
 
     static final Map configOptions
 

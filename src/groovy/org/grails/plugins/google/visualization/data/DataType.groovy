@@ -12,24 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.grails.plugins.google.visualization.util
+package org.grails.plugins.google.visualization.data
 
 /**
- * Resolved configuration option
+ * Data type
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class ResolvedConfigOption {
-    final type
-    final value
-
-    ResolvedConfigOption(type, value) {
-        this.type= type
-        this.value = value
-    }
-
-    @Override
-    public String toString() {
-        "ResolvedConfigOption{type='${type}', value='${value}'}"
-    }
+enum DataType {
+    STRING, NUMBER, BOOLEAN, DATE, OBJECT, ARRAY, MAP
 }

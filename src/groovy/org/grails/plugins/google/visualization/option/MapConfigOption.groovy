@@ -14,20 +14,22 @@
  */
 package org.grails.plugins.google.visualization.option
 
+import org.grails.plugins.google.visualization.data.DataType
+
 /**
  * Map configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum MapConfigOption {
-    ENABLE_SCROLL_WHEEL("enableScrollWheel", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    SHOW_TIP("showTip", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    SHOW_LINE("showLine", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    LINE_COLOR("lineColor", [GoogleVisualizationConfigOptionType.STRING]),
-    LINE_WIDTH("lineWidth", [GoogleVisualizationConfigOptionType.NUMBER]),
-    MAP_TYPE("mapType", [GoogleVisualizationConfigOptionType.STRING]),
-    USE_MAP_TYPE_CONTROL("useMapTypeControl", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    ZOOM_LEVEL("zoomLevel", [GoogleVisualizationConfigOptionType.NUMBER])
+    ENABLE_SCROLL_WHEEL("enableScrollWheel", [DataType.BOOLEAN]),
+    SHOW_TIP("showTip", [DataType.BOOLEAN]),
+    SHOW_LINE("showLine", [DataType.BOOLEAN]),
+    LINE_COLOR("lineColor", [DataType.STRING]),
+    LINE_WIDTH("lineWidth", [DataType.NUMBER]),
+    MAP_TYPE("mapType", [DataType.STRING]),
+    USE_MAP_TYPE_CONTROL("useMapTypeControl", [DataType.BOOLEAN]),
+    ZOOM_LEVEL("zoomLevel", [DataType.NUMBER])
 
     static final Map configOptions
 

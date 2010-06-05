@@ -12,25 +12,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.grails.plugins.google.visualization.util
+package org.grails.plugins.google.visualization.data.renderer
+
+import grails.test.GrailsUnitTestCase
 
 /**
- * Data representation utility
+ * Number and boolean data type renderer tests
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-final class DataRepresentationUtil {
-    private DataRepresentationUtil() {}
-
-    static replaceSquareWithCurlyBrackets(str) {
-        str = str.replace('[', '{')
-        str = str.replace(']', '}')
-        str
+class NumberAndBooleanRendererTests extends GrailsUnitTestCase {
+    void testRenderValueForNumber() {
+        assertEquals 123, NumberAndBooleanRenderer.instance.renderValue(123)
     }
 
-    static removeSquareBrackets(str) {
-        str = str.replace('[', '')
-        str = str.replace(']', '')
-        str
+    void testRenderValueForFloatingNumber() {
+        assertEquals 12.3, NumberAndBooleanRenderer.instance.renderValue(12.3)
+    }
+
+    void testRenderValueForBooleanTrue() {
+        assertEquals true, NumberAndBooleanRenderer.instance.renderValue(true)
+    }
+
+    void testRenderValueForBooleanFalse() {
+        assertEquals false, NumberAndBooleanRenderer.instance.renderValue(false)
     }
 }

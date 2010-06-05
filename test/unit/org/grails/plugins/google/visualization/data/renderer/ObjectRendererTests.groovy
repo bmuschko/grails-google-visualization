@@ -12,13 +12,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.grails.plugins.google.visualization.option
+package org.grails.plugins.google.visualization.data.renderer
+
+import grails.test.GrailsUnitTestCase
 
 /**
- * Allowed configuration option data types for Google visualizations
+ * Object renderer tests
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-enum GoogleVisualizationConfigOptionType {
-    STRING, NUMBER, BOOLEAN, DATE, OBJECT, ARRAY, MAP
+class ObjectRendererTests extends GrailsUnitTestCase {
+    void testRenderValue() {
+        assertEquals "{stroke: 'black', fill: '#eee', strokeSize: 1}", ObjectRenderer.instance.renderValue(new Expando(stroke:'black', fill:'#eee', strokeSize: 1))
+    }
 }

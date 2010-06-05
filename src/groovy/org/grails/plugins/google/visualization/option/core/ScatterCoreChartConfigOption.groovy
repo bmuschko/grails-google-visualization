@@ -14,7 +14,7 @@
  */
 package org.grails.plugins.google.visualization.option.core
 
-import org.grails.plugins.google.visualization.option.GoogleVisualizationConfigOptionType
+import org.grails.plugins.google.visualization.data.DataType
 
 /**
  * Scatter Core Chart configuration options
@@ -22,24 +22,24 @@ import org.grails.plugins.google.visualization.option.GoogleVisualizationConfigO
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum ScatterCoreChartConfigOption {
-    BACKGROUND_COLOR("backgroundColor", [GoogleVisualizationConfigOptionType.STRING]),
-    COLORS("colors", [GoogleVisualizationConfigOptionType.ARRAY]),
-    CURVE_TYPE("curveType", [GoogleVisualizationConfigOptionType.STRING]),
-    FONT_SIZE("fontSize", [GoogleVisualizationConfigOptionType.NUMBER]),
-    H_AXIS("hAxis", [GoogleVisualizationConfigOptionType.OBJECT]),
-    HEIGHT("height", [GoogleVisualizationConfigOptionType.NUMBER]),
-    LEGEND("legend", [GoogleVisualizationConfigOptionType.STRING]),
-    LEGEND_FONT_SIZE("legendFontSize", [GoogleVisualizationConfigOptionType.NUMBER]),
-    LEGEND_TEXT_COLOR("legendTextColor", [GoogleVisualizationConfigOptionType.STRING]),
-    LINE_WIDTH("lineWidth", [GoogleVisualizationConfigOptionType.NUMBER]),
-    POINT_SIZE("pointSize", [GoogleVisualizationConfigOptionType.NUMBER]),
-    REVERSE_CATEGORIES("reverseCategories", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    TITLE("title", [GoogleVisualizationConfigOptionType.STRING]),
-    TITLE_COLOR("titleColor", [GoogleVisualizationConfigOptionType.STRING]),
-    TITLE_FONT_SIZE("titleFontSize", [GoogleVisualizationConfigOptionType.NUMBER]),
-    TOOLTIP_FONT_SIZE("tooltipFontSize", [GoogleVisualizationConfigOptionType.NUMBER]),
-    V_AXIS("vAxis", [GoogleVisualizationConfigOptionType.OBJECT]),
-    WIDTH("width", [GoogleVisualizationConfigOptionType.NUMBER])
+    BACKGROUND_COLOR("backgroundColor", [DataType.STRING]),
+    COLORS("colors", [DataType.ARRAY]),
+    CURVE_TYPE("curveType", [DataType.STRING]),
+    FONT_SIZE("fontSize", [DataType.NUMBER]),
+    H_AXIS("hAxis", [DataType.OBJECT]),
+    HEIGHT("height", [DataType.NUMBER]),
+    LEGEND("legend", [DataType.STRING]),
+    LEGEND_FONT_SIZE("legendFontSize", [DataType.NUMBER]),
+    LEGEND_TEXT_COLOR("legendTextColor", [DataType.STRING]),
+    LINE_WIDTH("lineWidth", [DataType.NUMBER]),
+    POINT_SIZE("pointSize", [DataType.NUMBER]),
+    REVERSE_CATEGORIES("reverseCategories", [DataType.BOOLEAN]),
+    TITLE("title", [DataType.STRING]),
+    TITLE_COLOR("titleColor", [DataType.STRING]),
+    TITLE_FONT_SIZE("titleFontSize", [DataType.NUMBER]),
+    TOOLTIP_FONT_SIZE("tooltipFontSize", [DataType.NUMBER]),
+    V_AXIS("vAxis", [DataType.OBJECT]),
+    WIDTH("width", [DataType.NUMBER])
 
     static final Map configOptions
 

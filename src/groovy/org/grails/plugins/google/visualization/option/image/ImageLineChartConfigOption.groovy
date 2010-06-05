@@ -14,7 +14,7 @@
  */
 package org.grails.plugins.google.visualization.option.image
 
-import org.grails.plugins.google.visualization.option.GoogleVisualizationConfigOptionType
+import org.grails.plugins.google.visualization.data.DataType
 
 /**
  * Image Line Chart configuration options
@@ -22,19 +22,19 @@ import org.grails.plugins.google.visualization.option.GoogleVisualizationConfigO
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum ImageLineChartConfigOption {
-    BACKGROUND_COLOR("backgroundColor", [GoogleVisualizationConfigOptionType.STRING]),
-    COLORS("colors", [GoogleVisualizationConfigOptionType.ARRAY]),
-    ENABLE_EVENTS("enableEvents", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    HEIGHT("height", [GoogleVisualizationConfigOptionType.NUMBER]),
-    LEGEND("legend", [GoogleVisualizationConfigOptionType.STRING]),
-    MAX("max", [GoogleVisualizationConfigOptionType.NUMBER]),
-    MIN("min", [GoogleVisualizationConfigOptionType.NUMBER]),
-    SHOW_AXIS_LINES("showAxisLines", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    SHOW_CATEGORY_LABELS("showCategoryLabels", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    SHOW_VALUE_LABELS("showValueLabels", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    TITLE("title", [GoogleVisualizationConfigOptionType.STRING]),
-    VALUE_LABELS_INTERVAL("valueLabelsInterval", [GoogleVisualizationConfigOptionType.NUMBER]),
-    WIDTH("width", [GoogleVisualizationConfigOptionType.NUMBER])
+    BACKGROUND_COLOR("backgroundColor", [DataType.STRING]),
+    COLORS("colors", [DataType.ARRAY]),
+    ENABLE_EVENTS("enableEvents", [DataType.BOOLEAN]),
+    HEIGHT("height", [DataType.NUMBER]),
+    LEGEND("legend", [DataType.STRING]),
+    MAX("max", [DataType.NUMBER]),
+    MIN("min", [DataType.NUMBER]),
+    SHOW_AXIS_LINES("showAxisLines", [DataType.BOOLEAN]),
+    SHOW_CATEGORY_LABELS("showCategoryLabels", [DataType.BOOLEAN]),
+    SHOW_VALUE_LABELS("showValueLabels", [DataType.BOOLEAN]),
+    TITLE("title", [DataType.STRING]),
+    VALUE_LABELS_INTERVAL("valueLabelsInterval", [DataType.NUMBER]),
+    WIDTH("width", [DataType.NUMBER])
 
     static final Map configOptions
 

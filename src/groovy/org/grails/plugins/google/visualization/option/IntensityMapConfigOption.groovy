@@ -14,17 +14,19 @@
  */
 package org.grails.plugins.google.visualization.option
 
+import org.grails.plugins.google.visualization.data.DataType
+
 /**
  * Intensity Map configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum IntensityMapConfigOption {
-    COLORS("colors", [GoogleVisualizationConfigOptionType.ARRAY]),
-    HEIGHT("height", [GoogleVisualizationConfigOptionType.NUMBER]),
-    REGION("region", [GoogleVisualizationConfigOptionType.STRING]),
-    SHOW_ONE_TAB("showOneTab", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    WIDTH("width", [GoogleVisualizationConfigOptionType.NUMBER])
+    COLORS("colors", [DataType.ARRAY]),
+    HEIGHT("height", [DataType.NUMBER]),
+    REGION("region", [DataType.STRING]),
+    SHOW_ONE_TAB("showOneTab", [DataType.BOOLEAN]),
+    WIDTH("width", [DataType.NUMBER])
 
     static final Map configOptions
 

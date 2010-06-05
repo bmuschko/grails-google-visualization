@@ -14,42 +14,44 @@
  */
 package org.grails.plugins.google.visualization.option
 
+import org.grails.plugins.google.visualization.data.DataType
+
 /**
  * Area Chart configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum AreaChartConfigOption {
-    AXIS_COLOR("axisColor", [GoogleVisualizationConfigOptionType.STRING, GoogleVisualizationConfigOptionType.OBJECT]),
-    AXIS_BACKGROUND_COLOR("axisBackgroundColor", [GoogleVisualizationConfigOptionType.STRING, GoogleVisualizationConfigOptionType.OBJECT]),
-    AXIS_FONT_SIZE("axisFontSize", [GoogleVisualizationConfigOptionType.NUMBER]),
-    BACKGROUND_COLOR("backgroundColor", [GoogleVisualizationConfigOptionType.STRING, GoogleVisualizationConfigOptionType.OBJECT]),
-    BORDER_COLOR("borderColor", [GoogleVisualizationConfigOptionType.STRING, GoogleVisualizationConfigOptionType.OBJECT]),
-    COLORS("colors", [GoogleVisualizationConfigOptionType.ARRAY]),
-    ENABLE_TOOLTIP("enableTooltip", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    FOCUS_BORDER_COLOR("focusBorderColor", [GoogleVisualizationConfigOptionType.STRING, GoogleVisualizationConfigOptionType.OBJECT]),
-    HEIGHT("height", [GoogleVisualizationConfigOptionType.NUMBER]),
-    IS_STACKED("isStacked", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    LEGEND("legend", [GoogleVisualizationConfigOptionType.STRING]),
-    LEGEND_BACKGROUND_COLOR("legendBackgroundColor", [GoogleVisualizationConfigOptionType.STRING, GoogleVisualizationConfigOptionType.OBJECT]),
-    LEGEND_FONT_SIZE("legendFontSize", [GoogleVisualizationConfigOptionType.NUMBER]),
-    LEGEND_TEXT_COLOR("legendTextColor", [GoogleVisualizationConfigOptionType.STRING, GoogleVisualizationConfigOptionType.OBJECT]),
-    LINE_SIZE("lineSize", [GoogleVisualizationConfigOptionType.NUMBER]),
-    LOG_SCALE("logScale", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    MAX("max", [GoogleVisualizationConfigOptionType.NUMBER]),
-    MIN("min", [GoogleVisualizationConfigOptionType.NUMBER]),
-    POINT_SIZE("pointSize", [GoogleVisualizationConfigOptionType.NUMBER]),
-    REVERSE_AXIS("reverseAxis", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    SHOW_CATEGORIES("showCategories", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    TITLE("title", [GoogleVisualizationConfigOptionType.STRING]),
-    TITLE_X("titleX", [GoogleVisualizationConfigOptionType.STRING]),
-    TITLE_Y("titleY", [GoogleVisualizationConfigOptionType.STRING]),
-    TITLE_COLOR("titleColor", [GoogleVisualizationConfigOptionType.STRING, GoogleVisualizationConfigOptionType.OBJECT]),
-    TITLE_FONT_SIZE("titleFontSize", [GoogleVisualizationConfigOptionType.NUMBER]),
-    TOOLTIP_FONT_SIZE("tooltipFontSize", [GoogleVisualizationConfigOptionType.NUMBER]),
-    TOOLTIP_HEIGHT("tooltipHeight", [GoogleVisualizationConfigOptionType.NUMBER]),
-    TOOLTIP_WIDTH("tooltipWidth", [GoogleVisualizationConfigOptionType.NUMBER]),
-    WIDTH("width", [GoogleVisualizationConfigOptionType.NUMBER])
+    AXIS_COLOR("axisColor", [DataType.STRING, DataType.OBJECT]),
+    AXIS_BACKGROUND_COLOR("axisBackgroundColor", [DataType.STRING, DataType.OBJECT]),
+    AXIS_FONT_SIZE("axisFontSize", [DataType.NUMBER]),
+    BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT]),
+    BORDER_COLOR("borderColor", [DataType.STRING, DataType.OBJECT]),
+    COLORS("colors", [DataType.ARRAY]),
+    ENABLE_TOOLTIP("enableTooltip", [DataType.BOOLEAN]),
+    FOCUS_BORDER_COLOR("focusBorderColor", [DataType.STRING, DataType.OBJECT]),
+    HEIGHT("height", [DataType.NUMBER]),
+    IS_STACKED("isStacked", [DataType.BOOLEAN]),
+    LEGEND("legend", [DataType.STRING]),
+    LEGEND_BACKGROUND_COLOR("legendBackgroundColor", [DataType.STRING, DataType.OBJECT]),
+    LEGEND_FONT_SIZE("legendFontSize", [DataType.NUMBER]),
+    LEGEND_TEXT_COLOR("legendTextColor", [DataType.STRING, DataType.OBJECT]),
+    LINE_SIZE("lineSize", [DataType.NUMBER]),
+    LOG_SCALE("logScale", [DataType.BOOLEAN]),
+    MAX("max", [DataType.NUMBER]),
+    MIN("min", [DataType.NUMBER]),
+    POINT_SIZE("pointSize", [DataType.NUMBER]),
+    REVERSE_AXIS("reverseAxis", [DataType.BOOLEAN]),
+    SHOW_CATEGORIES("showCategories", [DataType.BOOLEAN]),
+    TITLE("title", [DataType.STRING]),
+    TITLE_X("titleX", [DataType.STRING]),
+    TITLE_Y("titleY", [DataType.STRING]),
+    TITLE_COLOR("titleColor", [DataType.STRING, DataType.OBJECT]),
+    TITLE_FONT_SIZE("titleFontSize", [DataType.NUMBER]),
+    TOOLTIP_FONT_SIZE("tooltipFontSize", [DataType.NUMBER]),
+    TOOLTIP_HEIGHT("tooltipHeight", [DataType.NUMBER]),
+    TOOLTIP_WIDTH("tooltipWidth", [DataType.NUMBER]),
+    WIDTH("width", [DataType.NUMBER])
 
     static final Map configOptions
 

@@ -14,27 +14,29 @@
  */
 package org.grails.plugins.google.visualization.option
 
+import org.grails.plugins.google.visualization.data.DataType
+
 /**
  * Table configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum TableConfigOption {
-    ALLOW_HTML("allowHtml", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    ALTERNATING_ROW_STYLE("alternatingRowStyle", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    CSS_CLASS_NAME("cssClassNames", [GoogleVisualizationConfigOptionType.OBJECT]),
-    FIRST_ROW_NUMBER("firstRowNumber", [GoogleVisualizationConfigOptionType.NUMBER]),
-    HEIGHT("height", [GoogleVisualizationConfigOptionType.NUMBER]),
-    PAGE("page", [GoogleVisualizationConfigOptionType.STRING]),
-    PAGE_SIZE("pageSize", [GoogleVisualizationConfigOptionType.NUMBER]),
-    RTL_TABLE("rtlTable", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    SCROLL_LEFT_START_POSITION("scrollLeftStartPosition", [GoogleVisualizationConfigOptionType.NUMBER]),
-    SHOW_ROW_NUMBER("showRowNumber", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    SORT("sort", [GoogleVisualizationConfigOptionType.STRING]),
-    SORT_ASCENDING("sortAscending", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    SORT_COLUMN("sortColumn", [GoogleVisualizationConfigOptionType.NUMBER]),
-    START_PAGE("startPage", [GoogleVisualizationConfigOptionType.NUMBER]),
-    WIDTH("width", [GoogleVisualizationConfigOptionType.NUMBER])
+    ALLOW_HTML("allowHtml", [DataType.BOOLEAN]),
+    ALTERNATING_ROW_STYLE("alternatingRowStyle", [DataType.BOOLEAN]),
+    CSS_CLASS_NAME("cssClassNames", [DataType.OBJECT]),
+    FIRST_ROW_NUMBER("firstRowNumber", [DataType.NUMBER]),
+    HEIGHT("height", [DataType.NUMBER]),
+    PAGE("page", [DataType.STRING]),
+    PAGE_SIZE("pageSize", [DataType.NUMBER]),
+    RTL_TABLE("rtlTable", [DataType.BOOLEAN]),
+    SCROLL_LEFT_START_POSITION("scrollLeftStartPosition", [DataType.NUMBER]),
+    SHOW_ROW_NUMBER("showRowNumber", [DataType.BOOLEAN]),
+    SORT("sort", [DataType.STRING]),
+    SORT_ASCENDING("sortAscending", [DataType.BOOLEAN]),
+    SORT_COLUMN("sortColumn", [DataType.NUMBER]),
+    START_PAGE("startPage", [DataType.NUMBER]),
+    WIDTH("width", [DataType.NUMBER])
   
     static final Map configOptions
 

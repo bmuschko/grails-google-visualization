@@ -16,6 +16,7 @@ package org.grails.plugins.google.visualization
 
 import org.apache.commons.lang.StringUtils
 import org.grails.plugins.google.visualization.data.Cell
+import org.grails.plugins.google.visualization.data.renderer.MapRenderer
 import org.grails.plugins.google.visualization.util.ConfigOptionRendererUtil
 import org.grails.plugins.google.visualization.util.DateUtil
 
@@ -133,11 +134,12 @@ class GoogleVisualizationBuilder extends VisualizationBuilder {
     }
 
     /**
-     * Renders cell value (see http://code.google.com/apis/visualization/documentation/reference.html#cell_object)
+     * Renders cell value
      *
      * @param dataType Data type
      * @param cell Cell
      * @return Rendered value
+     * @see <a href="http://code.google.com/apis/visualization/documentation/reference.html#cell_object">Google Cell Object</a>
      */
     def renderCellValue(dataType, cell) {
         def cellProperties = []
@@ -151,7 +153,7 @@ class GoogleVisualizationBuilder extends VisualizationBuilder {
         }
 
         if(cell.customValues != null) {
-            cellProperties << "p: '${cell.customValues}'"
+            cellProperties << "p: '${MapRenderer.instance.renderValue(cell.customValues)}'"
         }
 
         "{${StringUtils.join(cellProperties, ', ')}}"

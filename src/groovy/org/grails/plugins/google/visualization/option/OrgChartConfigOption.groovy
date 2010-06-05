@@ -14,17 +14,19 @@
  */
 package org.grails.plugins.google.visualization.option
 
+import org.grails.plugins.google.visualization.data.DataType
+
 /**
  * Organizational Chart configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum OrgChartConfigOption {
-    ALLOW_COLLAPSE("allowCollapse", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    ALLOW_HTML("allowHtml", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    NODE_CLASS("nodeClass", [GoogleVisualizationConfigOptionType.STRING]),
-    SELECTED_NODE_CLASS("selectedNodeClass", [GoogleVisualizationConfigOptionType.STRING]),
-    SIZE("size", [GoogleVisualizationConfigOptionType.STRING])
+    ALLOW_COLLAPSE("allowCollapse", [DataType.BOOLEAN]),
+    ALLOW_HTML("allowHtml", [DataType.BOOLEAN]),
+    NODE_CLASS("nodeClass", [DataType.STRING]),
+    SELECTED_NODE_CLASS("selectedNodeClass", [DataType.STRING]),
+    SIZE("size", [DataType.STRING])
 
     static final Map configOptions
 

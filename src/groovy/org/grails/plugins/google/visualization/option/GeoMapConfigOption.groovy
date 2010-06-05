@@ -14,21 +14,23 @@
  */
 package org.grails.plugins.google.visualization.option
 
+import org.grails.plugins.google.visualization.data.DataType
+
 /**
  * Geo Map configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum GeoMapConfigOption {
-    REGION("region", [GoogleVisualizationConfigOptionType.STRING]),
-    DATE_MODE("dataMode", [GoogleVisualizationConfigOptionType.STRING]),
-    WIDTH("width", [GoogleVisualizationConfigOptionType.NUMBER]),
-    HEIGHT("height", [GoogleVisualizationConfigOptionType.NUMBER]),
-    COLORS("colors", [GoogleVisualizationConfigOptionType.ARRAY]),
-    LEGEND("legend", [GoogleVisualizationConfigOptionType.STRING]),
-    SHOW_LEGEND("showLegend", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    SHOW_ZOOM_OUT("showZoomOut", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    ZOOM_OUT_LABEL("zoomOutLabel", [GoogleVisualizationConfigOptionType.STRING])
+    REGION("region", [DataType.STRING]),
+    DATE_MODE("dataMode", [DataType.STRING]),
+    WIDTH("width", [DataType.NUMBER]),
+    HEIGHT("height", [DataType.NUMBER]),
+    COLORS("colors", [DataType.ARRAY]),
+    LEGEND("legend", [DataType.STRING]),
+    SHOW_LEGEND("showLegend", [DataType.BOOLEAN]),
+    SHOW_ZOOM_OUT("showZoomOut", [DataType.BOOLEAN]),
+    ZOOM_OUT_LABEL("zoomOutLabel", [DataType.STRING])
 
     static final Map configOptions
 

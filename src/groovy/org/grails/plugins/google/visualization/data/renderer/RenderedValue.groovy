@@ -12,21 +12,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.grails.plugins.google.visualization.data
+package org.grails.plugins.google.visualization.data.renderer
 
 /**
- * Cell input value
+ * Rendered value
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
- * @see <a href="http://code.google.com/apis/visualization/documentation/reference.html#cell_object">Google Cell Object</a>
  */
-class Cell {
-    def value
-    String label
-    Map customValues
+class RenderedValue {
+    final type
+    final value
+
+    RenderedValue(type, value) {
+        this.type = type
+        this.value = value
+    }
 
     @Override
     public String toString() {
-        "Cell{value='${value}', label='${label}', customValues='${customValues}'}"
+        "RenderedValue{type='${type}', value='${value}'}"
     }
 }

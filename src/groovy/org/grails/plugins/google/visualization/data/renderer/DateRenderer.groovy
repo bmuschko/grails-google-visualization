@@ -12,21 +12,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.grails.plugins.google.visualization.data
+package org.grails.plugins.google.visualization.data.renderer
+
+import org.grails.plugins.google.visualization.util.DateUtil
 
 /**
- * Cell input value
+ * Date renderer
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
- * @see <a href="http://code.google.com/apis/visualization/documentation/reference.html#cell_object">Google Cell Object</a>
  */
-class Cell {
-    def value
-    String label
-    Map customValues
-
+@Singleton
+class DateRenderer implements DataTypeRenderer {
     @Override
-    public String toString() {
-        "Cell{value='${value}', label='${label}', customValues='${customValues}'}"
+    def renderValue(value) {
+        DateUtil.createDateTimeJavaScriptObject(value)
     }
 }

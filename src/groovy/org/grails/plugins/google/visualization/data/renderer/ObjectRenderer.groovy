@@ -12,21 +12,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.grails.plugins.google.visualization.data
+package org.grails.plugins.google.visualization.data.renderer
+
+import org.apache.commons.lang.StringUtils
 
 /**
- * Cell input value
+ * Object renderer
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
- * @see <a href="http://code.google.com/apis/visualization/documentation/reference.html#cell_object">Google Cell Object</a>
  */
-class Cell {
-    def value
-    String label
-    Map customValues
-
+@Singleton
+class ObjectRenderer implements DataTypeRenderer {
     @Override
-    public String toString() {
-        "Cell{value='${value}', label='${label}', customValues='${customValues}'}"
+    def renderValue(value) {
+        def objectValues = []
+
+        value.properties.each { propertyKey, propertyValue ->
+            // Only use class fields
+            if(propertyKey != 'class' || propertyKey != 'metaClass') {
+                objectValues << "${propertyKey}: ${DataTypeValueRenderer.instance.render(propertyValue).value}"
+            }
+        }
+
+        "{${StringUtils.join(objectValues, ', ')}}"
     }
 }

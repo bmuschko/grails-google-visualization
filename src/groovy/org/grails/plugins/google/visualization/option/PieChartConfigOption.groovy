@@ -14,32 +14,34 @@
  */
 package org.grails.plugins.google.visualization.option
 
+import org.grails.plugins.google.visualization.data.DataType
+
 /**
  * Pie Chart configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum PieChartConfigOption {
-    BACKGROUND_COLOR("backgroundColor", [GoogleVisualizationConfigOptionType.STRING, GoogleVisualizationConfigOptionType.OBJECT]),
-    BORDER_COLOR("borderColor", [GoogleVisualizationConfigOptionType.STRING, GoogleVisualizationConfigOptionType.OBJECT]),
-    COLORS("colors", [GoogleVisualizationConfigOptionType.ARRAY]),
-    ENABLE_TOOLTIP("enableTooltip", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    FOCUS_BORDER_COLOR("focusBorderColor", [GoogleVisualizationConfigOptionType.STRING, GoogleVisualizationConfigOptionType.OBJECT]),
-    HEIGHT("height", [GoogleVisualizationConfigOptionType.NUMBER]),
-    IS_3D("is3D", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    LEGEND("legend", [GoogleVisualizationConfigOptionType.STRING]),
-    LEGEND_BACKGROUND_COLOR("legendBackgroundColor", [GoogleVisualizationConfigOptionType.STRING, GoogleVisualizationConfigOptionType.OBJECT]),
-    LEGEND_FONT_SIZE("legendFontSize", [GoogleVisualizationConfigOptionType.NUMBER]),
-    LEGEND_TEXT_COLOR("legendTextColor", [GoogleVisualizationConfigOptionType.STRING, GoogleVisualizationConfigOptionType.OBJECT]),
-    PIE_JOIN_ANGLE("pieJoinAngle", [GoogleVisualizationConfigOptionType.NUMBER]),
-    PIE_MINIMAL_ANGLE("pieMinimalAngle", [GoogleVisualizationConfigOptionType.NUMBER]),
-    TITLE("title", [GoogleVisualizationConfigOptionType.STRING]),
-    TITLE_COLOR("titleColor", [GoogleVisualizationConfigOptionType.STRING, GoogleVisualizationConfigOptionType.OBJECT]),
-    TITLE_FONT_SIZE("titleFontSize", [GoogleVisualizationConfigOptionType.NUMBER]),
-    TOOLTIP_FONT_SIZE("tooltipFontSize", [GoogleVisualizationConfigOptionType.NUMBER]),
-    TOOLTIP_HEIGHT("tooltipHeight", [GoogleVisualizationConfigOptionType.NUMBER]),
-    TOOLTIP_WIDTH("tooltipWidth", [GoogleVisualizationConfigOptionType.NUMBER]),
-    WIDTH("width", [GoogleVisualizationConfigOptionType.NUMBER])
+    BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT]),
+    BORDER_COLOR("borderColor", [DataType.STRING, DataType.OBJECT]),
+    COLORS("colors", [DataType.ARRAY]),
+    ENABLE_TOOLTIP("enableTooltip", [DataType.BOOLEAN]),
+    FOCUS_BORDER_COLOR("focusBorderColor", [DataType.STRING, DataType.OBJECT]),
+    HEIGHT("height", [DataType.NUMBER]),
+    IS_3D("is3D", [DataType.BOOLEAN]),
+    LEGEND("legend", [DataType.STRING]),
+    LEGEND_BACKGROUND_COLOR("legendBackgroundColor", [DataType.STRING, DataType.OBJECT]),
+    LEGEND_FONT_SIZE("legendFontSize", [DataType.NUMBER]),
+    LEGEND_TEXT_COLOR("legendTextColor", [DataType.STRING, DataType.OBJECT]),
+    PIE_JOIN_ANGLE("pieJoinAngle", [DataType.NUMBER]),
+    PIE_MINIMAL_ANGLE("pieMinimalAngle", [DataType.NUMBER]),
+    TITLE("title", [DataType.STRING]),
+    TITLE_COLOR("titleColor", [DataType.STRING, DataType.OBJECT]),
+    TITLE_FONT_SIZE("titleFontSize", [DataType.NUMBER]),
+    TOOLTIP_FONT_SIZE("tooltipFontSize", [DataType.NUMBER]),
+    TOOLTIP_HEIGHT("tooltipHeight", [DataType.NUMBER]),
+    TOOLTIP_WIDTH("tooltipWidth", [DataType.NUMBER]),
+    WIDTH("width", [DataType.NUMBER])
 
     static final Map configOptions
 

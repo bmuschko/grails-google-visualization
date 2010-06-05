@@ -14,17 +14,16 @@
  */
 package org.grails.plugins.google.visualization.util
 
-import org.apache.commons.lang.StringEscapeUtils
-import org.apache.commons.lang.StringUtils
-import org.grails.plugins.google.visualization.option.GoogleVisualizationConfigOptionType
+import org.grails.plugins.google.visualization.data.renderer.DataTypeValueRenderer
 
 /**
  * Configuration option render utility
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-@Singleton
 final class ConfigOptionRendererUtil {
+    private ConfigOptionRendererUtil() {}
+
     /**
      * Render configuration option
      *
@@ -34,124 +33,12 @@ final class ConfigOptionRendererUtil {
      */
     static render(configOption, value) {
         def allowedTypes = configOption.types
-        def resolvedConfigOption = resolveConfigOption(value)
+        def resolvedConfigOption = DataTypeValueRenderer.instance.render(value)
 
         if(!allowedTypes.contains(resolvedConfigOption.type)) {
             throw new IllegalArgumentException("Unsupported configuration type '${resolvedConfigOption.type}'. Allowed types: ${allowedTypes}")
         }
 
         resolvedConfigOption
-    }
-
-    /**
-     * Resolves configuration option
-     *
-     * @param value Value
-     * @return Configuration option
-     */
-    static resolveConfigOption(value) {
-        if(value instanceof String) {
-            new ResolvedConfigOption(GoogleVisualizationConfigOptionType.STRING, renderStringValue(value))
-        }
-        else if(value instanceof Number) {
-            new ResolvedConfigOption(GoogleVisualizationConfigOptionType.NUMBER, renderNumberOrBooleanValue(value))
-        }
-        else if(value instanceof Boolean) {
-            new ResolvedConfigOption(GoogleVisualizationConfigOptionType.BOOLEAN, renderNumberOrBooleanValue(value))
-        }
-        else if(value instanceof Date) {
-            new ResolvedConfigOption(GoogleVisualizationConfigOptionType.DATE, renderDateValue(value))
-        }
-        else if(value instanceof Collection || value instanceof Object[]) {
-            new ResolvedConfigOption(GoogleVisualizationConfigOptionType.ARRAY, renderArrayValue(value))
-        }
-        else if(value instanceof Map) {
-            new ResolvedConfigOption(GoogleVisualizationConfigOptionType.MAP, renderMapValue(value))
-        }
-        else {
-            new ResolvedConfigOption(GoogleVisualizationConfigOptionType.OBJECT, renderObjectValue(value))
-        }
-    }
-
-    /**
-     * Renders String value
-     *
-     * @param value Value
-     * @return Rendered value
-     */
-    static renderStringValue(value) {
-        "'${StringEscapeUtils.escapeJavaScript(value)}'"
-    }
-
-    /**
-     * Renders number or boolean value
-     *
-     * @param value Value
-     * @return Rendered value
-     */
-    static renderNumberOrBooleanValue(value) {
-        value
-    }
-
-    /**
-     * Renders date value
-     *
-     * @param value
-     * @return Rendered value
-     */
-    static renderDateValue(value) {
-        DateUtil.createDateTimeJavaScriptObject(value)
-    }
-
-    /**
-     * Renders array value
-     *
-     * @param value Value
-     * @return Rendered value
-     */
-    static renderArrayValue(value) {
-        def arrayValues = []
-
-        value.each { arrayValue ->
-            arrayValues << resolveConfigOption(arrayValue).value
-        }
-
-        "[${StringUtils.join(arrayValues, ', ')}]"
-    }
-
-
-    /**
-     * Renders map value
-     *
-     * @param value Value
-     * @return Rendered value
-     */
-    static renderMapValue(value) {
-        def mapValues = []
-
-        value.each { mapKey, mapValue ->
-            mapValues << "${resolveConfigOption(mapKey).value}: ${resolveConfigOption(mapValue).value}"
-        }
-
-        "{${StringUtils.join(mapValues, ', ')}}"
-    }
-
-    /**
-     * Renders object value
-     *
-     * @param value Value
-     * @return Rendered value
-     */
-    static renderObjectValue(value) {
-        def objectValues = []
-
-        value.properties.each { propertyKey, propertyValue ->
-            // Only use class fields
-            if(propertyKey != 'class' || propertyKey != 'metaClass') {
-                objectValues << "${propertyKey}: ${resolveConfigOption(propertyValue).value}"
-            }
-        }
-
-        "{${StringUtils.join(objectValues, ', ')}}"
     }
 }

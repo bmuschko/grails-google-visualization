@@ -15,7 +15,8 @@
 package org.grails.plugins.google.visualization.util
 
 import grails.test.GrailsUnitTestCase
-import org.grails.plugins.google.visualization.option.GoogleVisualizationConfigOptionType
+import org.grails.plugins.google.visualization.data.DataType
+import org.grails.plugins.google.visualization.option.PieChartConfigOption
 
 /**
  * Configuration option renderer utility tests
@@ -23,83 +24,27 @@ import org.grails.plugins.google.visualization.option.GoogleVisualizationConfigO
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 class ConfigOptionRendererUtilTests extends GrailsUnitTestCase {
-    void testResolveConfigOptionForString() {
-        def resolvedConfigOption = ConfigOptionRendererUtil.resolveConfigOption('bla')
-        assertEquals GoogleVisualizationConfigOptionType.STRING, resolvedConfigOption.type
+    void testRenderForSingleAllowedType() {
+        def resolvedConfigOption = ConfigOptionRendererUtil.render(PieChartConfigOption.TITLE, 'bla')
+        assertEquals DataType.STRING, resolvedConfigOption.type
         assertEquals "'bla'", resolvedConfigOption.value
     }
 
-    void testResolveConfigOptionForNumber() {
-        def resolvedConfigOption = ConfigOptionRendererUtil.resolveConfigOption(123)
-        assertEquals GoogleVisualizationConfigOptionType.NUMBER, resolvedConfigOption.type
-        assertEquals 123, resolvedConfigOption.value
+    void testRenderForMultipleAllowedTypes() {
+        def resolvedConfigOption = ConfigOptionRendererUtil.render(PieChartConfigOption.BACKGROUND_COLOR, '#004411')
+        assertEquals DataType.STRING, resolvedConfigOption.type
+        assertEquals "'#004411'", resolvedConfigOption.value
     }
 
-    void testResolveConfigOptionForBooleanTrue() {
-        def resolvedConfigOption = ConfigOptionRendererUtil.resolveConfigOption(true)
-        assertEquals GoogleVisualizationConfigOptionType.BOOLEAN, resolvedConfigOption.type
-        assertEquals true, resolvedConfigOption.value
-    }
-
-    void testResolveConfigOptionForBooleanFalse() {
-        def resolvedConfigOption = ConfigOptionRendererUtil.resolveConfigOption(false)
-        assertEquals GoogleVisualizationConfigOptionType.BOOLEAN, resolvedConfigOption.type
-        assertEquals false, resolvedConfigOption.value
-    }
-
-    void testResolveConfigOptionForList() {
-        def resolvedConfigOption = ConfigOptionRendererUtil.resolveConfigOption(['a', 1, true] as List)
-        assertEquals GoogleVisualizationConfigOptionType.ARRAY, resolvedConfigOption.type
-        assertEquals "['a', 1, true]", resolvedConfigOption.value
-    }
-
-    void testResolveConfigOptionForObjectArray() {
-        def resolvedConfigOption = ConfigOptionRendererUtil.resolveConfigOption(['a', 1, true] as Object[])
-        assertEquals GoogleVisualizationConfigOptionType.ARRAY, resolvedConfigOption.type
-        assertEquals "['a', 1, true]", resolvedConfigOption.value
-    }
-
-    void testResolveConfigOptionForObject() {
-        def resolvedConfigOption = ConfigOptionRendererUtil.resolveConfigOption(new Expando(stroke:'black', fill:'#eee', strokeSize: 1))
-        assertEquals GoogleVisualizationConfigOptionType.OBJECT, resolvedConfigOption.type
-        assertEquals "{stroke: 'black', fill: '#eee', strokeSize: 1}", resolvedConfigOption.value
-    }
-
-    void testResolveConfigOptionForMap() {
-        def resolvedConfigOption = ConfigOptionRendererUtil.resolveConfigOption([1: 'value1', 2: 'value2', 3: 'value3'])
-        assertEquals GoogleVisualizationConfigOptionType.MAP, resolvedConfigOption.type
-        assertEquals "{1: 'value1', 2: 'value2', 3: 'value3'}", resolvedConfigOption.value
-    }
-
-    void testRenderStringValueUnescaped() {
-        assertEquals "'test'", ConfigOptionRendererUtil.renderStringValue('test')
-    }
-
-    void testRenderStringValueEscaped() {
-        assertEquals "'Jack\\'s parameter'", ConfigOptionRendererUtil.renderStringValue("Jack's parameter")
-    }
-
-    void testRenderNumberOrBooleanValueForNumber() {
-        assertEquals 123, ConfigOptionRendererUtil.renderNumberOrBooleanValue(123)
-    }
-
-    void testRenderNumberOrBooleanValueForBoolean() {
-        assertEquals true, ConfigOptionRendererUtil.renderNumberOrBooleanValue(true)
-    }
-
-    void testRenderObjectValue() {
-        assertEquals "{stroke: 'black', fill: '#eee', strokeSize: 1}", ConfigOptionRendererUtil.renderObjectValue(new Expando(stroke:'black', fill:'#eee', strokeSize: 1))
-    }
-
-    void testRenderArrayValue() {
-        assertEquals "['a', 1, true]", ConfigOptionRendererUtil.renderArrayValue(['a', 1, true])
-    }
-
-    void testRenderMapValue() {
-        assertEquals "{1: 'value1', 2: 'value2', 3: 'value3'}", ConfigOptionRendererUtil.renderMapValue([1: 'value1', 2: 'value2', 3: 'value3'])
-    }
-
-    void testRenderObjectArrayValue() {
-        assertEquals "[{color: '#FF0000', darker: '#680000'}, {color: 'cyan', darker: 'deepskyblue'}]", ConfigOptionRendererUtil.renderArrayValue([new Expando(color:'#FF0000', darker:'#680000'), new Expando(color:'cyan', darker:'deepskyblue')])
+    void testRenderForUnsupportedType() {
+        try
+        {
+            ConfigOptionRendererUtil.render(PieChartConfigOption.BACKGROUND_COLOR, 123)
+            fail "Unsupported data types have to throw an exception!"
+        }
+        catch(IllegalArgumentException e)
+        {
+            assertEquals "Unsupported configuration type 'NUMBER'. Allowed types: [STRING, OBJECT]", e.message 
+        }
     }
 }

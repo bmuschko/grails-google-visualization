@@ -19,8 +19,9 @@ package org.grails.plugins.google.visualization.util
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-@Singleton
 final class DateUtil {
+    private DateUtil() {}
+  
     static createDate(year, month, day) {
         def calendar = new GregorianCalendar()
         calendar.set(year, month, day)

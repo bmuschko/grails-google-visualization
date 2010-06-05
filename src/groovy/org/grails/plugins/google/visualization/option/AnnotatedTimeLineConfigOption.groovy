@@ -14,38 +14,40 @@
  */
 package org.grails.plugins.google.visualization.option
 
+import org.grails.plugins.google.visualization.data.DataType
+
 /**
  * Annotated Time Line configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum AnnotatedTimeLineConfigOption {
-    ALLOW_HTML("allowHtml", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    ALLOW_REDRAW("allowRedraw", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    ALL_VALUES_SUFFIX("allValuesSuffix", [GoogleVisualizationConfigOptionType.STRING]),
-    ANNOTATATIONS_WIDTH("annotationsWidth", [GoogleVisualizationConfigOptionType.NUMBER]),
-    COLORS("colors", [GoogleVisualizationConfigOptionType.ARRAY]),
-    DATE_FORMAT("dateFormat", [GoogleVisualizationConfigOptionType.STRING]),
-    DISPLAY_ANNOTATIONS("displayAnnotations", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    DISPLAY_ANNOTATIONS_FILTER("displayAnnotationsFilter", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    DISPLAY_DATE_BAR_SEPARATOR("displayDateBarSeparator", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    DISPLAY_EXACT_VALUES("displayExactValues", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    DISPLAY_LEGEND_DOTS("displayLegendDots", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    DISPLAY_LEGEND_VALUES("displayLegendValues", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    DISPLAY_RANGE_SELECTOR("displayRangeSelector", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    DISPLAY_ZOOM_BUTTONS("displayZoomButtons", [GoogleVisualizationConfigOptionType.BOOLEAN]),
-    FILL("fill", [GoogleVisualizationConfigOptionType.NUMBER]),
-    HIGHLIGHT_DOT("highlightDot", [GoogleVisualizationConfigOptionType.STRING]),
-    LEGEND_POSITION("legendPosition", [GoogleVisualizationConfigOptionType.STRING]),
-    MAX("max", [GoogleVisualizationConfigOptionType.NUMBER]),
-    MIN("min", [GoogleVisualizationConfigOptionType.NUMBER]),
-    NUMBER_FORMATS("numberFormats", [GoogleVisualizationConfigOptionType.STRING, GoogleVisualizationConfigOptionType.MAP]),
-    SCALE_COLUMNS("scaleColumns", [GoogleVisualizationConfigOptionType.ARRAY]),
-    SCALE_TYPE("scaleType", [GoogleVisualizationConfigOptionType.STRING]),
-    THICKNESS("thickness", [GoogleVisualizationConfigOptionType.NUMBER]),
-    WMODE("wmode", [GoogleVisualizationConfigOptionType.STRING]),
-    ZOOM_END_TIME("zoomEndTime", [GoogleVisualizationConfigOptionType.DATE]),
-    ZOOM_START_TIME("zoomStartTime", [GoogleVisualizationConfigOptionType.DATE])
+    ALLOW_HTML("allowHtml", [DataType.BOOLEAN]),
+    ALLOW_REDRAW("allowRedraw", [DataType.BOOLEAN]),
+    ALL_VALUES_SUFFIX("allValuesSuffix", [DataType.STRING]),
+    ANNOTATATIONS_WIDTH("annotationsWidth", [DataType.NUMBER]),
+    COLORS("colors", [DataType.ARRAY]),
+    DATE_FORMAT("dateFormat", [DataType.STRING]),
+    DISPLAY_ANNOTATIONS("displayAnnotations", [DataType.BOOLEAN]),
+    DISPLAY_ANNOTATIONS_FILTER("displayAnnotationsFilter", [DataType.BOOLEAN]),
+    DISPLAY_DATE_BAR_SEPARATOR("displayDateBarSeparator", [DataType.BOOLEAN]),
+    DISPLAY_EXACT_VALUES("displayExactValues", [DataType.BOOLEAN]),
+    DISPLAY_LEGEND_DOTS("displayLegendDots", [DataType.BOOLEAN]),
+    DISPLAY_LEGEND_VALUES("displayLegendValues", [DataType.BOOLEAN]),
+    DISPLAY_RANGE_SELECTOR("displayRangeSelector", [DataType.BOOLEAN]),
+    DISPLAY_ZOOM_BUTTONS("displayZoomButtons", [DataType.BOOLEAN]),
+    FILL("fill", [DataType.NUMBER]),
+    HIGHLIGHT_DOT("highlightDot", [DataType.STRING]),
+    LEGEND_POSITION("legendPosition", [DataType.STRING]),
+    MAX("max", [DataType.NUMBER]),
+    MIN("min", [DataType.NUMBER]),
+    NUMBER_FORMATS("numberFormats", [DataType.STRING, DataType.MAP]),
+    SCALE_COLUMNS("scaleColumns", [DataType.ARRAY]),
+    SCALE_TYPE("scaleType", [DataType.STRING]),
+    THICKNESS("thickness", [DataType.NUMBER]),
+    WMODE("wmode", [DataType.STRING]),
+    ZOOM_END_TIME("zoomEndTime", [DataType.DATE]),
+    ZOOM_START_TIME("zoomStartTime", [DataType.DATE])
 
     static final Map configOptions
 

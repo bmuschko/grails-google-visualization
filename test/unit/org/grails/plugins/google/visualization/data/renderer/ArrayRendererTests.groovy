@@ -12,21 +12,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.grails.plugins.google.visualization.data
+package org.grails.plugins.google.visualization.data.renderer
+
+import grails.test.GrailsUnitTestCase
 
 /**
- * Cell input value
+ * Array data type renderer tests
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
- * @see <a href="http://code.google.com/apis/visualization/documentation/reference.html#cell_object">Google Cell Object</a>
  */
-class Cell {
-    def value
-    String label
-    Map customValues
+class ArrayRendererTests extends GrailsUnitTestCase {
+    void testRenderValue() {
+        assertEquals "['a', 1, true]", ArrayRenderer.instance.renderValue(['a', 1, true])
+    }
 
-    @Override
-    public String toString() {
-        "Cell{value='${value}', label='${label}', customValues='${customValues}'}"
+    void testRenderValueForObjectArray() {
+        assertEquals "[{color: '#FF0000', darker: '#680000'}, {color: 'cyan', darker: 'deepskyblue'}]", ArrayRenderer.instance.renderValue([new Expando(color:'#FF0000', darker:'#680000'), new Expando(color:'cyan', darker:'deepskyblue')])
     }
 }

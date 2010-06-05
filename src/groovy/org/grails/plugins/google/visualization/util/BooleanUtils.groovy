@@ -19,8 +19,9 @@ package org.grails.plugins.google.visualization.util
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-@Singleton
 final class BooleanUtils {
+    private BooleanUtils() {}
+
     static boolean isBoolean(value) {
         (value == 'true' || value == 'false') ? true : false
     }
