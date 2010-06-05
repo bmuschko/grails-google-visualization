@@ -16,6 +16,7 @@ package org.grails.plugins.google.visualization
 
 import grails.test.GrailsUnitTestCase
 import org.grails.plugins.google.visualization.util.DateUtil
+import org.grails.plugins.google.visualization.data.Cell
 
 /**
  * Google visualization builder tests
@@ -122,6 +123,21 @@ class GoogleVisualizationBuilderTests extends GrailsUnitTestCase {
         assertEquals 2, googleVisualizationBuilder.visualizationData.rows.size()
         assertEquals "[[1, 2, 3, 4], 11]", googleVisualizationBuilder.visualizationData.rows.get(0)
         assertEquals "[undefined, 2]", googleVisualizationBuilder.visualizationData.rows.get(1)
+    }
+
+    void testRenderCellValueForValueOnly() {
+        def renderedCellValue = googleVisualizationBuilder.renderCellValue(GoogleVisualizationColumnType.BOOLEAN.toString(), new Cell(value: true))
+        assertEquals "{v: true}", renderedCellValue
+    }
+
+    void testRenderCellValueForValueAndLabel() {
+        def renderedCellValue = googleVisualizationBuilder.renderCellValue(GoogleVisualizationColumnType.STRING.toString(), new Cell(value: 'bla', label: 'test'))
+        assertEquals "{v: 'bla', f: 'test'}", renderedCellValue
+    }
+
+    void testRenderCellValueForValueLabelAndCustomValues() {
+        def renderedCellValue = googleVisualizationBuilder.renderCellValue(GoogleVisualizationColumnType.NUMBER.toString(), new Cell(value: 1, label: 'hello', customValues: [style:'border: 1px solid green;']))
+        assertEquals "{v: 1, f: 'hello', p: {style: 'border: 1px solid green;'}}", renderedCellValue
     }
 
     void testBuildEvents() {

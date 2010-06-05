@@ -114,16 +114,16 @@ class GoogleVisualizationBuilder extends VisualizationBuilder {
     def renderParam(dataType, value) {
         def param
 
-        if(dataType == GoogleVisualizationColumnType.STRING.toString().toLowerCase()) {
+        if(dataType == GoogleVisualizationColumnType.STRING.toString()) {
             param = "'${value}'"
         }
-        else if(dataType == GoogleVisualizationColumnType.DATE.toString().toLowerCase()) {
+        else if(dataType == GoogleVisualizationColumnType.DATE.toString()) {
             param = DateUtil.createDateJavaScriptObject(value)
         }
-        else if(dataType == GoogleVisualizationColumnType.DATETIME.toString().toLowerCase()) {
+        else if(dataType == GoogleVisualizationColumnType.DATETIME.toString()) {
             param = DateUtil.createDateTimeJavaScriptObject(value)
         }
-        else if(dataType == GoogleVisualizationColumnType.TIMEOFDAY.toString().toLowerCase()) {
+        else if(dataType == GoogleVisualizationColumnType.TIMEOFDAY.toString()) {
             param = DateUtil.createTimeOfDayJavaScriptObject(value)
         }
         else {
@@ -153,7 +153,7 @@ class GoogleVisualizationBuilder extends VisualizationBuilder {
         }
 
         if(cell.customValues != null) {
-            cellProperties << "p: '${MapRenderer.instance.renderValue(cell.customValues)}'"
+            cellProperties << "p: ${MapRenderer.instance.renderValue(cell.customValues)}"
         }
 
         "{${StringUtils.join(cellProperties, ', ')}}"

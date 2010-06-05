@@ -21,4 +21,9 @@ package org.grails.plugins.google.visualization
  */
 enum GoogleVisualizationColumnType {
     STRING, NUMBER, BOOLEAN, DATE, DATETIME, TIMEOFDAY
+
+    @Override
+    String toString() {
+        name().toLowerCase()
+    }
 }

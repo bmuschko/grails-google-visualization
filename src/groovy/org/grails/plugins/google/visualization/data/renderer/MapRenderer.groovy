@@ -28,7 +28,7 @@ class MapRenderer implements DataTypeRenderer {
         def mapValues = []
 
         value.each { mapKey, mapValue ->
-            mapValues << "${DataTypeValueRenderer.instance.render(mapKey).value}: ${DataTypeValueRenderer.instance.render(mapValue).value}"
+            mapValues << "${mapKey}: ${DataTypeValueRenderer.instance.render(mapValue).value}"
         }
 
         "{${StringUtils.join(mapValues, ', ')}}"
