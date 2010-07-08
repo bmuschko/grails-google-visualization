@@ -30,6 +30,7 @@ class VisualizationDataDirector {
         visualizationBuilder.createNewVisualizationData(attrs, visualization)
         visualizationBuilder.buildName()
         visualizationBuilder.buildElementId()
+        visualizationBuilder.buildDynamicLoading()
         visualizationBuilder.buildLanguage()
         visualizationBuilder.buildOptions()
         visualizationBuilder.buildColumns()

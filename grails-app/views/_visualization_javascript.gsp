@@ -1,9 +1,11 @@
+<%@ page import="org.apache.commons.lang.StringUtils" %>
+<g:set var="functionName" value="draw${StringUtils.capitalize(visualizationData.name)}"/>
 <script type="text/javascript">
-    google.load('visualization', '1', {'packages': ['${visualizationData.visualization.packageName}']<g:if test="${visualizationData.language}">, 'language': '${visualizationData.language}'</g:if>});
-    google.setOnLoadCallback(drawVisualization);
+    google.load('visualization', '1', {'packages': ['${visualizationData.visualization.packageName}']<g:if test="${visualizationData.dynamicLoading}">, 'callback': ${functionName}</g:if><g:if test="${visualizationData.language}">, 'language': '${visualizationData.language}'</g:if>});
+    <g:if test="${!visualizationData.dynamicLoading}">google.setOnLoadCallback(${functionName});</g:if>
     var ${visualizationData.name};
 
-    function drawVisualization() {
+    function ${functionName}() {
         var data = new google.visualization.DataTable();
         <g:each var="column" in="${visualizationData.columns}">
         data.addColumn('${column[0]}', '${column[1]}');

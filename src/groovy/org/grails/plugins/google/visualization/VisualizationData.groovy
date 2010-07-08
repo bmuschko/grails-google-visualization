@@ -23,6 +23,7 @@ class VisualizationData {
     final visualization
     def name
     def elementId
+    def dynamicLoading
     def language
     def options
     def columns

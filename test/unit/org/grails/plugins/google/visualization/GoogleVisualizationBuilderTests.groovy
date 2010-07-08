@@ -59,6 +59,21 @@ class GoogleVisualizationBuilderTests extends GrailsUnitTestCase {
         assertEquals 'someElementId', googleVisualizationBuilder.buildElementId()
     }
 
+    void testBuildDynamicLoadingForValueTrue() {
+        googleVisualizationBuilder.createNewVisualizationData(['dynamicLoading': true], GoogleVisualization.PIE_CHART)
+        assertTrue googleVisualizationBuilder.buildDynamicLoading()
+    }
+
+    void testBuildDynamicLoadingForValueFalse() {
+        googleVisualizationBuilder.createNewVisualizationData(['dynamicLoading': false], GoogleVisualization.PIE_CHART)
+        assertFalse googleVisualizationBuilder.buildDynamicLoading()
+    }
+
+    void testBuildDynamicLoadingForNoSetValue() {
+        googleVisualizationBuilder.createNewVisualizationData([], GoogleVisualization.PIE_CHART)
+        assertFalse googleVisualizationBuilder.buildDynamicLoading()
+    }
+
     void testBuildLanguageForSetLanguage() {
         googleVisualizationBuilder.createNewVisualizationData(['language':'fr'], GoogleVisualization.PIE_CHART)
         assertEquals 'fr', googleVisualizationBuilder.buildLanguage()

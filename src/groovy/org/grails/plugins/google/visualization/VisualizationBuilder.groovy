@@ -30,6 +30,7 @@ abstract class VisualizationBuilder {
 
     abstract buildName()
     abstract buildElementId()
+    abstract buildDynamicLoading()
     abstract buildLanguage()
     abstract buildOptions()
     abstract buildColumns()

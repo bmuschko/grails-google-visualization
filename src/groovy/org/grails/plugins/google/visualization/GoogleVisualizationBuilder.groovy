@@ -40,6 +40,11 @@ class GoogleVisualizationBuilder extends VisualizationBuilder {
     }
 
     @Override
+    def buildDynamicLoading() {
+        visualizationData.dynamicLoading = attrs.dynamicLoading ? attrs.dynamicLoading : false
+    }
+
+    @Override
     def buildLanguage() {
         if(attrs.language) {
             visualizationData.language = attrs.language 
