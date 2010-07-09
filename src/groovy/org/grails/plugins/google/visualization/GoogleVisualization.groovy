@@ -19,11 +19,7 @@ import org.apache.commons.logging.LogFactory
 import org.grails.plugins.google.visualization.event.*
 import org.grails.plugins.google.visualization.option.*
 import org.grails.plugins.google.visualization.option.core.*
-import org.grails.plugins.google.visualization.option.image.ImageAreaChartConfigOption
-import org.grails.plugins.google.visualization.option.image.ImageBarChartConfigOption
-import org.grails.plugins.google.visualization.option.image.ImageLineChartConfigOption
-import org.grails.plugins.google.visualization.option.image.ImagePieChartConfigOption
-import org.grails.plugins.google.visualization.option.image.ImageSparkLineConfigOption
+import org.grails.plugins.google.visualization.option.image.*
 
 /**
  * Google visualizations
@@ -51,7 +47,7 @@ enum GoogleVisualization {
     AREA_CORE_CHART('corechart', 'google.visualization.AreaChart', AreaCoreChartConfigOption.configOptions, DefaultEvent.events),
     LINE_CORE_CHART('corechart', 'google.visualization.LineChart', LineCoreChartConfigOption.configOptions, DefaultEvent.events),
     SCATTER_CORE_CHART('corechart', 'google.visualization.ScatterChart', ScatterCoreChartConfigOption.configOptions, DefaultEvent.events),
-    TREE_MAP('treemap', 'google.visualization.TreeMap', TreeMapConfigOption.configOptions, TreeMapEvent.events),
+    TREE_MAP('treemap', 'google.visualization.TreeMap', TreeMapConfigOption.configOptions, DefaultEvent.events),
     IMAGE_AREA_CHART('imageareachart', 'google.visualization.ImageAreaChart', ImageAreaChartConfigOption.configOptions, GenericImageChartEvent.events),
     IMAGE_BAR_CHART('imagebarchart', 'google.visualization.ImageBarChart', ImageBarChartConfigOption.configOptions, GenericImageChartEvent.events),
     IMAGE_LINE_CHART('imagelinechart', 'google.visualization.ImageLineChart', ImageLineChartConfigOption.configOptions, GenericImageChartEvent.events),
