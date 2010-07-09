@@ -8,8 +8,6 @@ This is a plugin for Google Visualization API.
   <documentation>http://www.grails.org/plugin/google-visualization</documentation>
   <resources>
     <resource>UrlMappings</resource>
-    <resource>org.grails.plugins.google.visualization.DeprecatedController</resource>
-    <resource>org.grails.plugins.google.visualization.FormatterController</resource>
     <resource>org.grails.plugins.google.visualization.GoogleVisualizationTagLib</resource>
   </resources>
   <dependencies />
