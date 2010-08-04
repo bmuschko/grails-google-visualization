@@ -14,6 +14,7 @@
  */
 package org.grails.plugins.google.visualization
 
+import org.apache.commons.lang.StringEscapeUtils
 import org.apache.commons.lang.StringUtils
 import org.grails.plugins.google.visualization.data.Cell
 import org.grails.plugins.google.visualization.data.renderer.MapRenderer
@@ -120,7 +121,7 @@ class GoogleVisualizationBuilder extends VisualizationBuilder {
         def param
 
         if(dataType == GoogleVisualizationColumnType.STRING.toString()) {
-            param = "'${value}'"
+            param = "'${StringEscapeUtils.escapeJavaScript(value)}'"
         }
         else if(dataType == GoogleVisualizationColumnType.DATE.toString()) {
             param = DateUtil.createDateJavaScriptObject(value)
@@ -154,7 +155,7 @@ class GoogleVisualizationBuilder extends VisualizationBuilder {
         }
 
         if(cell.label != null) {
-            cellProperties << "f: '${cell.label}'"
+            cellProperties << "f: '${StringEscapeUtils.escapeJavaScript(cell.label)}'"
         }
 
         if(cell.customValues != null) {
