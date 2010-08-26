@@ -25,15 +25,18 @@ enum PieCoreChartConfigOption {
     BACKGROUND_COLOR("backgroundColor", [DataType.STRING]),
     COLORS("colors", [DataType.ARRAY]),
     FONT_SIZE("fontSize", [DataType.NUMBER]),
+    FONT_NAME("fontName", [DataType.STRING]),
     HEIGHT("height", [DataType.NUMBER]),
+    IS_3D("is3D", [DataType.BOOLEAN]),
     LEGEND("legend", [DataType.STRING]),
-    LEGEND_FONT_SIZE("legendFontSize", [DataType.NUMBER]),
-    LEGEND_TEXT_COLOR("legendTextColor", [DataType.STRING]),
+    LEGEND_TEXT_STYLE("legendTextStyle", [DataType.OBJECT]),
+    PIE_SLICE_TEXT("pieSliceText", [DataType.STRING]),
+    PIE_SLICE_TEXT_STYLE("pieSliceTextStyle", [DataType.OBJECT]),
     REVERSE_CATEGORIES("reverseCategories", [DataType.BOOLEAN]),
+    SLICE_VISIBILITY_THRESHOLD("sliceVisibilityThreshold", [DataType.NUMBER]),
     TITLE("title", [DataType.STRING]),
-    TITLE_COLOR("titleColor", [DataType.STRING]),
-    TITLE_FONT_SIZE("titleFontSize", [DataType.NUMBER]),
-    TOOLTIP_FONT_SIZE("tooltipFontSize", [DataType.NUMBER]),
+    TITLE_TEXT_STYLE("titleTextStyle", [DataType.OBJECT]),
+    TOOLTIP_TEXT_STYLE("tooltipTextStyle", [DataType.OBJECT]),
     WIDTH("width", [DataType.NUMBER])
 
     static final Map configOptions
