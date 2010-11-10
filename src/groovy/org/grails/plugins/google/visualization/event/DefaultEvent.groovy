@@ -44,6 +44,6 @@ enum DefaultEvent {
 
     @Override
     public String toString() {
-        "AreaChartEvent{name='${name}'}"
+        "DefaultEvent{name='${name}'}"
     }
 }

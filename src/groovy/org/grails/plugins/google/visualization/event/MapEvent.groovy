@@ -23,7 +23,7 @@ import org.apache.commons.logging.Log
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum MapEvent {
-    SELECT('select')
+    ERROR('error'), SELECT('select')
 
     static final Log log = LogFactory.getLog(MapEvent)
     static final Map events

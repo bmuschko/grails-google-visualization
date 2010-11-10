@@ -22,7 +22,8 @@ import org.grails.plugins.google.visualization.data.DataType
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum PieCoreChartConfigOption {
-    BACKGROUND_COLOR("backgroundColor", [DataType.STRING]),
+    BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT]),
+    CHART_AREA("chartArea", [DataType.OBJECT]),
     COLORS("colors", [DataType.ARRAY]),
     FONT_SIZE("fontSize", [DataType.NUMBER]),
     FONT_NAME("fontName", [DataType.STRING]),
@@ -34,6 +35,7 @@ enum PieCoreChartConfigOption {
     PIE_SLICE_TEXT_STYLE("pieSliceTextStyle", [DataType.OBJECT]),
     REVERSE_CATEGORIES("reverseCategories", [DataType.BOOLEAN]),
     SLICE_VISIBILITY_THRESHOLD("sliceVisibilityThreshold", [DataType.NUMBER]),
+    PIE_RESIDUE_SLICE_LABEL("pieResidueSliceLabel", [DataType.STRING]),
     TITLE("title", [DataType.STRING]),
     TITLE_TEXT_STYLE("titleTextStyle", [DataType.OBJECT]),
     TOOLTIP_TEXT_STYLE("tooltipTextStyle", [DataType.OBJECT]),

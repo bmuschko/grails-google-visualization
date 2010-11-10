@@ -22,7 +22,9 @@ import org.grails.plugins.google.visualization.data.DataType
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum LineCoreChartConfigOption {
-    BACKGROUND_COLOR("backgroundColor", [DataType.STRING]),
+    AXIS_TITLES_POSITION("axisTitlesPosition", [DataType.STRING]),
+    BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT]),
+    CHART_AREA("chartArea", [DataType.OBJECT]),
     COLORS("colors", [DataType.ARRAY]),
     CURVE_TYPE("curveType", [DataType.STRING]),
     FONT_SIZE("fontSize", [DataType.NUMBER]),
@@ -35,6 +37,7 @@ enum LineCoreChartConfigOption {
     POINT_SIZE("pointSize", [DataType.NUMBER]),
     REVERSE_CATEGORIES("reverseCategories", [DataType.BOOLEAN]),
     TITLE("title", [DataType.STRING]),
+    TITLE_POSITION("titlePosition", [DataType.STRING]),
     TITLE_TEXT_STYLE("titleTextStyle", [DataType.OBJECT]),
     TOOLTIP_TEXT_STYLE("tooltipTextStyle", [DataType.OBJECT]),
     V_AXIS("vAxis", [DataType.OBJECT]),

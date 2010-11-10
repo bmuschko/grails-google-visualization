@@ -14,14 +14,18 @@
  */
 package org.grails.plugins.google.visualization.event
 
+import org.apache.commons.logging.LogFactory
+import org.apache.commons.logging.Log
+
 /**
- * Available events for Generic Image Charts
+ * Available events for most of the visualizations
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-enum GenericImageChartEvent {
-    ERROR('error'), ONMOUSEOVER('onmouseover'), ONMOUSEOUT('onmouseout'), ONCLICK('onclick')
+enum ErrorAwareDefaultEvent {
+    ERROR('error'), ONMOUSEOVER('onmouseover'), ONMOUSEOUT('onmouseout'), READY('ready'), SELECT('select')
 
+    static final Log log = LogFactory.getLog(DefaultEvent)
     static final Map events
 
     static {
@@ -34,12 +38,12 @@ enum GenericImageChartEvent {
 
     private final name
 
-    GenericImageChartEvent(name) {
+    ErrorAwareDefaultEvent(name) {
         this.name = name
     }
 
     @Override
     public String toString() {
-        "GenericImageChartEvent{name='${name}'}"
+        "ErrorAwareDefaultEvent{name='${name}'}"
     }
 }

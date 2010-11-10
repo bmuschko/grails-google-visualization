@@ -23,7 +23,7 @@ import org.apache.commons.logging.Log
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum MotionChartEvent {
-    READY('ready'), STATECHANGE('statechange')
+    ERROR('error'), READY('ready'), STATECHANGE('statechange')
 
     static final Log log = LogFactory.getLog(MotionChartEvent)
     static final Map events

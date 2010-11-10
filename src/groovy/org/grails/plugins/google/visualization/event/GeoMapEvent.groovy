@@ -23,7 +23,7 @@ import org.apache.commons.logging.Log
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum GeoMapEvent {
-    SELECT('select'), REGIONCLICK('regionClick'), ZOOMOUT('zoomOut'), DRAWINGDONE('drawingDone')
+    ERROR('error'), SELECT('select'), REGIONCLICK('regionClick'), ZOOMOUT('zoomOut'), DRAWINGDONE('drawingDone')
 
     static final Log log = LogFactory.getLog(GeoMapEvent)
     static final Map events
