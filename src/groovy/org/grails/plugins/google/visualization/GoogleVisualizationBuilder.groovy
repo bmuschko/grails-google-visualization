@@ -16,6 +16,8 @@ package org.grails.plugins.google.visualization
 
 import org.apache.commons.lang.StringEscapeUtils
 import org.apache.commons.lang.StringUtils
+import org.apache.commons.logging.Log
+import org.apache.commons.logging.LogFactory
 import org.grails.plugins.google.visualization.data.Cell
 import org.grails.plugins.google.visualization.data.renderer.MapRenderer
 import org.grails.plugins.google.visualization.util.ConfigOptionRendererUtil
@@ -28,6 +30,7 @@ import org.grails.plugins.google.visualization.util.DateUtil
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 class GoogleVisualizationBuilder extends VisualizationBuilder {
+    static final Log log = LogFactory.getLog(GoogleVisualizationBuilder)
     final DEFAULT_NAME = 'visualization'
 
     @Override
@@ -121,7 +124,14 @@ class GoogleVisualizationBuilder extends VisualizationBuilder {
         def param
 
         if(dataType == GoogleVisualizationColumnType.STRING.toString()) {
-            param = "'${StringEscapeUtils.escapeJavaScript(value)}'"
+            if(value instanceof String) {
+                value = StringEscapeUtils.escapeJavaScript(value)
+            }
+            else {
+                log.warn "You are assigning a value to the data type 'string' that actually isn't of type String: ${value}"
+            }
+
+            param = "'${value}'"
         }
         else if(dataType == GoogleVisualizationColumnType.DATE.toString()) {
             param = DateUtil.createDateJavaScriptObject(value)

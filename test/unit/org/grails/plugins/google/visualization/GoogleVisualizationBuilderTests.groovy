@@ -140,14 +140,59 @@ class GoogleVisualizationBuilderTests extends GrailsUnitTestCase {
         assertEquals "[undefined, 2]", googleVisualizationBuilder.visualizationData.rows.get(1)
     }
 
+    void testRenderParamForStringDataTypeWithStringValue() {
+        def renderedParam = googleVisualizationBuilder.renderParam('string', "test ' 12")
+        assertEquals "'test \\' 12'", renderedParam
+    }
+
+    void testRenderParamForStringDataTypeWithIntegerValue() {
+        def renderedParam = googleVisualizationBuilder.renderParam('string', 1)
+        assertEquals "'1'", renderedParam
+    }
+
+    void testRenderParamForStringDataTypeWithFloatValue() {
+        def renderedParam = googleVisualizationBuilder.renderParam('string', 1.1f)
+        assertEquals "'1.1'", renderedParam
+    }
+
+    void testRenderParamForNumberDataTypeWithIntegerValue() {
+        def renderedParam = googleVisualizationBuilder.renderParam('number', 11)
+        assertEquals 11, renderedParam
+    }
+
+    void testRenderParamForBooleanDataTypeWithBooleanValue() {
+        def renderedParam = googleVisualizationBuilder.renderParam('boolean', true)
+        assertEquals true, renderedParam
+    }
+
+    void testRenderParamForDateDataTypeWithDateValue() {
+        def renderedParam = googleVisualizationBuilder.renderParam('date', DateUtil.createDate(2008, Calendar.MARCH, 1, 1, 2, 3, 4))
+        assertEquals "new Date(2008, 2, 1)", renderedParam
+    }
+
+    void testRenderParamForDateTimeDataTypeWithDateValue() {
+        def renderedParam = googleVisualizationBuilder.renderParam('datetime', DateUtil.createDate(2008, Calendar.MARCH, 1, 1, 2, 3, 4))
+        assertEquals "new Date(2008, 2, 1, 1, 2, 3, 4)", renderedParam
+    }
+
+    void testRenderParamForTimeOfDayDataTypeWithDateValue() {
+        def renderedParam = googleVisualizationBuilder.renderParam('timeofday', DateUtil.createDate(2008, Calendar.MARCH, 1, 1, 2, 3, 4))
+        assertEquals "[1, 2, 3, 4]", renderedParam
+    }
+
     void testRenderCellValueForValueOnly() {
         def renderedCellValue = googleVisualizationBuilder.renderCellValue(GoogleVisualizationColumnType.BOOLEAN.toString(), new Cell(value: true))
         assertEquals "{v: true}", renderedCellValue
     }
 
-    void testRenderCellValueForValueAndLabel() {
+    void testRenderCellValueForValueAndLabelOfTypeString() {
         def renderedCellValue = googleVisualizationBuilder.renderCellValue(GoogleVisualizationColumnType.STRING.toString(), new Cell(value: 'bla', label: 'test'))
         assertEquals "{v: 'bla', f: 'test'}", renderedCellValue
+    }
+
+    void testRenderCellValueForValueAndLabelOfTypeInteger() {
+        def renderedCellValue = googleVisualizationBuilder.renderCellValue(GoogleVisualizationColumnType.STRING.toString(), new Cell(value: 'bla', label: 123))
+        assertEquals "{v: 'bla', f: '123'}", renderedCellValue
     }
 
     void testRenderCellValueForValueLabelAndCustomValues() {
