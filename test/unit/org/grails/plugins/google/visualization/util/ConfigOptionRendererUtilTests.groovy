@@ -16,7 +16,7 @@ package org.grails.plugins.google.visualization.util
 
 import grails.test.GrailsUnitTestCase
 import org.grails.plugins.google.visualization.data.DataType
-import org.grails.plugins.google.visualization.option.PieChartConfigOption
+import org.grails.plugins.google.visualization.option.deprecated.PieChartConfigOption
 
 /**
  * Configuration option renderer utility tests

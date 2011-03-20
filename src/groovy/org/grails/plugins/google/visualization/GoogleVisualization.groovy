@@ -19,6 +19,7 @@ import org.apache.commons.logging.LogFactory
 import org.grails.plugins.google.visualization.event.*
 import org.grails.plugins.google.visualization.option.*
 import org.grails.plugins.google.visualization.option.core.*
+import org.grails.plugins.google.visualization.option.deprecated.*
 import org.grails.plugins.google.visualization.option.image.*
 
 /**

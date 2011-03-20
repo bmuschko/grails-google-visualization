@@ -12,16 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.grails.plugins.google.visualization.option
+package org.grails.plugins.google.visualization.option.deprecated
 
 import org.grails.plugins.google.visualization.data.DataType
 
 /**
- * Bar Chart configuration options
+ * Line Chart configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-enum BarChartConfigOption {
+enum LineChartConfigOption {
     AXIS_COLOR("axisColor", [DataType.STRING, DataType.OBJECT]),
     AXIS_BACKGROUND_COLOR("axisBackgroundColor", [DataType.STRING, DataType.OBJECT]),
     AXIS_FONT_SIZE("axisFontSize", [DataType.NUMBER]),
@@ -31,17 +31,18 @@ enum BarChartConfigOption {
     ENABLE_TOOLTIP("enableTooltip", [DataType.BOOLEAN]),
     FOCUS_BORDER_COLOR("focusBorderColor", [DataType.STRING, DataType.OBJECT]),
     HEIGHT("height", [DataType.NUMBER]),
-    IS_3D("is3D", [DataType.BOOLEAN]),
-    IS_STACKED("isStacked", [DataType.BOOLEAN]),
     LEGEND("legend", [DataType.STRING]),
     LEGEND_BACKGROUND_COLOR("legendBackgroundColor", [DataType.STRING, DataType.OBJECT]),
     LEGEND_FONT_SIZE("legendFontSize", [DataType.NUMBER]),
     LEGEND_TEXT_COLOR("legendTextColor", [DataType.STRING, DataType.OBJECT]),
+    LINE_SIZE("lineSize", [DataType.NUMBER]),
     LOG_SCALE("logScale", [DataType.BOOLEAN]),
     MAX("max", [DataType.NUMBER]),
     MIN("min", [DataType.NUMBER]),
+    POINT_SIZE("pointSize", [DataType.NUMBER]),
     REVERSE_AXIS("reverseAxis", [DataType.BOOLEAN]),
     SHOW_CATEGORIES("showCategories", [DataType.BOOLEAN]),
+    SMOOTH_LINE("smoothLine", [DataType.BOOLEAN]),
     TITLE("title", [DataType.STRING]),
     TITLE_X("titleX", [DataType.STRING]),
     TITLE_Y("titleY", [DataType.STRING]),
@@ -65,13 +66,13 @@ enum BarChartConfigOption {
     private final name
     private final types
 
-    BarChartConfigOption(name, types) {
+    LineChartConfigOption(name, types) {
         this.name = name
         this.types = types
     }
 
     @Override
     public String toString() {
-        "BarChartConfigOption{name='${name}', types='${types}'}"
+        "LineChartConfigOption{name='${name}', types='${types}'}"
     }
 }
