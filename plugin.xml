@@ -10,6 +10,10 @@ This is a plugin for Google Visualization API.
     <resource>UrlMappings</resource>
     <resource>org.grails.plugins.google.visualization.GoogleVisualizationTagLib</resource>
   </resources>
-  <dependencies />
+  <dependencies>
+    <resolvers>
+      <resolver type='grailsPlugins' name='grailsPlugins' />
+    </resolvers>
+  </dependencies>
   <behavior />
 </plugin>
