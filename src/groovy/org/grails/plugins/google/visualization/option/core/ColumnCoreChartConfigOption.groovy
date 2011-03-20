@@ -28,6 +28,7 @@ enum ColumnCoreChartConfigOption {
     COLORS("colors", [DataType.ARRAY]),
     FONT_SIZE("fontSize", [DataType.NUMBER]),
     FONT_NAME("fontName", [DataType.STRING]),
+    GRIDLINE_COLOR("gridlineColor", [DataType.STRING]),
     H_AXIS("hAxis", [DataType.OBJECT]),
     HEIGHT("height", [DataType.NUMBER]),
     IS_STACKED("isStacked", [DataType.BOOLEAN]),

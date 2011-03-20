@@ -35,6 +35,7 @@ enum PieCoreChartConfigOption {
     PIE_SLICE_TEXT_STYLE("pieSliceTextStyle", [DataType.OBJECT]),
     REVERSE_CATEGORIES("reverseCategories", [DataType.BOOLEAN]),
     SLICE_VISIBILITY_THRESHOLD("sliceVisibilityThreshold", [DataType.NUMBER]),
+    PIE_RESIDUE_SLICE_COLOR("pieResidueSliceColor", [DataType.STRING]),
     PIE_RESIDUE_SLICE_LABEL("pieResidueSliceLabel", [DataType.STRING]),
     TITLE("title", [DataType.STRING]),
     TITLE_TEXT_STYLE("titleTextStyle", [DataType.OBJECT]),

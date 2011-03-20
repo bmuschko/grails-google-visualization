@@ -29,6 +29,7 @@ enum ScatterCoreChartConfigOption {
     CURVE_TYPE("curveType", [DataType.STRING]),
     FONT_SIZE("fontSize", [DataType.NUMBER]),
     FONT_NAME("fontName", [DataType.STRING]),
+    GRIDLINE_COLOR("gridlineColor", [DataType.STRING]),
     H_AXIS("hAxis", [DataType.OBJECT]),
     HEIGHT("height", [DataType.NUMBER]),
     LEGEND("legend", [DataType.STRING]),
