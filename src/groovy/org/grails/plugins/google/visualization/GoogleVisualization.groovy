@@ -53,7 +53,8 @@ enum GoogleVisualization {
     IMAGE_BAR_CHART('imagebarchart', 'google.visualization.ImageBarChart', ImageBarChartConfigOption.configOptions, GenericImageChartEvent.events),
     IMAGE_LINE_CHART('imagelinechart', 'google.visualization.ImageLineChart', ImageLineChartConfigOption.configOptions, GenericImageChartEvent.events),
     IMAGE_PIE_CHART('imagepiechart', 'google.visualization.ImagePieChart', ImagePieChartConfigOption.configOptions, GenericImageChartEvent.events),
-    IMAGE_SPARK_LINE('imagesparkline', 'google.visualization.ImageSparkLine', ImageSparkLineConfigOption.configOptions, ImageSparkLineEvent.events)
+    IMAGE_SPARK_LINE('imagesparkline', 'google.visualization.ImageSparkLine', ImageSparkLineConfigOption.configOptions, ImageSparkLineEvent.events),
+    IMAGE_CANDLESTICK_CHART('imagechart', 'google.visualization.ImageCandlestickChart', GenericImageChartConfigOption.configOptions.plus(ImageCandlestickChartConfigOption.configOptions), GenericImageChartEvent.events)
 
     static final Log log = LogFactory.getLog(GoogleVisualization)
     static final Map googleVisualizations

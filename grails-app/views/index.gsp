@@ -17,6 +17,8 @@
           def weightByAgeData = [[8, 12], [4, 5.5], [11, 14], [4, 5], [3, 3.5], [6.5, 7]]
           def revenueAndLicensesColumns = [['number', 'Revenue'], ['number', 'Licenses']]
           def revenueAndLicensesData = [[435, 132], [438, 131], [512, 137], [460, 142], [491, 140], [487, 139], [552, 147], [511, 146], [505, 151], [509, 149]]
+          def gainersLoserColumns = [['number', ''], ['number', 'Gainers'], ['number', 'Losers'], ['number', '']]
+          def gainersLoserData = [[-1, -1, -1, -1], [10, 30, 45, 60], [20, 35, 25, 45], [-1, -1, -1, -1]]
           def systemPerformanceColumns = [['string', 'Label'], ['number', 'Value']]
           def systemPerformanceData = [['Memory', 80], ['CPU', 55], ['Network', 68]]
           def employeeColumns = [['string', 'Name'], ['string', 'Salary'], ['boolean', 'Full Time Employee']]
@@ -53,6 +55,7 @@
        <gvisualization:imageLineChart elementId="imagelinechart" width="${400}" height="${240}" min="${0}" columns="${companyPerformanceColumns}" data="${companyPerformanceData}" />
        <gvisualization:scatterCoreChart elementId="scatterchart" width="${400}" height="${240}" title="Age vs. Weight comparison" hAxis="${new Expando(title: 'Age', minValue: 0, maxValue: 15)}" vAxis="${new Expando(title: 'Weight', minValue: 0, maxValue: 15)}" legend="none" columns="${weightByAgeColumns}" data="${weightByAgeData}" />
        <gvisualization:imageSparkLine elementId="imagesparkline" width="${120}" height="${40}" showAxisLines="${false}" showValueLabels="${false}" labelPosition="left" columns="${revenueAndLicensesColumns}" data="${revenueAndLicensesData}" />
+       <gvisualization:imageCandlestickChart elementId="imagecandlestickchart" columns="${gainersLoserColumns}" data="${gainersLoserData}" />
        <gvisualization:gauge elementId="gauge" width="${400}" height="${120}" redFrom="${90}" redTo="${100}" yellowFrom="${75}" yellowTo="${90}" minorTicks="${5}" columns="${systemPerformanceColumns}" data="${systemPerformanceData}" />
        <gvisualization:table elementId="table" width="${400}" height="${130}" columns="${employeeColumns}" data="${employeeData}" select="selectHandler" />
        <gvisualization:map elementId="map" columns="${mapColumns}" data="${mapData}" />
@@ -149,6 +152,14 @@
              </td>
              <td>
                 <div id="imagesparkline"></div>
+             </td>
+          </tr>
+          <tr>
+             <td>
+                <a href="http://code.google.com/apis/visualization/documentation/gallery/imagecandlestickchart.html">Candlestick Chart (Image)</a>
+             </td>
+             <td>
+                <div id="imagecandlestickchart" style="width: 300px; height: 300px;"></div>
              </td>
           </tr>
           <tr>

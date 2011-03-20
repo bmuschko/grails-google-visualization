@@ -129,6 +129,10 @@ class GoogleVisualizationTagLib {
         validateAndRender(attrs, GoogleVisualization.IMAGE_SPARK_LINE)
     }
 
+    def imageCandlestickChart = { attrs, body ->
+        validateAndRender(attrs, GoogleVisualization.IMAGE_CANDLESTICK_CHART)
+    }
+
     private validateAndRender(attrs, googleVisualization) {
         validateAttributes(attrs, googleVisualization)
         renderVisualization(attrs, googleVisualization)
