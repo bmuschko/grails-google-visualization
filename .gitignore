@@ -1,0 +1,7 @@
+out
+target
+stacktrace.log
+*.iml
+*.ipr
+*.iws
+.idea
