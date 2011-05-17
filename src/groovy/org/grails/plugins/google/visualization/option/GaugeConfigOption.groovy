@@ -22,6 +22,7 @@ import org.grails.plugins.google.visualization.data.DataType
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum GaugeConfigOption {
+    GREEN_COLOR("greenColor", [DataType.STRING]),
     GREEN_FROM("greenFrom", [DataType.NUMBER]),
     GREEN_TO("greenTo", [DataType.NUMBER]),
     HEIGHT("height", [DataType.NUMBER]),
@@ -29,9 +30,11 @@ enum GaugeConfigOption {
     MAX("max", [DataType.NUMBER]),
     MIN("min", [DataType.NUMBER]),
     MINOR_TICKS("minorTicks", [DataType.NUMBER]),
+    RED_COLOR("redColor", [DataType.STRING]),
     RED_FROM("redFrom", [DataType.NUMBER]),
     RED_TO("redTo", [DataType.NUMBER]),
     WIDTH("width", [DataType.NUMBER]),
+    YELLOW_COLOR("yellowColor", [DataType.STRING]),
     YELLOW_FROM("yellowFrom", [DataType.NUMBER]),
     YELLOW_TO("yellowTo", [DataType.NUMBER])
 
