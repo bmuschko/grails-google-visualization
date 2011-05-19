@@ -15,6 +15,8 @@
           def yearlyExpensesData = [['2004', 1000, 900], ['2005', 1170, 1000], ['2006', 660, 660], ['2007', 1030, 1000]]
           def weightByAgeColumns = [['number', 'Age'], ['number', 'Weight']]
           def weightByAgeData = [[8, 12], [4, 5.5], [11, 14], [4, 5], [3, 3.5], [6.5, 7]]
+          def countByDayColumns = [['string', 'Day'], ['number', ''], ['number', ''], ['number', ''], ['number', '']]
+          def countByDayData = [['Mon', 20, 28, 38, 45], ['Tues', 31, 38, 55, 66], ['Wed', 50, 55, 77, 80], ['Thurs', 50, 77, 66, 77], ['Fri', 15, 66, 22, 68]]
           def revenueAndLicensesColumns = [['number', 'Revenue'], ['number', 'Licenses']]
           def revenueAndLicensesData = [[435, 132], [438, 131], [512, 137], [460, 142], [491, 140], [487, 139], [552, 147], [511, 146], [505, 151], [509, 149]]
           def gainersLoserColumns = [['string', 'Name'], ['number', ''], ['number', ''], ['number', ''], ['number', '']]
@@ -54,6 +56,7 @@
        <gvisualization:lineCoreChart elementId="linechart" width="${400}" height="${240}" title="Company Performance" columns="${companyPerformanceColumns}" data="${companyPerformanceData}" />
        <gvisualization:imageLineChart elementId="imagelinechart" width="${400}" height="${240}" min="${0}" columns="${companyPerformanceColumns}" data="${companyPerformanceData}" />
        <gvisualization:scatterCoreChart elementId="scatterchart" width="${400}" height="${240}" title="Age vs. Weight comparison" hAxis="${new Expando(title: 'Age', minValue: 0, maxValue: 15)}" vAxis="${new Expando(title: 'Weight', minValue: 0, maxValue: 15)}" legend="none" columns="${weightByAgeColumns}" data="${weightByAgeData}" />
+       <gvisualization:candlestickCoreChart elementId="candlestickchart" legend="none" columns="${countByDayColumns}" data="${countByDayData}" />
        <gvisualization:imageSparkLine elementId="imagesparkline" width="${120}" height="${40}" showAxisLines="${false}" showValueLabels="${false}" labelPosition="left" columns="${revenueAndLicensesColumns}" data="${revenueAndLicensesData}" />
        <gvisualization:imageCandlestickChart elementId="imagecandlestickchart" columns="${gainersLoserColumns}" data="${gainersLoserData}" />
        <gvisualization:gauge elementId="gauge" width="${400}" height="${120}" redFrom="${90}" redTo="${100}" yellowFrom="${75}" yellowTo="${90}" minorTicks="${5}" columns="${systemPerformanceColumns}" data="${systemPerformanceData}" />
@@ -157,10 +160,18 @@
           </tr>
           <tr>
              <td>
+                <a href="http://code.google.com/apis/chart/interactive/docs/gallery/candlestickchart.html">Candlestick Chart</a>
+             </td>
+             <td>
+                <div id="candlestickchart" style="width: 300px; height: 300px;"></div>
+             </td>
+          </tr>
+          <tr>
+             <td>
                 <a href="http://code.google.com/apis/visualization/documentation/gallery/imagecandlestickchart.html">Candlestick Chart (Image)</a>
              </td>
              <td>
-                <div id="imagecandlestickchart" style="width: 300px; height: 300px;"></div>
+                <div id="imagecandlestickchart" style='width: 300px; height: 300px;'></div>
              </td>
           </tr>
           <tr>

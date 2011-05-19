@@ -49,6 +49,7 @@ enum GoogleVisualization {
     AREA_CORE_CHART('corechart', 'google.visualization.AreaChart', AreaCoreChartConfigOption.configOptions, ErrorAwareDefaultEvent.events),
     LINE_CORE_CHART('corechart', 'google.visualization.LineChart', LineCoreChartConfigOption.configOptions, DefaultEvent.events),
     SCATTER_CORE_CHART('corechart', 'google.visualization.ScatterChart', ScatterCoreChartConfigOption.configOptions, DefaultEvent.events),
+    CANDLESTICK_CORE_CHART('corechart', 'google.visualization.CandlestickChart', CandlestickCoreChartConfigOption.configOptions, DefaultEvent.events),
     TREE_MAP('treemap', 'google.visualization.TreeMap', TreeMapConfigOption.configOptions, TreeMapEvent.events),
     IMAGE_AREA_CHART('imageareachart', 'google.visualization.ImageAreaChart', ImageAreaChartConfigOption.configOptions, GenericImageChartEvent.events),
     IMAGE_BAR_CHART('imagebarchart', 'google.visualization.ImageBarChart', ImageBarChartConfigOption.configOptions, GenericImageChartEvent.events),

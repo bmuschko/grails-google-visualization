@@ -23,7 +23,7 @@ import org.apache.commons.logging.Log
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum DefaultEvent {
-    ONMOUSEOVER('onmouseover'), ONMOUSEOUT('onmouseout'), READY('ready'), SELECT('select')
+    ERROR('error'), ONMOUSEOVER('onmouseover'), ONMOUSEOUT('onmouseout'), READY('ready'), SELECT('select')
 
     static final Log log = LogFactory.getLog(DefaultEvent)
     static final Map events
