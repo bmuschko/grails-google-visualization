@@ -63,6 +63,7 @@
        <gvisualization:orgChart elementId="orgchart" allowHtml="${true}" columns="${orgColumns}" data="${orgData}" />
        <gvisualization:intensityMap elementId="intensitymap" columns="${populationColumns}" data="${populationData}" />
        <gvisualization:geoMap elementId="geomap" columns="${popularityColumns}" data="${popularityData}" />
+       <gvisualization:geoChart elementId="geochart" width="${556}" height="${347}" columns="${popularityColumns}" data="${popularityData}" />
        <gvisualization:motionChart elementId="motionchart" columns="${fruitColumns}" data="${fruitData}" />
        <gvisualization:treeMap elementId="treemap" minColor="#f00" midColor="#ddd" maxColor="#0d0" headerHeight="${15}" fontColor="black" showScale="${true}" columns="${marketByRegionColumns}" data="${marketByRegionData}" />
        <table cellpadding="2" cellspacing="0">
@@ -216,6 +217,14 @@
              </td>
              <td>
                 <div id="geomap"></div>
+             </td>
+          </tr>
+          <tr>
+             <td>
+                <a href="http://code.google.com/apis/chart/interactive/docs/gallery/geochart.html">Geo Chart</a>
+             </td>
+             <td>
+                <div id="geochart"></div>
              </td>
           </tr>
           <tr>

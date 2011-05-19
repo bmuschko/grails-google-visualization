@@ -17,20 +17,17 @@ package org.grails.plugins.google.visualization.option
 import org.grails.plugins.google.visualization.data.DataType
 
 /**
- * Geo Map configuration options
+ * Geo Chart configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-enum GeoMapConfigOption {
+enum GeoChartConfigOption {
     REGION("region", [DataType.STRING]),
-    DATA_MODE("dataMode", [DataType.STRING]),
     WIDTH("width", [DataType.NUMBER]),
     HEIGHT("height", [DataType.NUMBER]),
+    BACKGROUND_COLOR("colors", [DataType.STRING, DataType.OBJECT]),
     COLORS("colors", [DataType.ARRAY]),
-    LEGEND("legend", [DataType.STRING]),
-    SHOW_LEGEND("showLegend", [DataType.BOOLEAN]),
-    SHOW_ZOOM_OUT("showZoomOut", [DataType.BOOLEAN]),
-    ZOOM_OUT_LABEL("zoomOutLabel", [DataType.STRING])
+    RESOLUTION("resolution", [DataType.STRING])
 
     static final Map configOptions
 
@@ -45,13 +42,13 @@ enum GeoMapConfigOption {
     private final name
     private final types
 
-    GeoMapConfigOption(name, types) {
+    GeoChartConfigOption(name, types) {
         this.name = name
         this.types = types
     }
 
     @Override
-    public String toString() {
-        "GeoMapConfigOption{name='${name}', types='${types}'}"
+    String toString() {
+        "GeoChartConfigOption{name='${name}', types='${types}'}"
     }
 }

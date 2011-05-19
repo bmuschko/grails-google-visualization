@@ -77,6 +77,10 @@ class GoogleVisualizationTagLib {
         validateAndRender(attrs, GoogleVisualization.GEO_MAP)
     }
 
+    def geoChart = { attrs, body ->
+        validateAndRender(attrs, GoogleVisualization.GEO_CHART)
+    }
+
     def motionChart = { attrs, body ->
         validateAndRender(attrs, GoogleVisualization.MOTION_CHART)
     }

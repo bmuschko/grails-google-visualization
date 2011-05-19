@@ -41,6 +41,7 @@ enum GoogleVisualization {
     ORG_CHART('orgchart', 'google.visualization.OrgChart', OrgChartConfigOption.configOptions, OrgChartEvent.events),
     INTENSITY_MAP('intensitymap', 'google.visualization.IntensityMap', IntensityMapConfigOption.configOptions, IntensityMapEvent.events),
     GEO_MAP('geomap', 'google.visualization.GeoMap', GeoMapConfigOption.configOptions, GeoMapEvent.events),
+    GEO_CHART('geochart', 'google.visualization.GeoChart', GeoChartConfigOption.configOptions, GeoChartEvent.events),
     MOTION_CHART('motionchart', 'google.visualization.MotionChart', MotionChartConfigOption.configOptions, MotionChartEvent.events),
     PIE_CORE_CHART('corechart', 'google.visualization.PieChart', PieCoreChartConfigOption.configOptions, ErrorAwareDefaultEvent.events),
     BAR_CORE_CHART('corechart', 'google.visualization.BarChart', BarCoreChartConfigOption.configOptions, ErrorAwareDefaultEvent.events),
