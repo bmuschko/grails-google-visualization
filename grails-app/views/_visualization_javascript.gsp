@@ -1,7 +1,7 @@
 <%@ page import="org.apache.commons.lang.StringUtils" %>
 <g:set var="functionName" value="draw${StringUtils.capitalize(visualizationData.name)}"/>
 <script type="text/javascript">
-    google.load('visualization', '1', {'packages': ['${visualizationData.visualization.packageName}']<g:if test="${visualizationData.dynamicLoading}">, 'callback': ${functionName}</g:if><g:if test="${visualizationData.language}">, 'language': '${visualizationData.language}'</g:if>});
+    google.load('visualization', '${visualizationData.version}', {'packages': ['${visualizationData.visualization.packageName}']<g:if test="${visualizationData.dynamicLoading}">, 'callback': ${functionName}</g:if><g:if test="${visualizationData.language}">, 'language': '${visualizationData.language}'</g:if>});
     <g:if test="${!visualizationData.dynamicLoading}">google.setOnLoadCallback(${functionName});</g:if>
     
     function ${functionName}() {

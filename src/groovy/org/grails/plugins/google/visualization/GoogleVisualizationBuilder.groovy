@@ -32,10 +32,16 @@ import org.grails.plugins.google.visualization.util.DateUtil
 class GoogleVisualizationBuilder extends VisualizationBuilder {
     static final Log log = LogFactory.getLog(GoogleVisualizationBuilder)
     final DEFAULT_NAME = 'visualization'
+    final DEFAULT_VERSION = '1'
 
     @Override
     def buildName() {
-        visualizationData.name = attrs.name ? attrs.name : DEFAULT_NAME
+        visualizationData.name = attrs.name ?: DEFAULT_NAME
+    }
+
+    @Override
+    def buildVersion() {
+        visualizationData.version = attrs.version ?: DEFAULT_VERSION
     }
 
     @Override
@@ -45,7 +51,7 @@ class GoogleVisualizationBuilder extends VisualizationBuilder {
 
     @Override
     def buildDynamicLoading() {
-        visualizationData.dynamicLoading = attrs.dynamicLoading ? attrs.dynamicLoading : false
+        visualizationData.dynamicLoading = attrs.dynamicLoading ?: false
     }
 
     @Override
