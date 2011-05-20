@@ -113,6 +113,10 @@ class GoogleVisualizationTagLib {
         validateAndRender(attrs, GoogleVisualization.CANDLESTICK_CORE_CHART)
     }
 
+    def comboCoreChart = { attrs, body ->
+        validateAndRender(attrs, GoogleVisualization.COMBO_CORE_CHART)
+    }
+
     def treeMap = { attrs, body ->
         validateAndRender(attrs, GoogleVisualization.TREE_MAP)
     }

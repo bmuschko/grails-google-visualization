@@ -17,6 +17,10 @@
           def weightByAgeData = [[8, 12], [4, 5.5], [11, 14], [4, 5], [3, 3.5], [6.5, 7]]
           def countByDayColumns = [['string', 'Day'], ['number', ''], ['number', ''], ['number', ''], ['number', '']]
           def countByDayData = [['Mon', 20, 28, 38, 45], ['Tues', 31, 38, 55, 66], ['Wed', 50, 55, 77, 80], ['Thurs', 50, 77, 66, 77], ['Fri', 15, 66, 22, 68]]
+
+          def monthlyCoffeeProdByCountryColumns = [['string', 'Month'], ['number', 'Bolivia'], ['number', 'Ecuador'], ['number', 'Madagascar'], ['number', 'Papua  Guinea'], ['number', 'Rwanda'], ['number', 'Average']]
+          def monthlyCoffeeProdByCountryData = [['2004/05', 165, 938, 522, 998, 450, 614.6], ['2005/06', 135, 1120, 599, 1268, 288, 682], ['2006/07', 157, 1167, 587, 807, 397, 623], ['2007/08', 139, 1110, 615, 968, 215, 609.4], ['2008/09', 136, 691, 629, 1026, 366, 569.6]]
+
           def revenueAndLicensesColumns = [['number', 'Revenue'], ['number', 'Licenses']]
           def revenueAndLicensesData = [[435, 132], [438, 131], [512, 137], [460, 142], [491, 140], [487, 139], [552, 147], [511, 146], [505, 151], [509, 149]]
           def gainersLoserColumns = [['string', 'Name'], ['number', ''], ['number', ''], ['number', ''], ['number', '']]
@@ -57,6 +61,10 @@
        <gvisualization:imageLineChart elementId="imagelinechart" width="${400}" height="${240}" min="${0}" columns="${companyPerformanceColumns}" data="${companyPerformanceData}" />
        <gvisualization:scatterCoreChart elementId="scatterchart" width="${400}" height="${240}" title="Age vs. Weight comparison" hAxis="${new Expando(title: 'Age', minValue: 0, maxValue: 15)}" vAxis="${new Expando(title: 'Weight', minValue: 0, maxValue: 15)}" legend="none" columns="${weightByAgeColumns}" data="${weightByAgeData}" />
        <gvisualization:candlestickCoreChart elementId="candlestickchart" legend="none" columns="${countByDayColumns}" data="${countByDayData}" />
+
+       <gvisualization:comboCoreChart elementId="combochart" title="Monthly Coffee Production by Country" vAxis="${new Expando(title: 'Cups')}" hAxis="${new Expando(title: 'Month')}" seriesType="bars" series="${new Expando(5: new Expando(type: 'line'))}" columns="${monthlyCoffeeProdByCountryColumns}" data="${monthlyCoffeeProdByCountryData}" />
+
+
        <gvisualization:imageSparkLine elementId="imagesparkline" width="${120}" height="${40}" showAxisLines="${false}" showValueLabels="${false}" labelPosition="left" columns="${revenueAndLicensesColumns}" data="${revenueAndLicensesData}" />
        <gvisualization:imageCandlestickChart elementId="imagecandlestickchart" columns="${gainersLoserColumns}" data="${gainersLoserData}" />
        <gvisualization:gauge elementId="gauge" width="${400}" height="${120}" redFrom="${90}" redTo="${100}" yellowFrom="${75}" yellowTo="${90}" minorTicks="${5}" columns="${systemPerformanceColumns}" data="${systemPerformanceData}" />
@@ -172,6 +180,14 @@
              </td>
              <td>
                 <div id="imagecandlestickchart" style='width: 300px; height: 300px;'></div>
+             </td>
+          </tr>
+          <tr>
+             <td>
+                <a href="http://code.google.com/apis/chart/interactive/docs/gallery/combochart.html">Combo Chart</a>
+             </td>
+             <td>
+                <div id="combochart" style="width: 700px; height: 400px;"></div>
              </td>
           </tr>
           <tr>
