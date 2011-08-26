@@ -40,7 +40,8 @@ enum BarCoreChartConfigOption {
     TITLE_TEXT_STYLE("titleTextStyle", [DataType.OBJECT]),
     TOOLTIP_TEXT_STYLE("tooltipTextStyle", [DataType.OBJECT]),
     V_AXIS("vAxis", [DataType.OBJECT]),
-    WIDTH("width", [DataType.NUMBER])
+    WIDTH("width", [DataType.NUMBER]),
+    ENABLE_INTERACTIVITY("enableInteractivity", [DataType.BOOLEAN])
 
     static final Map configOptions
 
