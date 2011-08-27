@@ -26,6 +26,7 @@ enum BarCoreChartConfigOption {
     BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT]),
     CHART_AREA("chartArea", [DataType.OBJECT]),
     COLORS("colors", [DataType.ARRAY]),
+    ENABLE_INTERACTIVITY("enableInteractivity", [DataType.BOOLEAN]),
     FONT_SIZE("fontSize", [DataType.NUMBER]),
     FONT_NAME("fontName", [DataType.STRING]),
     GRIDLINE_COLOR("gridlineColor", [DataType.STRING]),

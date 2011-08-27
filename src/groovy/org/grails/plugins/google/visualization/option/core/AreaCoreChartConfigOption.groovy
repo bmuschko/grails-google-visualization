@@ -22,10 +22,12 @@ import org.grails.plugins.google.visualization.data.DataType
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum AreaCoreChartConfigOption {
+    AREA_OPACITY("areaOpacity", [DataType.NUMBER]),
     AXIS_TITLES_POSITION("axisTitlesPosition", [DataType.STRING]),
     BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT]),
     CHART_AREA("chartArea", [DataType.OBJECT]),
     COLORS("colors", [DataType.ARRAY]),
+    ENABLE_INTERACTIVITY("enableInteractivity", [DataType.BOOLEAN]),
     FONT_SIZE("fontSize", [DataType.NUMBER]),
     FONT_NAME("fontName", [DataType.STRING]),
     H_AXIS("hAxis", [DataType.OBJECT]),
@@ -62,7 +64,7 @@ enum AreaCoreChartConfigOption {
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "AreaCoreChartConfigOption{name='${name}', types='${types}'}"
     }
 }

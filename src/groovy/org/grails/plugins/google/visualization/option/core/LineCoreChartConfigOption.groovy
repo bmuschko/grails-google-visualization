@@ -27,6 +27,7 @@ enum LineCoreChartConfigOption {
     CHART_AREA("chartArea", [DataType.OBJECT]),
     COLORS("colors", [DataType.ARRAY]),
     CURVE_TYPE("curveType", [DataType.STRING]),
+    ENABLE_INTERACTIVITY("enableInteractivity", [DataType.BOOLEAN]),
     FONT_SIZE("fontSize", [DataType.NUMBER]),
     FONT_NAME("fontName", [DataType.STRING]),
     GRIDLINE_COLOR("gridlineColor", [DataType.STRING]),
