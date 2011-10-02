@@ -183,16 +183,23 @@ class GoogleVisualizationBuilder extends VisualizationBuilder {
 
     @Override
     def buildEvents() {
-        def events = [:]
+        def beforeDrawEvents = [:]
+        def afterDrawEvents = [:]
 
         attrs.each() { key, value ->
             // Attribute is a event
             if(visualizationData.visualization.events.containsKey(key)) {
-                events[key] = value
+                if(key == 'ready') {
+                    beforeDrawEvents[key] = value
+                }
+                else {
+                    afterDrawEvents[key] = value
+                }
             }
         }
 
-        visualizationData.events = events
+        visualizationData.beforeDrawEvents = beforeDrawEvents
+        visualizationData.afterDrawEvents = afterDrawEvents
     }
 
     @Override

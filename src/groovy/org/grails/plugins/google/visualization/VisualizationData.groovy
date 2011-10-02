@@ -29,7 +29,8 @@ class VisualizationData {
     def options
     def columns
     def rows
-    def events
+    def beforeDrawEvents
+    def afterDrawEvents
     def formatters
 
     VisualizationData(visualization) {

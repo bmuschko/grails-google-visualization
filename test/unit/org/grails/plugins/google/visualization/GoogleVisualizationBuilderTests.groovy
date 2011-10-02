@@ -203,8 +203,9 @@ class GoogleVisualizationBuilderTests extends GrailsUnitTestCase {
     void testBuildEvents() {
         googleVisualizationBuilder.createNewVisualizationData(['select':'selectHandler', 'ready':'readyHandler'], GoogleVisualization.PIE_CHART)
         googleVisualizationBuilder.buildEvents()
-        assertEquals 2, googleVisualizationBuilder.visualizationData.events.size()
-        assertEquals 'selectHandler', googleVisualizationBuilder.visualizationData.events['select']
-        assertEquals 'readyHandler', googleVisualizationBuilder.visualizationData.events['ready']
+        assertEquals 1, googleVisualizationBuilder.visualizationData.beforeDrawEvents.size()
+        assertEquals 'readyHandler', googleVisualizationBuilder.visualizationData.beforeDrawEvents['ready']
+        assertEquals 1, googleVisualizationBuilder.visualizationData.afterDrawEvents.size()
+        assertEquals 'selectHandler', googleVisualizationBuilder.visualizationData.afterDrawEvents['select']
     }
 }

@@ -16,11 +16,15 @@
         ${visualizationData.name} = new ${visualizationData.visualization.object}(document.getElementById('${visualizationData.elementId}'));
 
         <g:render template="/formatter" model="[visualizationData: visualizationData]" plugin="google-visualization"/>
+
+        <g:each var="beforeDrawEvent" in="${visualizationData.beforeDrawEvents}">
+        google.visualization.events.addListener(${visualizationData.name}, '${beforeDrawEvent.key}', ${beforeDrawEvent.value});
+        </g:each>
         
         ${visualizationData.name}.draw(${visualizationData.name}_data, ${visualizationData.options});
 
-        <g:each var="event" in="${visualizationData.events}">
-        google.visualization.events.addListener(${visualizationData.name}, '${event.key}', ${event.value});
+        <g:each var="afterDrawEvent" in="${visualizationData.afterDrawEvents}">
+        google.visualization.events.addListener(${visualizationData.name}, '${afterDrawEvent.key}', ${afterDrawEvent.value});
         </g:each>
     }
 </script>
