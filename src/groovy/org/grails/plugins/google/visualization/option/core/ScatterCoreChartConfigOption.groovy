@@ -37,6 +37,7 @@ enum ScatterCoreChartConfigOption {
     LEGEND_TEXT_STYLE("legendTextStyle", [DataType.OBJECT]),
     LINE_WIDTH("lineWidth", [DataType.NUMBER]),
     POINT_SIZE("pointSize", [DataType.NUMBER]),
+    SERIES("series", [DataType.ARRAY, DataType.OBJECT]),
     TITLE("title", [DataType.STRING]),
     TITLE_POSITION("titlePosition", [DataType.STRING]),
     TITLE_TEXT_STYLE("titleTextStyle", [DataType.OBJECT]),

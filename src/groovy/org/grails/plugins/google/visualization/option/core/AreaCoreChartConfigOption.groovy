@@ -38,6 +38,7 @@ enum AreaCoreChartConfigOption {
     LINE_WIDTH("lineWidth", [DataType.NUMBER]),
     POINT_SIZE("pointSize", [DataType.NUMBER]),
     REVERSE_CATEGORIES("reverseCategories", [DataType.BOOLEAN]),
+    SERIES("series", [DataType.ARRAY, DataType.OBJECT]),
     TITLE("title", [DataType.STRING]),
     TITLE_POSITION("titlePosition", [DataType.STRING]),
     TITLE_TEXT_STYLE("titleTextStyle", [DataType.OBJECT]),

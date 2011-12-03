@@ -36,6 +36,7 @@ enum BarCoreChartConfigOption {
     LEGEND("legend", [DataType.STRING]),
     LEGEND_TEXT_STYLE("legendTextStyle", [DataType.OBJECT]),
     REVERSE_CATEGORIES("reverseCategories", [DataType.BOOLEAN]),
+    SERIES("series", [DataType.ARRAY, DataType.OBJECT]),
     TITLE("title", [DataType.STRING]),
     TITLE_POSITION("titlePosition", [DataType.STRING]),
     TITLE_TEXT_STYLE("titleTextStyle", [DataType.OBJECT]),
