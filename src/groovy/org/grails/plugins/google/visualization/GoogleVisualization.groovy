@@ -52,6 +52,7 @@ enum GoogleVisualization {
     CANDLESTICK_CORE_CHART('corechart', 'google.visualization.CandlestickChart', CandlestickCoreChartConfigOption.configOptions, DefaultEvent.events),
     COMBO_CORE_CHART('corechart', 'google.visualization.ComboChart', ComboCoreChartConfigOption.configOptions, DefaultEvent.events),
     TREE_MAP('treemap', 'google.visualization.TreeMap', TreeMapConfigOption.configOptions, TreeMapEvent.events),
+    STEPPED_AREA_CORE_CHART('corechart', 'google.visualization.SteppedAreaChart', SteppedAreaCoreChartConfigOption.configOptions, SteppedAreaChartEvent.events),
     IMAGE_AREA_CHART('imageareachart', 'google.visualization.ImageAreaChart', ImageAreaChartConfigOption.configOptions, GenericImageChartEvent.events),
     IMAGE_BAR_CHART('imagebarchart', 'google.visualization.ImageBarChart', ImageBarChartConfigOption.configOptions, GenericImageChartEvent.events),
     IMAGE_LINE_CHART('imagelinechart', 'google.visualization.ImageLineChart', ImageLineChartConfigOption.configOptions, GenericImageChartEvent.events),
@@ -75,7 +76,7 @@ enum GoogleVisualization {
     private final configOptions
     private final events
 
-    GoogleVisualization(packageName, object, configOptions, events) {
+    private GoogleVisualization(packageName, object, configOptions, events) {
         this.packageName = packageName
         this.object = object
         this.configOptions = configOptions
@@ -94,7 +95,7 @@ enum GoogleVisualization {
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "GoogleVisualization{packageName='${packageName}', object='${object}', configOptions='${configOptions}', events='${events}'}"
     }
 }

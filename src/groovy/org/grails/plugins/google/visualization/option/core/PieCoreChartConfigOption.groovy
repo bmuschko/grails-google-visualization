@@ -56,13 +56,13 @@ enum PieCoreChartConfigOption {
     private final name
     private final types
 
-    PieCoreChartConfigOption(name, types) {
+    private PieCoreChartConfigOption(name, types) {
         this.name = name
         this.types = types
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "PieCoreChartConfigOption{name='${name}', types='${types}'}"
     }
 }

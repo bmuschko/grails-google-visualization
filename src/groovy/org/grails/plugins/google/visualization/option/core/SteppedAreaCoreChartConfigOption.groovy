@@ -17,32 +17,33 @@ package org.grails.plugins.google.visualization.option.core
 import org.grails.plugins.google.visualization.data.DataType
 
 /**
- * Area Core Chart configuration options
+ * Stepped Area Core Chart configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-enum AreaCoreChartConfigOption {
+enum SteppedAreaCoreChartConfigOption {
+    ANIMATION("animation", [DataType.STRING, DataType.OBJECT]),
     AREA_OPACITY("areaOpacity", [DataType.NUMBER]),
     AXIS_TITLES_POSITION("axisTitlesPosition", [DataType.STRING]),
     BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT]),
     CHART_AREA("chartArea", [DataType.OBJECT]),
     COLORS("colors", [DataType.ARRAY]),
-    ENABLE_INTERACTIVITY("enableInteractivity", [DataType.BOOLEAN]),
+    CONNECT_STEPS("connectSteps", [DataType.BOOLEAN]),
+    ENABLED_INTERACTIVITY("enableInteractivity", [DataType.BOOLEAN]),
+    FOCUS_TARGET("focusTarget", [DataType.STRING]),
     FONT_SIZE("fontSize", [DataType.NUMBER]),
     FONT_NAME("fontName", [DataType.STRING]),
     H_AXIS("hAxis", [DataType.OBJECT]),
     HEIGHT("height", [DataType.NUMBER]),
     IS_STACKED("isStacked", [DataType.BOOLEAN]),
-    LEGEND("legend", [DataType.STRING]),
-    LEGEND_TEXT_STYLE("legendTextStyle", [DataType.OBJECT]),
-    LINE_WIDTH("lineWidth", [DataType.NUMBER]),
-    POINT_SIZE("pointSize", [DataType.NUMBER]),
+    LEGEND("legend", [DataType.OBJECT]),
     REVERSE_CATEGORIES("reverseCategories", [DataType.BOOLEAN]),
     SERIES("series", [DataType.ARRAY, DataType.OBJECT]),
+    THEME("theme", [DataType.STRING]),
     TITLE("title", [DataType.STRING]),
     TITLE_POSITION("titlePosition", [DataType.STRING]),
     TITLE_TEXT_STYLE("titleTextStyle", [DataType.OBJECT]),
-    TOOLTIP_TEXT_STYLE("tooltipTextStyle", [DataType.OBJECT]),
+    TOOLTIP("tooltip", [DataType.OBJECT]),
     V_AXIS("vAxis", [DataType.OBJECT]),
     WIDTH("width", [DataType.NUMBER])
 
@@ -59,13 +60,13 @@ enum AreaCoreChartConfigOption {
     private final name
     private final types
 
-    private AreaCoreChartConfigOption(name, types) {
+    private SteppedAreaCoreChartConfigOption(name, types) {
         this.name = name
         this.types = types
     }
 
     @Override
     String toString() {
-        "AreaCoreChartConfigOption{name='${name}', types='${types}'}"
+        "SteppedAreaCoreChartConfigOption{name='${name}', types='${types}'}"
     }
 }

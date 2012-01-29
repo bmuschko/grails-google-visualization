@@ -34,12 +34,12 @@ enum ImageSparkLineEvent {
 
     private final name
 
-    ImageSparkLineEvent(name) {
+    private ImageSparkLineEvent(name) {
         this.name = name
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "ImageSparkLineEvent{name='${name}'}"
     }
 }

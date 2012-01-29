@@ -38,7 +38,7 @@ enum GeoChartEvent {
 
     private final name
 
-    GeoChartEvent(name) {
+    private GeoChartEvent(name) {
         this.name = name
     }
 

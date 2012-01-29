@@ -58,13 +58,13 @@ enum ScatterCoreChartConfigOption {
     private final name
     private final types
 
-    ScatterCoreChartConfigOption(name, types) {
+    private ScatterCoreChartConfigOption(name, types) {
         this.name = name
         this.types = types
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "ScatterCoreChartConfigOption{name='${name}', types='${types}'}"
     }
 }

@@ -34,12 +34,12 @@ enum GenericImageChartEvent {
 
     private final name
 
-    GenericImageChartEvent(name) {
+    private GenericImageChartEvent(name) {
         this.name = name
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "GenericImageChartEvent{name='${name}'}"
     }
 }

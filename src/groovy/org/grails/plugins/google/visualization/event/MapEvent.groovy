@@ -38,12 +38,12 @@ enum MapEvent {
 
     private final name
 
-    MapEvent(name) {
+    private MapEvent(name) {
         this.name = name
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "MapEvent{name='${name}'}"
     }
 }

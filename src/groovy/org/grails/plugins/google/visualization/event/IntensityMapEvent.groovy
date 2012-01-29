@@ -38,12 +38,12 @@ enum IntensityMapEvent {
 
     private final name
 
-    IntensityMapEvent(name) {
+    private IntensityMapEvent(name) {
         this.name = name
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "IntensityMapEvent{name='${name}'}"
     }
 }

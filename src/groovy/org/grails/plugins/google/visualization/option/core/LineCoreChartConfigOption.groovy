@@ -60,13 +60,13 @@ enum LineCoreChartConfigOption {
     private final name
     private final types
 
-    LineCoreChartConfigOption(name, types) {
+    private LineCoreChartConfigOption(name, types) {
         this.name = name
         this.types = types
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "LineCoreChartConfigOption{name='${name}', types='${types}'}"
     }
 }

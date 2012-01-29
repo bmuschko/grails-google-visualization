@@ -38,12 +38,12 @@ enum TableEvent {
 
     private final name
 
-    TableEvent(name) {
+    private TableEvent(name) {
         this.name = name
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "TableEvent{name='${name}'}"
     }
 }

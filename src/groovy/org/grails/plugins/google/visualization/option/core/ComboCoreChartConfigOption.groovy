@@ -60,7 +60,7 @@ enum ComboCoreChartConfigOption {
     private final name
     private final types
 
-    ComboCoreChartConfigOption(name, types) {
+    private ComboCoreChartConfigOption(name, types) {
         this.name = name
         this.types = types
     }

@@ -58,13 +58,13 @@ enum ColumnCoreChartConfigOption {
     private final name
     private final types
 
-    ColumnCoreChartConfigOption(name, types) {
+    private ColumnCoreChartConfigOption(name, types) {
         this.name = name
         this.types = types
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "ColumnCoreChartConfigOption{name='${name}', types='${types}'}"
     }
 }

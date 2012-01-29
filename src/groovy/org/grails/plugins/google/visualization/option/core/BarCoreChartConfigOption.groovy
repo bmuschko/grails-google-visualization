@@ -57,13 +57,13 @@ enum BarCoreChartConfigOption {
     private final name
     private final types
 
-    BarCoreChartConfigOption(name, types) {
+    private BarCoreChartConfigOption(name, types) {
         this.name = name
         this.types = types
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "BarCoreChartConfigOption{name='${name}', types='${types}'}"
     }
 }

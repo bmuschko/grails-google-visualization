@@ -38,12 +38,12 @@ enum MotionChartEvent {
 
     private final name
 
-    MotionChartEvent(name) {
+    private MotionChartEvent(name) {
         this.name = name
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "MotionChartEvent{name='${name}'}"
     }
 }

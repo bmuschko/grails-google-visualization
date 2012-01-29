@@ -38,12 +38,12 @@ enum DefaultEvent {
 
     private final name
 
-    DefaultEvent(name) {
+    private DefaultEvent(name) {
         this.name = name
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "DefaultEvent{name='${name}'}"
     }
 }

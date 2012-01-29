@@ -109,6 +109,10 @@ class GoogleVisualizationTagLib {
         validateAndRender(attrs, GoogleVisualization.SCATTER_CORE_CHART)
     }
 
+    def steppedAreaCoreChart = { attrs, body ->
+        validateAndRender(attrs, GoogleVisualization.STEPPED_AREA_CORE_CHART)
+    }
+
     def candlestickCoreChart = { attrs, body ->
         validateAndRender(attrs, GoogleVisualization.CANDLESTICK_CORE_CHART)
     }

@@ -56,7 +56,7 @@ enum CandlestickCoreChartConfigOption {
     private final name
     private final types
 
-    CandlestickCoreChartConfigOption(name, types) {
+    private CandlestickCoreChartConfigOption(name, types) {
         this.name = name
         this.types = types
     }

@@ -38,12 +38,12 @@ enum AnnotatedTimeLineEvent {
 
     private final name
 
-    AnnotatedTimeLineEvent(name) {
+    private AnnotatedTimeLineEvent(name) {
         this.name = name
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "AnnotatedTimeLineEvent{name='${name}'}"
     }
 }

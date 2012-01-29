@@ -38,12 +38,12 @@ enum OrgChartEvent {
 
     private final name
 
-    OrgChartEvent(name) {
+    private OrgChartEvent(name) {
         this.name = name
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "OrgChartEvent{name='${name}'}"
     }
 }

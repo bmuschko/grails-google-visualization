@@ -38,12 +38,12 @@ enum ErrorAwareDefaultEvent {
 
     private final name
 
-    ErrorAwareDefaultEvent(name) {
+    private ErrorAwareDefaultEvent(name) {
         this.name = name
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "ErrorAwareDefaultEvent{name='${name}'}"
     }
 }

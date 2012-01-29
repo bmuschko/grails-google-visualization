@@ -38,12 +38,12 @@ enum TreeMapEvent {
 
     private final name
 
-    TreeMapEvent(name) {
+    private TreeMapEvent(name) {
         this.name = name
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "TreeMapEvent{name='${name}'}"
     }
 }

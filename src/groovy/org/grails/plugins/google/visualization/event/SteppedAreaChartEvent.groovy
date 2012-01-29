@@ -1,4 +1,4 @@
-/* Copyright 2010 the original author or authors.
+/* Copyright 2011 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,18 +14,19 @@
  */
 package org.grails.plugins.google.visualization.event
 
-import org.apache.commons.logging.LogFactory
 import org.apache.commons.logging.Log
+import org.apache.commons.logging.LogFactory
 
 /**
- * Available events for visualization "Geo Map"
+ * Available events for visualization "Stepped Area"
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-enum GeoMapEvent {
-    ERROR('error'), SELECT('select'), REGIONCLICK('regionClick'), ZOOMOUT('zoomOut'), DRAWINGDONE('drawingDone')
+enum SteppedAreaChartEvent {
+    ANIMATIONFINISH('animationfinish'), ERROR('error'), ONMOUSEOVER('onmouseover'), ONMOUSEOUT('onmouseout'), READY('ready'),
+    SELECT('select')
 
-    static final Log log = LogFactory.getLog(GeoMapEvent)
+    static final Log log = LogFactory.getLog(DefaultEvent)
     static final Map events
 
     static {
@@ -38,12 +39,12 @@ enum GeoMapEvent {
 
     private final name
 
-    private GeoMapEvent(name) {
+    private SteppedAreaChartEvent(name) {
         this.name = name
     }
 
     @Override
     String toString() {
-        "GeoMapEvent{name='${name}'}"
+        "SteppedAreaChartEvent{name='${name}'}"
     }
 }
