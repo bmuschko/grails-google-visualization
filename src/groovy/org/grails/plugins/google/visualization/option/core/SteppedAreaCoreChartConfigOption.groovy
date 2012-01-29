@@ -34,7 +34,7 @@ enum SteppedAreaCoreChartConfigOption {
     FONT_SIZE("fontSize", [DataType.NUMBER]),
     FONT_NAME("fontName", [DataType.STRING]),
     H_AXIS("hAxis", [DataType.OBJECT]),
-    HEIGHT("height", [DataType.NUMBER]),
+    HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     IS_STACKED("isStacked", [DataType.BOOLEAN]),
     LEGEND("legend", [DataType.OBJECT]),
     REVERSE_CATEGORIES("reverseCategories", [DataType.BOOLEAN]),
@@ -45,7 +45,7 @@ enum SteppedAreaCoreChartConfigOption {
     TITLE_TEXT_STYLE("titleTextStyle", [DataType.OBJECT]),
     TOOLTIP("tooltip", [DataType.OBJECT]),
     V_AXIS("vAxis", [DataType.OBJECT]),
-    WIDTH("width", [DataType.NUMBER])
+    WIDTH("width", [DataType.NUMBER, DataType.STRING])
 
     static final Map configOptions
 

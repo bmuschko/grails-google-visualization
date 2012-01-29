@@ -25,7 +25,7 @@ enum ImageBarChartConfigOption {
     BACKGROUND_COLOR("backgroundColor", [DataType.STRING]),
     COLORS("colors", [DataType.ARRAY]),
     ENABLE_EVENTS("enableEvents", [DataType.BOOLEAN]),
-    HEIGHT("height", [DataType.NUMBER]),
+    HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     IS_STACKED("isStacked", [DataType.BOOLEAN]),
     IS_VERTICAL("isVertical", [DataType.BOOLEAN]),
     LEGEND("legend", [DataType.STRING]),
@@ -35,7 +35,7 @@ enum ImageBarChartConfigOption {
     SHOW_VALUE_LABELS("showValueLabels", [DataType.BOOLEAN]),
     TITLE("title", [DataType.STRING]),
     VALUE_LABELS_INTERVAL("valueLabelsInterval", [DataType.NUMBER]),
-    WIDTH("width", [DataType.NUMBER])
+    WIDTH("width", [DataType.NUMBER, DataType.STRING])
 
     static final Map configOptions
 

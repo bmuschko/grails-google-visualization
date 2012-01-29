@@ -25,14 +25,14 @@ enum ImageSparkLineConfigOption {
     COLOR("color", [DataType.STRING]),
     COLORS("colors", [DataType.ARRAY]),
     FILL("fill", [DataType.BOOLEAN]),
-    HEIGHT("height", [DataType.NUMBER]),
+    HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     LABEL_POSITION("labelPosition", [DataType.STRING]),
     MAX("max", [DataType.ARRAY]),
     MIN("min", [DataType.ARRAY]),
     SHOW_AXIS_LINES("showAxisLines", [DataType.BOOLEAN]),
     SHOW_VALUE_LABELS("showValueLabels", [DataType.BOOLEAN]),
     TITLE("title", [DataType.ARRAY]),
-    WIDTH("width", [DataType.NUMBER]),
+    WIDTH("width", [DataType.NUMBER, DataType.STRING]),
     LAYOUT("layout", [DataType.STRING])
 
     static final Map configOptions

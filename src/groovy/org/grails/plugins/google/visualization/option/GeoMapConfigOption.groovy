@@ -24,8 +24,8 @@ import org.grails.plugins.google.visualization.data.DataType
 enum GeoMapConfigOption {
     REGION("region", [DataType.STRING]),
     DATA_MODE("dataMode", [DataType.STRING]),
-    WIDTH("width", [DataType.NUMBER]),
-    HEIGHT("height", [DataType.NUMBER]),
+    WIDTH("width", [DataType.NUMBER, DataType.STRING]),
+    HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     COLORS("colors", [DataType.ARRAY]),
     LEGEND("legend", [DataType.STRING]),
     SHOW_LEGEND("showLegend", [DataType.BOOLEAN]),

@@ -24,14 +24,14 @@ import org.grails.plugins.google.visualization.data.DataType
 enum ImageCandlestickChartConfigOption {
     BACKGROUND_COLOR("backgroundColor", [DataType.STRING]),
     SHOW_AXIS_LINES("showAxisLines", [DataType.BOOLEAN]),
-    HEIGHT("height", [DataType.NUMBER]),
+    HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     MAX("max", [DataType.NUMBER]),
     MIN("min", [DataType.NUMBER]),
     SHOW_CATEGORY_LABELS("showCategoryLabels", [DataType.BOOLEAN]),
     SHOW_VALUE_LABELS("showValueLabels", [DataType.BOOLEAN]),
     SHOW_VALUE_LABELS_INTERVAL("showValueLabelsInternal", [DataType.NUMBER]),
     TITLE("title", [DataType.STRING]),
-    WIDTH("width", [DataType.NUMBER])
+    WIDTH("width", [DataType.NUMBER, DataType.STRING])
 
     static final Map configOptions
 

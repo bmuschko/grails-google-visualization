@@ -23,8 +23,8 @@ import org.grails.plugins.google.visualization.data.DataType
  */
 enum GeoChartConfigOption {
     REGION("region", [DataType.STRING]),
-    WIDTH("width", [DataType.NUMBER]),
-    HEIGHT("height", [DataType.NUMBER]),
+    WIDTH("width", [DataType.NUMBER, DataType.STRING]),
+    HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     BACKGROUND_COLOR("colors", [DataType.STRING, DataType.OBJECT]),
     COLORS("colors", [DataType.ARRAY]),
     RESOLUTION("resolution", [DataType.STRING])

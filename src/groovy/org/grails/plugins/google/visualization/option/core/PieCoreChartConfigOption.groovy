@@ -27,7 +27,7 @@ enum PieCoreChartConfigOption {
     COLORS("colors", [DataType.ARRAY]),
     FONT_SIZE("fontSize", [DataType.NUMBER]),
     FONT_NAME("fontName", [DataType.STRING]),
-    HEIGHT("height", [DataType.NUMBER]),
+    HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     IS_3D("is3D", [DataType.BOOLEAN]),
     LEGEND("legend", [DataType.STRING]),
     LEGEND_TEXT_STYLE("legendTextStyle", [DataType.OBJECT]),
@@ -41,7 +41,7 @@ enum PieCoreChartConfigOption {
     TITLE_TEXT_STYLE("titleTextStyle", [DataType.OBJECT]),
     TOOLTIP_TEXT("tooltipText", [DataType.STRING]),
     TOOLTIP_TEXT_STYLE("tooltipTextStyle", [DataType.OBJECT]),
-    WIDTH("width", [DataType.NUMBER])
+    WIDTH("width", [DataType.NUMBER, DataType.STRING])
 
     static final Map configOptions
 

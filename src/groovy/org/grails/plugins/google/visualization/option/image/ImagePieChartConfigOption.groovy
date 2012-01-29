@@ -26,12 +26,12 @@ enum ImagePieChartConfigOption {
     COLOR("color", [DataType.STRING]),
     COLORS("colors", [DataType.ARRAY]),
     ENABLE_EVENTS("enableEvents", [DataType.BOOLEAN]),
-    HEIGHT("height", [DataType.NUMBER]),
+    HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     IS_3D("is3D", [DataType.BOOLEAN]),
     LABELS("labels", [DataType.STRING]),    
     LEGEND("legend", [DataType.STRING]),
     TITLE("title", [DataType.STRING]),
-    WIDTH("width", [DataType.NUMBER])
+    WIDTH("width", [DataType.NUMBER, DataType.STRING])
 
     static final Map configOptions
 

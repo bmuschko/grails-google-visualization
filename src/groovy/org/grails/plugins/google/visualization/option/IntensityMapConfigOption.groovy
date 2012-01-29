@@ -23,10 +23,10 @@ import org.grails.plugins.google.visualization.data.DataType
  */
 enum IntensityMapConfigOption {
     COLORS("colors", [DataType.ARRAY]),
-    HEIGHT("height", [DataType.NUMBER]),
+    HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     REGION("region", [DataType.STRING]),
     SHOW_ONE_TAB("showOneTab", [DataType.BOOLEAN]),
-    WIDTH("width", [DataType.NUMBER])
+    WIDTH("width", [DataType.NUMBER, DataType.STRING])
 
     static final Map configOptions
 

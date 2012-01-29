@@ -32,7 +32,7 @@ enum BubbleCoreChartConfigOption {
     FONT_SIZE("fontSize", [DataType.NUMBER]),
     FONT_NAME("fontName", [DataType.STRING]),
     H_AXIS("hAxis", [DataType.OBJECT]),
-    HEIGHT("height", [DataType.NUMBER]),
+    HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     LEGEND("legend", [DataType.OBJECT]),
     SERIES("series", [DataType.ARRAY, DataType.OBJECT]),
     SIZE_AXIS("sizeAxis", [DataType.OBJECT]),
@@ -43,7 +43,7 @@ enum BubbleCoreChartConfigOption {
     TITLE_TEXT_STYLE("titleTextStyle", [DataType.OBJECT]),
     TOOLTIP("tooltip", [DataType.OBJECT]),
     V_AXIS("vAxis", [DataType.OBJECT]),
-    WIDTH("width", [DataType.NUMBER])
+    WIDTH("width", [DataType.NUMBER, DataType.STRING])
 
     static final Map configOptions
 

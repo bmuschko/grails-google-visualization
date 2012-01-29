@@ -25,7 +25,7 @@ enum GaugeConfigOption {
     GREEN_COLOR("greenColor", [DataType.STRING]),
     GREEN_FROM("greenFrom", [DataType.NUMBER]),
     GREEN_TO("greenTo", [DataType.NUMBER]),
-    HEIGHT("height", [DataType.NUMBER]),
+    HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     MAJOR_TICKS("majorTicks", [DataType.ARRAY]),
     MAX("max", [DataType.NUMBER]),
     MIN("min", [DataType.NUMBER]),
@@ -33,7 +33,7 @@ enum GaugeConfigOption {
     RED_COLOR("redColor", [DataType.STRING]),
     RED_FROM("redFrom", [DataType.NUMBER]),
     RED_TO("redTo", [DataType.NUMBER]),
-    WIDTH("width", [DataType.NUMBER]),
+    WIDTH("width", [DataType.NUMBER, DataType.STRING]),
     YELLOW_COLOR("yellowColor", [DataType.STRING]),
     YELLOW_FROM("yellowFrom", [DataType.NUMBER]),
     YELLOW_TO("yellowTo", [DataType.NUMBER])

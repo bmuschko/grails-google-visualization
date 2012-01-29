@@ -22,8 +22,8 @@ import org.grails.plugins.google.visualization.data.DataType
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum MotionChartConfigOption {
-    HEIGHT("height", [DataType.NUMBER]),
-    WIDTH("width", [DataType.NUMBER]),
+    HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
+    WIDTH("width", [DataType.NUMBER, DataType.STRING]),
     STATE("state", [DataType.STRING]),
     SHOW_CHART_BUTTON("showChartButtons", [DataType.BOOLEAN]),
     SHOW_HEADER("showHeader", [DataType.BOOLEAN]),

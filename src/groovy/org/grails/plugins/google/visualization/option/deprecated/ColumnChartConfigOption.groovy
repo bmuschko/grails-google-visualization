@@ -30,7 +30,7 @@ enum ColumnChartConfigOption {
     COLORS("colors", [DataType.ARRAY]),
     ENABLE_TOOLTIP("enableTooltip", [DataType.BOOLEAN]),
     FOCUS_BORDER_COLOR("focusBorderColor", [DataType.STRING, DataType.OBJECT]),
-    HEIGHT("height", [DataType.NUMBER]),
+    HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     IS_3D("is3D", [DataType.BOOLEAN]),
     IS_STACKED("isStacked", [DataType.BOOLEAN]),
     LEGEND("legend", [DataType.STRING]),
@@ -50,7 +50,7 @@ enum ColumnChartConfigOption {
     TOOLTIP_FONT_SIZE("tooltipFontSize", [DataType.NUMBER]),
     TOOLTIP_HEIGHT("tooltipHeight", [DataType.NUMBER]),
     TOOLTIP_WIDTH("tooltipWidth", [DataType.NUMBER]),
-    WIDTH("width", [DataType.NUMBER])
+    WIDTH("width", [DataType.NUMBER, DataType.STRING])
 
     static final Map configOptions
 

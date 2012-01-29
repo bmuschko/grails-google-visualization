@@ -29,7 +29,7 @@ enum GenericImageChartConfigOption {
     ENABLE_EVENTS("enableEvents", [DataType.BOOLEAN]),
     FIRST_HIDDEN_COLUMN("firstHiddenColumn", [DataType.NUMBER]),
     FILL("fill", [DataType.BOOLEAN]),
-    HEIGHT("height", [DataType.NUMBER]),
+    HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     LABELS("labels", [DataType.STRING]),
     LEGEND("legend", [DataType.STRING]),
     MAX("max", [DataType.NUMBER]),
@@ -39,7 +39,7 @@ enum GenericImageChartConfigOption {
     SINGLE_COLUMN_DISPLAY("singleColumnDisplay", [DataType.NUMBER]),
     TITLE("title", [DataType.STRING]),
     VALUE_LABELS_INTERVAL("valueLabelsInterval", [DataType.NUMBER]),
-    WIDTH("width", [DataType.NUMBER])
+    WIDTH("width", [DataType.NUMBER, DataType.STRING])
 
     static final Map configOptions
 

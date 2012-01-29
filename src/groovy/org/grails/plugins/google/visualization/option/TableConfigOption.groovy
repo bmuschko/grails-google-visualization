@@ -26,7 +26,7 @@ enum TableConfigOption {
     ALTERNATING_ROW_STYLE("alternatingRowStyle", [DataType.BOOLEAN]),
     CSS_CLASS_NAME("cssClassNames", [DataType.OBJECT]),
     FIRST_ROW_NUMBER("firstRowNumber", [DataType.NUMBER]),
-    HEIGHT("height", [DataType.NUMBER]),
+    HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     PAGE("page", [DataType.STRING]),
     PAGE_SIZE("pageSize", [DataType.NUMBER]),
     RTL_TABLE("rtlTable", [DataType.BOOLEAN]),
@@ -36,7 +36,7 @@ enum TableConfigOption {
     SORT_ASCENDING("sortAscending", [DataType.BOOLEAN]),
     SORT_COLUMN("sortColumn", [DataType.NUMBER]),
     START_PAGE("startPage", [DataType.NUMBER]),
-    WIDTH("width", [DataType.NUMBER])
+    WIDTH("width", [DataType.NUMBER, DataType.STRING])
   
     static final Map configOptions
 
