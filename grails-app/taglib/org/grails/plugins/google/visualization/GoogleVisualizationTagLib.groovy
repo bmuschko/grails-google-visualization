@@ -30,31 +30,31 @@ class GoogleVisualizationTagLib {
     }
 
     def pieChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.PIE_CHART)
+        validateAndRender(attrs, GoogleVisualization.PIE_CHART, ['formatters'])
     }
 
     def barChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.BAR_CHART)
+        validateAndRender(attrs, GoogleVisualization.BAR_CHART, ['formatters'])
     }
 
     def columnChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.COLUMN_CHART)
+        validateAndRender(attrs, GoogleVisualization.COLUMN_CHART, ['formatters'])
     }
 
     def areaChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.AREA_CHART)
+        validateAndRender(attrs, GoogleVisualization.AREA_CHART, ['formatters'])
     }
 
     def lineChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.LINE_CHART)
+        validateAndRender(attrs, GoogleVisualization.LINE_CHART, ['formatters'])
     }
 
     def scatterChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.SCATTER_CHART)
+        validateAndRender(attrs, GoogleVisualization.SCATTER_CHART, ['formatters'])
     }
 
     def gauge = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.GAUGE)
+        validateAndRender(attrs, GoogleVisualization.GAUGE, ['formatters'])
     }
 
     def table = { attrs, body ->
@@ -62,99 +62,99 @@ class GoogleVisualizationTagLib {
     }
 
     def map = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.MAP)
+        validateAndRender(attrs, GoogleVisualization.MAP, ['formatters'])
     }
 
     def annotatedTimeLine = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.ANNOTATED_TIME_LINE)
+        validateAndRender(attrs, GoogleVisualization.ANNOTATED_TIME_LINE, ['formatters'])
     }
 
     def orgChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.ORG_CHART)
+        validateAndRender(attrs, GoogleVisualization.ORG_CHART, ['formatters'])
     }
 
     def intensityMap = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.INTENSITY_MAP)
+        validateAndRender(attrs, GoogleVisualization.INTENSITY_MAP, ['formatters'])
     }
 
     def geoMap = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.GEO_MAP)
+        validateAndRender(attrs, GoogleVisualization.GEO_MAP, ['formatters'])
     }
 
     def geoChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.GEO_CHART)
+        validateAndRender(attrs, GoogleVisualization.GEO_CHART, ['formatters'])
     }
 
     def motionChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.MOTION_CHART)
+        validateAndRender(attrs, GoogleVisualization.MOTION_CHART, ['formatters'])
     }
 
     def pieCoreChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.PIE_CORE_CHART)
+        validateAndRender(attrs, GoogleVisualization.PIE_CORE_CHART, ['formatters'])
     }
 
     def barCoreChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.BAR_CORE_CHART)
+        validateAndRender(attrs, GoogleVisualization.BAR_CORE_CHART, ['formatters'])
     }
 
     def bubbleCoreChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.BUBBLE_CORE_CHART)
+        validateAndRender(attrs, GoogleVisualization.BUBBLE_CORE_CHART, ['formatters'])
     }
 
     def columnCoreChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.COLUMN_CORE_CHART)
+        validateAndRender(attrs, GoogleVisualization.COLUMN_CORE_CHART, ['formatters'])
     }
 
     def areaCoreChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.AREA_CORE_CHART)
+        validateAndRender(attrs, GoogleVisualization.AREA_CORE_CHART, ['formatters'])
     }
 
     def lineCoreChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.LINE_CORE_CHART)
+        validateAndRender(attrs, GoogleVisualization.LINE_CORE_CHART, ['formatters'])
     }
 
     def scatterCoreChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.SCATTER_CORE_CHART)
+        validateAndRender(attrs, GoogleVisualization.SCATTER_CORE_CHART, ['formatters'])
     }
 
     def steppedAreaCoreChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.STEPPED_AREA_CORE_CHART)
+        validateAndRender(attrs, GoogleVisualization.STEPPED_AREA_CORE_CHART, ['formatters'])
     }
 
     def candlestickCoreChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.CANDLESTICK_CORE_CHART)
+        validateAndRender(attrs, GoogleVisualization.CANDLESTICK_CORE_CHART, ['formatters'])
     }
 
     def comboCoreChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.COMBO_CORE_CHART)
+        validateAndRender(attrs, GoogleVisualization.COMBO_CORE_CHART, ['formatters'])
     }
 
     def treeMap = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.TREE_MAP)
+        validateAndRender(attrs, GoogleVisualization.TREE_MAP, ['formatters'])
     }
 
     def imageAreaChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.IMAGE_AREA_CHART)
+        validateAndRender(attrs, GoogleVisualization.IMAGE_AREA_CHART, ['formatters'])
     }
 
     def imageBarChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.IMAGE_BAR_CHART)
+        validateAndRender(attrs, GoogleVisualization.IMAGE_BAR_CHART, ['formatters'])
     }
 
     def imageLineChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.IMAGE_LINE_CHART)
+        validateAndRender(attrs, GoogleVisualization.IMAGE_LINE_CHART, ['formatters'])
     }
 
     def imagePieChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.IMAGE_PIE_CHART)
+        validateAndRender(attrs, GoogleVisualization.IMAGE_PIE_CHART, ['formatters'])
     }
 
     def imageSparkLine = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.IMAGE_SPARK_LINE)
+        validateAndRender(attrs, GoogleVisualization.IMAGE_SPARK_LINE, ['formatters'])
     }
 
     def imageCandlestickChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.IMAGE_CANDLESTICK_CHART)
+        validateAndRender(attrs, GoogleVisualization.IMAGE_CANDLESTICK_CHART, ['formatters'])
     }
 
     private validateAndRender(attrs, googleVisualization) {
