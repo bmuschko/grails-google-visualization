@@ -53,6 +53,7 @@ enum GoogleVisualization {
     COMBO_CORE_CHART('corechart', 'google.visualization.ComboChart', ComboCoreChartConfigOption.configOptions, DefaultEvent.events),
     TREE_MAP('treemap', 'google.visualization.TreeMap', TreeMapConfigOption.configOptions, TreeMapEvent.events),
     STEPPED_AREA_CORE_CHART('corechart', 'google.visualization.SteppedAreaChart', SteppedAreaCoreChartConfigOption.configOptions, SteppedAreaChartEvent.events),
+    BUBBLE_CORE_CHART('corechart', 'google.visualization.BubbleChart', BubbleCoreChartConfigOption.configOptions, BubbleChartEvent.events),
     IMAGE_AREA_CHART('imageareachart', 'google.visualization.ImageAreaChart', ImageAreaChartConfigOption.configOptions, GenericImageChartEvent.events),
     IMAGE_BAR_CHART('imagebarchart', 'google.visualization.ImageBarChart', ImageBarChartConfigOption.configOptions, GenericImageChartEvent.events),
     IMAGE_LINE_CHART('imagelinechart', 'google.visualization.ImageLineChart', ImageLineChartConfigOption.configOptions, GenericImageChartEvent.events),

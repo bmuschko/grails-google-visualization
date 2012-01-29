@@ -93,6 +93,10 @@ class GoogleVisualizationTagLib {
         validateAndRender(attrs, GoogleVisualization.BAR_CORE_CHART)
     }
 
+    def bubbleCoreChart = { attrs, body ->
+        validateAndRender(attrs, GoogleVisualization.BUBBLE_CORE_CHART)
+    }
+
     def columnCoreChart = { attrs, body ->
         validateAndRender(attrs, GoogleVisualization.COLUMN_CORE_CHART)
     }
