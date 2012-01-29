@@ -25,6 +25,10 @@ class GoogleVisualizationTagLib {
     static final VISUALIZATION_JAVASCRIPT_TEMPLATE = '/visualization_javascript'
     final BASIC_ATTRIBUTES = ['name', 'version', 'elementId', 'dynamicLoading', 'language', 'columns', 'data'] as Set
 
+    def apiImport = { attrs, body ->
+        out << '<script type="text/javascript" src="http://www.google.com/jsapi"></script>'
+    }
+
     def pieChart = { attrs, body ->
         validateAndRender(attrs, GoogleVisualization.PIE_CHART)
     }

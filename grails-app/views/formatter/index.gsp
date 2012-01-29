@@ -3,8 +3,8 @@
 <html>
     <head>
         <title>Google Visualization API plugin</title>
-		<meta name="layout" content="main" />
-        <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+        <meta name="layout" content="main" />
+        <gvisualization:apiImport/>
     </head>
        <body>
        <% 
