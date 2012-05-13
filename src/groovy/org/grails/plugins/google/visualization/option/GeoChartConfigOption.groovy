@@ -22,12 +22,21 @@ import org.grails.plugins.google.visualization.data.DataType
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum GeoChartConfigOption {
-    REGION("region", [DataType.STRING]),
-    WIDTH("width", [DataType.NUMBER, DataType.STRING]),
+    BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT]),
+    COLOR_AXIS("colorAxis", [DataType.OBJECT]),
+    DATALESS_REGION_COLOR("datalessRegionColor", [DataType.STRING]),
+    DISPLAY_MODE("displayMode", [DataType.STRING]),
+    ENABLE_REGION_INTERACTIVITY("enableRegionInteractivity", [DataType.BOOLEAN]),
     HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
-    BACKGROUND_COLOR("colors", [DataType.STRING, DataType.OBJECT]),
-    COLORS("colors", [DataType.ARRAY]),
-    RESOLUTION("resolution", [DataType.STRING])
+    KEEP_ASPECT_RATIO("keepAspectRatio", [DataType.BOOLEAN]),
+    LEGEND("legend", [DataType.OBJECT]),
+    REGION("region", [DataType.STRING]),
+    MAGNIFYING_GLASS("magnifyingGlass", [DataType.OBJECT]),
+    MARKER_OPACITY("markerOpacity", [DataType.NUMBER]),
+    RESOLUTION("resolution", [DataType.STRING]),
+    SIZE_AXIS("sizeAxis", [DataType.OBJECT]),
+    TOOLTIP("tooltip", [DataType.OBJECT]),
+    WIDTH("width", [DataType.NUMBER, DataType.STRING])
 
     static final Map configOptions
 
