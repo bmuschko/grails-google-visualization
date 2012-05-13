@@ -96,7 +96,7 @@ class GoogleVisualizationTagLibTests extends TagLibUnitTestCase {
     }
 
     void testGetInvalidOptionExceptionMessage() {
-        assertEquals "Attribute 'bla' is not a valid option for Google Visualization 'google.visualization.PieChart'!", tagLib.getInvalidOptionExceptionMessage('bla', GoogleVisualization.PIE_CHART) 
+        assertEquals "Attribute 'bla' is not a valid option for Google Visualization 'google.visualization.PieChart'!", tagLib.getInvalidOptionExceptionMessage('bla', GoogleVisualization.PIE_CHART).toString()
     }
 
     void testRenderVisualization() {

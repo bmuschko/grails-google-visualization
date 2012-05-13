@@ -25,6 +25,6 @@ import org.grails.plugins.google.visualization.util.DateUtil
 class DateRendererTests extends GrailsUnitTestCase {
     void testRenderValue() {
         def date = DateUtil.removeTime(DateUtil.createDate(1995, Calendar.NOVEMBER, 29))
-        assertEquals "new Date(1995, 10, 29, 0, 0, 0, 0)", DateRenderer.instance.renderValue(date)
+        assertEquals "new Date(1995, 10, 29, 0, 0, 0, 0)", DateRenderer.instance.renderValue(date).toString()
     }
 }

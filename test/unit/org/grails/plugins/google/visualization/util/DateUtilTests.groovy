@@ -47,18 +47,18 @@ class DateUtilTests extends GrailsUnitTestCase {
     void testCreateDateJavaScriptObject() {
         def date = DateUtil.createDate(1995, Calendar.NOVEMBER, 29)
         def dateJavaScriptObject = DateUtil.createDateJavaScriptObject(date)
-        assertEquals "new Date(1995, 10, 29)", dateJavaScriptObject
+        assertEquals "new Date(1995, 10, 29)", dateJavaScriptObject.toString()
     }
 
     void testCreateDateTimeJavaScriptObject() {
         def date = DateUtil.removeTime(DateUtil.createDate(1995, Calendar.NOVEMBER, 29))
         def dateTimeJavaScriptObject = DateUtil.createDateTimeJavaScriptObject(date)
-        assertEquals "new Date(1995, 10, 29, 0, 0, 0, 0)", dateTimeJavaScriptObject
+        assertEquals "new Date(1995, 10, 29, 0, 0, 0, 0)", dateTimeJavaScriptObject.toString()
     }
 
     void testCreateTimeOfDayJavaScriptObject() {
         def date = DateUtil.createDate(1995, Calendar.NOVEMBER, 29, 1, 2, 3, 4)
         def timeOfDayJavaScriptObject = DateUtil.createTimeOfDayJavaScriptObject(date)
-        assertEquals "[1, 2, 3, 4]", timeOfDayJavaScriptObject
+        assertEquals "[1, 2, 3, 4]", timeOfDayJavaScriptObject.toString()
     }
 }

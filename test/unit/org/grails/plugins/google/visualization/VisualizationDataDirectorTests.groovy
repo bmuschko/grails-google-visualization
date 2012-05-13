@@ -47,13 +47,13 @@ class VisualizationDataDirectorTests extends GrailsUnitTestCase {
         visualizationDataDirector.constructVisualizationData(attrs, GoogleVisualization.PIE_CHART)
         assertEquals 'visualization', visualizationDataDirector.getVisualizationData().name
         assertEquals 'piechart', visualizationDataDirector.getVisualizationData().elementId
-        assertEquals "{title: 'My Daily Activities', width: 400, height: 240, is3D: true}", visualizationDataDirector.getVisualizationData().options
+        assertEquals "{title: 'My Daily Activities', width: 400, height: 240, is3D: true}", visualizationDataDirector.getVisualizationData().options.toString()
         assertEquals 5, visualizationDataDirector.getVisualizationData().rows.size()
-        assertEquals "['Work', 11]", visualizationDataDirector.getVisualizationData().rows.get(0)
-        assertEquals "['Eat', 2]", visualizationDataDirector.getVisualizationData().rows.get(1)
-        assertEquals "['Commute', 2]", visualizationDataDirector.getVisualizationData().rows.get(2)
-        assertEquals "['Watch TV', 2]", visualizationDataDirector.getVisualizationData().rows.get(3)
-        assertEquals "['Sleep', 7]", visualizationDataDirector.getVisualizationData().rows.get(4)
+        assertEquals "['Work', 11]", visualizationDataDirector.getVisualizationData().rows.get(0).toString()
+        assertEquals "['Eat', 2]", visualizationDataDirector.getVisualizationData().rows.get(1).toString()
+        assertEquals "['Commute', 2]", visualizationDataDirector.getVisualizationData().rows.get(2).toString()
+        assertEquals "['Watch TV', 2]", visualizationDataDirector.getVisualizationData().rows.get(3).toString()
+        assertEquals "['Sleep', 7]", visualizationDataDirector.getVisualizationData().rows.get(4).toString()
         assertEquals 0, visualizationDataDirector.getVisualizationData().beforeDrawEvents.size()
         assertEquals 1, visualizationDataDirector.getVisualizationData().afterDrawEvents.size()
         assertEquals 'selectHandler', visualizationDataDirector.getVisualizationData().afterDrawEvents['select']

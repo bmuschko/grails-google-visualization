@@ -23,6 +23,6 @@ import grails.test.GrailsUnitTestCase
  */
 class MapRendererTests extends GrailsUnitTestCase {
     void testRenderValue() {
-        assertEquals "{1: 'value1', 2: 'value2', 3: 'value3'}", MapRenderer.instance.renderValue([1: 'value1', 2: 'value2', 3: 'value3'])
+        assertEquals "{1: 'value1', 2: 'value2', 3: 'value3'}", MapRenderer.instance.renderValue([1: 'value1', 2: 'value2', 3: 'value3']).toString()
     }
 }

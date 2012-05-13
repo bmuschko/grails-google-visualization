@@ -27,13 +27,13 @@ class ConfigOptionRendererUtilTests extends GrailsUnitTestCase {
     void testRenderForSingleAllowedType() {
         def resolvedConfigOption = ConfigOptionRendererUtil.render(PieChartConfigOption.TITLE, 'bla')
         assertEquals DataType.STRING, resolvedConfigOption.type
-        assertEquals "'bla'", resolvedConfigOption.value
+        assertEquals "'bla'", resolvedConfigOption.value.toString()
     }
 
     void testRenderForMultipleAllowedTypes() {
         def resolvedConfigOption = ConfigOptionRendererUtil.render(PieChartConfigOption.BACKGROUND_COLOR, '#004411')
         assertEquals DataType.STRING, resolvedConfigOption.type
-        assertEquals "'#004411'", resolvedConfigOption.value
+        assertEquals "'#004411'", resolvedConfigOption.value.toString()
     }
 
     void testRenderForUnsupportedType() {

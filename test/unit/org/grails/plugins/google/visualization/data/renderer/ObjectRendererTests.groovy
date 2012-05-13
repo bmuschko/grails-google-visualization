@@ -23,6 +23,6 @@ import grails.test.GrailsUnitTestCase
  */
 class ObjectRendererTests extends GrailsUnitTestCase {
     void testRenderValue() {
-        assertEquals "{stroke: 'black', fill: '#eee', strokeSize: 1}", ObjectRenderer.instance.renderValue(new Expando(stroke:'black', fill:'#eee', strokeSize: 1))
+        assertEquals "{stroke: 'black', fill: '#eee', strokeSize: 1}", ObjectRenderer.instance.renderValue(new Expando(stroke:'black', fill:'#eee', strokeSize: 1)).toString()
     }
 }

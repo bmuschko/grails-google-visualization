@@ -23,10 +23,10 @@ import grails.test.GrailsUnitTestCase
  */
 class StringRendererTests extends GrailsUnitTestCase {
     void testRenderStringValueUnescaped() {
-        assertEquals "'test'", StringRenderer.instance.renderValue('test')
+        assertEquals "'test'", StringRenderer.instance.renderValue('test').toString()
     }
 
     void testRenderStringValueEscaped() {
-        assertEquals "'Jack\\'s parameter'", StringRenderer.instance.renderValue("Jack's parameter")
+        assertEquals "'Jack\\'s parameter'", StringRenderer.instance.renderValue("Jack's parameter").toString()
     }
 }

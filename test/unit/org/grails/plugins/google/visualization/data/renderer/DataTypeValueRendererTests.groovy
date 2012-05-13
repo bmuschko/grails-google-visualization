@@ -27,7 +27,7 @@ class DataTypeValueRendererTests extends GrailsUnitTestCase {
     void testRenderForString() {
         def renderedValue = DataTypeValueRenderer.instance.render('bla')
         assertEquals DataType.STRING, renderedValue.type
-        assertEquals "'bla'", renderedValue.value
+        assertEquals "'bla'", renderedValue.value.toString()
     }
 
     void testRenderForNumber() {
@@ -52,30 +52,30 @@ class DataTypeValueRendererTests extends GrailsUnitTestCase {
         def date = DateUtil.removeTime(DateUtil.createDate(1995, Calendar.NOVEMBER, 29))
         def renderedValue = DataTypeValueRenderer.instance.render(date)
         assertEquals DataType.DATE, renderedValue.type
-        assertEquals "new Date(1995, 10, 29, 0, 0, 0, 0)", renderedValue.value
+        assertEquals "new Date(1995, 10, 29, 0, 0, 0, 0)", renderedValue.value.toString()
     }
 
     void testRenderForList() {
         def renderedValue = DataTypeValueRenderer.instance.render(['a', 1, true] as List)
         assertEquals DataType.ARRAY, renderedValue.type
-        assertEquals "['a', 1, true]", renderedValue.value
+        assertEquals "['a', 1, true]", renderedValue.value.toString()
     }
 
     void testRenderForObjectArray() {
         def renderedValue = DataTypeValueRenderer.instance.render(['a', 1, true] as Object[])
         assertEquals DataType.ARRAY, renderedValue.type
-        assertEquals "['a', 1, true]", renderedValue.value
+        assertEquals "['a', 1, true]", renderedValue.value.toString()
     }
 
     void testRenderForObject() {
         def renderedValue = DataTypeValueRenderer.instance.render(new Expando(stroke:'black', fill:'#eee', strokeSize: 1))
         assertEquals DataType.OBJECT, renderedValue.type
-        assertEquals "{stroke: 'black', fill: '#eee', strokeSize: 1}", renderedValue.value
+        assertEquals "{stroke: 'black', fill: '#eee', strokeSize: 1}", renderedValue.value.toString()
     }
 
     void testRenderForMap() {
         def renderedValue = DataTypeValueRenderer.instance.render([1: 'value1', 2: 'value2', 3: 'value3'])
         assertEquals DataType.MAP, renderedValue.type
-        assertEquals "{1: 'value1', 2: 'value2', 3: 'value3'}", renderedValue.value
+        assertEquals "{1: 'value1', 2: 'value2', 3: 'value3'}", renderedValue.value.toString()
     }
 }
