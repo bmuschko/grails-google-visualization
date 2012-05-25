@@ -35,6 +35,7 @@ enum ComboCoreChartConfigOption {
     H_AXIS("hAxis", [DataType.OBJECT]),
     HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     INTERPOLATE_NULLS("interpolateNulls", [DataType.BOOLEAN]),
+    IS_STACKED("isStacked", [DataType.BOOLEAN]),
     LEGEND("legend", [DataType.STRING]),
     LEGEND_TEXT_STYLE("legendTextStyle", [DataType.OBJECT]),
     REVERSE_CATEGORIES("reverseCategories", [DataType.BOOLEAN]),
