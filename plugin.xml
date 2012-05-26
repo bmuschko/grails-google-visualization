@@ -2,9 +2,7 @@
   <author>Benjamin Muschko</author>
   <authorEmail>benjamin.muschko@gmail.com</authorEmail>
   <title>Google Visualization API Plugin</title>
-  <description>\
-This is a plugin for Google Visualization API. 
-</description>
+  <description>This is a plugin for Google Visualization API.</description>
   <documentation>http://www.grails.org/plugin/google-visualization</documentation>
   <type>GoogleVisualizationGrailsPlugin</type>
   <resources>
