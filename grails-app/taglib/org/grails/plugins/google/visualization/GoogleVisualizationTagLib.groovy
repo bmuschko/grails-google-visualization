@@ -157,25 +157,12 @@ class GoogleVisualizationTagLib {
         validateAndRender(attrs, GoogleVisualization.IMAGE_CANDLESTICK_CHART, ['formatters'])
     }
 
-    private validateAndRender(attrs, googleVisualization) {
-        validateAttributes(attrs, googleVisualization)
-        renderVisualization(attrs, googleVisualization)
-    }
-
     private validateAndRender(attrs, googleVisualization, optionalAttributes) {
         validateAttributes(attrs, googleVisualization, optionalAttributes)
         renderVisualization(attrs, googleVisualization)
     }
 
-    private validateAttributes(attrs, googleVisualization) {
-        attrs.each { key, value ->
-            if(!isValidAttribute(key, googleVisualization)) {
-                throw new IllegalArgumentException(getInvalidOptionExceptionMessage(key, googleVisualization)) 
-            }
-        }
-    }
-
-    def validateAttributes(attrs, googleVisualization, optionalAttributes) {
+    private validateAttributes(attrs, googleVisualization, optionalAttributes) {
         attrs.each { key, value ->
             if(!isValidAttribute(key, googleVisualization, optionalAttributes)) {
                 throw new IllegalArgumentException(getInvalidOptionExceptionMessage(key, googleVisualization))

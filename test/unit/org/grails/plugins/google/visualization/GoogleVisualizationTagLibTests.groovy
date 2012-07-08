@@ -14,7 +14,7 @@
  */
 package org.grails.plugins.google.visualization
 
-import grails.test.*
+import grails.test.TagLibUnitTestCase
 
 /**
  * Google visualization taglib tests
@@ -25,11 +25,6 @@ class GoogleVisualizationTagLibTests extends TagLibUnitTestCase {
     void testPieChart() {
         tagLib.pieChart(createPieChartAttributes()) { }
         assertNotNull tagLib.out.toString()
-    }
-
-    void testValidateAttributesForBasicAttributes() {
-        def attrs = ['name':'testName', 'elementId':'testElementId', 'columns':[1, 2, 3, 4], 'data':[5, 6, 7, 8]]
-        tagLib.validateAttributes(attrs, GoogleVisualization.PIE_CHART)
     }
 
     void testValidateAttributesForOptionalAttributes() {
@@ -46,28 +41,6 @@ class GoogleVisualizationTagLibTests extends TagLibUnitTestCase {
         }
         catch(IllegalArgumentException e) {
             assertEquals "Attribute 'someValue' is not a valid option for Google Visualization 'google.visualization.PieChart'!", e.message
-        }
-    }
-
-    void testValidateAttributesForConfigOptionAttribute() {
-        def attrs = ['backgroundColor':'blue']
-        tagLib.validateAttributes(attrs, GoogleVisualization.PIE_CHART)
-    }
-
-    void testValidateAttributesForEventsAttribute() {
-        def attrs = ['onmouseover':'onMouseOverHandler']
-        tagLib.validateAttributes(attrs, GoogleVisualization.PIE_CHART)
-    }
-
-    void testValidateAttributesForUnknownAttribute() {
-        def attrs = ['bla':'blubb']
-      
-        try {
-            tagLib.validateAttributes(attrs, GoogleVisualization.PIE_CHART)
-            fail("Unknown attributes have to throw an exception!")
-        }
-        catch(IllegalArgumentException e) {
-            assertEquals "Attribute 'bla' is not a valid option for Google Visualization 'google.visualization.PieChart'!", e.message
         }
     }
 
