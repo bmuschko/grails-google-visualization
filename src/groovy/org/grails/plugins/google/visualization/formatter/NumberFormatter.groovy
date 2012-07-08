@@ -25,6 +25,7 @@ class NumberFormatter extends StandardFormatter {
     def groupingSymbol
     def negativeColor
     def negativeParens
+    def pattern
     def prefix
     def suffix
 
@@ -40,6 +41,6 @@ class NumberFormatter extends StandardFormatter {
     @Override
     def getFormatterOptions() {
         ['decimalSymbol': decimalSymbol, 'fractionDigits': fractionDigits, 'groupingSymbol': groupingSymbol,
-         'negativeColor': negativeColor, 'negativeParens': negativeParens, 'prefix': prefix, 'suffix': suffix]
+         'negativeColor': negativeColor, 'negativeParens': negativeParens, 'pattern': pattern, 'prefix': prefix, 'suffix': suffix]
     }
 }
