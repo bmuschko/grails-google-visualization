@@ -1,4 +1,4 @@
-<plugin name='google-visualization' version='0.5.3' grailsVersion='1.2 &gt; *'>
+<plugin name='google-visualization' version='0.5.4' grailsVersion='1.2 &gt; *'>
   <author>Benjamin Muschko</author>
   <authorEmail>benjamin.muschko@gmail.com</authorEmail>
   <title>Google Visualization API Plugin</title>

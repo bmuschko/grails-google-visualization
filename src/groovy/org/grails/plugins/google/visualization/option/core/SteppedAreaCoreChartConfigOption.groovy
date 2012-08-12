@@ -44,6 +44,7 @@ enum SteppedAreaCoreChartConfigOption {
     TITLE_POSITION("titlePosition", [DataType.STRING]),
     TITLE_TEXT_STYLE("titleTextStyle", [DataType.OBJECT]),
     TOOLTIP("tooltip", [DataType.OBJECT]),
+    V_AXES("vAxes", [DataType.ARRAY, DataType.OBJECT]),
     V_AXIS("vAxis", [DataType.OBJECT]),
     WIDTH("width", [DataType.NUMBER, DataType.STRING])
 
