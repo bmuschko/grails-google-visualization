@@ -36,7 +36,8 @@ enum GaugeConfigOption {
     WIDTH("width", [DataType.NUMBER, DataType.STRING]),
     YELLOW_COLOR("yellowColor", [DataType.STRING]),
     YELLOW_FROM("yellowFrom", [DataType.NUMBER]),
-    YELLOW_TO("yellowTo", [DataType.NUMBER])
+    YELLOW_TO("yellowTo", [DataType.NUMBER]),
+    FORCEIFRAME("forceIFrame", [DataType.BOOLEAN])
 
     static final Map configOptions
 

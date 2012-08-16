@@ -30,7 +30,8 @@ enum GeoMapConfigOption {
     LEGEND("legend", [DataType.STRING]),
     SHOW_LEGEND("showLegend", [DataType.BOOLEAN]),
     SHOW_ZOOM_OUT("showZoomOut", [DataType.BOOLEAN]),
-    ZOOM_OUT_LABEL("zoomOutLabel", [DataType.STRING])
+    ZOOM_OUT_LABEL("zoomOutLabel", [DataType.STRING]),
+    FORCEIFRAME("forceIFrame", [DataType.BOOLEAN])
 
     static final Map configOptions
 

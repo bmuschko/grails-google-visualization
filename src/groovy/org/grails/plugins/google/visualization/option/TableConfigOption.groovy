@@ -36,8 +36,9 @@ enum TableConfigOption {
     SORT_ASCENDING("sortAscending", [DataType.BOOLEAN]),
     SORT_COLUMN("sortColumn", [DataType.NUMBER]),
     START_PAGE("startPage", [DataType.NUMBER]),
-    WIDTH("width", [DataType.NUMBER, DataType.STRING])
-  
+    WIDTH("width", [DataType.NUMBER, DataType.STRING]),
+    FORCEIFRAME("forceIFrame", [DataType.BOOLEAN])
+
     static final Map configOptions
 
     static {

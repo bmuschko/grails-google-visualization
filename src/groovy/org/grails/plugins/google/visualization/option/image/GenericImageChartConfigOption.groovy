@@ -39,7 +39,8 @@ enum GenericImageChartConfigOption {
     SINGLE_COLUMN_DISPLAY("singleColumnDisplay", [DataType.NUMBER]),
     TITLE("title", [DataType.STRING]),
     VALUE_LABELS_INTERVAL("valueLabelsInterval", [DataType.NUMBER]),
-    WIDTH("width", [DataType.NUMBER, DataType.STRING])
+    WIDTH("width", [DataType.NUMBER, DataType.STRING]),
+    FORCEIFRAME("forceIFrame", [DataType.BOOLEAN])
 
     static final Map configOptions
 

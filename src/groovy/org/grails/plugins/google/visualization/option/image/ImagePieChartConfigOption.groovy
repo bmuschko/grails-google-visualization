@@ -28,10 +28,11 @@ enum ImagePieChartConfigOption {
     ENABLE_EVENTS("enableEvents", [DataType.BOOLEAN]),
     HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     IS_3D("is3D", [DataType.BOOLEAN]),
-    LABELS("labels", [DataType.STRING]),    
+    LABELS("labels", [DataType.STRING]),
     LEGEND("legend", [DataType.STRING]),
     TITLE("title", [DataType.STRING]),
-    WIDTH("width", [DataType.NUMBER, DataType.STRING])
+    WIDTH("width", [DataType.NUMBER, DataType.STRING]),
+    FORCEIFRAME("forceIFrame", [DataType.BOOLEAN])
 
     static final Map configOptions
 

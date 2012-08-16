@@ -31,7 +31,8 @@ enum ImageCandlestickChartConfigOption {
     SHOW_VALUE_LABELS("showValueLabels", [DataType.BOOLEAN]),
     SHOW_VALUE_LABELS_INTERVAL("showValueLabelsInternal", [DataType.NUMBER]),
     TITLE("title", [DataType.STRING]),
-    WIDTH("width", [DataType.NUMBER, DataType.STRING])
+    WIDTH("width", [DataType.NUMBER, DataType.STRING]),
+    FORCEIFRAME("forceIFrame", [DataType.BOOLEAN])
 
     static final Map configOptions
 

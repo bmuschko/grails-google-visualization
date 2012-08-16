@@ -47,7 +47,8 @@ enum AnnotatedTimeLineConfigOption {
     THICKNESS("thickness", [DataType.NUMBER]),
     WMODE("wmode", [DataType.STRING]),
     ZOOM_END_TIME("zoomEndTime", [DataType.DATE]),
-    ZOOM_START_TIME("zoomStartTime", [DataType.DATE])
+    ZOOM_START_TIME("zoomStartTime", [DataType.DATE]),
+    FORCEIFRAME("forceIFrame", [DataType.BOOLEAN])
 
     static final Map configOptions
 
