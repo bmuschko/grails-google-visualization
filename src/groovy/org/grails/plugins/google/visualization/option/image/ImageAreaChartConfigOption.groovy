@@ -34,7 +34,7 @@ enum ImageAreaChartConfigOption {
     TITLE("title", [DataType.STRING]),
     VALUE_LABELS_INTERVAL("valueLabelsInterval", [DataType.NUMBER]),
     WIDTH("width", [DataType.NUMBER, DataType.STRING])
-  
+
     static final Map configOptions
 
     static {

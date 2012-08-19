@@ -40,7 +40,8 @@ enum TreeMapConfigOption {
     SHOW_SCALE("showScale", [DataType.BOOLEAN]),
     FONT_COLOR("fontColor", [DataType.STRING]),
     FONT_FAMILY("fontFamily", [DataType.STRING]),
-    FONT_SIZE("fontSize", [DataType.NUMBER])
+    FONT_SIZE("fontSize", [DataType.NUMBER]),
+    FORCEIFRAME("forceIFrame", [DataType.BOOLEAN])
 
     static final Map configOptions
 
