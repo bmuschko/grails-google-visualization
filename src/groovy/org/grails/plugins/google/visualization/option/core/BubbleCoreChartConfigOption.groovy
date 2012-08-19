@@ -43,7 +43,8 @@ enum BubbleCoreChartConfigOption {
     TITLE_TEXT_STYLE("titleTextStyle", [DataType.OBJECT]),
     TOOLTIP("tooltip", [DataType.OBJECT]),
     V_AXIS("vAxis", [DataType.OBJECT]),
-    WIDTH("width", [DataType.NUMBER, DataType.STRING])
+    WIDTH("width", [DataType.NUMBER, DataType.STRING]),
+    FORCEIFRAME("forceIFrame", [DataType.BOOLEAN])
 
     static final Map configOptions
 

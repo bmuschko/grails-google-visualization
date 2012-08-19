@@ -37,7 +37,7 @@ enum TableConfigOption {
     SORT_COLUMN("sortColumn", [DataType.NUMBER]),
     START_PAGE("startPage", [DataType.NUMBER]),
     WIDTH("width", [DataType.NUMBER, DataType.STRING])
-  
+
     static final Map configOptions
 
     static {

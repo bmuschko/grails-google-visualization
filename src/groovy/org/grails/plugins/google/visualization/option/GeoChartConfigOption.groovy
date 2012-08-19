@@ -36,7 +36,8 @@ enum GeoChartConfigOption {
     RESOLUTION("resolution", [DataType.STRING]),
     SIZE_AXIS("sizeAxis", [DataType.OBJECT]),
     TOOLTIP("tooltip", [DataType.OBJECT]),
-    WIDTH("width", [DataType.NUMBER, DataType.STRING])
+    WIDTH("width", [DataType.NUMBER, DataType.STRING]),
+    FORCEIFRAME("forceIFrame", [DataType.BOOLEAN])
 
     static final Map configOptions
 
