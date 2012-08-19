@@ -31,8 +31,7 @@ enum ImagePieChartConfigOption {
     LABELS("labels", [DataType.STRING]),
     LEGEND("legend", [DataType.STRING]),
     TITLE("title", [DataType.STRING]),
-    WIDTH("width", [DataType.NUMBER, DataType.STRING]),
-    FORCEIFRAME("forceIFrame", [DataType.BOOLEAN])
+    WIDTH("width", [DataType.NUMBER, DataType.STRING])
 
     static final Map configOptions
 

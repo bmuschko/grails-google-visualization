@@ -33,8 +33,7 @@ enum ImageSparkLineConfigOption {
     SHOW_VALUE_LABELS("showValueLabels", [DataType.BOOLEAN]),
     TITLE("title", [DataType.ARRAY]),
     WIDTH("width", [DataType.NUMBER, DataType.STRING]),
-    LAYOUT("layout", [DataType.STRING]),
-    FORCEIFRAME("forceIFrame", [DataType.BOOLEAN])
+    LAYOUT("layout", [DataType.STRING])
 
     static final Map configOptions
 

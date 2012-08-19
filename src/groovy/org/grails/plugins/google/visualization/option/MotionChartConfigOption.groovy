@@ -33,8 +33,7 @@ enum MotionChartConfigOption {
     SHOW_Y_METRIC_PANEL("showYMetricPicker", [DataType.BOOLEAN]),
     SHOW_X_SCALE_PICKER("showXScalePicker", [DataType.BOOLEAN]),
     SHOW_Y_SCALE_PICKER("showYScalePicker", [DataType.BOOLEAN]),
-    SHOW_ADVANCED_PANEL("showAdvancedPanel", [DataType.BOOLEAN]),
-    FORCEIFRAME("forceIFrame", [DataType.BOOLEAN])
+    SHOW_ADVANCED_PANEL("showAdvancedPanel", [DataType.BOOLEAN])
 
     static final Map configOptions
 

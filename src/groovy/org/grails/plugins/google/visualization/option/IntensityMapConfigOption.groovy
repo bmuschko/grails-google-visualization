@@ -26,8 +26,7 @@ enum IntensityMapConfigOption {
     HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     REGION("region", [DataType.STRING]),
     SHOW_ONE_TAB("showOneTab", [DataType.BOOLEAN]),
-    WIDTH("width", [DataType.NUMBER, DataType.STRING]),
-    FORCEIFRAME("forceIFrame", [DataType.BOOLEAN])
+    WIDTH("width", [DataType.NUMBER, DataType.STRING])
 
     static final Map configOptions
 

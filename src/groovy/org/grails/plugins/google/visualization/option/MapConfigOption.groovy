@@ -29,8 +29,7 @@ enum MapConfigOption {
     LINE_WIDTH("lineWidth", [DataType.NUMBER]),
     MAP_TYPE("mapType", [DataType.STRING]),
     USE_MAP_TYPE_CONTROL("useMapTypeControl", [DataType.BOOLEAN]),
-    ZOOM_LEVEL("zoomLevel", [DataType.NUMBER]),
-    FORCEIFRAME("forceIFrame", [DataType.BOOLEAN])
+    ZOOM_LEVEL("zoomLevel", [DataType.NUMBER])
 
     static final Map configOptions
 

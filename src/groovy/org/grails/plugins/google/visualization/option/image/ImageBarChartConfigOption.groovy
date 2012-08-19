@@ -35,8 +35,7 @@ enum ImageBarChartConfigOption {
     SHOW_VALUE_LABELS("showValueLabels", [DataType.BOOLEAN]),
     TITLE("title", [DataType.STRING]),
     VALUE_LABELS_INTERVAL("valueLabelsInterval", [DataType.NUMBER]),
-    WIDTH("width", [DataType.NUMBER, DataType.STRING]),
-    FORCEIFRAME("forceIFrame", [DataType.BOOLEAN])
+    WIDTH("width", [DataType.NUMBER, DataType.STRING])
 
     static final Map configOptions
 

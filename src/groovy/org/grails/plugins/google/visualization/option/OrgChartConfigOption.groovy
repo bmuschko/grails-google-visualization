@@ -26,8 +26,7 @@ enum OrgChartConfigOption {
     ALLOW_HTML("allowHtml", [DataType.BOOLEAN]),
     NODE_CLASS("nodeClass", [DataType.STRING]),
     SELECTED_NODE_CLASS("selectedNodeClass", [DataType.STRING]),
-    SIZE("size", [DataType.STRING]),
-    FORCEIFRAME("forceIFrame", [DataType.BOOLEAN])
+    SIZE("size", [DataType.STRING])
 
     static final Map configOptions
 
