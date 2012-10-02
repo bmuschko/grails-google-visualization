@@ -24,6 +24,7 @@ import org.grails.plugins.google.visualization.data.DataType
 enum CandlestickCoreChartConfigOption {
     AXIS_TITLES_POSITION("axisTitlesPosition", [DataType.STRING]),
     BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT]),
+    BAR("bar", [DataType.OBJECT]),
     CHART_AREA("chartArea", [DataType.OBJECT]),
     COLORS("colors", [DataType.ARRAY]),
     ENABLE_INTERACTIVITY("enableInteractivity", [DataType.BOOLEAN]),
