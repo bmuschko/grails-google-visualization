@@ -25,6 +25,7 @@ enum ComboCoreChartConfigOption {
     AREA_OPACITY("areaOpacity", [DataType.NUMBER]),
     AXIS_TITLES_POSITION("axisTitlesPosition", [DataType.STRING]),
     BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT]),
+    BAR("bar", [DataType.OBJECT]),
     CHART_AREA("chartArea", [DataType.OBJECT]),
     COLORS("colors", [DataType.ARRAY]),
     CURVE_TYPE("curveType", [DataType.STRING]),

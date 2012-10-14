@@ -23,6 +23,7 @@ import org.grails.plugins.google.visualization.data.DataType
  */
 enum BarCoreChartConfigOption {
     AXIS_TITLES_POSITION("axisTitlesPosition", [DataType.STRING]),
+    BAR("bar", [DataType.OBJECT]),
     BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT]),
     CHART_AREA("chartArea", [DataType.OBJECT]),
     COLORS("colors", [DataType.ARRAY]),
