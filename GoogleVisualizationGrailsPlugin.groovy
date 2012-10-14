@@ -16,7 +16,7 @@
  */
 class GoogleVisualizationGrailsPlugin {
     // the plugin version
-    def version = "0.5.5"
+    def version = "0.5.6"
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "1.2 > *"
     // the other plugins this plugin depends on
@@ -33,6 +33,12 @@ class GoogleVisualizationGrailsPlugin {
 
     // URL to the plugin's documentation
     def documentation = "http://www.grails.org/plugin/google-visualization"
+
+    // Location of the plugin's issue tracker.
+    def issueManagement = [system: "github", url: "https://github.com/bmuschko/grails-google-visualization/issues"]
+
+    // Online location of the plugin's browseable source code.
+    def scm = [url: "https://github.com/bmuschko/grails-google-visualization"]
 
     def doWithSpring = {
         // TODO Implement runtime spring config (optional)
