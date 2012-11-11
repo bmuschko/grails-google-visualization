@@ -1,20 +1,18 @@
+grails.project.work.dir = 'target'
+grails.project.source.level = 1.6
+
 grails.project.dependency.resolution = {
-    inherits("global") {
-    }
 
-    repositories {
-        grailsPlugins()
-        grailsHome()
-        grailsCentral()
-        grailsRepo "http://grails.org/plugins"
-    }
+	inherits 'global'
+	log 'warn'
 
-    dependencies {
-    }
+	repositories {
+		grailsCentral()
+	}
 
-    plugins {
-        build ":release:2.0.0", {
-            export = false
-        }
-    }
+	plugins {
+		build(':release:2.0.4', ':rest-client-builder:1.0.2') {
+			export = false
+		}
+	}
 }
