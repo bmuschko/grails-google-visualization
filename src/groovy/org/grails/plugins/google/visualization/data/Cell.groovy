@@ -26,7 +26,7 @@ class Cell {
     Map customValues
 
     @Override
-    public String toString() {
+    String toString() {
         "Cell{value='${value}', label='${label}', customValues='${customValues}'}"
     }
 }

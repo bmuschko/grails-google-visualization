@@ -60,7 +60,7 @@ enum GenericImageChartConfigOption {
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "GenericImageChartConfigOption{name='${name}', types='${types}'}"
     }
 }

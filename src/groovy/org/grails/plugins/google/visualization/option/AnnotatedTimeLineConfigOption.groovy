@@ -68,7 +68,7 @@ enum AnnotatedTimeLineConfigOption {
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "AnnotatedTimeLineConfigOption{name='${name}', types='${types}'}"
     }
 }

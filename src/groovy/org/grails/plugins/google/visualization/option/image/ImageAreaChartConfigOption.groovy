@@ -54,7 +54,7 @@ enum ImageAreaChartConfigOption {
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "ImageAreaChartConfigOption{name='${name}', types='${types}'}"
     }
 }

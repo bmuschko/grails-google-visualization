@@ -52,7 +52,7 @@ enum ImageCandlestickChartConfigOption {
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "ImageCandlestickChartConfigOption{name='${name}', types='${types}'}"
     }
 }

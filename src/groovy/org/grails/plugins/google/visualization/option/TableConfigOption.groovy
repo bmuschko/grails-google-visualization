@@ -57,7 +57,7 @@ enum TableConfigOption {
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "TableConfigOption{name='${name}', types='${types}'}"
     }
 }

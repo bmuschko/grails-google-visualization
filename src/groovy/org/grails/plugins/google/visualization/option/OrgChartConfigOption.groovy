@@ -47,7 +47,7 @@ enum OrgChartConfigOption {
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "OrgChartConfigOption{name='${name}', types='${types}'}"
     }
 }

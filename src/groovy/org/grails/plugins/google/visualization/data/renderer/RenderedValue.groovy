@@ -29,7 +29,7 @@ class RenderedValue {
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "RenderedValue{type='${type}', value='${value}'}"
     }
 }

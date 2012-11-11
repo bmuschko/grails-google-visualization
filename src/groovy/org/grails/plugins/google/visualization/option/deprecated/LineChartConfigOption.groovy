@@ -72,7 +72,7 @@ enum LineChartConfigOption {
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "LineChartConfigOption{name='${name}', types='${types}'}"
     }
 }

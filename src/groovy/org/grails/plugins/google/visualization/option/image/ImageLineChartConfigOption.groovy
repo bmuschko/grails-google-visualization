@@ -55,7 +55,7 @@ enum ImageLineChartConfigOption {
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "ImageLineChartConfigOption{name='${name}', types='${types}'}"
     }
 }
