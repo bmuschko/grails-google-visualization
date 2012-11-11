@@ -71,7 +71,7 @@ enum BarChartConfigOption {
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "BarChartConfigOption{name='${name}', types='${types}'}"
     }
 }

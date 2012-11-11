@@ -71,7 +71,7 @@ enum ColumnChartConfigOption {
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "ColumnChartConfigOption{name='${name}', types='${types}'}"
     }
 }

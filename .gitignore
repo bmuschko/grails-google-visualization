@@ -1,7 +1,11 @@
 out
 target
-stacktrace.log
+.log
 *.iml
 *.ipr
 *.iws
 .idea
+target/
+plugin.xml
+.settings/
+web-app/

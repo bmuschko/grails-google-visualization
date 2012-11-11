@@ -51,7 +51,7 @@ enum GeoMapConfigOption {
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "GeoMapConfigOption{name='${name}', types='${types}'}"
     }
 }

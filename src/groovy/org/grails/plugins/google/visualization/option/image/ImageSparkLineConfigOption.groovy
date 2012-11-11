@@ -54,7 +54,7 @@ enum ImageSparkLineConfigOption {
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "ImageSparkLineConfigOption{name='${name}', types='${types}'}"
     }
 }

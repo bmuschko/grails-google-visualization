@@ -54,7 +54,7 @@ enum MotionChartConfigOption {
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "MotionChartConfigOption{name='${name}', types='${types}'}"
     }
 }

@@ -57,7 +57,7 @@ enum GaugeConfigOption {
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "GaugeConfigOption{name='${name}', types='${types}'}"
     }
 }

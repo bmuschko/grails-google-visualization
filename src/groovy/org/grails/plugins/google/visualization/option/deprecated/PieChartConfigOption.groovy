@@ -62,7 +62,7 @@ enum PieChartConfigOption {
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "PieChartConfigOption{name='${name}', types='${types}'}"
     }
 }

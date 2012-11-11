@@ -70,7 +70,7 @@ enum ScatterChartConfigOption {
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "ScatterChartConfigOption{name='${name}', types='${types}'}"
     }
 }

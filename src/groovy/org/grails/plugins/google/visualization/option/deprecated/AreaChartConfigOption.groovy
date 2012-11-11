@@ -72,7 +72,7 @@ enum AreaChartConfigOption {
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "AreaChartConfigOption{name='${name}', types='${types}'}"
     }
 }

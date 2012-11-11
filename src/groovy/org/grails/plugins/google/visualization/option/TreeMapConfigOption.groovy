@@ -62,7 +62,7 @@ enum TreeMapConfigOption {
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "TreeMapConfigOption{name='${name}', types='${types}'}"
     }
 }

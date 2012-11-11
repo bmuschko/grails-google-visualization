@@ -47,7 +47,7 @@ enum IntensityMapConfigOption {
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "IntensityMapConfigOption{name='${name}', types='${types}'}"
     }
 }

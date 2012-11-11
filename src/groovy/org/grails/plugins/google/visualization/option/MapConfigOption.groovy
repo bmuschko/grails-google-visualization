@@ -50,7 +50,7 @@ enum MapConfigOption {
     }
 
     @Override
-    public String toString() {
+    String toString() {
         "MapConfigOption{name='${name}', types='${types}'}"
     }
 }
