@@ -15,13 +15,15 @@
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 class GoogleVisualizationGrailsPlugin {
-    def version = "0.6"
+    def version = "0.6.1"
     def grailsVersion = "1.2 > *"
     def author = "Benjamin Muschko"
     def authorEmail = "benjamin.muschko@gmail.com"
+    def developers = [[name: "Benjamin Muschko", email: "benjamin.muschko@gmail.com"]]
     def title = "Google Visualization API Plugin"
     def description = 'This is a plugin for Google Visualization API.'
     def documentation = "http://www.grails.org/plugin/google-visualization"
+    def license = "APACHE"
     def issueManagement = [system: "github", url: "https://github.com/bmuschko/grails-google-visualization/issues"]
     def scm = [url: "https://github.com/bmuschko/grails-google-visualization"]
 }
