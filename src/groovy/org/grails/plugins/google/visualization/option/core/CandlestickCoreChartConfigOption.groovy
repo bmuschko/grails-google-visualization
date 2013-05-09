@@ -44,7 +44,8 @@ enum CandlestickCoreChartConfigOption {
     V_AXES("vAxes", [DataType.ARRAY, DataType.OBJECT]),
     V_AXIS("vAxis", [DataType.OBJECT]),
     WIDTH("width", [DataType.NUMBER, DataType.STRING]),
-    FORCEIFRAME("forceIFrame", [DataType.BOOLEAN])
+    FORCEIFRAME("forceIFrame", [DataType.BOOLEAN]),
+    CANDLESTICK("candlestick", [DataType.OBJECT])
 
     static final Map configOptions
 
