@@ -22,6 +22,7 @@ package org.grails.plugins.google.visualization
 class VisualizationData {
     final visualization
     def version
+    def callback
     def name
     def elementId
     def dynamicLoading

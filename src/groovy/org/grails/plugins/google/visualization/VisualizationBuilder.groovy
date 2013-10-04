@@ -29,6 +29,7 @@ abstract class VisualizationBuilder {
     }
 
     abstract buildName()
+    abstract buildCallback()
     abstract buildVersion()
     abstract buildElementId()
     abstract buildDynamicLoading()

@@ -23,10 +23,18 @@ class GoogleVisualizationTagLib {
     static namespace = "gvisualization"
     static final PLUGIN_NAME = 'google-visualization'
     static final VISUALIZATION_JAVASCRIPT_TEMPLATE = '/visualization_javascript'
-    final BASIC_ATTRIBUTES = ['name', 'version', 'elementId', 'dynamicLoading', 'language', 'columns', 'data'] as Set
+    final BASIC_ATTRIBUTES = ['callback', 'name', 'version', 'elementId', 'dynamicLoading', 'language', 'columns', 'data'] as Set
 
     def apiImport = { attrs, body ->
-        out << '<script type="text/javascript" src="http://www.google.com/jsapi"></script>'
+        out << '<script type="text/javascript" src="//www.google.com/jsapi'
+        if (attrs.callback && attrs.key) {
+            out << "?key=${attrs.key}&callback=${attrs.callback}"
+        } else if (attrs.callback) {
+            out << "?callback=${attrs.callback}"
+        } else if (attrs.key) {
+            out << "?key=${attrs.key}"
+        }
+        out << '"></script>'
     }
 
     def pieChart = { attrs, body ->
