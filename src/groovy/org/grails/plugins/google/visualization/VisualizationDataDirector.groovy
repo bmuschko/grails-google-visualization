@@ -29,6 +29,7 @@ class VisualizationDataDirector {
     def constructVisualizationData(attrs, visualization) {
         visualizationBuilder.createNewVisualizationData(attrs, visualization)
         visualizationBuilder.buildName()
+        visualizationBuilder.buildCallback()
         visualizationBuilder.buildVersion()
         visualizationBuilder.buildElementId()
         visualizationBuilder.buildDynamicLoading()

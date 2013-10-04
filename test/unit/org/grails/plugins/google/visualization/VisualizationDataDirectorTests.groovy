@@ -41,11 +41,12 @@ class VisualizationDataDirectorTests extends GrailsUnitTestCase {
     }
 
     void testConstructVisualizationData() {
-        def attrs = ['elementId':'piechart', 'title':'My Daily Activities', 'width':400, 'height':240, 'is3D':true, 'columns':[['string', 'Task'], ['number', 'Hours per Day']], 'data':[['Work', 11], ['Eat', 2], ['Commute', 2], ['Watch TV', 2], ['Sleep', 7]], 'select':'selectHandler']
+        def attrs = ['callback':'testcallback', 'elementId':'piechart', 'title':'My Daily Activities', 'width':400, 'height':240, 'is3D':true, 'columns':[['string', 'Task'], ['number', 'Hours per Day']], 'data':[['Work', 11], ['Eat', 2], ['Commute', 2], ['Watch TV', 2], ['Sleep', 7]], 'select':'selectHandler']
         def googleVisualizationBuilder = new GoogleVisualizationBuilder()
         visualizationDataDirector.setVisualizationDataBuilder(googleVisualizationBuilder)
         visualizationDataDirector.constructVisualizationData(attrs, GoogleVisualization.PIE_CHART)
         assertEquals 'visualization', visualizationDataDirector.getVisualizationData().name
+        assertEquals 'testcallback', visualizationDataDirector.getVisualizationData().callback
         assertEquals 'piechart', visualizationDataDirector.getVisualizationData().elementId
         assertEquals "{title: 'My Daily Activities', width: 400, height: 240, is3D: true}", visualizationDataDirector.getVisualizationData().options.toString()
         assertEquals 5, visualizationDataDirector.getVisualizationData().rows.size()

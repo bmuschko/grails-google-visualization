@@ -33,10 +33,16 @@ class GoogleVisualizationBuilder extends VisualizationBuilder {
     static final Log log = LogFactory.getLog(GoogleVisualizationBuilder)
     final DEFAULT_NAME = 'visualization'
     final DEFAULT_VERSION = '1'
+    final DEFAULT_CALLBACK = null
 
     @Override
     def buildName() {
         visualizationData.name = attrs.name ?: DEFAULT_NAME
+    }
+
+    @Override
+    def buildCallback() {
+        visualizationData.callback = attrs.callback ?: DEFAULT_CALLBACK
     }
 
     @Override
@@ -57,7 +63,7 @@ class GoogleVisualizationBuilder extends VisualizationBuilder {
     @Override
     def buildLanguage() {
         if(attrs.language) {
-            visualizationData.language = attrs.language 
+            visualizationData.language = attrs.language
         }
     }
 
@@ -204,6 +210,6 @@ class GoogleVisualizationBuilder extends VisualizationBuilder {
 
     @Override
     def buildFormatters() {
-        visualizationData.formatters = attrs.formatters 
+        visualizationData.formatters = attrs.formatters
     }
 }

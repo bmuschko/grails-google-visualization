@@ -54,6 +54,16 @@ class GoogleVisualizationBuilderTests extends GrailsUnitTestCase {
         assertEquals 'visualization', googleVisualizationBuilder.buildName()
     }
 
+    void testBuildCallbackForGivenCallback() {
+        googleVisualizationBuilder.createNewVisualizationData(['callback':'test'], GoogleVisualization.PIE_CHART)
+        assertEquals 'test', googleVisualizationBuilder.buildCallback()
+    }
+
+    void testBuildCallbackForDefaultCallback() {
+        googleVisualizationBuilder.createNewVisualizationData([], GoogleVisualization.PIE_CHART)
+        assertEquals null, googleVisualizationBuilder.buildCallback()
+    }
+
     void testBuildElementId() {
         googleVisualizationBuilder.createNewVisualizationData(['elementId':'someElementId'], GoogleVisualization.PIE_CHART)
         assertEquals 'someElementId', googleVisualizationBuilder.buildElementId()

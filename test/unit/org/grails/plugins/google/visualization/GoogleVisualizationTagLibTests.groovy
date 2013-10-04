@@ -44,6 +44,34 @@ class GoogleVisualizationTagLibTests extends TagLibUnitTestCase {
         }
     }
 
+    void testRenderApiImportWithoutCallbackAndWithoutKey() {
+        def attrs = []
+        tagLib.apiImport(attrs, "")
+        assertEquals "<script type=\"text/javascript\" src=\"//www.google.com/jsapi\"></script>", tagLib.out.toString()
+    }
+
+    void testRenderApiImportWithCallbackAndWithoutKey() {
+        def attrs = ["callback":"foo"]
+        tagLib.apiImport(attrs, "")
+        assertEquals "<script type=\"text/javascript\" src=\"//www.google.com/jsapi?callback=foo\"></script>", tagLib.out.toString()
+    }
+
+    void testRenderApiImportWithoutCallbackAndWithKey() {
+        def attrs = ["key":"bar"]
+        tagLib.apiImport(attrs, "")
+        assertEquals "<script type=\"text/javascript\" src=\"//www.google.com/jsapi?key=bar\"></script>", tagLib.out.toString()
+    }
+
+    void testRenderApiImportWithCallbackAndWithKey() {
+        def attrs = ["callback":"foo", "key":"bar"]
+        tagLib.apiImport(attrs, "")
+        assertEquals "<script type=\"text/javascript\" src=\"//www.google.com/jsapi?key=bar&callback=foo\"></script>", tagLib.out.toString()
+    }
+
+    void testIsValidAttributeForBasicAttributeCallback() {
+        assertTrue tagLib.isValidAttribute('callback', GoogleVisualization.PIE_CHART)
+    }
+
     void testIsValidAttributeForBasicAttributeName() {
         assertTrue tagLib.isValidAttribute('name', GoogleVisualization.PIE_CHART)
     }
