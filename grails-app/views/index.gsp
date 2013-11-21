@@ -7,6 +7,8 @@
     </head>
        <body>
        <%
+          def timelineColumns = [['string', 'President'], ['date', 'Start'], ['date', 'End']]
+          def timelineData = [['Washington',  DateUtil.createDate(1789, 3, 29),  DateUtil.createDate(1797, 2, 3)], ['Adams',  DateUtil.createDate(1797, 2, 3),  DateUtil.createDate(1801, 2, 3)], ['Jefferson',  DateUtil.createDate(1801, 2, 3),  DateUtil.createDate(1809, 2, 3)]]
           def myDailyActivitiesColumns = [['string', 'Task'], ['number', 'Hours per Day']]
           def myDailyActivitiesData = [['Work', 11], ['Eat', 2], ['Commute', 2], ['Watch TV', 2], ['Sleep', 7]]
           def companyPerformanceColumns = [['string', 'Year'], ['number', 'Sales'], ['number', 'Expenses']]
@@ -84,6 +86,7 @@
        <gvisualization:geoChart elementId="geochart" width="${556}" height="${347}" columns="${popularityColumns}" data="${popularityData}" />
        <gvisualization:motionChart elementId="motionchart" columns="${fruitColumns}" data="${fruitData}" />
        <gvisualization:treeMap elementId="treemap" minColor="#f00" midColor="#ddd" maxColor="#0d0" headerHeight="${15}" fontColor="black" showScale="${true}" columns="${marketByRegionColumns}" data="${marketByRegionData}" />
+       <gvisualization:timeLine elementId="timeline" columns="${timelineColumns}" data="${timelineData}" />
        <table cellpadding="2" cellspacing="0">
           <tr>
              <td>
@@ -293,6 +296,14 @@
                 <div id="treemap" style="width: 900px; height: 500px;"></div>
              </td>
           </tr>
+           <tr>
+               <td>
+                   <a href="http://code.google.com/apis/visualization/documentation/gallery/timeline.html">Timeline</a>
+               </td>
+               <td>
+                   <div id="timeline"></div>
+               </td>
+           </tr>
        </table>
     </body>
 </html>

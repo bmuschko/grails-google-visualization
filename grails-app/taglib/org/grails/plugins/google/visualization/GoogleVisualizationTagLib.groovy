@@ -157,6 +157,9 @@ class GoogleVisualizationTagLib {
         validateAndRender(attrs, GoogleVisualization.IMAGE_CANDLESTICK_CHART, ['formatters'])
     }
 
+    def timeLine = { attrs, body ->
+        validateAndRender(attrs, GoogleVisualization.TIME_LINE, ['formatters'])
+    }
     private validateAndRender(attrs, googleVisualization, optionalAttributes) {
         validateAttributes(attrs, googleVisualization, optionalAttributes)
         renderVisualization(attrs, googleVisualization)
