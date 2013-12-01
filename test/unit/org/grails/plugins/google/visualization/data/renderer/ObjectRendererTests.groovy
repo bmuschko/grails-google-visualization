@@ -15,7 +15,6 @@
 package org.grails.plugins.google.visualization.data.renderer
 
 import grails.test.GrailsUnitTestCase
-import java.awt.Rectangle
 
 /**
  * Object renderer tests
