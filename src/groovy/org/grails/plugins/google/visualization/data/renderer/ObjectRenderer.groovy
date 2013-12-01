@@ -29,7 +29,7 @@ class ObjectRenderer implements DataTypeRenderer {
 
         value.properties.each { propertyKey, propertyValue ->
             // Only use class fields
-            if(propertyKey != 'class' || propertyKey != 'metaClass') {
+            if(propertyKey != 'class' && propertyKey != 'metaClass') {
                 objectValues << "${propertyKey}: ${DataTypeValueRenderer.instance.render(propertyValue).value}"
             }
         }

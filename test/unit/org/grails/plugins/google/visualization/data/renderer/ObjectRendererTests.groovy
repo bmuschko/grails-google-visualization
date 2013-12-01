@@ -15,6 +15,7 @@
 package org.grails.plugins.google.visualization.data.renderer
 
 import grails.test.GrailsUnitTestCase
+import java.awt.Rectangle
 
 /**
  * Object renderer tests
@@ -25,4 +26,15 @@ class ObjectRendererTests extends GrailsUnitTestCase {
     void testRenderValue() {
         assertEquals "{stroke: 'black', fill: '#eee', strokeSize: 1}", ObjectRenderer.instance.renderValue(new Expando(stroke:'black', fill:'#eee', strokeSize: 1)).toString()
     }
+	
+	void testRenderValueRealObject() {
+		def simpleObject = new SimpleClass(a: "xxx", b: 123)
+		def renderedObject = ObjectRenderer.instance.renderValue(simpleObject)
+		assertEquals "{b: 123, a: 'xxx'}", renderedObject.toString()
+	}
+	
+	class SimpleClass {
+		String a
+		int b
+	}
 }
