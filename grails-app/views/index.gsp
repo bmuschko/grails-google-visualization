@@ -7,6 +7,8 @@
     </head>
        <body>
        <%
+          def calendarColumns = [['date', 'Date'], ['number', 'Won/Loss']]
+          def calendarData = [[DateUtil.createDate(2012, 3, 13), 37032], [DateUtil.createDate(2012, 3, 14), 38024], [DateUtil.createDate(2012, 3, 15), 38024], [DateUtil.createDate(2012, 3, 16), 38108], [DateUtil.createDate(2012, 3, 17), 38229]]
           def timelineColumns = [['string', 'President'], ['date', 'Start'], ['date', 'End']]
           def timelineData = [['Washington',  DateUtil.createDate(1789, 3, 29),  DateUtil.createDate(1797, 2, 3)], ['Adams',  DateUtil.createDate(1797, 2, 3),  DateUtil.createDate(1801, 2, 3)], ['Jefferson',  DateUtil.createDate(1801, 2, 3),  DateUtil.createDate(1809, 2, 3)]]
           def myDailyActivitiesColumns = [['string', 'Task'], ['number', 'Hours per Day']]
@@ -87,10 +89,11 @@
        <gvisualization:motionChart elementId="motionchart" columns="${fruitColumns}" data="${fruitData}" />
        <gvisualization:treeMap elementId="treemap" minColor="#f00" midColor="#ddd" maxColor="#0d0" headerHeight="${15}" fontColor="black" showScale="${true}" columns="${marketByRegionColumns}" data="${marketByRegionData}" />
        <gvisualization:timeLine elementId="timeline" columns="${timelineColumns}" data="${timelineData}" />
+       <gvisualization:calendarChart elementId="calendarchart" columns="${calendarColumns}" data="${calendarData}" />
        <table cellpadding="2" cellspacing="0">
           <tr>
              <td>
-                <a href="http://code.google.com/apis/visualization/documentation/gallery/piechart.html">Pie Chart</a>
+                <a href="http://developers.google.com/chart/interactive/docs/gallery/piechart">Pie Chart</a>
              </td>
              <td>
                 <div id="piechart"></div>
@@ -98,7 +101,7 @@
           </tr>
           <tr>
              <td>
-                <a href="http://code.google.com/apis/visualization/documentation/gallery/imagepiechart.html">Pie Chart (Image)</a>
+                <a href="http://developers.google.com/chart/interactive/docs/gallery/imagepiechart">Pie Chart (Image)</a>
              </td>
              <td>
                 <div id="imagepiechart"></div>
@@ -106,7 +109,7 @@
           </tr>
           <tr>
              <td>
-                <a href="http://code.google.com/apis/visualization/documentation/gallery/barchart.html">Bar Chart</a>
+                <a href="http://developers.google.com/chart/interactive/docs/gallery/barchart">Bar Chart</a>
              </td>
              <td>
                 <div id="barchart"></div>
@@ -114,7 +117,7 @@
           </tr>
           <tr>
              <td>
-                <a href="http://code.google.com/apis/visualization/documentation/gallery/imagebarchart.html">Bar Chart (Image)</a>
+                <a href="http://developers.google.com/chart/interactive/docs/gallery/imagebarchart">Bar Chart (Image)</a>
              </td>
              <td>
                 <div id="imagebarchart"></div>
@@ -130,7 +133,7 @@
           </tr>
           <tr>
              <td>
-                <a href="http://code.google.com/apis/visualization/documentation/gallery/columnchart.html">Column Chart</a>
+                <a href="http://developers.google.com/chart/interactive/docs/gallery/columnchart">Column Chart</a>
              </td>
              <td>
                 <div id="columnchart"></div>
@@ -138,7 +141,7 @@
           </tr>
           <tr>
              <td>
-                <a href="http://code.google.com/apis/visualization/documentation/gallery/areachart.html">Area Chart</a>
+                <a href="http://developers.google.com/chart/interactive/docs/gallery/areachart">Area Chart</a>
              </td>
              <td>
                 <div id="areachart"></div>
@@ -146,7 +149,7 @@
           </tr>
           <tr>
              <td>
-                <a href="http://code.google.com/apis/visualization/documentation/gallery/imageareachart.html">Area Chart (Image)</a>
+                <a href="http://developers.google.com/chart/interactive/docs/gallery/imageareachart">Area Chart (Image)</a>
              </td>
              <td>
                 <div id="imageareachart"></div>
@@ -154,7 +157,7 @@
           </tr>
           <tr>
              <td>
-                <a href="http://code.google.com/apis/visualization/documentation/gallery/linechart.html">Line Chart</a>
+                <a href="http://developers.google.com/chart/interactive/docs/gallery/linechart">Line Chart</a>
              </td>
              <td>
                 <div id="linechart"></div>
@@ -162,7 +165,7 @@
           </tr>
           <tr>
              <td>
-                <a href="http://code.google.com/apis/visualization/documentation/gallery/imagelinechart.html">Line Chart (Image)</a>
+                <a href="http://developers.google.com/chart/interactive/docs/gallery/imagelinechart">Line Chart (Image)</a>
              </td>
              <td>
                 <div id="imagelinechart"></div>
@@ -170,7 +173,7 @@
           </tr>
           <tr>
              <td>
-                <a href="http://code.google.com/apis/visualization/documentation/gallery/scatterchart.html">Scatter Chart</a>
+                <a href="http://developers.google.com/chart/interactive/docs/gallery/scatterchart">Scatter Chart</a>
              </td>
              <td>
                 <div id="scatterchart"></div>
@@ -178,7 +181,7 @@
           </tr>
        <tr>
            <td>
-               <a href="http://code.google.com/apis/chart/interactive/docs/gallery/steppedareachart.html">Stepped Area Chart</a>
+               <a href="http://developers.google.com/chart/interactive/docs/gallery/steppedareachart">Stepped Area Chart</a>
            </td>
            <td>
                <div id="steppedareachart"></div>
@@ -186,7 +189,7 @@
        </tr>
           <tr>
              <td>
-                <a href="http://code.google.com/apis/visualization/documentation/gallery/imagesparkline.html">Sparkline (Image)</a>
+                <a href="http://developers.google.com/chart/interactive/docs/gallery/imagesparkline">Sparkline (Image)</a>
              </td>
              <td>
                 <div id="imagesparkline"></div>
@@ -194,7 +197,7 @@
           </tr>
           <tr>
              <td>
-                <a href="http://code.google.com/apis/chart/interactive/docs/gallery/candlestickchart.html">Candlestick Chart</a>
+                <a href="http://developers.google.com/chart/interactive/docs/gallery/candlestickchart">Candlestick Chart</a>
              </td>
              <td>
                 <div id="candlestickchart" style="width: 300px; height: 300px;"></div>
@@ -202,7 +205,7 @@
           </tr>
           <tr>
              <td>
-                <a href="http://code.google.com/apis/visualization/documentation/gallery/imagecandlestickchart.html">Candlestick Chart (Image)</a>
+                <a href="http://developers.google.com/chart/interactive/docs/gallery/imagecandlestickchart">Candlestick Chart (Image)</a>
              </td>
              <td>
                 <div id="imagecandlestickchart" style='width: 300px; height: 300px;'></div>
@@ -210,7 +213,7 @@
           </tr>
           <tr>
              <td>
-                <a href="http://code.google.com/apis/chart/interactive/docs/gallery/combochart.html">Combo Chart</a>
+                <a href="http://developers.google.com/chart/interactive/docs/gallery/combochart">Combo Chart</a>
              </td>
              <td>
                 <div id="combochart" style="width: 700px; height: 400px;"></div>
@@ -218,7 +221,7 @@
           </tr>
           <tr>
              <td>
-                <a href="http://code.google.com/apis/visualization/documentation/gallery/gauge.html">Gauge</a>
+                <a href="http://developers.google.com/chart/interactive/docs/gallery/gauge">Gauge</a>
              </td>
              <td>
                 <div id="gauge"></div>
@@ -226,7 +229,7 @@
           </tr>
           <tr>
              <td>
-                <a href="http://code.google.com/apis/visualization/documentation/gallery/table.html">Table</a>
+                <a href="http://developers.google.com/chart/interactive/docs/gallery/table">Table</a>
              </td>
              <td>
                 <div id="table"></div>
@@ -234,7 +237,7 @@
           </tr>
           <tr>
              <td>
-                <a href="http://code.google.com/apis/visualization/documentation/gallery/map.html">Map</a>
+                <a href="http://developers.google.com/chart/interactive/docs/gallery/map">Map</a>
              </td>
              <td>
                 <div id="map" style="width: 400px; height: 300px"></div>
@@ -242,7 +245,7 @@
           </tr>
           <tr>
              <td>
-                <a href="http://code.google.com/apis/visualization/documentation/gallery/annotatedtimeline.html">Annotated Time Line</a>
+                <a href="http://developers.google.com/chart/interactive/docs/gallery/annotatedtimeline">Annotated Time Line</a>
              </td>
              <td>
                 <div id="annotatedtimeline" style='width: 700px; height: 240px;'></div>
@@ -250,7 +253,7 @@
           </tr>
           <tr>
              <td>
-                <a href="http://code.google.com/apis/visualization/documentation/gallery/orgchart.html">Organizational Chart</a>
+                <a href="http://developers.google.com/chart/interactive/docs/gallery/orgchart">Organizational Chart</a>
              </td>
              <td>
                 <div id="orgchart"></div>
@@ -258,7 +261,7 @@
           </tr>
           <tr>
              <td>
-                <a href="http://code.google.com/apis/visualization/documentation/gallery/intensitymap.html">Intensity Map</a>
+                <a href="http://developers.google.com/chart/interactive/docs/gallery/intensitymap">Intensity Map</a>
              </td>
              <td>
                 <div id="intensitymap"></div>
@@ -266,7 +269,7 @@
           </tr>
           <tr>
              <td>
-                <a href="http://code.google.com/apis/visualization/documentation/gallery/geomap.html">Geo Map</a>
+                <a href="http://developers.google.com/chart/interactive/docs/gallery/geomap">Geo Map</a>
              </td>
              <td>
                 <div id="geomap"></div>
@@ -274,7 +277,7 @@
           </tr>
           <tr>
              <td>
-                <a href="http://code.google.com/apis/chart/interactive/docs/gallery/geochart.html">Geo Chart</a>
+                <a href="http://developers.google.com/chart/interactive/docs/gallery/geochart">Geo Chart</a>
              </td>
              <td>
                 <div id="geochart"></div>
@@ -282,7 +285,7 @@
           </tr>
           <tr>
              <td>
-                <a href="http://code.google.com/apis/visualization/documentation/gallery/motionchart.html">Motion Chart</a>
+                <a href="http://developers.google.com/chart/interactive/docs/gallery/motionchart">Motion Chart</a>
              </td>
              <td>
                 <div id="motionchart"></div>
@@ -290,7 +293,7 @@
           </tr>
           <tr>
              <td>
-                <a href="http://code.google.com/apis/visualization/documentation/gallery/treemap.html">Tree Map</a>
+                <a href="http://developers.google.com/chart/interactive/docs/gallery/treemap">Tree Map</a>
              </td>
              <td>
                 <div id="treemap" style="width: 900px; height: 500px;"></div>
@@ -298,10 +301,18 @@
           </tr>
            <tr>
                <td>
-                   <a href="http://code.google.com/apis/visualization/documentation/gallery/timeline.html">Timeline</a>
+                   <a href="http://developers.google.com/chart/interactive/docs/gallery/timeline">Timeline</a>
                </td>
                <td>
                    <div id="timeline"></div>
+               </td>
+           </tr>
+           <tr>
+               <td>
+                   <a href="http://developers.google.com/chart/interactive/docs/gallery/calendar">Calendar</a>
+               </td>
+               <td>
+                   <div id="calendarchart"></div>
                </td>
            </tr>
        </table>
