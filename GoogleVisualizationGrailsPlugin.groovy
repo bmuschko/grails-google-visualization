@@ -15,7 +15,7 @@
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 class GoogleVisualizationGrailsPlugin {
-    def version = "0.6.2.2"
+    def version = "0.6.2.3"
     def grailsVersion = "1.2 > *"
     def author = "Benjamin Muschko"
     def authorEmail = "benjamin.muschko@gmail.com"
