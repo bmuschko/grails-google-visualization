@@ -59,7 +59,9 @@ enum GoogleVisualization {
     IMAGE_LINE_CHART('imagelinechart', 'google.visualization.ImageLineChart', ImageLineChartConfigOption.configOptions, GenericImageChartEvent.events),
     IMAGE_PIE_CHART('imagepiechart', 'google.visualization.ImagePieChart', ImagePieChartConfigOption.configOptions, GenericImageChartEvent.events),
     IMAGE_SPARK_LINE('imagesparkline', 'google.visualization.ImageSparkLine', ImageSparkLineConfigOption.configOptions, ImageSparkLineEvent.events),
-    IMAGE_CANDLESTICK_CHART('imagechart', 'google.visualization.ImageCandlestickChart', GenericImageChartConfigOption.configOptions.plus(ImageCandlestickChartConfigOption.configOptions), GenericImageChartEvent.events)
+    IMAGE_CANDLESTICK_CHART('imagechart', 'google.visualization.ImageCandlestickChart', GenericImageChartConfigOption.configOptions.plus(ImageCandlestickChartConfigOption.configOptions), GenericImageChartEvent.events),
+    TIME_LINE('timeline', 'google.visualization.Timeline', TimeLineConfigOption.configOptions, DefaultEvent.events),
+    CALENDAR_CHART('calendar', 'google.visualization.Calendar', CalendarChartConfigOption.configOptions, DefaultEvent.events)
 
     static final Log log = LogFactory.getLog(GoogleVisualization)
     static final Map googleVisualizations
