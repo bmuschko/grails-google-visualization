@@ -10,7 +10,7 @@
         <%=visualizationData.name%>_data.addColumn('<%=column[0]%>', '<%=column[1]%>');
         </g:each>
         <g:each var="row" in="${visualizationData.rows}">
-        <%=visualizationData.name%>_data.addRow(<%=raw(row)%>);
+        <%=visualizationData.name%>_data.addRow(<%=row%>);
         </g:each>
       
         <%=visualizationData.name%> = new <%=visualizationData.visualization.object%>(document.getElementById('<%=visualizationData.elementId%>'));
@@ -21,7 +21,7 @@
         google.visualization.events.addListener(<%=visualizationData.name%>, '<%=beforeDrawEvent.key%>', <%=beforeDrawEvent.value%>);
         </g:each>
         
-        <%=visualizationData.name%>.draw(<%=visualizationData.name%>_data, <%=raw(visualizationData.options)%>);
+        <%=visualizationData.name%>.draw(<%=visualizationData.name%>_data, <%=visualizationData.options%>);
 
         <g:each var="afterDrawEvent" in="${visualizationData.afterDrawEvents}">
         google.visualization.events.addListener(<%=visualizationData.name%>, '<%=afterDrawEvent.key%>', <%=afterDrawEvent.value%>);
