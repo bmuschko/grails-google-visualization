@@ -39,6 +39,7 @@ enum PieCoreChartConfigOption {
     PIE_RESIDUE_SLICE_LABEL("pieResidueSliceLabel", [DataType.STRING]),
     TITLE("title", [DataType.STRING]),
     TITLE_TEXT_STYLE("titleTextStyle", [DataType.OBJECT]),
+    TOOLTIP("tooltip", [DataType.OBJECT]),
     TOOLTIP_TEXT("tooltipText", [DataType.STRING]),
     TOOLTIP_TEXT_STYLE("tooltipTextStyle", [DataType.OBJECT]),
     WIDTH("width", [DataType.NUMBER, DataType.STRING]),
