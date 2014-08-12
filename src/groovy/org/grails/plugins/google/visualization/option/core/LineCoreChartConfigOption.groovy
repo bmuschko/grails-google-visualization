@@ -22,11 +22,14 @@ import org.grails.plugins.google.visualization.data.DataType
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum LineCoreChartConfigOption {
+    ANNOTATION("annotation", [DataType.OBJECT]),
+    ANNOTATIONS("annotations", [DataType.OBJECT]),
     AXIS_TITLES_POSITION("axisTitlesPosition", [DataType.STRING]),
     BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT]),
     CHART_AREA("chartArea", [DataType.OBJECT]),
     COLORS("colors", [DataType.ARRAY]),
     CURVE_TYPE("curveType", [DataType.STRING]),
+    DISPLAY_ANNOTATIONS("displayAnnotations", [DataType.BOOLEAN]),
     ENABLE_INTERACTIVITY("enableInteractivity", [DataType.BOOLEAN]),
     FONT_SIZE("fontSize", [DataType.NUMBER]),
     FONT_NAME("fontName", [DataType.STRING]),
@@ -34,6 +37,8 @@ enum LineCoreChartConfigOption {
     H_AXIS("hAxis", [DataType.OBJECT]),
     HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     INTERPOLATE_NULLS("interpolateNulls", [DataType.BOOLEAN]),
+    INTERVAL("interval", [DataType.OBJECT]),
+    INTERVALS("intervals", [DataType.OBJECT]),
     LEGEND("legend", [DataType.STRING]),
     LEGEND_TEXT_STYLE("legendTextStyle", [DataType.OBJECT]),
     LINE_WIDTH("lineWidth", [DataType.NUMBER]),
@@ -43,6 +48,7 @@ enum LineCoreChartConfigOption {
     TITLE("title", [DataType.STRING]),
     TITLE_POSITION("titlePosition", [DataType.STRING]),
     TITLE_TEXT_STYLE("titleTextStyle", [DataType.OBJECT]),
+    TOOLTIP("tooltip", [DataType.OBJECT]),
     TOOLTIP_TEXT_STYLE("tooltipTextStyle", [DataType.OBJECT]),
     V_AXES("vAxes", [DataType.ARRAY, DataType.OBJECT]),
     V_AXIS("vAxis", [DataType.OBJECT]),
