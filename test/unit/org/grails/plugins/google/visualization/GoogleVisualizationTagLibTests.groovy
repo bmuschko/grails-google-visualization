@@ -14,14 +14,19 @@
  */
 package org.grails.plugins.google.visualization
 
-import grails.test.TagLibUnitTestCase
+import grails.test.mixin.TestFor
+import grails.test.mixin.TestMixin
+import grails.test.mixin.web.GroovyPageUnitTestMixin
+import spock.lang.Specification
 
 /**
  * Google visualization taglib tests
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class GoogleVisualizationTagLibTests extends TagLibUnitTestCase {
+@TestMixin(GroovyPageUnitTestMixin)
+@TestFor(GoogleVisualizationTagLib)
+class GoogleVisualizationTagLibTests {
     void testPieChart() {
         tagLib.pieChart(createPieChartAttributes()) { }
         assertNotNull tagLib.out.toString()
