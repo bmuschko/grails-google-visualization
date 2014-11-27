@@ -8,10 +8,11 @@ grails.project.dependency.resolution = {
 
 	repositories {
 		grailsCentral()
+        mavenCentral()
 	}
 
 	plugins {
-    	build(':release:3.0.1', ':rest-client-builder:1.0.3') {
+    	build(':release:3.0.1', ':rest-client-builder:1.0.3', ':tomcat:7.0.54') {
 			export = false
 		}
 	}
