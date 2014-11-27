@@ -26,7 +26,7 @@ class GoogleVisualizationTagLib {
     final BASIC_ATTRIBUTES = ['name', 'version', 'elementId', 'dynamicLoading', 'language', 'columns', 'data'] as Set
 
     def apiImport = { attrs, body ->
-        out << '<script type="text/javascript" src="http://www.google.com/jsapi"></script>'
+        out << '<script type="text/javascript" src="//www.google.com/jsapi"></script>'
     }
 
     def pieChart = { attrs, body ->
