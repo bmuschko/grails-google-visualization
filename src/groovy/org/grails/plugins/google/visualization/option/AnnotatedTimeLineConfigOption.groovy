@@ -20,6 +20,7 @@ import org.grails.plugins.google.visualization.data.DataType
  * Annotated Time Line configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
+ * @see <a href="https://developers.google.com/chart/interactive/docs/gallery/annotatedtimeline#Configuration_Options">Configuration Options</a>
  */
 enum AnnotatedTimeLineConfigOption {
     ALLOW_HTML("allowHtml", [DataType.BOOLEAN]),

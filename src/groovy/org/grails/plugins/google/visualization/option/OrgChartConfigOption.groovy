@@ -20,12 +20,15 @@ import org.grails.plugins.google.visualization.data.DataType
  * Organizational Chart configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
+ * @see <a href="https://developers.google.com/chart/interactive/docs/gallery/orgchart#Configuration_Options">Configuration Options</a>
  */
 enum OrgChartConfigOption {
     ALLOW_COLLAPSE("allowCollapse", [DataType.BOOLEAN]),
     ALLOW_HTML("allowHtml", [DataType.BOOLEAN]),
+    COLOR("color", [DataType.STRING]),
     NODE_CLASS("nodeClass", [DataType.STRING]),
     SELECTED_NODE_CLASS("selectedNodeClass", [DataType.STRING]),
+    SELECTION_COLOR("selectionColor", [DataType.STRING]),
     SIZE("size", [DataType.STRING])
 
     static final Map configOptions
