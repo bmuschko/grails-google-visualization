@@ -20,34 +20,44 @@ import org.grails.plugins.google.visualization.data.DataType
  * Line Core Chart configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
+ * @see <a href="https://developers.google.com/chart/interactive/docs/gallery/linechart#Configuration_Options">Configuration Options</a>
  */
 enum LineCoreChartConfigOption {
+    AGGREGATION_TARGET("aggregationTarget", [DataType.STRING]),
+    ANIMATION("animation", [DataType.OBJECT, DataType.MAP]),
+    ANNOTATIONS("annotations", [DataType.OBJECT, DataType.MAP]),
     AXIS_TITLES_POSITION("axisTitlesPosition", [DataType.STRING]),
-    BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT]),
-    CHART_AREA("chartArea", [DataType.OBJECT]),
+    BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT, DataType.MAP]),
+    CHART_AREA("chartArea", [DataType.OBJECT, DataType.MAP]),
     COLORS("colors", [DataType.ARRAY]),
+    CROSSHAIR("crosshair", [DataType.OBJECT, DataType.MAP]),
     CURVE_TYPE("curveType", [DataType.STRING]),
+    DATA_OPACITY("dataOpacity", [DataType.NUMBER]),
     ENABLE_INTERACTIVITY("enableInteractivity", [DataType.BOOLEAN]),
+    EXPLORER("explorer", [DataType.OBJECT, DataType.MAP]),
+    FOCUS_TARGET("focusTarget", [DataType.STRING]),
     FONT_SIZE("fontSize", [DataType.NUMBER]),
     FONT_NAME("fontName", [DataType.STRING]),
+    FORCE_IFRAME("forceIFrame", [DataType.BOOLEAN]),
     GRIDLINE_COLOR("gridlineColor", [DataType.STRING]),
-    H_AXIS("hAxis", [DataType.OBJECT]),
+    H_AXIS("hAxis", [DataType.OBJECT, DataType.MAP]),
     HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     INTERPOLATE_NULLS("interpolateNulls", [DataType.BOOLEAN]),
-    LEGEND("legend", [DataType.STRING]),
-    LEGEND_TEXT_STYLE("legendTextStyle", [DataType.OBJECT]),
+    LEGEND("legend", [DataType.STRING, DataType.OBJECT, DataType.MAP]),
     LINE_WIDTH("lineWidth", [DataType.NUMBER]),
+    ORIENTATION("orientation", [DataType.STRING]),
     POINT_SIZE("pointSize", [DataType.NUMBER]),
     REVERSE_CATEGORIES("reverseCategories", [DataType.BOOLEAN]),
-    SERIES("series", [DataType.ARRAY, DataType.OBJECT]),
+    SERIES("series", [DataType.ARRAY, DataType.OBJECT, DataType.MAP]),
+    THEME("theme", [DataType.STRING]),
     TITLE("title", [DataType.STRING]),
     TITLE_POSITION("titlePosition", [DataType.STRING]),
-    TITLE_TEXT_STYLE("titleTextStyle", [DataType.OBJECT]),
-    TOOLTIP_TEXT_STYLE("tooltipTextStyle", [DataType.OBJECT]),
-    V_AXES("vAxes", [DataType.ARRAY, DataType.OBJECT]),
-    V_AXIS("vAxis", [DataType.OBJECT]),
-    WIDTH("width", [DataType.NUMBER, DataType.STRING]),
-    FORCEIFRAME("forceIFrame", [DataType.BOOLEAN])
+    TITLE_TEXT_STYLE("titleTextStyle", [DataType.OBJECT, DataType.MAP]),
+    TOOLTIP("tooltip", [DataType.OBJECT, DataType.MAP]),
+    TRENDLINES("trendlines", [DataType.OBJECT, DataType.MAP]),
+    V_AXES("vAxes", [DataType.ARRAY, DataType.OBJECT, DataType.MAP]),
+    V_AXIS("vAxis", [DataType.OBJECT, DataType.MAP]),
+    WIDTH("width", [DataType.NUMBER, DataType.STRING])
 
     static final Map configOptions
 

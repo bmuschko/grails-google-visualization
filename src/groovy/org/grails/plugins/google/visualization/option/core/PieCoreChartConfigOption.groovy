@@ -20,29 +20,33 @@ import org.grails.plugins.google.visualization.data.DataType
  * Pie Core Chart configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
+ * @see <a href="https://developers.google.com/chart/interactive/docs/gallery/piechart#Configuration_Options">Configuration Options</a>
  */
 enum PieCoreChartConfigOption {
-    BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT]),
-    CHART_AREA("chartArea", [DataType.OBJECT]),
+    BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT, DataType.MAP]),
+    CHART_AREA("chartArea", [DataType.OBJECT, DataType.MAP]),
     COLORS("colors", [DataType.ARRAY]),
+    ENABLE_INTERACTIVITY("enableInteractivity", [DataType.BOOLEAN]),
     FONT_SIZE("fontSize", [DataType.NUMBER]),
     FONT_NAME("fontName", [DataType.STRING]),
+    FORCE_IFRAME("forceIFrame", [DataType.BOOLEAN]),
     HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     IS_3D("is3D", [DataType.BOOLEAN]),
-    LEGEND("legend", [DataType.STRING]),
-    LEGEND_TEXT_STYLE("legendTextStyle", [DataType.OBJECT]),
+    LEGEND("legend", [DataType.STRING, DataType.OBJECT, DataType.MAP]),
+    PIE_HOLE("pieHole", [DataType.NUMBER]),
+    PIE_SLICE_BORDER_COLOR("pieSliceBorderColor", [DataType.STRING]),
     PIE_SLICE_TEXT("pieSliceText", [DataType.STRING]),
     PIE_SLICE_TEXT_STYLE("pieSliceTextStyle", [DataType.OBJECT]),
-    REVERSE_CATEGORIES("reverseCategories", [DataType.BOOLEAN]),
-    SLICE_VISIBILITY_THRESHOLD("sliceVisibilityThreshold", [DataType.NUMBER]),
+    PIE_START_ANGLE("pieStartAngle", [DataType.OBJECT, DataType.MAP]),
     PIE_RESIDUE_SLICE_COLOR("pieResidueSliceColor", [DataType.STRING]),
     PIE_RESIDUE_SLICE_LABEL("pieResidueSliceLabel", [DataType.STRING]),
+    REVERSE_CATEGORIES("reverseCategories", [DataType.BOOLEAN]),
+    SLICES("slices", [DataType.ARRAY, DataType.OBJECT, DataType.MAP]),
+    SLICE_VISIBILITY_THRESHOLD("sliceVisibilityThreshold", [DataType.NUMBER]),
     TITLE("title", [DataType.STRING]),
-    TITLE_TEXT_STYLE("titleTextStyle", [DataType.OBJECT]),
-    TOOLTIP_TEXT("tooltipText", [DataType.STRING]),
-    TOOLTIP_TEXT_STYLE("tooltipTextStyle", [DataType.OBJECT]),
-    WIDTH("width", [DataType.NUMBER, DataType.STRING]),
-    FORCEIFRAME("forceIFrame", [DataType.BOOLEAN])
+    TITLE_TEXT_STYLE("titleTextStyle", [DataType.OBJECT, DataType.MAP]),
+    TOOLTIP("tooltip", [DataType.OBJECT, DataType.MAP]),
+    WIDTH("width", [DataType.NUMBER, DataType.STRING])
 
     static final Map configOptions
 
