@@ -20,21 +20,22 @@ import org.grails.plugins.google.visualization.data.DataType
  * Scatter Chart configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
+ * @see <a href="https://developers.google.com/chart/interactive/docs/gallery/scatterchart_old#Configuration_Options">Configuration Options</a>
  */
 enum ScatterChartConfigOption {
-    AXIS_COLOR("axisColor", [DataType.STRING, DataType.OBJECT]),
-    AXIS_BACKGROUND_COLOR("axisBackgroundColor", [DataType.STRING, DataType.OBJECT]),
+    AXIS_COLOR("axisColor", [DataType.STRING, DataType.OBJECT, DataType.MAP]),
+    AXIS_BACKGROUND_COLOR("axisBackgroundColor", [DataType.STRING, DataType.OBJECT, DataType.MAP]),
     AXIS_FONT_SIZE("axisFontSize", [DataType.NUMBER]),
-    BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT]),
-    BORDER_COLOR("borderColor", [DataType.STRING, DataType.OBJECT]),
+    BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT, DataType.MAP]),
+    BORDER_COLOR("borderColor", [DataType.STRING, DataType.OBJECT, DataType.MAP]),
     COLORS("colors", [DataType.ARRAY]),
     ENABLE_TOOLTIP("enableTooltip", [DataType.BOOLEAN]),
-    FOCUS_BORDER_COLOR("focusBorderColor", [DataType.STRING, DataType.OBJECT]),
+    FOCUS_BORDER_COLOR("focusBorderColor", [DataType.STRING, DataType.OBJECT, DataType.MAP]),
     HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     LEGEND("legend", [DataType.STRING]),
-    LEGEND_BACKGROUND_COLOR("legendBackgroundColor", [DataType.STRING, DataType.OBJECT]),
+    LEGEND_BACKGROUND_COLOR("legendBackgroundColor", [DataType.STRING, DataType.OBJECT, DataType.MAP]),
     LEGEND_FONT_SIZE("legendFontSize", [DataType.NUMBER]),
-    LEGEND_TEXT_COLOR("legendTextColor", [DataType.STRING, DataType.OBJECT]),
+    LEGEND_TEXT_COLOR("legendTextColor", [DataType.STRING, DataType.OBJECT, DataType.MAP]),
     LINE_SIZE("lineSize", [DataType.NUMBER]),
     LOG_SCALE("logScale", [DataType.BOOLEAN]),
     LOG_SCALE_X("logScaleX", [DataType.BOOLEAN]),
@@ -44,7 +45,7 @@ enum ScatterChartConfigOption {
     TITLE("title", [DataType.STRING]),
     TITLE_X("titleX", [DataType.STRING]),
     TITLE_Y("titleY", [DataType.STRING]),
-    TITLE_COLOR("titleColor", [DataType.STRING, DataType.OBJECT]),
+    TITLE_COLOR("titleColor", [DataType.STRING, DataType.OBJECT, DataType.MAP]),
     TITLE_FONT_SIZE("titleFontSize", [DataType.NUMBER]),
     TOOLTIP_FONT_SIZE("tooltipFontSize", [DataType.NUMBER]),
     TOOLTIP_HEIGHT("tooltipHeight", [DataType.NUMBER]),
