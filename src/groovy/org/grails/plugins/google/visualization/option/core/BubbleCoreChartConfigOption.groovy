@@ -40,7 +40,7 @@ enum BubbleCoreChartConfigOption {
     LEGEND("legend", [DataType.STRING, DataType.OBJECT, DataType.MAP]),
     SELECTION_MODE("selectionMode", [DataType.STRING]),
     SERIES("series", [DataType.ARRAY, DataType.OBJECT, DataType.MAP]),
-    SIZE_AXIS("sizeAxis", [DataType.OBJECT]),
+    SIZE_AXIS("sizeAxis", [DataType.OBJECT, DataType.MAP]),
     SORT_BUBBLES_BY_SIZE("sortBubblesBySize", [DataType.BOOLEAN]),
     THEME("theme", [DataType.STRING]),
     TITLE("title", [DataType.STRING]),

@@ -36,7 +36,7 @@ enum PieCoreChartConfigOption {
     PIE_HOLE("pieHole", [DataType.NUMBER]),
     PIE_SLICE_BORDER_COLOR("pieSliceBorderColor", [DataType.STRING]),
     PIE_SLICE_TEXT("pieSliceText", [DataType.STRING]),
-    PIE_SLICE_TEXT_STYLE("pieSliceTextStyle", [DataType.OBJECT]),
+    PIE_SLICE_TEXT_STYLE("pieSliceTextStyle", [DataType.OBJECT, DataType.MAP]),
     PIE_START_ANGLE("pieStartAngle", [DataType.OBJECT, DataType.MAP]),
     PIE_RESIDUE_SLICE_COLOR("pieResidueSliceColor", [DataType.STRING]),
     PIE_RESIDUE_SLICE_LABEL("pieResidueSliceLabel", [DataType.STRING]),
