@@ -1,11 +1,13 @@
 out
-target
+target/*
 .log
 *.iml
 *.ipr
 *.iws
-.idea
+.idea/*
 target/
 plugin.xml
+.classpath
+.project
 .settings/
 web-app/
