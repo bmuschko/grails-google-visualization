@@ -63,21 +63,15 @@
        </script>
        <h2>Google Visualization API Examples</h2>
        <gvisualization:pieCoreChart elementId="piechart" title="My Daily Activities" width="${450}" height="${300}" columns="${myDailyActivitiesColumns}" data="${myDailyActivitiesData}" />
-       <gvisualization:imagePieChart elementId="imagepiechart" width="${430}" height="${240}" title="My Daily Activities" columns="${myDailyActivitiesColumns}" data="${myDailyActivitiesData}" />
        <gvisualization:barCoreChart elementId="barchart" title="Company Performance" width="${400}" height="${240}" vAxis="${new Expando(title: 'Year', titleColor: 'red')}" columns="${companyPerformanceColumns}" data="${companyPerformanceData}" />
-       <gvisualization:imageBarChart elementId="imagebarchart" width="${400}" height="${240}" min="${0}" columns="${companyPerformanceColumns}" data="${companyPerformanceData}" />
        <gvisualization:bubbleCoreChart elementId="bubblechart" title="Correlation between life expectancy, fertility rate and population of some world countries (2010)" hAxis="${new Expando(title: 'Life Expectancy')}" vAxis="${new Expando(title: 'Fertility Rate')}" bubble="${new Expando(textStyle: '{fontSize: 11}')}" columns="${lifeExpectancyFertilityRateColumns}" data="${lifeExpectancyFertilityRateData}" />
        <gvisualization:columnCoreChart elementId="columnchart" title="Company Performance" width="${400}" height="${240}" hAxis="${new Expando(title: 'Year', titleColor: 'red')}" columns="${companyPerformanceColumns}" data="${companyPerformanceData}" />
        <gvisualization:areaCoreChart elementId="areachart" title="Company Performance" width="${400}" height="${240}" hAxis="${new Expando(title: 'Year', titleColor: 'red')}" columns="${companyPerformanceColumns}" data="${companyPerformanceData}" />
-       <gvisualization:imageAreaChart elementId="imageareachart" width="${400}" height="${240}" min="${300}" max="${1400}" title="Yearly Expenses and Sales" columns="${yearlyExpensesColumns}" data="${yearlyExpensesData}" />       
        <gvisualization:lineCoreChart elementId="linechart" width="${400}" height="${240}" title="Company Performance" columns="${companyPerformanceColumns}" data="${companyPerformanceData}" />
-       <gvisualization:imageLineChart elementId="imagelinechart" width="${400}" height="${240}" min="${0}" columns="${companyPerformanceColumns}" data="${companyPerformanceData}" />
        <gvisualization:scatterCoreChart elementId="scatterchart" width="${400}" height="${240}" title="Age vs. Weight comparison" hAxis="${new Expando(title: 'Age', minValue: 0, maxValue: 15)}" vAxis="${new Expando(title: 'Weight', minValue: 0, maxValue: 15)}" legend="none" columns="${weightByAgeColumns}" data="${weightByAgeData}" />
        <gvisualization:steppedAreaCoreChart elementId="steppedareachart" width="${400}" height="${240}" title="The decline of \'The 39 Steps\'" vAxis="${new Expando(title: 'Accumulated Rating')}" isStacked="${true}" columns="${accumulatedRatingColumns}" data="${accumulatedRatingData}" />
        <gvisualization:candlestickCoreChart elementId="candlestickchart" legend="none" columns="${countByDayColumns}" data="${countByDayData}" candlestick="${new Expando(candlestickOptions)}" />
        <gvisualization:comboCoreChart elementId="combochart" title="Monthly Coffee Production by Country" vAxis="${new Expando(title: 'Cups')}" hAxis="${new Expando(title: 'Month')}" seriesType="bars" series="${new Expando(5: new Expando(type: 'line'))}" columns="${monthlyCoffeeProdByCountryColumns}" data="${monthlyCoffeeProdByCountryData}" />
-       <gvisualization:imageSparkLine elementId="imagesparkline" width="${120}" height="${40}" showAxisLines="${false}" showValueLabels="${false}" labelPosition="left" columns="${revenueAndLicensesColumns}" data="${revenueAndLicensesData}" />
-       <gvisualization:imageCandlestickChart elementId="imagecandlestickchart" columns="${gainersLoserColumns}" data="${gainersLoserData}" />
        <gvisualization:gauge elementId="gauge" width="${400}" height="${120}" redFrom="${90}" redTo="${100}" yellowFrom="${75}" yellowTo="${90}" minorTicks="${5}" columns="${systemPerformanceColumns}" data="${systemPerformanceData}" />
        <gvisualization:table elementId="table" width="${400}" height="${130}" columns="${employeeColumns}" data="${employeeData}" select="selectHandler" ready="readyHandler"/>
        <gvisualization:map elementId="map" columns="${mapColumns}" data="${mapData}" />
@@ -101,26 +95,10 @@
           </tr>
           <tr>
              <td>
-                <a href="http://developers.google.com/chart/interactive/docs/gallery/imagepiechart">Pie Chart (Image)</a>
-             </td>
-             <td>
-                <div id="imagepiechart"></div>
-             </td>
-          </tr>
-          <tr>
-             <td>
                 <a href="http://developers.google.com/chart/interactive/docs/gallery/barchart">Bar Chart</a>
              </td>
              <td>
                 <div id="barchart"></div>
-             </td>
-          </tr>
-          <tr>
-             <td>
-                <a href="http://developers.google.com/chart/interactive/docs/gallery/imagebarchart">Bar Chart (Image)</a>
-             </td>
-             <td>
-                <div id="imagebarchart"></div>
              </td>
           </tr>
           <tr>
@@ -149,26 +127,10 @@
           </tr>
           <tr>
              <td>
-                <a href="http://developers.google.com/chart/interactive/docs/gallery/imageareachart">Area Chart (Image)</a>
-             </td>
-             <td>
-                <div id="imageareachart"></div>
-             </td>
-          </tr>
-          <tr>
-             <td>
                 <a href="http://developers.google.com/chart/interactive/docs/gallery/linechart">Line Chart</a>
              </td>
              <td>
                 <div id="linechart"></div>
-             </td>
-          </tr>
-          <tr>
-             <td>
-                <a href="http://developers.google.com/chart/interactive/docs/gallery/imagelinechart">Line Chart (Image)</a>
-             </td>
-             <td>
-                <div id="imagelinechart"></div>
              </td>
           </tr>
           <tr>
@@ -189,26 +151,10 @@
        </tr>
           <tr>
              <td>
-                <a href="http://developers.google.com/chart/interactive/docs/gallery/imagesparkline">Sparkline (Image)</a>
-             </td>
-             <td>
-                <div id="imagesparkline"></div>
-             </td>
-          </tr>
-          <tr>
-             <td>
                 <a href="http://developers.google.com/chart/interactive/docs/gallery/candlestickchart">Candlestick Chart</a>
              </td>
              <td>
                 <div id="candlestickchart" style="width: 300px; height: 300px;"></div>
-             </td>
-          </tr>
-          <tr>
-             <td>
-                <a href="http://developers.google.com/chart/interactive/docs/gallery/imagecandlestickchart">Candlestick Chart (Image)</a>
-             </td>
-             <td>
-                <div id="imagecandlestickchart" style='width: 300px; height: 300px;'></div>
              </td>
           </tr>
           <tr>

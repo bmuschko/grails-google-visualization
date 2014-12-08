@@ -133,30 +133,6 @@ class GoogleVisualizationTagLib {
         validateAndRender(attrs, GoogleVisualization.TREE_MAP, ['formatters'])
     }
 
-    def imageAreaChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.IMAGE_AREA_CHART, ['formatters'])
-    }
-
-    def imageBarChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.IMAGE_BAR_CHART, ['formatters'])
-    }
-
-    def imageLineChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.IMAGE_LINE_CHART, ['formatters'])
-    }
-
-    def imagePieChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.IMAGE_PIE_CHART, ['formatters'])
-    }
-
-    def imageSparkLine = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.IMAGE_SPARK_LINE, ['formatters'])
-    }
-
-    def imageCandlestickChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.IMAGE_CANDLESTICK_CHART, ['formatters'])
-    }
-
     def timeLine = { attrs, body ->
         validateAndRender(attrs, GoogleVisualization.TIME_LINE, ['formatters'])
     }
