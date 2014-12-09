@@ -44,7 +44,7 @@ class ConfigOptionRendererUtilTests extends GrailsUnitTestCase {
         }
         catch(IllegalArgumentException e)
         {
-            assertEquals "Unsupported configuration type 'NUMBER'. Allowed types: [STRING, OBJECT]", e.message 
+            assertEquals "Unsupported configuration type 'NUMBER'. Allowed types: [STRING, OBJECT, MAP]", e.message
         }
     }
 }
