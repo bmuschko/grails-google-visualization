@@ -23,7 +23,7 @@ import org.apache.commons.logging.Log
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 enum TableEvent {
-    SELECT('select'), PAGE('page'), SORT('sort'), READY('ready')
+    SELECT('select'), PAGE('page-event'), SORT('sort'), READY('ready')
 
     static final Log log = LogFactory.getLog(TableEvent)
     static final Map events
