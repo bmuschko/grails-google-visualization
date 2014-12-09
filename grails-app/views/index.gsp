@@ -15,18 +15,12 @@
           def myDailyActivitiesData = [['Work', 11], ['Eat', 2], ['Commute', 2], ['Watch TV', 2], ['Sleep', 7]]
           def companyPerformanceColumns = [['string', 'Year'], ['number', 'Sales'], ['number', 'Expenses']]
           def companyPerformanceData = [['2004', 1000, 400], ['2005', 1170, 460], ['2006', 660, 1120], ['2007', 1030, 540]]
-          def yearlyExpensesColumns = [['string', 'Year'], ['number', 'Expenses'], ['number', 'Sales']]
-          def yearlyExpensesData = [['2004', 1000, 900], ['2005', 1170, 1000], ['2006', 660, 660], ['2007', 1030, 1000]]
           def weightByAgeColumns = [['number', 'Age'], ['number', 'Weight']]
           def weightByAgeData = [[8, 12], [4, 5.5], [11, 14], [4, 5], [3, 3.5], [6.5, 7]]
           def countByDayColumns = [['string', 'Day'], ['number', ''], ['number', ''], ['number', ''], ['number', '']]
           def countByDayData = [['Mon', 20, 28, 38, 45], ['Tues', 31, 38, 55, 66], ['Wed', 50, 55, 77, 80], ['Thurs', 50, 77, 66, 77], ['Fri', 15, 66, 22, 68]]
           def monthlyCoffeeProdByCountryColumns = [['string', 'Month'], ['number', 'Bolivia'], ['number', 'Ecuador'], ['number', 'Madagascar'], ['number', 'Papua  Guinea'], ['number', 'Rwanda'], ['number', 'Average']]
           def monthlyCoffeeProdByCountryData = [['2004/05', 165, 938, 522, 998, 450, 614.6], ['2005/06', 135, 1120, 599, 1268, 288, 682], ['2006/07', 157, 1167, 587, 807, 397, 623], ['2007/08', 139, 1110, 615, 968, 215, 609.4], ['2008/09', 136, 691, 629, 1026, 366, 569.6]]
-          def revenueAndLicensesColumns = [['number', 'Revenue'], ['number', 'Licenses']]
-          def revenueAndLicensesData = [[435, 132], [438, 131], [512, 137], [460, 142], [491, 140], [487, 139], [552, 147], [511, 146], [505, 151], [509, 149]]
-          def gainersLoserColumns = [['string', 'Name'], ['number', ''], ['number', ''], ['number', ''], ['number', '']]
-          def gainersLoserData = [['Gainers', 10, 30, 45, 60], ['Losers', 20, 35, 25, 45]]
           def systemPerformanceColumns = [['string', 'Label'], ['number', 'Value']]
           def systemPerformanceData = [['Memory', 80], ['CPU', 55], ['Network', 68]]
           def employeeColumns = [['string', 'Name'], ['string', 'Salary'], ['boolean', 'Full Time Employee']]
@@ -63,15 +57,15 @@
        </script>
        <h2>Google Visualization API Examples</h2>
        <gvisualization:pieCoreChart elementId="piechart" title="My Daily Activities" width="${450}" height="${300}" columns="${myDailyActivitiesColumns}" data="${myDailyActivitiesData}" />
-       <gvisualization:barCoreChart elementId="barchart" title="Company Performance" width="${400}" height="${240}" vAxis="${new Expando(title: 'Year', titleColor: 'red')}" columns="${companyPerformanceColumns}" data="${companyPerformanceData}" />
-       <gvisualization:bubbleCoreChart elementId="bubblechart" title="Correlation between life expectancy, fertility rate and population of some world countries (2010)" hAxis="${new Expando(title: 'Life Expectancy')}" vAxis="${new Expando(title: 'Fertility Rate')}" bubble="${new Expando(textStyle: '{fontSize: 11}')}" columns="${lifeExpectancyFertilityRateColumns}" data="${lifeExpectancyFertilityRateData}" />
-       <gvisualization:columnCoreChart elementId="columnchart" title="Company Performance" width="${400}" height="${240}" hAxis="${new Expando(title: 'Year', titleColor: 'red')}" columns="${companyPerformanceColumns}" data="${companyPerformanceData}" />
-       <gvisualization:areaCoreChart elementId="areachart" title="Company Performance" width="${400}" height="${240}" hAxis="${new Expando(title: 'Year', titleColor: 'red')}" columns="${companyPerformanceColumns}" data="${companyPerformanceData}" />
+       <gvisualization:barCoreChart elementId="barchart" title="Company Performance" width="${400}" height="${240}" vAxis="${[title: 'Year', titleColor: 'red']}" columns="${companyPerformanceColumns}" data="${companyPerformanceData}" />
+       <gvisualization:bubbleCoreChart elementId="bubblechart" title="Correlation between life expectancy, fertility rate and population of some world countries (2010)" hAxis="${[title: 'Life Expectancy']}" vAxis="${[title: 'Fertility Rate']}" bubble="${[textStyle: '{fontSize: 11}']}" columns="${lifeExpectancyFertilityRateColumns}" data="${lifeExpectancyFertilityRateData}" />
+       <gvisualization:columnCoreChart elementId="columnchart" title="Company Performance" width="${400}" height="${240}" hAxis="${[title: 'Year', titleColor: 'red']}" columns="${companyPerformanceColumns}" data="${companyPerformanceData}" />
+       <gvisualization:areaCoreChart elementId="areachart" title="Company Performance" width="${400}" height="${240}" hAxis="${[title: 'Year', titleColor: 'red']}" columns="${companyPerformanceColumns}" data="${companyPerformanceData}" />
        <gvisualization:lineCoreChart elementId="linechart" width="${400}" height="${240}" title="Company Performance" columns="${companyPerformanceColumns}" data="${companyPerformanceData}" />
-       <gvisualization:scatterCoreChart elementId="scatterchart" width="${400}" height="${240}" title="Age vs. Weight comparison" hAxis="${new Expando(title: 'Age', minValue: 0, maxValue: 15)}" vAxis="${new Expando(title: 'Weight', minValue: 0, maxValue: 15)}" legend="none" columns="${weightByAgeColumns}" data="${weightByAgeData}" />
-       <gvisualization:steppedAreaCoreChart elementId="steppedareachart" width="${400}" height="${240}" title="The decline of \'The 39 Steps\'" vAxis="${new Expando(title: 'Accumulated Rating')}" isStacked="${true}" columns="${accumulatedRatingColumns}" data="${accumulatedRatingData}" />
-       <gvisualization:candlestickCoreChart elementId="candlestickchart" legend="none" columns="${countByDayColumns}" data="${countByDayData}" candlestick="${new Expando(candlestickOptions)}" />
-       <gvisualization:comboCoreChart elementId="combochart" title="Monthly Coffee Production by Country" vAxis="${new Expando(title: 'Cups')}" hAxis="${new Expando(title: 'Month')}" seriesType="bars" series="${new Expando(5: new Expando(type: 'line'))}" columns="${monthlyCoffeeProdByCountryColumns}" data="${monthlyCoffeeProdByCountryData}" />
+       <gvisualization:scatterCoreChart elementId="scatterchart" width="${400}" height="${240}" title="Age vs. Weight comparison" hAxis="${[title: 'Age', minValue: 0, maxValue: 15]}" vAxis="${[title: 'Weight', minValue: 0, maxValue: 15]}" legend="none" columns="${weightByAgeColumns}" data="${weightByAgeData}" />
+       <gvisualization:steppedAreaCoreChart elementId="steppedareachart" width="${400}" height="${240}" title="The decline of \'The 39 Steps\'" vAxis="${[title: 'Accumulated Rating']}" isStacked="${true}" columns="${accumulatedRatingColumns}" data="${accumulatedRatingData}" />
+       <gvisualization:candlestickCoreChart elementId="candlestickchart" legend="none" columns="${countByDayColumns}" data="${countByDayData}" candlestick="${candlestickOptions}" />
+       <gvisualization:comboCoreChart elementId="combochart" title="Monthly Coffee Production by Country" vAxis="${[title: 'Cups']}" hAxis="${[title: 'Month']}" seriesType="bars" series="${[5: [type: 'line']]}" columns="${monthlyCoffeeProdByCountryColumns}" data="${monthlyCoffeeProdByCountryData}" />
        <gvisualization:gauge elementId="gauge" width="${400}" height="${120}" redFrom="${90}" redTo="${100}" yellowFrom="${75}" yellowTo="${90}" minorTicks="${5}" columns="${systemPerformanceColumns}" data="${systemPerformanceData}" />
        <gvisualization:table elementId="table" width="${400}" height="${130}" columns="${employeeColumns}" data="${employeeData}" select="selectHandler" ready="readyHandler"/>
        <gvisualization:map elementId="map" columns="${mapColumns}" data="${mapData}" />
