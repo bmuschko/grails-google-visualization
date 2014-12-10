@@ -9,3 +9,6 @@ target/
 plugin.xml
 .settings/
 web-app/
+*.zip
+*.sha1
+
