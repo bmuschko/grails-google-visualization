@@ -19,7 +19,7 @@ class GoogleVisualizationGrailsPlugin {
     def grailsVersion = "1.2 > *"
     def author = "Benjamin Muschko"
     def authorEmail = "benjamin.muschko@gmail.com"
-    def developers = [[name: "Benjamin Muschko", email: "benjamin.muschko@gmail.com"]]
+    def developers = [[name: "Benjamin Muschko", email: "benjamin.muschko@gmail.com"], [name: 'Angel Ruiz Calvo', email: 'aruizca@gmail.com']]
     def title = "Google Visualization API Plugin"
     def description = 'This is a plugin for Google Visualization API.'
     def documentation = "http://www.grails.org/plugin/google-visualization"
