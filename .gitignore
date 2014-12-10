@@ -11,3 +11,5 @@ plugin.xml
 .project
 .settings/
 web-app/
+*.zip
+*.sha1
