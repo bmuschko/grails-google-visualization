@@ -189,7 +189,7 @@ class GoogleVisualizationBuilder extends VisualizationBuilder {
         attrs.each() { key, value ->
             // Attribute is a event
             if(visualizationData.visualization.events.containsKey(key)) {
-                if(key == 'ready') {
+                if(key == 'ready' || key == 'error') {
                     beforeDrawEvents[key] = value
                 }
                 else {
