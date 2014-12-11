@@ -1,4 +1,4 @@
-![Travis CI build status](https://travis-ci.org/bmuschko/grails-google-visualization.svg)
+[![Travis CI build status](https://travis-ci.org/bmuschko/grails-google-visualization.svg)](https://travis-ci.org/bmuschko/grails-google-visualization)
 # Grails Google Visualization plugin
 
 ## Overview
