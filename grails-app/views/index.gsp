@@ -44,6 +44,13 @@
           def lifeExpectancyFertilityRateColumns =[['string', 'ID'], ['number', 'Life Expectancy'], ['number', 'Fertility Rate'], ['string', 'Region'], ['number', 'Population']]
           def lifeExpectancyFertilityRateData = [['CAN', 80.66, 1.67, 'North America', 33739900], ['DEU', 79.84, 1.36, 'Europe', 81902307], ['DNK', 78.6, 1.84, 'Europe', 5523095], ['EGY', 72.73, 2.78, 'Middle East', 79716203], ['GBR', 80.05, 2, 'Europe', 61801570], ['IRN', 72.49, 1.7, 'Middle East', 73137148], ['IRQ', 68.09, 4.77, 'Middle East', 31090763], ['ISR', 81.55, 2.96, 'Middle East', 7485600], ['RUS', 68.6, 1.54, 'Europe', 141850000], ['USA', 78.09, 2.05, 'North America', 307007000]]
           def candlestickOptions = [hollowIsRising: true]
+          def dataTableRoleExampleColumns = [['string', 'Month'], ['number', 'Sales'], [type: 'number', role: 'interval'], [type:'number', role:'interval'], [type:'string', role:'annotation'], [type:'string', role:'annotationText'], [type:'boolean',role:'certainty']]
+          def dataTableRoleData = [
+                  ['April',1000,  900, 1100,  'A','Stolen data', true],
+                  ['May',  1170, 1000, 1200,  'B','Coffee spill', true],
+                  ['June',  660,  550,  800,  'C','Wumpus attack', true],
+                  ['July', 1030, null, null, null, null, false]
+          ]
 
        %>
        <script type="text/javascript">
@@ -78,6 +85,7 @@
        <gvisualization:treeMap elementId="treemap" minColor="#f00" midColor="#ddd" maxColor="#0d0" headerHeight="${15}" fontColor="black" showScale="${true}" columns="${marketByRegionColumns}" data="${marketByRegionData}" />
        <gvisualization:timeLine elementId="timeline" columns="${timelineColumns}" data="${timelineData}" />
        <gvisualization:calendarChart elementId="calendarchart" columns="${calendarColumns}" data="${calendarData}" />
+       <gvisualization:lineCoreChart elementId="dataTableRoles" width="${400}" height="${240}" columns="${dataTableRoleExampleColumns}" data="${dataTableRoleData}" legend="${[position: 'top', alignment: 'center']}" />
        <table cellpadding="2" cellspacing="0">
           <tr>
              <td>
@@ -255,6 +263,14 @@
                    <div id="calendarchart"></div>
                </td>
            </tr>
+          <tr>
+             <td>
+                <a href="https://developers.google.com/chart/interactive/docs/roles">Data Table roles</a>
+             </td>
+             <td>
+                <div id="dataTableRoles"></div>
+             </td>
+          </tr>
        </table>
     </body>
 </html>
