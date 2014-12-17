@@ -10,10 +10,10 @@
         ${visualizationData.name}_data = new google.visualization.DataTable();
         <g:each var="column" in="${visualizationData.columns}">
             <g:if test="${column instanceof Map}">
-                ${visualizationData.name}_data.addColumn(${(column as JSON).toString()});
+        ${visualizationData.name}_data.addColumn(${(column as JSON).toString()});
             </g:if>
             <g:else>
-                ${visualizationData.name}_data.addColumn('${column[0]}', '${column[1]}');
+        ${visualizationData.name}_data.addColumn('${column[0]}', '${column[1]}');
             </g:else>
         </g:each>
         <g:each var="row" in="${visualizationData.rows}">
