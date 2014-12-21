@@ -20,6 +20,7 @@ import org.grails.plugins.google.visualization.data.DataType
  * Map configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
+ * @see <a href="https://developers.google.com/chart/interactive/docs/gallery/map#Configuration_Options">Configuration Options</a>
  */
 enum MapConfigOption {
     ENABLE_SCROLL_WHEEL("enableScrollWheel", [DataType.BOOLEAN]),

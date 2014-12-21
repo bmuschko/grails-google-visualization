@@ -26,7 +26,7 @@ class GoogleVisualizationTagLib {
     final BASIC_ATTRIBUTES = ['name', 'version', 'elementId', 'dynamicLoading', 'language', 'columns', 'data'] as Set
 
     def apiImport = { attrs, body ->
-        out << '<script type="text/javascript" src="http://www.google.com/jsapi"></script>'
+        out << '<script type="text/javascript" src="https://www.google.com/jsapi"></script>'
     }
 
     def pieChart = { attrs, body ->
@@ -131,30 +131,6 @@ class GoogleVisualizationTagLib {
 
     def treeMap = { attrs, body ->
         validateAndRender(attrs, GoogleVisualization.TREE_MAP, ['formatters'])
-    }
-
-    def imageAreaChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.IMAGE_AREA_CHART, ['formatters'])
-    }
-
-    def imageBarChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.IMAGE_BAR_CHART, ['formatters'])
-    }
-
-    def imageLineChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.IMAGE_LINE_CHART, ['formatters'])
-    }
-
-    def imagePieChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.IMAGE_PIE_CHART, ['formatters'])
-    }
-
-    def imageSparkLine = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.IMAGE_SPARK_LINE, ['formatters'])
-    }
-
-    def imageCandlestickChart = { attrs, body ->
-        validateAndRender(attrs, GoogleVisualization.IMAGE_CANDLESTICK_CHART, ['formatters'])
     }
 
     def timeLine = { attrs, body ->

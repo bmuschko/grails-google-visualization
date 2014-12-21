@@ -96,7 +96,8 @@ class GoogleVisualizationBuilder extends VisualizationBuilder {
             def rowValues = []
 
             it.toList().eachWithIndex { row, rowIndex ->
-                def dataType = attrs.columns[rowIndex][0]
+                def metadata = attrs.columns[rowIndex]
+                def dataType = metadata instanceof Map ? metadata.type : metadata[0]
                 def param
 
                 if(row != null) {

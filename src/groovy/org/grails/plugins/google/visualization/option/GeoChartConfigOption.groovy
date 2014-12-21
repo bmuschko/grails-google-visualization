@@ -20,24 +20,26 @@ import org.grails.plugins.google.visualization.data.DataType
  * Geo Chart configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
+ * @see <a href="https://developers.google.com/chart/interactive/docs/gallery/geochart#Configuration_Options">Configuration Options</a>
  */
 enum GeoChartConfigOption {
-    BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT]),
-    COLOR_AXIS("colorAxis", [DataType.OBJECT]),
+    BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT, DataType.MAP]),
+    COLOR_AXIS("colorAxis", [DataType.OBJECT, DataType.MAP]),
     DATALESS_REGION_COLOR("datalessRegionColor", [DataType.STRING]),
     DISPLAY_MODE("displayMode", [DataType.STRING]),
+    DOMAIN("domain", [DataType.STRING]),
     ENABLE_REGION_INTERACTIVITY("enableRegionInteractivity", [DataType.BOOLEAN]),
+    FORCE_IFRAME("forceIFrame", [DataType.BOOLEAN]),
     HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     KEEP_ASPECT_RATIO("keepAspectRatio", [DataType.BOOLEAN]),
-    LEGEND("legend", [DataType.OBJECT]),
+    LEGEND("legend", [DataType.STRING, DataType.OBJECT, DataType.MAP]),
     REGION("region", [DataType.STRING]),
-    MAGNIFYING_GLASS("magnifyingGlass", [DataType.OBJECT]),
+    MAGNIFYING_GLASS("magnifyingGlass", [DataType.OBJECT, DataType.MAP]),
     MARKER_OPACITY("markerOpacity", [DataType.NUMBER]),
     RESOLUTION("resolution", [DataType.STRING]),
-    SIZE_AXIS("sizeAxis", [DataType.OBJECT]),
-    TOOLTIP("tooltip", [DataType.OBJECT]),
-    WIDTH("width", [DataType.NUMBER, DataType.STRING]),
-    FORCEIFRAME("forceIFrame", [DataType.BOOLEAN])
+    SIZE_AXIS("sizeAxis", [DataType.OBJECT, DataType.MAP]),
+    TOOLTIP("tooltip", [DataType.OBJECT, DataType.MAP]),
+    WIDTH("width", [DataType.NUMBER, DataType.STRING])
 
     static final Map configOptions
 

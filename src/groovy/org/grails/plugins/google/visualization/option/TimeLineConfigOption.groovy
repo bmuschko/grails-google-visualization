@@ -20,14 +20,15 @@ import org.grails.plugins.google.visualization.data.DataType
  * Annotated Time Line configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
+ * @see <a href="https://developers.google.com/chart/interactive/docs/gallery/timeline#Configuration_Options">Configuration Options</a>
  */
 enum TimeLineConfigOption {
     AVOID_OVERLAPPING_GRID_LINES("avoidOverlappingGridLines", [DataType.BOOLEAN]),
-    BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT]),
+    BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT, DataType.MAP]),
     COLORS("colors", [DataType.ARRAY]),
     ENABLE_INTERACTIVITY("enableInteractivity", [DataType.BOOLEAN]),
     HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
-    TIMELINE("timeline", [DataType.OBJECT]),
+    TIMELINE("timeline", [DataType.OBJECT, DataType.MAP]),
     WIDTH("width", [DataType.NUMBER, DataType.STRING])
 
     static final Map configOptions

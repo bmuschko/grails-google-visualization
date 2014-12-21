@@ -20,6 +20,7 @@ import org.grails.plugins.google.visualization.data.DataType
  * Intensity Map configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
+ * @see <a href="https://developers.google.com/chart/interactive/docs/gallery/intensitymap#Configuration_Options">Configuration Options</a>
  */
 enum IntensityMapConfigOption {
     COLORS("colors", [DataType.ARRAY]),

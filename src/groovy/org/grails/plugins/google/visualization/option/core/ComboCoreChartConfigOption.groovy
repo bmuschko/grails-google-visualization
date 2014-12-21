@@ -20,36 +20,47 @@ import org.grails.plugins.google.visualization.data.DataType
  * Combo Core Chart configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
+ * @see <a href="https://developers.google.com/chart/interactive/docs/gallery/combochart#Configuration_Options">Configuration Options</a>
  */
 enum ComboCoreChartConfigOption {
+    AGGREGATION_TARGET("aggregationTarget", [DataType.STRING]),
+    ANIMATION("animation", [DataType.OBJECT, DataType.MAP]),
+    ANNOTATIONS("annotations", [DataType.OBJECT, DataType.MAP]),
     AREA_OPACITY("areaOpacity", [DataType.NUMBER]),
     AXIS_TITLES_POSITION("axisTitlesPosition", [DataType.STRING]),
-    BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT]),
-    BAR("bar", [DataType.OBJECT]),
-    CHART_AREA("chartArea", [DataType.OBJECT]),
+    BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT, DataType.MAP]),
+    BAR("bar", [DataType.OBJECT, DataType.MAP]),
+    CANDLESTICK("candlestick", [DataType.OBJECT, DataType.MAP]),
+    CHART_AREA("chartArea", [DataType.OBJECT, DataType.MAP]),
     COLORS("colors", [DataType.ARRAY]),
+    CROSSHAIR("crosshair", [DataType.OBJECT, DataType.MAP]),
     CURVE_TYPE("curveType", [DataType.STRING]),
+    DATA_OPACITY("dataOpacity", [DataType.NUMBER]),
     ENABLE_INTERACTIVITY("enableInteractivity", [DataType.BOOLEAN]),
+    FOCUS_TARGET("focusTarget", [DataType.STRING]),
     FONT_SIZE("fontSize", [DataType.NUMBER]),
     FONT_NAME("fontName", [DataType.STRING]),
-    GRIDLINE_COLOR("gridlineColor", [DataType.STRING]),
-    H_AXIS("hAxis", [DataType.OBJECT]),
+    FORCE_IFRAME("forceIFrame", [DataType.BOOLEAN]),
+    H_AXIS("hAxis", [DataType.OBJECT, DataType.MAP]),
     HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     INTERPOLATE_NULLS("interpolateNulls", [DataType.BOOLEAN]),
     IS_STACKED("isStacked", [DataType.BOOLEAN]),
-    LEGEND("legend", [DataType.STRING]),
-    LEGEND_TEXT_STYLE("legendTextStyle", [DataType.OBJECT]),
+    LEGEND("legend", [DataType.STRING, DataType.OBJECT, DataType.MAP]),
+    LINE_WIDTH("lineWidth", [DataType.NUMBER]),
+    ORIENTATION("orientation", [DataType.STRING]),
+    POINT_SHAPE("pointShape", [DataType.STRING]),
+    POINT_SIZE("pointSize", [DataType.NUMBER]),
     REVERSE_CATEGORIES("reverseCategories", [DataType.BOOLEAN]),
-    SERIES("series", [DataType.ARRAY, DataType.OBJECT]),
+    SELECTION_MODE("selectionMode", [DataType.STRING]),
+    SERIES("series", [DataType.ARRAY, DataType.OBJECT, DataType.MAP]),
     SERIES_TYPE("seriesType", [DataType.STRING]),
     TITLE("title", [DataType.STRING]),
     TITLE_POSITION("titlePosition", [DataType.STRING]),
-    TITLE_TEXT_STYLE("titleTextStyle", [DataType.OBJECT]),
-    TOOLTIP_TEXT_STYLE("tooltipTextStyle", [DataType.OBJECT]),
-    V_AXES("vAxes", [DataType.ARRAY, DataType.OBJECT]),
-    V_AXIS("vAxis", [DataType.OBJECT]),
-    WIDTH("width", [DataType.NUMBER, DataType.STRING]),
-    FORCEIFRAME("forceIFrame", [DataType.BOOLEAN])
+    TITLE_TEXT_STYLE("titleTextStyle", [DataType.OBJECT, DataType.MAP]),
+    TOOLTIP("tooltip", [DataType.OBJECT, DataType.MAP]),
+    V_AXES("vAxes", [DataType.ARRAY, DataType.OBJECT, DataType.MAP]),
+    V_AXIS("vAxis", [DataType.OBJECT, DataType.MAP]),
+    WIDTH("width", [DataType.NUMBER, DataType.STRING])
 
     static final Map configOptions
 

@@ -20,11 +20,17 @@ import org.grails.plugins.google.visualization.data.DataType
  * Tree Map configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
+ * @see <a href="https://developers.google.com/chart/interactive/docs/gallery/treemap#Configuration_Options">Configuration Options</a>
  */
 enum TreeMapConfigOption {
+    FONT_COLOR("fontColor", [DataType.STRING]),
+    FONT_FAMILY("fontFamily", [DataType.STRING]),
+    FONT_SIZE("fontSize", [DataType.NUMBER]),
+    FORCE_IFRAME("forceIFrame", [DataType.BOOLEAN]),
     HEADER_COLOR("headerColor", [DataType.STRING]),
     HEADER_HEIGHT("headerHeight", [DataType.NUMBER]),
     HEADER_HIGHLIGHT_COLOR("headerHighlightColor", [DataType.STRING]),
+    HINT_OPACITY("hintOpacity", [DataType.NUMBER]),
     MAX_COLOR("maxColor", [DataType.STRING]),
     MAX_DEPTH("maxDepth", [DataType.NUMBER]),
     MAX_HIGHLIGHT_COLOR("maxHighlightColor", [DataType.STRING]),
@@ -38,10 +44,12 @@ enum TreeMapConfigOption {
     NO_COLOR("noColor", [DataType.STRING]),
     NO_HIGHLIGHT_COLOR("noHighlightColor", [DataType.STRING]),
     SHOW_SCALE("showScale", [DataType.BOOLEAN]),
-    FONT_COLOR("fontColor", [DataType.STRING]),
-    FONT_FAMILY("fontFamily", [DataType.STRING]),
-    FONT_SIZE("fontSize", [DataType.NUMBER]),
-    FORCEIFRAME("forceIFrame", [DataType.BOOLEAN])
+    SHOW_TOOLTIPS("showTooltips", [DataType.BOOLEAN]),
+    TEXT_STYLE("textStyle", [DataType.OBJECT, DataType.MAP]),
+    TITLE("title", [DataType.STRING]),
+    TITLE_TEXT_STYLE("titleTextStyle", [DataType.OBJECT, DataType.MAP]),
+    USE_WEIGHTED_AVERAGE_FOR_AGGREGATION("useWeightedAverageForAggregation", [DataType.BOOLEAN])
+
 
     static final Map configOptions
 

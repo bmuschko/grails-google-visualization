@@ -20,6 +20,7 @@ import org.grails.plugins.google.visualization.data.DataType
  * Geo Map configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
+ * @see <a href="https://developers.google.com/chart/interactive/docs/gallery/geomap#Configuration_Options">Configuration Options</a>
  */
 enum GeoMapConfigOption {
     REGION("region", [DataType.STRING]),
@@ -27,7 +28,6 @@ enum GeoMapConfigOption {
     WIDTH("width", [DataType.NUMBER, DataType.STRING]),
     HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     COLORS("colors", [DataType.ARRAY]),
-    LEGEND("legend", [DataType.STRING]),
     SHOW_LEGEND("showLegend", [DataType.BOOLEAN]),
     SHOW_ZOOM_OUT("showZoomOut", [DataType.BOOLEAN]),
     ZOOM_OUT_LABEL("zoomOutLabel", [DataType.STRING])

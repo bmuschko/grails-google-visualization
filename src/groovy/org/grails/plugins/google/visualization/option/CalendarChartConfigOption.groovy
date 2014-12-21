@@ -20,12 +20,14 @@ import org.grails.plugins.google.visualization.data.DataType
  * Annotated Time Line configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
+ * @see <a href="https://developers.google.com/chart/interactive/docs/gallery/calendar#Configuration_Options">Configuration Options</a>
  */
 enum CalendarChartConfigOption {
-    CALENDAR("calendar", [DataType.OBJECT]),
+    CALENDAR("calendar", [DataType.OBJECT, DataType.MAP]),
+    COLOR_AXIS("colorAxis", [DataType.OBJECT, DataType.MAP]),
     FORCE_IFRAME("forceIFrame", [DataType.BOOLEAN]),
     HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
-    NO_DATA_PATTERN("noDataPattern", [DataType.OBJECT]),
+    NO_DATA_PATTERN("noDataPattern", [DataType.OBJECT, DataType.MAP]),
     WIDTH("width", [DataType.NUMBER, DataType.STRING])
 
     static final Map configOptions

@@ -15,8 +15,8 @@
 package org.grails.plugins.google.visualization
 
 import grails.test.GrailsUnitTestCase
-import org.grails.plugins.google.visualization.util.DateUtil
 import org.grails.plugins.google.visualization.data.Cell
+import org.grails.plugins.google.visualization.util.DateUtil
 
 /**
  * Google visualization builder tests
@@ -24,7 +24,7 @@ import org.grails.plugins.google.visualization.data.Cell
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 class GoogleVisualizationBuilderTests extends GrailsUnitTestCase {
-    def googleVisualizationBuilder
+    GoogleVisualizationBuilder googleVisualizationBuilder
 
     protected void setUp() {
         super.setUp()
@@ -138,6 +138,60 @@ class GoogleVisualizationBuilderTests extends GrailsUnitTestCase {
         assertEquals 2, googleVisualizationBuilder.visualizationData.rows.size()
         assertEquals "[[1, 2, 3, 4], 11]", googleVisualizationBuilder.visualizationData.rows.get(0).toString()
         assertEquals "[undefined, 2]", googleVisualizationBuilder.visualizationData.rows.get(1).toString()
+    }
+
+    void testBuildColumnsForGraphUsingDataTableRoles() {
+        def columns = [
+                ['string', 'Month'],
+                ['number', 'Sales'],
+                [type: 'number', role: 'interval'],
+                [type:'number', role:'interval'],
+                [type:'string', role:'annotation'],
+                [type:'string', role:'annotationText'],
+                [type:'boolean',role:'certainty']
+        ]
+
+        def data = [
+                ['April',1000,  900, 1100,  'A','Stolen data', true],
+                ['May',  1170, 1000, 1200,  'B','Coffee spill', true],
+                ['June',  660,  550,  800,  'C','Wumpus attack', true],
+                ['July', 1030, null, null, null, null, false]
+        ]
+
+        googleVisualizationBuilder.createNewVisualizationData([columns: columns, data: data], GoogleVisualization.LINE_CORE_CHART)
+        googleVisualizationBuilder.buildColumns()
+        def builderColumns = googleVisualizationBuilder.visualizationData.columns
+        assert 7 == builderColumns.size()
+        assert builderColumns[0] instanceof List & builderColumns[2] instanceof Map
+        assertEquals(['string', 'Month'], builderColumns[0])
+        assertEquals([type: 'number', role: 'interval'], builderColumns[2])
+
+    }
+
+    void testBuildRowsForGraphUsingDataTableRoles() {
+        def columns = [
+                ['string', 'Month'],
+                ['number', 'Sales'],
+                [type: 'number', role: 'interval'],
+                [type: 'number', role: 'interval'],
+                [type: 'string', role: 'annotation'],
+                [type: 'string', role: 'annotationText'],
+                [type: 'boolean', role: 'certainty']
+        ]
+
+        def data = [
+                ['April', 1000, 900, 1100, 'A', 'Stolen data', true],
+                ['May', 1170, 1000, 1200, 'B', 'Coffee spill', true],
+                ['June', 660, 550, 800, 'C', 'Wumpus attack', true],
+                ['July', 1030, null, null, null, null, false]
+        ]
+
+        googleVisualizationBuilder.createNewVisualizationData([columns: columns, data: data], GoogleVisualization.LINE_CORE_CHART)
+        googleVisualizationBuilder.buildRows()
+        def builderRows = googleVisualizationBuilder.visualizationData.rows
+        assert 4 == builderRows.size()
+        assert "['April', 1000, 900, 1100, 'A', 'Stolen data', true]" == builderRows[0].toString()
+        assert "['July', 1030, undefined, undefined, undefined, undefined, false]" == builderRows[3].toString()
     }
 
     void testRenderParamForStringDataTypeWithStringValue() {

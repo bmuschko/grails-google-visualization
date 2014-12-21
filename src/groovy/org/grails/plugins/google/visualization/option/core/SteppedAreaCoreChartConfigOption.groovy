@@ -20,34 +20,37 @@ import org.grails.plugins.google.visualization.data.DataType
  * Stepped Area Core Chart configuration options
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
+ * @see <a href="https://developers.google.com/chart/interactive/docs/gallery/steppedareachart#Configuration_Options">Configuration Options</a>
  */
 enum SteppedAreaCoreChartConfigOption {
-    ANIMATION("animation", [DataType.STRING, DataType.OBJECT]),
+    AGGREGATION_TARGET("aggregationTarget", [DataType.STRING]),
+    ANIMATION("animation", [DataType.STRING, DataType.OBJECT, DataType.MAP]),
     AREA_OPACITY("areaOpacity", [DataType.NUMBER]),
     AXIS_TITLES_POSITION("axisTitlesPosition", [DataType.STRING]),
-    BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT]),
-    CHART_AREA("chartArea", [DataType.OBJECT]),
+    BACKGROUND_COLOR("backgroundColor", [DataType.STRING, DataType.OBJECT, DataType.MAP]),
+    CHART_AREA("chartArea", [DataType.OBJECT, DataType.MAP]),
     COLORS("colors", [DataType.ARRAY]),
     CONNECT_STEPS("connectSteps", [DataType.BOOLEAN]),
     ENABLED_INTERACTIVITY("enableInteractivity", [DataType.BOOLEAN]),
     FOCUS_TARGET("focusTarget", [DataType.STRING]),
     FONT_SIZE("fontSize", [DataType.NUMBER]),
     FONT_NAME("fontName", [DataType.STRING]),
-    H_AXIS("hAxis", [DataType.OBJECT]),
+    FORCE_IFRAME("forceIFrame", [DataType.BOOLEAN]),
+    H_AXIS("hAxis", [DataType.OBJECT, DataType.MAP]),
     HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     IS_STACKED("isStacked", [DataType.BOOLEAN]),
-    LEGEND("legend", [DataType.OBJECT]),
+    LEGEND("legend", [DataType.STRING, DataType.OBJECT, DataType.MAP]),
     REVERSE_CATEGORIES("reverseCategories", [DataType.BOOLEAN]),
-    SERIES("series", [DataType.ARRAY, DataType.OBJECT]),
+    SELECTION_MODE("selectionMode", [DataType.STRING]),
+    SERIES("series", [DataType.ARRAY, DataType.OBJECT, DataType.MAP]),
     THEME("theme", [DataType.STRING]),
     TITLE("title", [DataType.STRING]),
     TITLE_POSITION("titlePosition", [DataType.STRING]),
-    TITLE_TEXT_STYLE("titleTextStyle", [DataType.OBJECT]),
-    TOOLTIP("tooltip", [DataType.OBJECT]),
-    V_AXES("vAxes", [DataType.ARRAY, DataType.OBJECT]),
-    V_AXIS("vAxis", [DataType.OBJECT]),
-    WIDTH("width", [DataType.NUMBER, DataType.STRING]),
-    FORCEIFRAME("forceIFrame", [DataType.BOOLEAN])
+    TITLE_TEXT_STYLE("titleTextStyle", [DataType.OBJECT, DataType.MAP]),
+    TOOLTIP("tooltip", [DataType.OBJECT, DataType.MAP]),
+    V_AXES("vAxes", [DataType.ARRAY, DataType.OBJECT, DataType.MAP]),
+    V_AXIS("vAxis", [DataType.OBJECT, DataType.MAP]),
+    WIDTH("width", [DataType.NUMBER, DataType.STRING])
 
     static final Map configOptions
 
