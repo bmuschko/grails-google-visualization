@@ -3,25 +3,17 @@
 
 ## Overview
 
-The plugin provides a taglib for the interactive charts of the [Google Visualization API](https://developers.google.com/chart/interactive/docs/reference).
-You can find the [full documentation](http://www.grails.org/plugin/google-visualization) including examples on the Grails plugin page.
+[This Grails plugin](http://grails.org/plugin/google-visualization) provides a taglib for the interactive charts of the [Google Visualization API](https://developers.google.com/chart/).
+
+## Documentation
+You can find the full documentation in the corresponding GitHub wiki [here](https://github.com/bmuschko/grails-google-visualization/wiki).
+
+## News
+- **January 04, 2015**: We are pleased to announce the release of version 1.0 with quite a few changes, that potentially could present some backward compatibility issues. Please check the changelog for more details: https://github.com/bmuschko/grails-google-visualization/wiki/changelog
 
 ## Features
-
-* Supports all visualizations provided by Google.
-* Implementations for table formatters `TableArrowFormat`, `TableBarFormat`, `TableColorFormat`, `TableDateFormat`, `TableNumberFormat` and `TablePatternFormat`.
-* Visualization event handling.
-
-## Change log
-
-### version 0.7.2
-- Fixes bug #32: the "error" event should be declared before drawing the chart.
-
-### version 0.7.1
-- Fixes bugs #28 and #24: Grails 2.3+ XSS prevention mechanism was HTML encoding the javascript output of the taglib and therefore breaking it.
-
-## Development
-
-To report issues or request improvements and new features please add a ticket in [Jira](http://jira.grails.org/browse/GPGOOGLEVISUALIZATIONAPI)
-or open an issue on [GitHub](https://github.com/bmuschko/grails-google-visualization/issues). The plugin code gets built automatically
-on [Travis CI](https://travis-ci.org/bmuschko/grails-google-visualization).
+* Supports the following visualizations: Annotated Time Line, Area Chart, Bar Chart, Bubble Chart, Candlestick Chart, Column Chart, Combo Chart, Gauge, Geo Chart Geo Map, Intensity Map, Line Chart, Map, Motion Chart, Organizational Chart, Pie Chart, Scatter Chart, Stepped Area Chart, Table Chart, Time Line Chart and Tree Map. See the [gallery](https://developers.google.com/chart/interactive/docs/gallery) for more information.
+* Implements redesigned charts (Area, Bar, Bubble, Candlestick, Column, Combo, Line, Pie, Scatter and Stepped Area Charts) from the previously known as "Core Chart package" as well as the deprecated versions.
+* Provides implementations for [table formatters](https://developers.google.com/chart/interactive/docs/gallery/table#Formatters) TableArrowFormat, TableBarFormat, TableColorFormat, TableDateFormat, TableNumberFormat and TablePatternFormat.
+* Visualization [Event Handling](https://developers.google.com/chart/interactive/docs/events).
+* Provides support for [Data Tables Roles](https://developers.google.com/chart/interactive/docs/roles) (since version 1.0)
