@@ -28,6 +28,7 @@ enum CalendarChartConfigOption {
     FORCE_IFRAME("forceIFrame", [DataType.BOOLEAN]),
     HEIGHT("height", [DataType.NUMBER, DataType.STRING]),
     NO_DATA_PATTERN("noDataPattern", [DataType.OBJECT, DataType.MAP]),
+    TITLE("title", [DataType.STRING]),
     WIDTH("width", [DataType.NUMBER, DataType.STRING])
 
     static final Map configOptions
