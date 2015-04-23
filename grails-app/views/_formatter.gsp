@@ -1,4 +1,5 @@
 <%@ page import="org.grails.plugins.google.visualization.formatter.ColorFormatter; org.grails.plugins.google.visualization.formatter.PatternFormatter" %>
+<%@ page defaultCodec="none" %>
 
 <g:each var="formatter" in="${visualizationData.formatters}" status="i">
    <g:set var="index" value="${i + 1}"/>
