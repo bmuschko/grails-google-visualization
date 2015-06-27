@@ -23,15 +23,19 @@ import spock.lang.Specification
  */
 class ObjectRendererTests extends Specification {
     void testRenderValue() {
-        assertEquals "{stroke: 'black', fill: '#eee', strokeSize: 1}", ObjectRenderer.instance.renderValue(new Expando(stroke:'black', fill:'#eee', strokeSize: 1)).toString()
+        expect:
+        ObjectRenderer.instance.renderValue(new Expando(stroke: 'black', fill: '#eee', strokeSize: 1)).toString() == "{stroke: 'black', fill: '#eee', strokeSize: 1}"
     }
 
     void testRenderValueRealObject() {
+        setup:
         def simpleObject = new SimpleClass(a: "xxx", b: 123)
+        when:
         def renderedObject = ObjectRenderer.instance.renderValue(simpleObject)
-        assertEquals "{b: 123, a: 'xxx'}", renderedObject.toString()
+        then:
+        renderedObject.toString() == "{b: 123, a: 'xxx'}"
     }
-	
+
     class SimpleClass {
         String a
         int b
