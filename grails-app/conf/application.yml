@@ -2,7 +2,7 @@
 grails:
     profile: web-plugin
     codegen:
-        defaultPackage: grails.google.visualization
+        defaultPackage: org.grails.plugins.google.visualization
 info:
     app:
         name: '@info.app.name@'
