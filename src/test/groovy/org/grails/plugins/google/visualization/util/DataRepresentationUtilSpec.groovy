@@ -21,12 +21,14 @@ import spock.lang.Specification
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class DataRepresentationUtilTests extends Specification {
+class DataRepresentationUtilSpec extends Specification {
     void testReplaceSquareWithCurlyBrackets() {
-        assertEquals DataRepresentationUtil.replaceSquareWithCurlyBrackets("[1, 2, 4]"), "{1, 2, 4}"
+        expect:
+        DataRepresentationUtil.replaceSquareWithCurlyBrackets("[1, 2, 4]") == "{1, 2, 4}"
     }
 
     void testRemoveSquareBrackets() {
-        assertEquals DataRepresentationUtil.removeSquareBrackets("[1, 2, 4]"), "1, 2, 4"
+        expect:
+        DataRepresentationUtil.removeSquareBrackets("[1, 2, 4]") == "1, 2, 4"
     }
 }
