@@ -15,6 +15,7 @@
 package org.grails.plugins.google.visualization.util
 
 import spock.lang.Specification
+
 import java.text.SimpleDateFormat
 
 /**
@@ -22,43 +23,57 @@ import java.text.SimpleDateFormat
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class DateUtilTests extends Specification {
+class DateUtilSpec extends Specification {
     void testCreateDateForDate() {
+        when:
         def date = DateUtil.createDate(1995, Calendar.NOVEMBER, 29)
         def dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-        assertEquals "1995/11/29", dateFormat.format(date)
+
+        then:
+        "1995/11/29" == dateFormat.format(date)
     }
 
     void testCreateDateForDateAndTime() {
+        when:
         def date = DateUtil.createDate(1995, Calendar.NOVEMBER, 29, 1, 2, 3, 4)
         def dateFormat = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss:SSS");
-        assertEquals "1995/11/29 01:02:03:004", dateFormat.format(date)
+
+        then:
+        "1995/11/29 01:02:03:004" == dateFormat.format(date)
     }
 
     void testRemoveTimeForNull() {
-        try {
-            DateUtil.removeTime(null)
-            fail("A null date should not be allowed")
-        }
-        catch(IllegalArgumentException e) {
-        }
+        when:
+        DateUtil.removeTime(null)
+
+        then:
+        thrown(IllegalArgumentException)
     }
 
     void testCreateDateJavaScriptObject() {
+        when:
         def date = DateUtil.createDate(1995, Calendar.NOVEMBER, 29)
         def dateJavaScriptObject = DateUtil.createDateJavaScriptObject(date)
-        assertEquals "new Date(1995, 10, 29)", dateJavaScriptObject.toString()
+
+        then:
+        "new Date(1995, 10, 29)" == dateJavaScriptObject.toString()
     }
 
     void testCreateDateTimeJavaScriptObject() {
+        when:
         def date = DateUtil.removeTime(DateUtil.createDate(1995, Calendar.NOVEMBER, 29))
         def dateTimeJavaScriptObject = DateUtil.createDateTimeJavaScriptObject(date)
-        assertEquals "new Date(1995, 10, 29, 0, 0, 0, 0)", dateTimeJavaScriptObject.toString()
+
+        then:
+        "new Date(1995, 10, 29, 0, 0, 0, 0)" == dateTimeJavaScriptObject.toString()
     }
 
     void testCreateTimeOfDayJavaScriptObject() {
+        when:
         def date = DateUtil.createDate(1995, Calendar.NOVEMBER, 29, 1, 2, 3, 4)
         def timeOfDayJavaScriptObject = DateUtil.createTimeOfDayJavaScriptObject(date)
-        assertEquals "[1, 2, 3, 4]", timeOfDayJavaScriptObject.toString()
+
+        then:
+        "[1, 2, 3, 4]" == timeOfDayJavaScriptObject.toString()
     }
 }
