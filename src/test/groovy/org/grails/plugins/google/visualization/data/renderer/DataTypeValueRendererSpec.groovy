@@ -23,59 +23,78 @@ import spock.lang.Specification
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class DataTypeValueRendererTests extends Specification {
+class DataTypeValueRendererSpec extends Specification {
     void testRenderForString() {
+        when:
         def renderedValue = DataTypeValueRenderer.instance.render('bla')
-        assertEquals DataType.STRING, renderedValue.type
-        assertEquals "'bla'", renderedValue.value.toString()
+        then:
+        renderedValue.type == DataType.STRING
+        renderedValue.value.toString() == "'bla'"
     }
 
     void testRenderForNumber() {
+        when:
         def renderedValue = DataTypeValueRenderer.instance.render(123)
-        assertEquals DataType.NUMBER, renderedValue.type
-        assertEquals 123, renderedValue.value
+        then:
+        renderedValue.type == DataType.NUMBER
+        renderedValue.value == 123
     }
 
     void testRenderForBooleanTrue() {
+        when:
         def renderedValue = DataTypeValueRenderer.instance.render(true)
-        assertEquals DataType.BOOLEAN, renderedValue.type
-        assertEquals true, renderedValue.value
+        then:
+        renderedValue.type == DataType.BOOLEAN
+        renderedValue.value
     }
 
     void testRenderForBooleanFalse() {
+        when:
         def renderedValue = DataTypeValueRenderer.instance.render(false)
-        assertEquals DataType.BOOLEAN, renderedValue.type
-        assertEquals false, renderedValue.value
+        then:
+        renderedValue.type == DataType.BOOLEAN
+        !renderedValue.value
     }
 
     void testRenderForDate() {
+        given:
         def date = DateUtil.removeTime(DateUtil.createDate(1995, Calendar.NOVEMBER, 29))
+        when:
         def renderedValue = DataTypeValueRenderer.instance.render(date)
-        assertEquals DataType.DATE, renderedValue.type
-        assertEquals "new Date(1995, 10, 29, 0, 0, 0, 0)", renderedValue.value.toString()
+        then:
+        renderedValue.type == DataType.DATE
+        renderedValue.value.toString() == "new Date(1995, 10, 29, 0, 0, 0, 0)"
     }
 
     void testRenderForList() {
+        when:
         def renderedValue = DataTypeValueRenderer.instance.render(['a', 1, true] as List)
-        assertEquals DataType.ARRAY, renderedValue.type
-        assertEquals "['a', 1, true]", renderedValue.value.toString()
+        then:
+        renderedValue.type == DataType.ARRAY
+        renderedValue.value.toString() == "['a', 1, true]"
     }
 
     void testRenderForObjectArray() {
+        when:
         def renderedValue = DataTypeValueRenderer.instance.render(['a', 1, true] as Object[])
-        assertEquals DataType.ARRAY, renderedValue.type
-        assertEquals "['a', 1, true]", renderedValue.value.toString()
+        then:
+        renderedValue.type == DataType.ARRAY
+        renderedValue.value.toString() == "['a', 1, true]"
     }
 
     void testRenderForObject() {
-        def renderedValue = DataTypeValueRenderer.instance.render(new Expando(stroke:'black', fill:'#eee', strokeSize: 1))
-        assertEquals DataType.OBJECT, renderedValue.type
-        assertEquals "{stroke: 'black', fill: '#eee', strokeSize: 1}", renderedValue.value.toString()
+        when:
+        def renderedValue = DataTypeValueRenderer.instance.render(new Expando(stroke: 'black', fill: '#eee', strokeSize: 1))
+        then:
+        renderedValue.type == DataType.OBJECT
+        renderedValue.value.toString() == "{stroke: 'black', fill: '#eee', strokeSize: 1}"
     }
 
     void testRenderForMap() {
+        when:
         def renderedValue = DataTypeValueRenderer.instance.render([1: 'value1', 2: 'value2', 3: 'value3'])
-        assertEquals DataType.MAP, renderedValue.type
-        assertEquals "{1: 'value1', 2: 'value2', 3: 'value3'}", renderedValue.value.toString()
+        then:
+        renderedValue.type == DataType.MAP
+        renderedValue.value.toString() == "{1: 'value1', 2: 'value2', 3: 'value3'}"
     }
 }
