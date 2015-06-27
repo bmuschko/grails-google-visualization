@@ -23,28 +23,30 @@ import spock.lang.Specification
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class ConfigOptionRendererUtilTests extends Specification {
+class ConfigOptionRendererUtilSpec extends Specification {
     void testRenderForSingleAllowedType() {
+        when:
         def resolvedConfigOption = ConfigOptionRendererUtil.render(PieChartConfigOption.TITLE, 'bla')
-        assertEquals DataType.STRING, resolvedConfigOption.type
-        assertEquals "'bla'", resolvedConfigOption.value.toString()
+
+        then:
+        DataType.STRING == resolvedConfigOption.type
+        "'bla'" == resolvedConfigOption.value.toString()
     }
 
     void testRenderForMultipleAllowedTypes() {
+        when:
         def resolvedConfigOption = ConfigOptionRendererUtil.render(PieChartConfigOption.BACKGROUND_COLOR, '#004411')
-        assertEquals DataType.STRING, resolvedConfigOption.type
-        assertEquals "'#004411'", resolvedConfigOption.value.toString()
+
+        then:
+        DataType.STRING == resolvedConfigOption.type
+        "'#004411'" == resolvedConfigOption.value.toString()
     }
 
     void testRenderForUnsupportedType() {
-        try
-        {
-            ConfigOptionRendererUtil.render(PieChartConfigOption.BACKGROUND_COLOR, 123)
-            fail "Unsupported data types have to throw an exception!"
-        }
-        catch(IllegalArgumentException e)
-        {
-            assertEquals "Unsupported configuration type 'NUMBER'. Allowed types: [STRING, OBJECT, MAP]", e.message
-        }
+        when:
+        ConfigOptionRendererUtil.render(PieChartConfigOption.BACKGROUND_COLOR, 123)
+
+        then:
+        thrown(IllegalArgumentException)
     }
 }

@@ -35,7 +35,7 @@ class GoogleVisualizationBuilderTests extends Specification {
     }
 
     void testCreateNewVisualizationData() {
-        googleVisualizationBuilder.createNewVisualizationData(['a':1, 'b': 2], GoogleVisualization.PIE_CHART)
+        googleVisualizationBuilder.createNewVisualizationData(['a': 1, 'b': 2], GoogleVisualization.PIE_CHART)
         assertEquals 2, googleVisualizationBuilder.attrs.size()
         assertEquals 1, googleVisualizationBuilder.attrs['a']
         assertEquals 2, googleVisualizationBuilder.attrs['b']
@@ -43,7 +43,7 @@ class GoogleVisualizationBuilderTests extends Specification {
     }
 
     void testBuildNameForGivenName() {
-        googleVisualizationBuilder.createNewVisualizationData(['name':'test'], GoogleVisualization.PIE_CHART)
+        googleVisualizationBuilder.createNewVisualizationData(['name': 'test'], GoogleVisualization.PIE_CHART)
         assertEquals 'test', googleVisualizationBuilder.buildName()
     }
 
@@ -53,7 +53,7 @@ class GoogleVisualizationBuilderTests extends Specification {
     }
 
     void testBuildElementId() {
-        googleVisualizationBuilder.createNewVisualizationData(['elementId':'someElementId'], GoogleVisualization.PIE_CHART)
+        googleVisualizationBuilder.createNewVisualizationData(['elementId': 'someElementId'], GoogleVisualization.PIE_CHART)
         assertEquals 'someElementId', googleVisualizationBuilder.buildElementId()
     }
 
@@ -73,7 +73,7 @@ class GoogleVisualizationBuilderTests extends Specification {
     }
 
     void testBuildLanguageForSetLanguage() {
-        googleVisualizationBuilder.createNewVisualizationData(['language':'fr'], GoogleVisualization.PIE_CHART)
+        googleVisualizationBuilder.createNewVisualizationData(['language': 'fr'], GoogleVisualization.PIE_CHART)
         assertEquals 'fr', googleVisualizationBuilder.buildLanguage()
     }
 
@@ -89,13 +89,13 @@ class GoogleVisualizationBuilderTests extends Specification {
     }
 
     void testBuildOptionsForMultipleOptions() {
-        googleVisualizationBuilder.createNewVisualizationData(['title':'My Daily Activities', 'width':400, 'height':240, 'is3D':true], GoogleVisualization.PIE_CHART)
+        googleVisualizationBuilder.createNewVisualizationData(['title': 'My Daily Activities', 'width': 400, 'height': 240, 'is3D': true], GoogleVisualization.PIE_CHART)
         googleVisualizationBuilder.buildOptions()
         assertEquals "{title: 'My Daily Activities', width: 400, height: 240, is3D: true}", googleVisualizationBuilder.visualizationData.options.toString()
     }
 
     void testBuildColumns() {
-        googleVisualizationBuilder.createNewVisualizationData(['columns':[['string', 'Name'], ['string', 'Salary'], ['boolean', 'Full Time Employee']]], GoogleVisualization.PIE_CHART)
+        googleVisualizationBuilder.createNewVisualizationData(['columns': [['string', 'Name'], ['string', 'Salary'], ['boolean', 'Full Time Employee']]], GoogleVisualization.PIE_CHART)
         googleVisualizationBuilder.buildColumns()
         assertEquals 3, googleVisualizationBuilder.visualizationData.columns.size()
         assertEquals 'string', googleVisualizationBuilder.visualizationData.columns.get(0).get(0)
@@ -107,7 +107,7 @@ class GoogleVisualizationBuilderTests extends Specification {
     }
 
     void testBuildRowsForStringDataType() {
-        googleVisualizationBuilder.createNewVisualizationData(['columns':[['string', 'Task'], ['number', 'Hours per Day']], 'data':[['Work', 11], [null, 2]]], GoogleVisualization.PIE_CHART)
+        googleVisualizationBuilder.createNewVisualizationData(['columns': [['string', 'Task'], ['number', 'Hours per Day']], 'data': [['Work', 11], [null, 2]]], GoogleVisualization.PIE_CHART)
         googleVisualizationBuilder.buildRows()
         assertEquals 2, googleVisualizationBuilder.visualizationData.rows.size()
         assertEquals "['Work', 11]", googleVisualizationBuilder.visualizationData.rows.get(0).toString()
@@ -115,7 +115,7 @@ class GoogleVisualizationBuilderTests extends Specification {
     }
 
     void testBuildRowsForDateDataType() {
-        googleVisualizationBuilder.createNewVisualizationData(['columns':[['date', 'Date'], ['number', 'Hours per Day']], 'data':[[DateUtil.createDate(2008, Calendar.MARCH, 1), 11], [null, 2]]], GoogleVisualization.PIE_CHART)
+        googleVisualizationBuilder.createNewVisualizationData(['columns': [['date', 'Date'], ['number', 'Hours per Day']], 'data': [[DateUtil.createDate(2008, Calendar.MARCH, 1), 11], [null, 2]]], GoogleVisualization.PIE_CHART)
         googleVisualizationBuilder.buildRows()
         assertEquals 2, googleVisualizationBuilder.visualizationData.rows.size()
         assertEquals "[new Date(2008, 2, 1), 11]", googleVisualizationBuilder.visualizationData.rows.get(0).toString()
@@ -123,7 +123,7 @@ class GoogleVisualizationBuilderTests extends Specification {
     }
 
     void testBuildRowsForDateDataTimeType() {
-        googleVisualizationBuilder.createNewVisualizationData(['columns':[['datetime', 'DateTime'], ['number', 'Hours per Day']], 'data':[[DateUtil.createDate(2008, Calendar.MARCH, 1, 1, 2, 3, 4), 11], [null, 2]]], GoogleVisualization.PIE_CHART)
+        googleVisualizationBuilder.createNewVisualizationData(['columns': [['datetime', 'DateTime'], ['number', 'Hours per Day']], 'data': [[DateUtil.createDate(2008, Calendar.MARCH, 1, 1, 2, 3, 4), 11], [null, 2]]], GoogleVisualization.PIE_CHART)
         googleVisualizationBuilder.buildRows()
         assertEquals 2, googleVisualizationBuilder.visualizationData.rows.size()
         assertEquals "[new Date(2008, 2, 1, 1, 2, 3, 4), 11]", googleVisualizationBuilder.visualizationData.rows.get(0).toString()
@@ -131,7 +131,7 @@ class GoogleVisualizationBuilderTests extends Specification {
     }
 
     void testBuildRowsForDateTimeOfDayType() {
-        googleVisualizationBuilder.createNewVisualizationData(['columns':[['timeofday', 'TimeOfDay'], ['number', 'Hours per Day']], 'data':[[DateUtil.createDate(2008, Calendar.MARCH, 1, 1, 2, 3, 4), 11], [null, 2]]], GoogleVisualization.PIE_CHART)
+        googleVisualizationBuilder.createNewVisualizationData(['columns': [['timeofday', 'TimeOfDay'], ['number', 'Hours per Day']], 'data': [[DateUtil.createDate(2008, Calendar.MARCH, 1, 1, 2, 3, 4), 11], [null, 2]]], GoogleVisualization.PIE_CHART)
         googleVisualizationBuilder.buildRows()
         assertEquals 2, googleVisualizationBuilder.visualizationData.rows.size()
         assertEquals "[[1, 2, 3, 4], 11]", googleVisualizationBuilder.visualizationData.rows.get(0).toString()
@@ -143,16 +143,16 @@ class GoogleVisualizationBuilderTests extends Specification {
                 ['string', 'Month'],
                 ['number', 'Sales'],
                 [type: 'number', role: 'interval'],
-                [type:'number', role:'interval'],
-                [type:'string', role:'annotation'],
-                [type:'string', role:'annotationText'],
-                [type:'boolean',role:'certainty']
+                [type: 'number', role: 'interval'],
+                [type: 'string', role: 'annotation'],
+                [type: 'string', role: 'annotationText'],
+                [type: 'boolean', role: 'certainty']
         ]
 
         def data = [
-                ['April',1000,  900, 1100,  'A','Stolen data', true],
-                ['May',  1170, 1000, 1200,  'B','Coffee spill', true],
-                ['June',  660,  550,  800,  'C','Wumpus attack', true],
+                ['April', 1000, 900, 1100, 'A', 'Stolen data', true],
+                ['May', 1170, 1000, 1200, 'B', 'Coffee spill', true],
+                ['June', 660, 550, 800, 'C', 'Wumpus attack', true],
                 ['July', 1030, null, null, null, null, false]
         ]
 
@@ -248,12 +248,12 @@ class GoogleVisualizationBuilderTests extends Specification {
     }
 
     void testRenderCellValueForValueLabelAndCustomValues() {
-        def renderedCellValue = googleVisualizationBuilder.renderCellValue(GoogleVisualizationColumnType.NUMBER.toString(), new Cell(value: 1, label: 'hello', customValues: [style:'border: 1px solid green;', test:'hello: next;']))
+        def renderedCellValue = googleVisualizationBuilder.renderCellValue(GoogleVisualizationColumnType.NUMBER.toString(), new Cell(value: 1, label: 'hello', customValues: [style: 'border: 1px solid green;', test: 'hello: next;']))
         assertEquals "{v: 1, f: 'hello', p: {style: 'border: 1px solid green;', test: 'hello: next;'}}", renderedCellValue.toString()
     }
 
     void testBuildEvents() {
-        googleVisualizationBuilder.createNewVisualizationData(['select':'selectHandler', 'ready':'readyHandler'], GoogleVisualization.PIE_CHART)
+        googleVisualizationBuilder.createNewVisualizationData(['select': 'selectHandler', 'ready': 'readyHandler'], GoogleVisualization.PIE_CHART)
         googleVisualizationBuilder.buildEvents()
         assertEquals 1, googleVisualizationBuilder.visualizationData.beforeDrawEvents.size()
         assertEquals 'readyHandler', googleVisualizationBuilder.visualizationData.beforeDrawEvents['ready']
