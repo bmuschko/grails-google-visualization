@@ -1,4 +1,3 @@
-package org.grails.plugins.google
 import grails.plugins.Plugin
 /* Copyright 2010 the original author or authors.
  *

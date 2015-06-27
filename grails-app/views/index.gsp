@@ -1,4 +1,4 @@
-<%@ page import="org.grails.plugins.google.org.grails.plugins.google.visualization.data.Cell; org.grails.plugins.google.org.grails.plugins.google.visualization.util.DateUtil" %>
+<%@ page import="org.grails.plugins.google.visualization.data.Cell; org.grails.plugins.google.visualization.util.DateUtil" %>
 <html>
     <head>
         <title>Google Visualization API plugin</title>
