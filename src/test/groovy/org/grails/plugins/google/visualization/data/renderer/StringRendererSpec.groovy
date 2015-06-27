@@ -17,28 +17,18 @@ package org.grails.plugins.google.visualization.data.renderer
 import spock.lang.Specification
 
 /**
- * Number and boolean data type renderer tests
+ * String data type renderer tests
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class NumberAndBooleanRendererTests extends Specification {
-    void testRenderValueForNumber() {
+class StringRendererSpec extends Specification {
+    void testRenderStringValueUnescaped() {
         expect:
-        NumberAndBooleanRenderer.instance.renderValue(123) == 123
+        StringRenderer.instance.renderValue('test').toString() == "'test'"
     }
 
-    void testRenderValueForFloatingNumber() {
+    void testRenderStringValueEscaped() {
         expect:
-        NumberAndBooleanRenderer.instance.renderValue(12.3) == 12.3
-    }
-
-    void testRenderValueForBooleanTrue() {
-        expect:
-        NumberAndBooleanRenderer.instance.renderValue(true)
-    }
-
-    void testRenderValueForBooleanFalse() {
-        expect:
-        !NumberAndBooleanRenderer.instance.renderValue(false)
+        StringRenderer.instance.renderValue("Jack's parameter").toString() == "'Jack\\'s parameter'"
     }
 }

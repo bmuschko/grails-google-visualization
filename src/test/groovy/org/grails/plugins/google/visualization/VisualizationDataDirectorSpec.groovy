@@ -21,8 +21,8 @@ import spock.lang.Specification
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class VisualizationDataDirectorTests extends Specification {
-    def visualizationDataDirector
+class VisualizationDataDirectorSpec extends Specification {
+    VisualizationDataDirector visualizationDataDirector
 
     protected void setup() {
         visualizationDataDirector = new VisualizationDataDirector()
@@ -33,27 +33,36 @@ class VisualizationDataDirectorTests extends Specification {
     }
 
     void testSetVisualizationDataBuilder() {
+        setup:
         def googleVisualizationBuilder = new GoogleVisualizationBuilder()
+        when:
         visualizationDataDirector.setVisualizationDataBuilder(googleVisualizationBuilder)
-        assertEquals googleVisualizationBuilder, visualizationDataDirector.visualizationBuilder
+        then:
+        visualizationDataDirector.visualizationBuilder == googleVisualizationBuilder
     }
 
     void testConstructVisualizationData() {
+        setup :
+        
         def attrs = ['elementId':'piechart', 'title':'My Daily Activities', 'width':400, 'height':240, 'is3D':true, 'columns':[['string', 'Task'], ['number', 'Hours per Day']], 'data':[['Work', 11], ['Eat', 2], ['Commute', 2], ['Watch TV', 2], ['Sleep', 7]], 'select':'selectHandler']
         def googleVisualizationBuilder = new GoogleVisualizationBuilder()
+        
+        when:
         visualizationDataDirector.setVisualizationDataBuilder(googleVisualizationBuilder)
         visualizationDataDirector.constructVisualizationData(attrs, GoogleVisualization.PIE_CHART)
-        assertEquals 'org.grails.plugins.google.visualization', visualizationDataDirector.getVisualizationData().name
-        assertEquals 'piechart', visualizationDataDirector.getVisualizationData().elementId
-        assertEquals "{title: 'My Daily Activities', width: 400, height: 240, is3D: true}", visualizationDataDirector.getVisualizationData().options.toString()
-        assertEquals 5, visualizationDataDirector.getVisualizationData().rows.size()
-        assertEquals "['Work', 11]", visualizationDataDirector.getVisualizationData().rows.get(0).toString()
-        assertEquals "['Eat', 2]", visualizationDataDirector.getVisualizationData().rows.get(1).toString()
-        assertEquals "['Commute', 2]", visualizationDataDirector.getVisualizationData().rows.get(2).toString()
-        assertEquals "['Watch TV', 2]", visualizationDataDirector.getVisualizationData().rows.get(3).toString()
-        assertEquals "['Sleep', 7]", visualizationDataDirector.getVisualizationData().rows.get(4).toString()
-        assertEquals 0, visualizationDataDirector.getVisualizationData().beforeDrawEvents.size()
-        assertEquals 1, visualizationDataDirector.getVisualizationData().afterDrawEvents.size()
-        assertEquals 'selectHandler', visualizationDataDirector.getVisualizationData().afterDrawEvents['select']
+        
+        then : 
+        visualizationDataDirector.getVisualizationData().name == 'org.grails.plugins.google.visualization'
+        visualizationDataDirector.getVisualizationData().elementId== 'piechart'
+        visualizationDataDirector.getVisualizationData().options.toString() == "{title: 'My Daily Activities', width: 400, height: 240, is3D: true}"
+        visualizationDataDirector.getVisualizationData().rows.size() == 5
+        visualizationDataDirector.getVisualizationData().rows.get(0).toString() == "['Work', 11]"
+        visualizationDataDirector.getVisualizationData().rows.get(1).toString()=="['Eat', 2]"
+        visualizationDataDirector.getVisualizationData().rows.get(2).toString()== "['Commute', 2]"
+        visualizationDataDirector.getVisualizationData().rows.get(3).toString()== "['Watch TV', 2]"
+        visualizationDataDirector.getVisualizationData().rows.get(4).toString() =="['Sleep', 7]"
+        visualizationDataDirector.getVisualizationData().beforeDrawEvents.size() == 0
+        visualizationDataDirector.getVisualizationData().afterDrawEvents.size()==1
+        visualizationDataDirector.getVisualizationData().afterDrawEvents['select']== 'selectHandler'
     }
 }
