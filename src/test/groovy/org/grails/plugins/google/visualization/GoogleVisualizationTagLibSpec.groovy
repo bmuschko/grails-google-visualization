@@ -26,63 +26,73 @@ import spock.lang.Specification
  */
 @TestMixin(GroovyPageUnitTestMixin)
 @TestFor(GoogleVisualizationTagLib)
-class GoogleVisualizationTagLibTests {
-    void testPieChart() {
-        tagLib.pieChart(createPieChartAttributes()) { }
-        assertNotNull tagLib.out.toString()
+class GoogleVisualizationTagLibSpec extends Specification {
+
+    void "test pieChart tag"() {
+        expect:
+        tagLib.pieChart(createPieChartAttributes())
     }
 
     void testValidateAttributesForOptionalAttributes() {
-        def attrs = ['name':'testName', 'elementId':'testElementId', 'columns':[1, 2, 3, 4], 'data':[5, 6, 7, 8], 'someValue':'hello']
+        setup:
+        def attrs = ['name': 'testName', 'elementId': 'testElementId', 'columns': [1, 2, 3, 4], 'data': [5, 6, 7, 8], 'someValue': 'hello']
+
+        expect:
         tagLib.validateAttributes(attrs, GoogleVisualization.PIE_CHART, ['someValue', 'test'])
     }
 
     void testValidateAttributesForOptionalAttributesForUnknownAttribute() {
-        def attrs = ['name':'testName', 'elementId':'testElementId', 'columns':[1, 2, 3, 4], 'data':[5, 6, 7, 8], 'someValue':'hello']
+        setup:
+        def attrs = ['name': 'testName', 'elementId': 'testElementId', 'columns': [1, 2, 3, 4], 'data': [5, 6, 7, 8], 'someValue': 'hello']
 
-        try {
-            tagLib.validateAttributes(attrs, GoogleVisualization.PIE_CHART, ['xxx', 'yyy'])
-            fail("Unknown attributes have to throw an exception!")
-        }
-        catch(IllegalArgumentException e) {
-            assertEquals "Attribute 'someValue' is not a valid option for Google Visualization 'google.org.grails.plugins.google.visualization.PieChart'!", e.message
-        }
+        when:
+        tagLib.validateAttributes(attrs, GoogleVisualization.PIE_CHART, ['xxx', 'yyy'])
+
+        then:
+        thrown(IllegalArgumentException)
     }
 
     void testIsValidAttributeForBasicAttributeName() {
-        assertTrue tagLib.isValidAttribute('name', GoogleVisualization.PIE_CHART)
+        expect:
+        tagLib.isValidAttribute('name', GoogleVisualization.PIE_CHART)
     }
 
     void testIsValidAttributeForBasicAttributeElementId() {
-        assertTrue tagLib.isValidAttribute('elementId', GoogleVisualization.PIE_CHART)
+        expect:
+        tagLib.isValidAttribute('elementId', GoogleVisualization.PIE_CHART)
     }
 
     void testIsValidAttributeForBasicAttributeLanguage() {
-        assertTrue tagLib.isValidAttribute('language', GoogleVisualization.PIE_CHART)
+        expect:
+        tagLib.isValidAttribute('language', GoogleVisualization.PIE_CHART)
     }
 
     void testIsValidAttributeForBasicAttributeColumns() {
-        assertTrue tagLib.isValidAttribute('columns', GoogleVisualization.PIE_CHART)
+        expect:
+        tagLib.isValidAttribute('columns', GoogleVisualization.PIE_CHART)
     }
 
     void testIsValidAttributeForBasicAttributeData() {
-        assertTrue tagLib.isValidAttribute('data', GoogleVisualization.PIE_CHART)
+        expect:
+        tagLib.isValidAttribute('data', GoogleVisualization.PIE_CHART)
     }
 
     void testIsValidAttributeForOptionalAttribute() {
-        assertTrue tagLib.isValidAttribute('xxx', GoogleVisualization.PIE_CHART, ['yyy', 'xxx', 'zzz'])
+        expect:
+        tagLib.isValidAttribute('xxx', GoogleVisualization.PIE_CHART, ['yyy', 'xxx', 'zzz'])
     }
 
     void testGetInvalidOptionExceptionMessage() {
-        assertEquals "Attribute 'bla' is not a valid option for Google Visualization 'google.org.grails.plugins.google.visualization.PieChart'!", tagLib.getInvalidOptionExceptionMessage('bla', GoogleVisualization.PIE_CHART).toString()
+        expect:
+        tagLib.getInvalidOptionExceptionMessage('bla', GoogleVisualization.PIE_CHART).toString() == "Attribute 'bla' is not a valid option for Google Visualization 'google.org.grails.plugins.google.visualization.PieChart'!"
     }
 
     void testRenderVisualization() {
+        expect:
         tagLib.renderVisualization(createPieChartAttributes(), GoogleVisualization.PIE_CHART)
-        assertNotNull tagLib.out.toString()
     }
 
     def createPieChartAttributes() {
-        ['title':'My Daily Activities', 'width':400, 'height':240, 'is3D':true, 'columns':[['string', 'Name'], ['number', 'Salary'], ['boolean', 'Full Time Employee']], 'data':[['Memory', 80], ['CPU', 55], ['Network', 68]]]
+        ['title': 'My Daily Activities', 'width': 400, 'height': 240, 'is3D': true, 'columns': [['string', 'Name'], ['number', 'Salary'], ['boolean', 'Full Time Employee']], 'data': [['Memory', 80], ['CPU', 55], ['Network', 68]]]
     }
 }
