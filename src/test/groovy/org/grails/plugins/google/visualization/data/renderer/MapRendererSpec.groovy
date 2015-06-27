@@ -21,8 +21,9 @@ import spock.lang.Specification
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class MapRendererTests extends Specification {
+class MapRendererSpec extends Specification {
     void testRenderValue() {
-        assertEquals "{1: 'value1', 2: 'value2', 3: 'value3'}", MapRenderer.instance.renderValue([1: 'value1', 2: 'value2', 3: 'value3']).toString()
+        expect:
+        MapRenderer.instance.renderValue([1: 'value1', 2: 'value2', 3: 'value3']).toString() == "{1: 'value1', 2: 'value2', 3: 'value3'}"
     }
 }
