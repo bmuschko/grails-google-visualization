@@ -22,9 +22,11 @@ import spock.lang.Specification
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class DateRendererTests extends Specification {
+class DateRendererSpec extends Specification {
     void testRenderValue() {
+        setup:
         def date = DateUtil.removeTime(DateUtil.createDate(1995, Calendar.NOVEMBER, 29))
-        assertEquals "new Date(1995, 10, 29, 0, 0, 0, 0)", DateRenderer.instance.renderValue(date).toString()
+        expect:
+        DateRenderer.instance.renderValue(date).toString() == "new Date(1995, 10, 29, 0, 0, 0, 0)"
     }
 }
