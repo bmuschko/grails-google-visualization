@@ -23,18 +23,22 @@ import spock.lang.Specification
  */
 class NumberAndBooleanRendererTests extends Specification {
     void testRenderValueForNumber() {
-        assertEquals 123, NumberAndBooleanRenderer.instance.renderValue(123)
+        expect:
+        NumberAndBooleanRenderer.instance.renderValue(123) == 123
     }
 
     void testRenderValueForFloatingNumber() {
-        assertEquals 12.3, NumberAndBooleanRenderer.instance.renderValue(12.3)
+        expect:
+        NumberAndBooleanRenderer.instance.renderValue(12.3) == 12.3
     }
 
     void testRenderValueForBooleanTrue() {
-        assertEquals true, NumberAndBooleanRenderer.instance.renderValue(true)
+        expect:
+        NumberAndBooleanRenderer.instance.renderValue(true)
     }
 
     void testRenderValueForBooleanFalse() {
-        assertEquals false, NumberAndBooleanRenderer.instance.renderValue(false)
+        expect:
+        !NumberAndBooleanRenderer.instance.renderValue(false)
     }
 }
