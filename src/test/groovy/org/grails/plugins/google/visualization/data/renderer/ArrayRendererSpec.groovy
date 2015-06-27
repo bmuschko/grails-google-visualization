@@ -21,12 +21,14 @@ import spock.lang.Specification
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class ArrayRendererTests extends Specification {
+class ArrayRendererSpec extends Specification {
     void testRenderValue() {
-        assertEquals "['a', 1, true]", ArrayRenderer.instance.renderValue(['a', 1, true]).toString()
+        expect:
+        ArrayRenderer.instance.renderValue(['a', 1, true]).toString() == "['a', 1, true]"
     }
 
     void testRenderValueForObjectArray() {
-        assertEquals "[{color: '#FF0000', darker: '#680000'}, {color: 'cyan', darker: 'deepskyblue'}]", ArrayRenderer.instance.renderValue([new Expando(color:'#FF0000', darker:'#680000'), new Expando(color:'cyan', darker:'deepskyblue')]).toString()
+        expect:
+        ArrayRenderer.instance.renderValue([new Expando(color: '#FF0000', darker: '#680000'), new Expando(color: 'cyan', darker: 'deepskyblue')]).toString() == "[{color: '#FF0000', darker: '#680000'}, {color: 'cyan', darker: 'deepskyblue'}]"
     }
 }
