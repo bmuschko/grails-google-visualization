@@ -31,7 +31,7 @@ import org.grails.plugins.google.visualization.util.DateUtil
  */
 class GoogleVisualizationBuilder extends VisualizationBuilder {
     static final Log log = LogFactory.getLog(GoogleVisualizationBuilder)
-    final DEFAULT_NAME = 'org.grails.plugins.google.visualization'
+    final DEFAULT_NAME = 'visualization'
     final DEFAULT_VERSION = '1'
 
     @Override
