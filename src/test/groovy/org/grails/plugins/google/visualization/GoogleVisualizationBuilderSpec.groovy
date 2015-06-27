@@ -58,7 +58,7 @@ class GoogleVisualizationBuilderSpec extends Specification {
         googleVisualizationBuilder.createNewVisualizationData([], GoogleVisualization.PIE_CHART)
 
         then:
-        'org.grails.plugins.google.visualization' == googleVisualizationBuilder.buildName()
+        'visualization' == googleVisualizationBuilder.buildName()
     }
 
     void testBuildElementId() {

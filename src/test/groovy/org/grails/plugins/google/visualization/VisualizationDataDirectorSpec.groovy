@@ -52,7 +52,7 @@ class VisualizationDataDirectorSpec extends Specification {
         visualizationDataDirector.constructVisualizationData(attrs, GoogleVisualization.PIE_CHART)
         
         then : 
-        visualizationDataDirector.getVisualizationData().name == 'org.grails.plugins.google.visualization'
+        visualizationDataDirector.getVisualizationData().name == 'visualization'
         visualizationDataDirector.getVisualizationData().elementId== 'piechart'
         visualizationDataDirector.getVisualizationData().options.toString() == "{title: 'My Daily Activities', width: 400, height: 240, is3D: true}"
         visualizationDataDirector.getVisualizationData().rows.size() == 5

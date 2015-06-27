@@ -84,7 +84,7 @@ class GoogleVisualizationTagLibSpec extends Specification {
 
     void testGetInvalidOptionExceptionMessage() {
         expect:
-        tagLib.getInvalidOptionExceptionMessage('bla', GoogleVisualization.PIE_CHART).toString() == "Attribute 'bla' is not a valid option for Google Visualization 'google.org.grails.plugins.google.visualization.PieChart'!"
+        tagLib.getInvalidOptionExceptionMessage('bla', GoogleVisualization.PIE_CHART).toString() == "Attribute 'bla' is not a valid option for Google Visualization 'google.visualization.PieChart'!"
     }
 
     void testRenderVisualization() {
