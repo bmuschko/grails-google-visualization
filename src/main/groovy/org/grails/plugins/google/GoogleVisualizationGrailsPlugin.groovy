@@ -1,4 +1,5 @@
 package org.grails.plugins.google
+import grails.plugins.Plugin
 /* Copyright 2010 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,16 +16,25 @@ package org.grails.plugins.google
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class GoogleVisualizationGrailsPlugin {
-    def version = "1.0.3-SNAPSHOT"
-    def grailsVersion = "1.2 > *"
+class GoogleVisualizationGrailsPlugin extends Plugin {
+    def version = "2.0.0-SNAPSHOT"
+    def grailsVersion = "3.0.2 > *"
     def author = "Benjamin Muschko"
     def authorEmail = "benjamin.muschko@gmail.com"
-    def developers = [[name: "Benjamin Muschko", email: "benjamin.muschko@gmail.com"], [name: "Angel Ruiz Calvo", email: "aruizca@gmail.com"]]
+    def developers = [[name: "Benjamin Muschko", email: "benjamin.muschko@gmail.com"], [name: "Angel Ruiz Calvo", email: "aruizca@gmail.com"],
+            [name: "Mansi Arora", email: "mansi.arora@tothenew.com"], [name: "Uday Pratap Singh", email: "uday.singh@tothenew.com"]]
     def title = "Google Visualization API Plugin"
     def description = 'This is a plugin for Google Visualization API.'
     def documentation = "https://github.com/bmuschko/grails-google-visualization/wiki"
     def license = "APACHE"
     def issueManagement = [system: "github", url: "https://github.com/bmuschko/grails-google-visualization/issues"]
     def scm = [url: "https://github.com/bmuschko/grails-google-visualization"]
+
+
+    def pluginExcludes = [
+            "grails-app/views/error.gsp"
+    ]
+
+    def profiles = ['web']
+
 }
