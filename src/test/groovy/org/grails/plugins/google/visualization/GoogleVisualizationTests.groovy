@@ -14,14 +14,14 @@
  */
 package org.grails.plugins.google.visualization
 
-import grails.test.GrailsUnitTestCase
+import spock.lang.Specification
 
 /**
  * Google org.grails.plugins.google.visualization tests
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class GoogleVisualizationTests extends GrailsUnitTestCase {
+class GoogleVisualizationTests extends Specification {
     void testGetGoogleVisualizationForPackageNameKnown() {
         assertEquals GoogleVisualization.PIE_CHART, GoogleVisualization.getGoogleVisualizationForPackageName('piechart')
         assertEquals GoogleVisualization.BAR_CHART, GoogleVisualization.getGoogleVisualizationForPackageName('barchart') 

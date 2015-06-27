@@ -14,14 +14,14 @@
  */
 package org.grails.plugins.google.visualization.data.renderer
 
-import grails.test.GrailsUnitTestCase
+import spock.lang.Specification
 
 /**
  * Map data type renderer tests
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class MapRendererTests extends GrailsUnitTestCase {
+class MapRendererTests extends Specification {
     void testRenderValue() {
         assertEquals "{1: 'value1', 2: 'value2', 3: 'value3'}", MapRenderer.instance.renderValue([1: 'value1', 2: 'value2', 3: 'value3']).toString()
     }

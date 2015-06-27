@@ -14,14 +14,14 @@
  */
 package org.grails.plugins.google.visualization.data.renderer
 
-import grails.test.GrailsUnitTestCase
+import spock.lang.Specification
 
 /**
  * Number and boolean data type renderer tests
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class NumberAndBooleanRendererTests extends GrailsUnitTestCase {
+class NumberAndBooleanRendererTests extends Specification {
     void testRenderValueForNumber() {
         assertEquals 123, NumberAndBooleanRenderer.instance.renderValue(123)
     }

@@ -14,7 +14,7 @@
  */
 package org.grails.plugins.google.visualization.util
 
-import grails.test.GrailsUnitTestCase
+import spock.lang.Specification
 import java.text.SimpleDateFormat
 
 /**
@@ -22,7 +22,7 @@ import java.text.SimpleDateFormat
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class DateUtilTests extends GrailsUnitTestCase {
+class DateUtilTests extends Specification {
     void testCreateDateForDate() {
         def date = DateUtil.createDate(1995, Calendar.NOVEMBER, 29)
         def dateFormat = new SimpleDateFormat("yyyy/MM/dd");

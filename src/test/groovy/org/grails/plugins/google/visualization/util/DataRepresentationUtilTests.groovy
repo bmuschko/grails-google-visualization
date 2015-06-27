@@ -14,14 +14,14 @@
  */
 package org.grails.plugins.google.visualization.util
 
-import grails.test.GrailsUnitTestCase
+import spock.lang.Specification
 
 /**
  * Data representation utility tests
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class DataRepresentationUtilTests extends GrailsUnitTestCase {
+class DataRepresentationUtilTests extends Specification {
     void testReplaceSquareWithCurlyBrackets() {
         assertEquals DataRepresentationUtil.replaceSquareWithCurlyBrackets("[1, 2, 4]"), "{1, 2, 4}"
     }

@@ -14,14 +14,14 @@
  */
 package org.grails.plugins.google.visualization.data.renderer
 
-import grails.test.GrailsUnitTestCase
+import spock.lang.Specification
 
 /**
  * Object renderer tests
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class ObjectRendererTests extends GrailsUnitTestCase {
+class ObjectRendererTests extends Specification {
     void testRenderValue() {
         assertEquals "{stroke: 'black', fill: '#eee', strokeSize: 1}", ObjectRenderer.instance.renderValue(new Expando(stroke:'black', fill:'#eee', strokeSize: 1)).toString()
     }

@@ -14,14 +14,14 @@
  */
 package org.grails.plugins.google.visualization
 
-import grails.test.GrailsUnitTestCase
+import spock.lang.Specification
 
 /**
  * Visualization data director tests
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class VisualizationDataDirectorTests extends GrailsUnitTestCase {
+class VisualizationDataDirectorTests extends Specification {
     def visualizationDataDirector
 
     protected void setUp() {

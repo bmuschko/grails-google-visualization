@@ -14,14 +14,14 @@
  */
 package org.grails.plugins.google.visualization.data.renderer
 
-import grails.test.GrailsUnitTestCase
+import spock.lang.Specification
 
 /**
  * String data type renderer tests
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class StringRendererTests extends GrailsUnitTestCase {
+class StringRendererTests extends Specification {
     void testRenderStringValueUnescaped() {
         assertEquals "'test'", StringRenderer.instance.renderValue('test').toString()
     }

@@ -14,16 +14,16 @@
  */
 package org.grails.plugins.google.visualization
 
-import grails.test.GrailsUnitTestCase
 import org.grails.plugins.google.visualization.data.Cell
 import org.grails.plugins.google.visualization.util.DateUtil
+import spock.lang.Specification
 
 /**
  * Google org.grails.plugins.google.visualization builder tests
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class GoogleVisualizationBuilderTests extends GrailsUnitTestCase {
+class GoogleVisualizationBuilderTests extends Specification {
     GoogleVisualizationBuilder googleVisualizationBuilder
 
     protected void setUp() {

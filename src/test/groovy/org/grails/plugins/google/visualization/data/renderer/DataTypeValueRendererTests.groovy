@@ -14,16 +14,16 @@
  */
 package org.grails.plugins.google.visualization.data.renderer
 
-import grails.test.GrailsUnitTestCase
 import org.grails.plugins.google.visualization.data.DataType
 import org.grails.plugins.google.visualization.util.DateUtil
+import spock.lang.Specification
 
 /**
  * Data type value renderer tests
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class DataTypeValueRendererTests extends GrailsUnitTestCase {
+class DataTypeValueRendererTests extends Specification {
     void testRenderForString() {
         def renderedValue = DataTypeValueRenderer.instance.render('bla')
         assertEquals DataType.STRING, renderedValue.type

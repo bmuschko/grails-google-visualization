@@ -14,16 +14,16 @@
  */
 package org.grails.plugins.google.visualization.util
 
-import grails.test.GrailsUnitTestCase
 import org.grails.plugins.google.visualization.data.DataType
 import org.grails.plugins.google.visualization.option.deprecated.PieChartConfigOption
+import spock.lang.Specification
 
 /**
  * Configuration option renderer utility tests
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class ConfigOptionRendererUtilTests extends GrailsUnitTestCase {
+class ConfigOptionRendererUtilTests extends Specification {
     void testRenderForSingleAllowedType() {
         def resolvedConfigOption = ConfigOptionRendererUtil.render(PieChartConfigOption.TITLE, 'bla')
         assertEquals DataType.STRING, resolvedConfigOption.type

@@ -14,14 +14,14 @@
  */
 package org.grails.plugins.google.visualization.data.renderer
 
-import grails.test.GrailsUnitTestCase
+import spock.lang.Specification
 
 /**
  * Array data type renderer tests
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class ArrayRendererTests extends GrailsUnitTestCase {
+class ArrayRendererTests extends Specification {
     void testRenderValue() {
         assertEquals "['a', 1, true]", ArrayRenderer.instance.renderValue(['a', 1, true]).toString()
     }

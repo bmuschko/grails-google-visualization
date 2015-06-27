@@ -14,15 +14,15 @@
  */
 package org.grails.plugins.google.visualization.data.renderer
 
-import grails.test.GrailsUnitTestCase
 import org.grails.plugins.google.visualization.util.DateUtil
+import spock.lang.Specification
 
 /**
  * Date data type renderer tests
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class DateRendererTests extends GrailsUnitTestCase {
+class DateRendererTests extends Specification {
     void testRenderValue() {
         def date = DateUtil.removeTime(DateUtil.createDate(1995, Calendar.NOVEMBER, 29))
         assertEquals "new Date(1995, 10, 29, 0, 0, 0, 0)", DateRenderer.instance.renderValue(date).toString()
