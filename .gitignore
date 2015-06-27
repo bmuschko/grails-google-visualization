@@ -13,3 +13,5 @@ plugin.xml
 web-app/
 *.zip
 *.sha1
+.gradle/
+build/
