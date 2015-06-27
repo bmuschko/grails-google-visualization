@@ -21,7 +21,7 @@ import spock.lang.Specification
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class NumberAndBooleanRendererTests extends Specification {
+class NumberAndBooleanRendererSpec extends Specification {
     void testRenderValueForNumber() {
         expect:
         NumberAndBooleanRenderer.instance.renderValue(123) == 123

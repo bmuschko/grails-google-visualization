@@ -17,27 +17,18 @@ package org.grails.plugins.google.visualization.data.renderer
 import spock.lang.Specification
 
 /**
- * Object renderer tests
+ * String data type renderer tests
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class ObjectRendererTests extends Specification {
-    void testRenderValue() {
+class StringRendererSpec extends Specification {
+    void testRenderStringValueUnescaped() {
         expect:
-        ObjectRenderer.instance.renderValue(new Expando(stroke: 'black', fill: '#eee', strokeSize: 1)).toString() == "{stroke: 'black', fill: '#eee', strokeSize: 1}"
+        StringRenderer.instance.renderValue('test').toString() == "'test'"
     }
 
-    void testRenderValueRealObject() {
-        setup:
-        def simpleObject = new SimpleClass(a: "xxx", b: 123)
-        when:
-        def renderedObject = ObjectRenderer.instance.renderValue(simpleObject)
-        then:
-        renderedObject.toString() == "{b: 123, a: 'xxx'}"
-    }
-
-    class SimpleClass {
-        String a
-        int b
+    void testRenderStringValueEscaped() {
+        expect:
+        StringRenderer.instance.renderValue("Jack's parameter").toString() == "'Jack\\'s parameter'"
     }
 }
