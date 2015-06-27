@@ -24,14 +24,12 @@ import spock.lang.Specification
 class VisualizationDataDirectorTests extends Specification {
     def visualizationDataDirector
 
-    protected void setUp() {
-        super.setUp()
+    protected void setup() {
         visualizationDataDirector = new VisualizationDataDirector()
     }
 
-    protected void tearDown() {
+    protected void cleanup() {
         visualizationDataDirector = null
-        super.tearDown()
     }
 
     void testSetVisualizationDataBuilder() {

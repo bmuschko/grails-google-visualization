@@ -26,14 +26,12 @@ import spock.lang.Specification
 class GoogleVisualizationBuilderTests extends Specification {
     GoogleVisualizationBuilder googleVisualizationBuilder
 
-    protected void setUp() {
-        super.setUp()
+    protected void setup() {
         googleVisualizationBuilder = new GoogleVisualizationBuilder()
     }
 
-    protected void tearDown() {
+    protected void cleanup() {
         googleVisualizationBuilder = null
-        super.tearDown()
     }
 
     void testCreateNewVisualizationData() {
