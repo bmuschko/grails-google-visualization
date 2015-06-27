@@ -21,36 +21,36 @@ import spock.lang.Specification
  *
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
-class GoogleVisualizationTests extends Specification {
+class GoogleVisualizationSpec extends Specification {
     void testGetGoogleVisualizationForPackageNameKnown() {
-        assertEquals GoogleVisualization.PIE_CHART, GoogleVisualization.getGoogleVisualizationForPackageName('piechart')
-        assertEquals GoogleVisualization.BAR_CHART, GoogleVisualization.getGoogleVisualizationForPackageName('barchart') 
-        assertEquals GoogleVisualization.COLUMN_CHART, GoogleVisualization.getGoogleVisualizationForPackageName('columnchart')
-        assertEquals GoogleVisualization.AREA_CHART, GoogleVisualization.getGoogleVisualizationForPackageName('areachart')
-        assertEquals GoogleVisualization.SCATTER_CHART, GoogleVisualization.getGoogleVisualizationForPackageName('scatterchart')
-        assertEquals GoogleVisualization.GAUGE, GoogleVisualization.getGoogleVisualizationForPackageName('gauge')
-        assertEquals GoogleVisualization.LINE_CHART, GoogleVisualization.getGoogleVisualizationForPackageName('linechart')
-        assertEquals GoogleVisualization.TABLE, GoogleVisualization.getGoogleVisualizationForPackageName('table')
-        assertEquals GoogleVisualization.MAP, GoogleVisualization.getGoogleVisualizationForPackageName('map')
-        assertEquals GoogleVisualization.ANNOTATED_TIME_LINE, GoogleVisualization.getGoogleVisualizationForPackageName('annotatedtimeline')
-        assertEquals GoogleVisualization.ORG_CHART, GoogleVisualization.getGoogleVisualizationForPackageName('orgchart')
-        assertEquals GoogleVisualization.INTENSITY_MAP, GoogleVisualization.getGoogleVisualizationForPackageName('intensitymap')
-        assertEquals GoogleVisualization.GEO_MAP, GoogleVisualization.getGoogleVisualizationForPackageName('geomap')
-        assertEquals GoogleVisualization.MOTION_CHART, GoogleVisualization.getGoogleVisualizationForPackageName('motionchart')
+        expect:
+        GoogleVisualization.getGoogleVisualizationForPackageName('piechart') == GoogleVisualization.PIE_CHART
+        GoogleVisualization.getGoogleVisualizationForPackageName('barchart') == GoogleVisualization.BAR_CHART
+        GoogleVisualization.getGoogleVisualizationForPackageName('columnchart') == GoogleVisualization.COLUMN_CHART
+        GoogleVisualization.getGoogleVisualizationForPackageName('areachart') == GoogleVisualization.AREA_CHART
+        GoogleVisualization.getGoogleVisualizationForPackageName('scatterchart') == GoogleVisualization.SCATTER_CHART
+        GoogleVisualization.getGoogleVisualizationForPackageName('gauge') == GoogleVisualization.GAUGE
+        GoogleVisualization.getGoogleVisualizationForPackageName('linechart') == GoogleVisualization.LINE_CHART
+        GoogleVisualization.getGoogleVisualizationForPackageName('table') == GoogleVisualization.TABLE
+        GoogleVisualization.getGoogleVisualizationForPackageName('map') == GoogleVisualization.MAP
+        GoogleVisualization.getGoogleVisualizationForPackageName('annotatedtimeline') == GoogleVisualization.ANNOTATED_TIME_LINE
+        GoogleVisualization.getGoogleVisualizationForPackageName('orgchart') == GoogleVisualization.ORG_CHART
+        GoogleVisualization.getGoogleVisualizationForPackageName('intensitymap') == GoogleVisualization.INTENSITY_MAP
+        GoogleVisualization.getGoogleVisualizationForPackageName('geomap') == GoogleVisualization.GEO_MAP
+        GoogleVisualization.getGoogleVisualizationForPackageName('motionchart') == GoogleVisualization.MOTION_CHART
     }
 
     void testGetGoogleVisualizationForPackageNameUnknown() {
-        try {
-            GoogleVisualization.getGoogleVisualizationForPackageName('unknown')
-            fail("Unknown org.grails.plugins.google.visualization should throw an exception")
-        }
-        catch(IllegalArgumentException e) {
-            assertEquals 'Unknown Google org.grails.plugins.google.visualization', e.message
-        }
+        when:
+        GoogleVisualization.getGoogleVisualizationForPackageName('unknown')
+        then:
+        thrown(IllegalArgumentException)
     }
 
     void testToString() {
+        setup:
         def expected = "GoogleVisualization{packageName='piechart', object='google.org.grails.plugins.google.visualization.PieChart', configOptions='[backgroundColor:PieChartConfigOption{name='backgroundColor', types='[STRING, OBJECT, MAP]'}, borderColor:PieChartConfigOption{name='borderColor', types='[STRING, OBJECT, MAP]'}, colors:PieChartConfigOption{name='colors', types='[ARRAY]'}, enableTooltip:PieChartConfigOption{name='enableTooltip', types='[BOOLEAN]'}, focusBorderColor:PieChartConfigOption{name='focusBorderColor', types='[STRING, OBJECT, MAP]'}, height:PieChartConfigOption{name='height', types='[NUMBER, STRING]'}, is3D:PieChartConfigOption{name='is3D', types='[BOOLEAN]'}, legend:PieChartConfigOption{name='legend', types='[STRING]'}, legendBackgroundColor:PieChartConfigOption{name='legendBackgroundColor', types='[STRING, OBJECT, MAP]'}, legendFontSize:PieChartConfigOption{name='legendFontSize', types='[NUMBER]'}, legendTextColor:PieChartConfigOption{name='legendTextColor', types='[STRING, OBJECT, MAP]'}, pieJoinAngle:PieChartConfigOption{name='pieJoinAngle', types='[NUMBER]'}, pieMinimalAngle:PieChartConfigOption{name='pieMinimalAngle', types='[NUMBER]'}, title:PieChartConfigOption{name='title', types='[STRING]'}, titleColor:PieChartConfigOption{name='titleColor', types='[STRING, OBJECT, MAP]'}, titleFontSize:PieChartConfigOption{name='titleFontSize', types='[NUMBER]'}, tooltipFontSize:PieChartConfigOption{name='tooltipFontSize', types='[NUMBER]'}, tooltipHeight:PieChartConfigOption{name='tooltipHeight', types='[NUMBER]'}, tooltipWidth:PieChartConfigOption{name='tooltipWidth', types='[NUMBER]'}, width:PieChartConfigOption{name='width', types='[NUMBER, STRING]'}]', events='[error:DefaultEvent{name='error'}, onmouseover:DefaultEvent{name='onmouseover'}, onmouseout:DefaultEvent{name='onmouseout'}, ready:DefaultEvent{name='ready'}, select:DefaultEvent{name='select'}]'}"
-        assert expected == GoogleVisualization.PIE_CHART.toString()
+        expect:
+        GoogleVisualization.PIE_CHART.toString() == expected
     }
 }
