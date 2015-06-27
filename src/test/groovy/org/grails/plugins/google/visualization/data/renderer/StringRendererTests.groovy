@@ -23,10 +23,12 @@ import spock.lang.Specification
  */
 class StringRendererTests extends Specification {
     void testRenderStringValueUnescaped() {
-        assertEquals "'test'", StringRenderer.instance.renderValue('test').toString()
+        expect:
+        StringRenderer.instance.renderValue('test').toString() == "'test'"
     }
 
     void testRenderStringValueEscaped() {
-        assertEquals "'Jack\\'s parameter'", StringRenderer.instance.renderValue("Jack's parameter").toString()
+        expect:
+        StringRenderer.instance.renderValue("Jack's parameter").toString() == "'Jack\\'s parameter'"
     }
 }
