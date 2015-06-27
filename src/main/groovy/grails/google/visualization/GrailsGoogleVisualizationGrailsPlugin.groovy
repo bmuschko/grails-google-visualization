@@ -21,7 +21,7 @@ Brief summary/description of the plugin.
     def profiles = ['web']
 
     // URL to the plugin's documentation
-    def documentation = "http://grails.org/plugin/grails-google-visualization"
+    def documentation = "http://grails.org/plugin/grails-google-org.grails.plugins.google.visualization"
 
     // Extra (optional) plugin metadata
 

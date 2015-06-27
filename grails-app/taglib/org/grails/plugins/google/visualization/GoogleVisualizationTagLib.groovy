@@ -21,7 +21,7 @@ package org.grails.plugins.google.visualization
  */
 class GoogleVisualizationTagLib {
     static namespace = "gvisualization"
-    static final PLUGIN_NAME = 'google-visualization'
+    static final PLUGIN_NAME = 'google-org.grails.plugins.google.visualization'
     static final VISUALIZATION_JAVASCRIPT_TEMPLATE = '/visualization_javascript'
     final BASIC_ATTRIBUTES = ['name', 'version', 'elementId', 'dynamicLoading', 'language', 'columns', 'data'] as Set
 

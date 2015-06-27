@@ -1,0 +1,98 @@
+/* Copyright 2010 the original author or authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package org.grails.plugins.google.visualization
+
+import org.apache.commons.logging.Log
+import org.apache.commons.logging.LogFactory
+import org.grails.plugins.google.visualization.event.*
+import org.grails.plugins.google.visualization.option.*
+import org.grails.plugins.google.visualization.option.core.*
+import org.grails.plugins.google.visualization.option.deprecated.*
+import org.grails.plugins.google.visualization.option.image.*
+
+/**
+ * Google visualizations
+ *
+ * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
+ */
+enum GoogleVisualization {
+    PIE_CHART('piechart', 'google.org.grails.plugins.google.visualization.PieChart', PieChartConfigOption.configOptions, DefaultEvent.events),
+    BAR_CHART('barchart', 'google.org.grails.plugins.google.visualization.BarChart', BarChartConfigOption.configOptions, DefaultEvent.events),
+    COLUMN_CHART('columnchart', 'google.org.grails.plugins.google.visualization.ColumnChart', ColumnChartConfigOption.configOptions, DefaultEvent.events),
+    AREA_CHART('areachart', 'google.org.grails.plugins.google.visualization.AreaChart', AreaChartConfigOption.configOptions, DefaultEvent.events),
+    SCATTER_CHART('scatterchart', 'google.org.grails.plugins.google.visualization.ScatterChart', ScatterChartConfigOption.configOptions, DefaultEvent.events),
+    GAUGE('gauge', 'google.org.grails.plugins.google.visualization.Gauge', GaugeConfigOption.configOptions, [:]),
+    LINE_CHART('linechart', 'google.org.grails.plugins.google.visualization.LineChart', LineChartConfigOption.configOptions, DefaultEvent.events),
+    TABLE('table', 'google.org.grails.plugins.google.visualization.Table', TableConfigOption.configOptions, TableEvent.events),
+    MAP('map', 'google.org.grails.plugins.google.visualization.Map', MapConfigOption.configOptions, MapEvent.events),
+    ANNOTATED_TIME_LINE('annotatedtimeline', 'google.org.grails.plugins.google.visualization.AnnotatedTimeLine', AnnotatedTimeLineConfigOption.configOptions, AnnotatedTimeLineEvent.events),
+    ORG_CHART('orgchart', 'google.org.grails.plugins.google.visualization.OrgChart', OrgChartConfigOption.configOptions, OrgChartEvent.events),
+    INTENSITY_MAP('intensitymap', 'google.org.grails.plugins.google.visualization.IntensityMap', IntensityMapConfigOption.configOptions, IntensityMapEvent.events),
+    GEO_MAP('geomap', 'google.org.grails.plugins.google.visualization.GeoMap', GeoMapConfigOption.configOptions, GeoMapEvent.events),
+    GEO_CHART('geochart', 'google.org.grails.plugins.google.visualization.GeoChart', GeoChartConfigOption.configOptions, GeoChartEvent.events),
+    MOTION_CHART('motionchart', 'google.org.grails.plugins.google.visualization.MotionChart', MotionChartConfigOption.configOptions, MotionChartEvent.events),
+    PIE_CORE_CHART('corechart', 'google.org.grails.plugins.google.visualization.PieChart', PieCoreChartConfigOption.configOptions, ErrorAwareDefaultEvent.events),
+    BAR_CORE_CHART('corechart', 'google.org.grails.plugins.google.visualization.BarChart', BarCoreChartConfigOption.configOptions, ErrorAwareDefaultEvent.events),
+    COLUMN_CORE_CHART('corechart', 'google.org.grails.plugins.google.visualization.ColumnChart', ColumnCoreChartConfigOption.configOptions, ErrorAwareDefaultEvent.events),
+    AREA_CORE_CHART('corechart', 'google.org.grails.plugins.google.visualization.AreaChart', AreaCoreChartConfigOption.configOptions, ErrorAwareDefaultEvent.events),
+    LINE_CORE_CHART('corechart', 'google.org.grails.plugins.google.visualization.LineChart', LineCoreChartConfigOption.configOptions, DefaultEvent.events),
+    SCATTER_CORE_CHART('corechart', 'google.org.grails.plugins.google.visualization.ScatterChart', ScatterCoreChartConfigOption.configOptions, DefaultEvent.events),
+    CANDLESTICK_CORE_CHART('corechart', 'google.org.grails.plugins.google.visualization.CandlestickChart', CandlestickCoreChartConfigOption.configOptions, DefaultEvent.events),
+    COMBO_CORE_CHART('corechart', 'google.org.grails.plugins.google.visualization.ComboChart', ComboCoreChartConfigOption.configOptions, DefaultEvent.events),
+    TREE_MAP('treemap', 'google.org.grails.plugins.google.visualization.TreeMap', TreeMapConfigOption.configOptions, TreeMapEvent.events),
+    STEPPED_AREA_CORE_CHART('corechart', 'google.org.grails.plugins.google.visualization.SteppedAreaChart', SteppedAreaCoreChartConfigOption.configOptions, SteppedAreaChartEvent.events),
+    BUBBLE_CORE_CHART('corechart', 'google.org.grails.plugins.google.visualization.BubbleChart', BubbleCoreChartConfigOption.configOptions, BubbleChartEvent.events),
+    TIME_LINE('timeline', 'google.org.grails.plugins.google.visualization.Timeline', TimeLineConfigOption.configOptions, DefaultEvent.events),
+    CALENDAR_CHART('calendar', 'google.org.grails.plugins.google.visualization.Calendar', CalendarChartConfigOption.configOptions, DefaultEvent.events)
+
+    static final Log log = LogFactory.getLog(GoogleVisualization)
+    static final Map googleVisualizations
+
+    static {
+        googleVisualizations = [:]
+
+        values().each { googleVisualization ->
+            googleVisualizations.put(googleVisualization.packageName, googleVisualization)
+        }
+    }
+
+    private final packageName
+    private final object
+    private final configOptions
+    private final events
+
+    private GoogleVisualization(packageName, object, configOptions, events) {
+        this.packageName = packageName
+        this.object = object
+        this.configOptions = configOptions
+        this.events = events
+    }
+
+    static getGoogleVisualizationForPackageName(packageName) {
+        def googleVisualization = googleVisualizations[packageName]
+
+        if(googleVisualization == null) {
+            log.error "Unknown Google org.grails.plugins.google.visualization: ${packageName}"
+            throw new IllegalArgumentException('Unknown Google org.grails.plugins.google.visualization')
+        }
+
+        googleVisualization
+    }
+
+    @Override
+    String toString() {
+        "GoogleVisualization{packageName='${packageName}', object='${object}', configOptions='${configOptions}', events='${events}'}"
+    }
+}

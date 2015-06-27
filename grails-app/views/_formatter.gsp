@@ -1,4 +1,4 @@
-<%@ page import="org.grails.plugins.google.visualization.formatter.ColorFormatter; org.grails.plugins.google.visualization.formatter.PatternFormatter" %>
+<%@ page import="org.grails.plugins.google.org.grails.plugins.google.visualization.formatter.ColorFormatter; org.grails.plugins.google.org.grails.plugins.google.visualization.formatter.PatternFormatter" %>
 <%@ page defaultCodec="none" %>
 
 <g:each var="formatter" in="${visualizationData.formatters}" status="i">
