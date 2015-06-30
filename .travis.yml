@@ -14,8 +14,8 @@ before_install:
 - ~/install_gvm.sh
 - echo "gvm_auto_answer=true" > ~/.gvm/etc/config
 - source ~/.gvm/bin/gvm-init.sh
-- GRAILS_VERSION=`grep '^app\.grails\.version=' ./application.properties | sed -e
-  's/^app\.grails\.version=//g'`
+- GRAILS_VERSION=`grep '^grailsVersion=' ./gradle.properties | sed -e
+  's/^grailsVersion=//g'`
 - gvm install grails $GRAILS_VERSION || true
 
 branches:
@@ -23,10 +23,12 @@ branches:
   - master
 
 script:
-  - grails clean && grails refresh-dependencies --non-interactive && grails test-app --non-interactive --stacktrace
+  - ./gradlew clean test assemble
 
 notifications:
   email:
     recipients:
       - benjamin.muschko@gmail.com
       - aruizca@gmail.com
+      - mansi.arora@tothenew.com
+      - uday.singh@tothenew.com
