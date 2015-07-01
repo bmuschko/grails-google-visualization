@@ -16,7 +16,7 @@ import grails.plugins.Plugin
  * @author <a href='mailto:benjamin.muschko@gmail.com'>Benjamin Muschko</a>
  */
 class GoogleVisualizationGrailsPlugin extends Plugin {
-    def version = "2.0.0-SNAPSHOT"
+    def version = "2.0-SNAPSHOT"
     def grailsVersion = "3.0.2 > *"
     def author = "Benjamin Muschko"
     def authorEmail = "benjamin.muschko@gmail.com"
@@ -31,7 +31,8 @@ class GoogleVisualizationGrailsPlugin extends Plugin {
 
 
     def pluginExcludes = [
-            "grails-app/views/error.gsp"
+            "grails-app/views/**",
+            "grails-app/controllers/**"
     ]
 
     def profiles = ['web']
