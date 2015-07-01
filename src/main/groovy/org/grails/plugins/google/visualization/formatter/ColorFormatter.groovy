@@ -30,7 +30,7 @@ class ColorFormatter implements Formatter {
 
     @Override
     def getObject() {
-        'google.org.grails.plugins.google.visualization.ColorFormat'
+        'google.visualization.ColorFormat'
     }
 
     @Override

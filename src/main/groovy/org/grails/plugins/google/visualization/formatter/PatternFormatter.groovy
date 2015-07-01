@@ -31,7 +31,7 @@ class PatternFormatter implements Formatter {
 
     @Override
     def getObject() {
-        'google.org.grails.plugins.google.visualization.PatternFormat'
+        'google.visualization.PatternFormat'
     }
 
     @Override

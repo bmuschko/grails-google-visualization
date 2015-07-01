@@ -30,7 +30,7 @@ class DateFormatter extends StandardFormatter {
 
     @Override
     def getObject() {
-        'google.org.grails.plugins.google.visualization.DateFormat'
+        'google.visualization.DateFormat'
     }
 
     @Override

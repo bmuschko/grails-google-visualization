@@ -35,7 +35,7 @@ class BarFormatter extends StandardFormatter {
 
     @Override
     def getObject() {
-        'google.org.grails.plugins.google.visualization.BarFormat'
+        'google.visualization.BarFormat'
     }
 
     @Override

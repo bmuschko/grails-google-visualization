@@ -28,7 +28,7 @@ class ArrowFormatter extends StandardFormatter {
 
     @Override
     def getObject() {
-        'google.org.grails.plugins.google.visualization.ArrowFormat'
+        'google.visualization.ArrowFormat'
     }
 
     @Override

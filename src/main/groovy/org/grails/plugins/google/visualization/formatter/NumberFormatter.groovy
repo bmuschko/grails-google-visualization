@@ -35,7 +35,7 @@ class NumberFormatter extends StandardFormatter {
 
     @Override
     def getObject() {
-        'google.org.grails.plugins.google.visualization.NumberFormat'
+        'google.visualization.NumberFormat'
     }
 
     @Override
