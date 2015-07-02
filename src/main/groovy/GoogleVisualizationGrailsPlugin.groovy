@@ -17,7 +17,7 @@ import grails.plugins.Plugin
  */
 class GoogleVisualizationGrailsPlugin extends Plugin {
     def version = "2.0-SNAPSHOT"
-    def grailsVersion = "3.0.2 > *"
+    def grailsVersion = "3.0.0 > *"
     def author = "Benjamin Muschko"
     def authorEmail = "benjamin.muschko@gmail.com"
     def developers = [[name: "Benjamin Muschko", email: "benjamin.muschko@gmail.com"], [name: "Angel Ruiz Calvo", email: "aruizca@gmail.com"],
@@ -31,7 +31,6 @@ class GoogleVisualizationGrailsPlugin extends Plugin {
 
 
     def pluginExcludes = [
-            "grails-app/views/**",
             "grails-app/controllers/**"
     ]
 
