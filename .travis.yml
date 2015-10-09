@@ -7,17 +7,6 @@ branches:
   only:
   - master
 
-before_install:
-- rm -rf ~/.gvm
-- curl -s get.sdkman.io > ~/install_sdkman.sh
-- chmod 775 ~/install_sdkman.sh
-- ~/install_sdkman.sh
-- echo "sdkman_auto_answer=true" > ~/.sdkman/bin/config
-- source ~/.sdkman/bin/sdkman-init.sh
-- GRAILS_VERSION=`grep '^grailsVersion=' ./gradle.properties | sed -e
-  's/^grailsVersion=//g'`
-- sdk install grails $GRAILS_VERSION || true
-
 branches:
   only:
   - master
