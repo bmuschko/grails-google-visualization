@@ -9,11 +9,11 @@ branches:
 
 before_install:
 - rm -rf ~/.gvm
-- curl -s get.gvmtool.net > ~/install_gvm.sh
-- chmod 775 ~/install_gvm.sh
-- ~/install_gvm.sh
-- echo "gvm_auto_answer=true" > ~/.gvm/etc/config
-- source ~/.gvm/bin/gvm-init.sh
+- curl -s get.sdkman.io > ~/install_sdkman.sh
+- chmod 775 ~/install_sdkman.sh
+- ~/install_sdkman.sh
+- echo "sdkman_auto_answer=true" > ~/.gvm/sdkman/config
+- source ~/.sdkman/bin/sdkman-init.sh"
 - GRAILS_VERSION=`grep '^grailsVersion=' ./gradle.properties | sed -e
   's/^grailsVersion=//g'`
 - gvm install grails $GRAILS_VERSION || true
@@ -30,5 +30,3 @@ notifications:
     recipients:
       - benjamin.muschko@gmail.com
       - aruizca@gmail.com
-      - mansi.arora@tothenew.com
-      - uday.singh@tothenew.com
