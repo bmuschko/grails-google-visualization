@@ -7,10 +7,6 @@ branches:
   only:
   - master
 
-branches:
-  only:
-  - master
-
 script:
   - ./gradlew clean test assemble
 
