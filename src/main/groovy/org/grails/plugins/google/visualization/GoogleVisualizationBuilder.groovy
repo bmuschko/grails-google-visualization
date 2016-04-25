@@ -207,4 +207,9 @@ class GoogleVisualizationBuilder extends VisualizationBuilder {
     def buildFormatters() {
         visualizationData.formatters = attrs.formatters 
     }
+
+    @Override
+    def buildDataView() {
+        visualizationData.dataView = attrs.dataView
+    }
 }
