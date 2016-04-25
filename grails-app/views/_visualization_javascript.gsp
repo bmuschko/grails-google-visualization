@@ -27,8 +27,17 @@
         <g:each var="beforeDrawEvent" in="${visualizationData.beforeDrawEvents}">
         google.visualization.events.addListener(${visualizationData.name}, '${beforeDrawEvent.key}', ${beforeDrawEvent.value});
         </g:each>
-        
-        ${visualizationData.name}.draw(${visualizationData.name}_data, ${visualizationData.options});
+
+        <g:if test="${visualizationData.dataView}">
+            ${visualizationData.name}_view = new google.visualization.DataView(${visualizationData.name}_data);
+            ${visualizationData.name}_view.setColumns(${visualizationData.dataView});
+            ${visualizationData.name}.draw(${visualizationData.name}_view, ${visualizationData.options});
+        </g:if>
+
+        <g:if test="${visualizationData.dataView == null || visualizationData.dataView?.size() == 0 }">
+            ${visualizationData.name}.draw(${visualizationData.name}_data, ${visualizationData.options});
+        </g:if>
+
 
         <g:each var="afterDrawEvent" in="${visualizationData.afterDrawEvents}">
         google.visualization.events.addListener(${visualizationData.name}, '${afterDrawEvent.key}', ${afterDrawEvent.value});
