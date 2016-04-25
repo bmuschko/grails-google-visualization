@@ -93,6 +93,6 @@ class GoogleVisualizationTagLibSpec extends Specification {
     }
 
     def createPieChartAttributes() {
-        ['title': 'My Daily Activities', 'width': 400, 'height': 240, 'is3D': true, 'columns': [['string', 'Name'], ['number', 'Salary'], ['boolean', 'Full Time Employee']], 'data': [['Memory', 80], ['CPU', 55], ['Network', 68]]]
+        ['title': 'My Daily Activities', 'width': 400, 'height': 240, 'is3D': true, 'columns': [['string', 'Name'], ['number', 'Salary'], ['boolean', 'Full Time Employee']], 'data': [['Memory', 80], ['CPU', 55], ['Network', 68]], 'dataView': [0,1,2]]
     }
 }
