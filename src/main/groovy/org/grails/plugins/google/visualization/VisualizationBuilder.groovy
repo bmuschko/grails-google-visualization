@@ -38,4 +38,8 @@ abstract class VisualizationBuilder {
     abstract buildRows()
     abstract buildEvents()
     abstract buildFormatters()
+
+    //lgarwood - add buildDataView()
+    abstract buildDataView()
+
 }

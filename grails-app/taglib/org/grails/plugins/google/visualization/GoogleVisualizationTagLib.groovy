@@ -23,7 +23,9 @@ class GoogleVisualizationTagLib {
     static namespace = "gvisualization"
     static final PLUGIN_NAME = 'google-visualization'
     static final VISUALIZATION_JAVASCRIPT_TEMPLATE = '/visualization_javascript'
-    final BASIC_ATTRIBUTES = ['name', 'version', 'elementId', 'dynamicLoading', 'language', 'columns', 'data'] as Set
+
+    //lgarwood - adding dataView as a valid attribute
+    final BASIC_ATTRIBUTES = ['name', 'version', 'elementId', 'dynamicLoading', 'language', 'columns', 'data', 'dataView'] as Set
 
     def apiImport = { attrs, body ->
         out << '<script type="text/javascript" src="https://www.google.com/jsapi"></script>'
