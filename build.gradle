@@ -12,8 +12,8 @@ buildscript {
 }
 
 plugins {
-    id "io.spring.dependency-management" version "0.5.1.RELEASE"
-    id "com.jfrog.bintray" version "1.1"
+    id "io.spring.dependency-management" version "0.5.4.RELEASE"
+    id "com.jfrog.bintray" version "1.4"
 }
 
 version "2.1-SNAPSHOT"
@@ -63,9 +63,7 @@ dependencies {
 
     testCompile "org.grails:grails-plugin-testing"
 
-    provided("org.grails:grails-shell") {
-        exclude group: 'org.slf4j', module: 'slf4j-simple'
-    }
+    console "org.grails:grails-console"
 }
 
 task wrapper(type: Wrapper) {
@@ -87,5 +85,6 @@ bintray {
         userOrg = '' // If you want to publish to an organization
         issueTrackerUrl = "https://github.com/bmuschko/grails-google-visualization/issues"
         vcsUrl = "https://github.com/bmuschko/grails-google-visualization"
+        licenses = project.hasProperty('license') ? [project.license] : ['Apache-2.0']
     }
 }
