@@ -77,7 +77,7 @@
        <gvisualization:table elementId="table" width="${400}" height="${130}" columns="${employeeColumns}" data="${employeeData}" select="selectHandler" ready="readyHandler"/>
        <gvisualization:map elementId="map" columns="${mapColumns}" data="${mapData}" />
        <gvisualization:annotatedTimeLine elementId="annotatedtimeline" columns="${pensColumns}" data="${pensData}" />
-       <gvisualization:annotationChart elementId="annotationChart" columns="${pensColumns}" data="${pensData}" />
+       <gvisualization:annotationChart elementId="annotationchart" columns="${pensColumns}" data="${pensData}" />
        <gvisualization:orgChart elementId="orgchart" allowHtml="${true}" columns="${orgColumns}" data="${orgData}" />
        <gvisualization:intensityMap elementId="intensitymap" columns="${populationColumns}" data="${populationData}" />
        <gvisualization:geoMap elementId="geomap" columns="${popularityColumns}" data="${popularityData}" />
@@ -205,7 +205,7 @@
                 <a href="http://developers.google.com/chart/interactive/docs/gallery/annotationChart">Annotation Chart</a>
              </td>
              <td>
-                <div id="annotationChart" style='width: 700px; height: 240px;'></div>
+                <div id="annotationchart" style='width: 700px; height: 240px;'></div>
              </td>
           </tr>
           <tr>

@@ -38,7 +38,7 @@ enum GoogleVisualization {
     TABLE('table', 'google.visualization.Table', TableConfigOption.configOptions, TableEvent.events),
     MAP('map', 'google.visualization.Map', MapConfigOption.configOptions, MapEvent.events),
     ANNOTATED_TIME_LINE('annotatedtimeline', 'google.visualization.AnnotatedTimeLine', AnnotatedTimeLineConfigOption.configOptions, AnnotatedTimeLineEvent.events),
-    ANNOTATION_CHART('annotation', 'google.visualization.AnnotationChart', AnnotionChartConfigOption.configOptions, AnnotationChartEvent.events),
+    ANNOTATION_CHART('annotationchart', 'google.visualization.AnnotationChart', AnnotionChartConfigOption.configOptions, AnnotationChartEvent.events),
     ORG_CHART('orgchart', 'google.visualization.OrgChart', OrgChartConfigOption.configOptions, OrgChartEvent.events),
     INTENSITY_MAP('intensitymap', 'google.visualization.IntensityMap', IntensityMapConfigOption.configOptions, IntensityMapEvent.events),
     GEO_MAP('geomap', 'google.visualization.GeoMap', GeoMapConfigOption.configOptions, GeoMapEvent.events),
