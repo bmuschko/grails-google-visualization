@@ -178,6 +178,6 @@ class GoogleVisualizationTagLib {
         visualizationDataDirector.setVisualizationBuilder(new GoogleVisualizationBuilder())
         visualizationDataDirector.constructVisualizationData(attrs, googleVisualization)
         def visualizationData = visualizationDataDirector.getVisualizationData()
-        out << render(template: VISUALIZATION_JAVASCRIPT_TEMPLATE, model: [visualizationData: visualizationData], plugin: PLUGIN_NAME)
+        out << render(template: VISUALIZATION_JAVASCRIPT_TEMPLATE, model: [visualizationData: visualizationData])
     }
 }
