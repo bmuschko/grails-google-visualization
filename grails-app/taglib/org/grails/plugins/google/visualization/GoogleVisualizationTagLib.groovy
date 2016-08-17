@@ -69,6 +69,10 @@ class GoogleVisualizationTagLib {
         validateAndRender(attrs, GoogleVisualization.ANNOTATED_TIME_LINE, ['formatters'])
     }
 
+    def annotationChart = { attrs, body ->
+        validateAndRender(attrs, GoogleVisualization.ANNOTATION_CHART, ['formatters'])
+    }
+
     def orgChart = { attrs, body ->
         validateAndRender(attrs, GoogleVisualization.ORG_CHART, ['formatters'])
     }

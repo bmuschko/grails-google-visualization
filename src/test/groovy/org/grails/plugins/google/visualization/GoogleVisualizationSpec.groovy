@@ -34,6 +34,7 @@ class GoogleVisualizationSpec extends Specification {
         GoogleVisualization.getGoogleVisualizationForPackageName('table') == GoogleVisualization.TABLE
         GoogleVisualization.getGoogleVisualizationForPackageName('map') == GoogleVisualization.MAP
         GoogleVisualization.getGoogleVisualizationForPackageName('annotatedtimeline') == GoogleVisualization.ANNOTATED_TIME_LINE
+        GoogleVisualization.getGoogleVisualizationForPackageName('annotationchart') == GoogleVisualization.ANNOTATION_CHART
         GoogleVisualization.getGoogleVisualizationForPackageName('orgchart') == GoogleVisualization.ORG_CHART
         GoogleVisualization.getGoogleVisualizationForPackageName('intensitymap') == GoogleVisualization.INTENSITY_MAP
         GoogleVisualization.getGoogleVisualizationForPackageName('geomap') == GoogleVisualization.GEO_MAP
