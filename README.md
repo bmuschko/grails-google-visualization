@@ -9,6 +9,7 @@
 You can find the full documentation in the corresponding GitHub wiki [here](https://github.com/bmuschko/grails-google-visualization/wiki).
 
 ## News
+- **August 17, 2016**: Release version 2.1 with bugfix for issue #54 and added support for AnnotationChart.
 - **October 09, 2015**: Release version 2.0 providing Grails 3 support.
 - **January 07, 2015**: Bug fix release 1.0.1 to add "title" config option to the Calendar chart.
 - **January 04, 2015**: We are pleased to announce the release of version 1.0 with quite a few changes, that potentially could present some backward compatibility issues. Please check the changelog for more details: https://github.com/bmuschko/grails-google-visualization/wiki/changelog
