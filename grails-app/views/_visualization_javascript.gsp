@@ -22,12 +22,12 @@
       
         ${visualizationData.name} = new ${visualizationData.visualization.object}(document.getElementById('${visualizationData.elementId}'));
 
-        <g:render template="/formatter" model="[visualizationData: visualizationData]" plugin="google-visualization"/>
+        <g:render template="/formatter" model="[visualizationData: visualizationData]" />
 
         <g:each var="beforeDrawEvent" in="${visualizationData.beforeDrawEvents}">
         google.visualization.events.addListener(${visualizationData.name}, '${beforeDrawEvent.key}', ${beforeDrawEvent.value});
         </g:each>
-        
+
         ${visualizationData.name}.draw(${visualizationData.name}_data, ${visualizationData.options});
 
         <g:each var="afterDrawEvent" in="${visualizationData.afterDrawEvents}">
