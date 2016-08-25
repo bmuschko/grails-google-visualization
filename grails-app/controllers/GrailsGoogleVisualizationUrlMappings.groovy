@@ -1,4 +1,4 @@
-class UrlMappings {
+class GrailsGoogleVisualizationUrlMappings {
 
 	static mappings = {
         "/$controller/$action?/$id?(.$format)?"{
