@@ -30,8 +30,6 @@ class GoogleVisualizationTagLib {
 	@Value('${google.maps.key}')
 	String mapsApiKey
 
-
-
     def apiImport = { attrs, body ->
         out << '<script type="text/javascript" src="https://www.google.com/jsapi"></script>'
         if(!mapsApiKey) {
@@ -39,8 +37,6 @@ class GoogleVisualizationTagLib {
         }
         out << "<script async defer src='https://maps.googleapis.com/maps/api/js?key=${mapsApiKey}'></script>"
     }
-
-
 
     def pieChart = { attrs, body ->
         validateAndRender(attrs, GoogleVisualization.PIE_CHART, ['formatters'])
@@ -196,9 +192,5 @@ class GoogleVisualizationTagLib {
         visualizationDataDirector.constructVisualizationData(attrs, googleVisualization)
         def visualizationData = visualizationDataDirector.getVisualizationData()
         out << render(template: VISUALIZATION_JAVASCRIPT_TEMPLATE, model: [visualizationData: visualizationData])
-    }
-
-    private String getApiKey() {
-        grailsApplication.config.googleVisualization.apiKey
     }
 }
