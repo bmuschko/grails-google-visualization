@@ -14,6 +14,8 @@
  */
 package org.grails.plugins.google.visualization
 
+import org.springframework.beans.factory.annotation.Value
+
 /**
  * Taglib for rendering Google visualizations
  *
@@ -25,9 +27,20 @@ class GoogleVisualizationTagLib {
     static final VISUALIZATION_JAVASCRIPT_TEMPLATE = '/visualization_javascript'
     final BASIC_ATTRIBUTES = ['name', 'version', 'elementId', 'dynamicLoading', 'language', 'columns', 'data'] as Set
 
+	@Value('${google.maps.key}')
+	String mapsApiKey
+
+
+
     def apiImport = { attrs, body ->
         out << '<script type="text/javascript" src="https://www.google.com/jsapi"></script>'
+        if(!mapsApiKey) {
+            log.warn("Google Maps API key not found. Some of charts related to Maps require key. To fix define google.maps.key")
+        }
+        out << "<script async defer src='https://maps.googleapis.com/maps/api/js?key=${mapsApiKey}'></script>"
     }
+
+
 
     def pieChart = { attrs, body ->
         validateAndRender(attrs, GoogleVisualization.PIE_CHART, ['formatters'])
@@ -183,5 +196,9 @@ class GoogleVisualizationTagLib {
         visualizationDataDirector.constructVisualizationData(attrs, googleVisualization)
         def visualizationData = visualizationDataDirector.getVisualizationData()
         out << render(template: VISUALIZATION_JAVASCRIPT_TEMPLATE, model: [visualizationData: visualizationData])
+    }
+
+    private String getApiKey() {
+        grailsApplication.config.googleVisualization.apiKey
     }
 }
