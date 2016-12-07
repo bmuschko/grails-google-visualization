@@ -9,8 +9,9 @@
 You can find the full documentation in the corresponding GitHub wiki [here](https://github.com/bmuschko/grails-google-visualization/wiki).
 
 ## News
-- **September 15, 2016**: Release version 2.2: new config paramater `google.maps.key` required to use Google Map based visualization as mentioned in issue #65.
-- **August 21, 2016**: Release version 2.1.1 renames url mapping file to avoid conflicts as stated in issue #63.
+- **December 7, 2016**: Release version 2.2.1: Reverted changes introduced in release 2.1.1 as per issue #67
+- **September 15, 2016**: Release version 2.2 (not recommended): new config paramater `google.maps.key` required to use Google Map based visualization as mentioned in issue #65.
+- **August 21, 2016**: Release version 2.1.1 (not recommended): renames url mapping file to avoid conflicts as stated in issue #63.
 - **August 17, 2016**: Release version 2.1 with bugfix for issue #54 and added support for AnnotationChart.
 - **October 09, 2015**: Release version 2.0 providing Grails 3 support.
 - **January 07, 2015**: Bug fix release 1.0.1 to add "title" config option to the Calendar chart.
